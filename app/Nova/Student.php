@@ -2,30 +2,29 @@
 
 namespace App\Nova;
 
-use Eminiarts\Tabs\Tabs;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
-use Laravel\Nova\Fields\DateTime;
-use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Group extends Resource
+class Student extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\Group::class;
+    public static $model = \App\Models\Student::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'firstname';
 
     /**
      * The columns that should be searched.
@@ -33,13 +32,8 @@ class Group extends Resource
      * @var array
      */
     public static $search = [
-        'name',
+        'firstname', 'lastname', 'code', 'email'
     ];
-
-    public static function indexQuery(NovaRequest $request, $query)
-    {
-        return $query->whereKeyNot(1);
-    }
 
     /**
      * Get the fields displayed by the resource.
@@ -50,18 +44,29 @@ class Group extends Resource
     public function fields(Request $request)
     {
         return [
-            \Laravel\Nova\Fields\Text::make(__('Name'), 'name')->sortable()->required(),
+            \Laravel\Nova\Fields\Text::make(__('Firstname'), 'firstname')
+                ->rules(['required'])
+                ->required(),
 
-            Textarea::make(__('Description'), 'description'),
+            \Laravel\Nova\Fields\Text::make(__('Lastname'), 'lastname')
+                ->rules(['required'])
+                ->required(),
 
-            DateTime::make(__('Start'), 'start')->required(),
+            \Laravel\Nova\Fields\Text::make(__('Code'), 'code'),
 
-            DateTime::make(__('End'), 'end')->required(),
+            \Laravel\Nova\Fields\Text::make(__('E-mail'), 'email')
+                ->rules(['required', 'email'])
+                ->required(),
 
-            new Tabs('Relations', [
-                BelongsToMany::make('Students'),
-                HasMany::make('Courses'),
-            ]),
+            Password::make(__('Password'), 'password')
+                ->onlyOnForms()
+                ->creationRules('required', 'string', 'min:6')
+                ->updateRules('nullable', 'string', 'min:6'),
+
+            Boolean::make(__('Is active'), 'isActive')
+                ->default(true),
+
+            BelongsToMany::make('Groups')
         ];
     }
 

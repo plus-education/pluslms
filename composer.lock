@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "43747aeebe42b12fc7c60274a8a1bc71",
+    "content-hash": "a913e5aa49c3bbcd57d49adf99d0cca2",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -966,6 +966,55 @@
                 "validator"
             ],
             "time": "2020-09-06T13:44:32+00:00"
+        },
+        {
+            "name": "eminiarts/nova-tabs",
+            "version": "1.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/eminiarts/nova-tabs.git",
+                "reference": "b0fb236fc259550b65bc78436f4b37f0a53ceeb3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/eminiarts/nova-tabs/zipball/b0fb236fc259550b65bc78436f4b37f0a53ceeb3",
+                "reference": "b0fb236fc259550b65bc78436f4b37f0a53ceeb3",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": ">=2.9.0",
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Eminiarts\\Tabs\\TabsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Eminiarts\\Tabs\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Emini Arts GmbH",
+                    "email": "support@eminiarts.ch",
+                    "homepage": "https://eminiarts.ch"
+                }
+            ],
+            "description": "Laravel Nova - Tabs.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "time": "2019-12-18T15:30:55+00:00"
         },
         {
             "name": "fideloper/proxy",

@@ -12,6 +12,7 @@
         "chris-ware/nova-breadcrumbs": "^1.3",
         "digital-creative/nova-filepond": "^0.2.13",
         "digital-creative/nova-inline-morph-to": "^0.2.1",
+        "eminiarts/nova-tabs": "^1.2",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
