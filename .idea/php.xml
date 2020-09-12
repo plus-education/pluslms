@@ -132,6 +132,11 @@
       <path value="$PROJECT_DIR$/vendor/spatie/nova-tags-field" />
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-translatable" />
       <path value="$PROJECT_DIR$/vendor/eminiarts/nova-tabs" />
+      <path value="$PROJECT_DIR$/vendor/spatie/nova-backup-tool" />
+      <path value="$PROJECT_DIR$/vendor/spatie/db-dumper" />
+      <path value="$PROJECT_DIR$/vendor/spatie/temporary-directory" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-backup" />
+      <path value="$PROJECT_DIR$/vendor/whitecube/nova-flexible-content" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

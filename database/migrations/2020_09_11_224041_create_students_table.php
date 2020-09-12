@@ -21,6 +21,7 @@ class CreateStudentsTable extends Migration
             $table->string('email');
             $table->string('password')->nullable();
             $table->boolean('isActive')->default(1);
+            $table->json('extraFields');
             $table->timestamps();
         });
     }

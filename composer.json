@@ -21,7 +21,9 @@
         "laravel/nova": "~3.9.2",
         "laravel/tinker": "^2.0",
         "michielkempen/nova-order-field": "^2.0",
-        "spatie/nova-tags-field": "^3.0"
+        "spatie/nova-backup-tool": "^4.0",
+        "spatie/nova-tags-field": "^3.0",
+        "whitecube/nova-flexible-content": "^0.2.5"
     },
 
     "repositories": [

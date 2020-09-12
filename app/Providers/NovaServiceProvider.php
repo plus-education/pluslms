@@ -78,6 +78,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function tools()
     {
         return [
+            new \Spatie\BackupTool\BackupTool(),
             //\ChrisWare\NovaBreadcrumbs\NovaBreadcrumbs::make(),
         ];
     }
