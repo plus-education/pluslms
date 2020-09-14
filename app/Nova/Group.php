@@ -59,7 +59,7 @@ class Group extends Resource
             DateTime::make(__('End'), 'end')->required(),
 
             new Tabs('Relations', [
-                BelongsToMany::make('Students'),
+                BelongsToMany::make('Users'),
                 HasMany::make('Courses'),
             ]),
         ];

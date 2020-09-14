@@ -79,7 +79,7 @@ class Activity extends Resource
                 File::class,
                 Link::class,
                 Homework::class
-            ]),
+            ])->required(),
 
             OrderField::make('order'),
         ];

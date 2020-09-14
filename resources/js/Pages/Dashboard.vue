@@ -7,7 +7,7 @@
         </template>
 
         <section class="container m-auto">
-            <home></home>
+            <home :courses="courses"></home>
         </section>
 
     </app-layout>
@@ -21,6 +21,10 @@
         components: {
             AppLayout,
             Home,
+        },
+
+        props: {
+            courses: Object,
         },
     }
 </script>

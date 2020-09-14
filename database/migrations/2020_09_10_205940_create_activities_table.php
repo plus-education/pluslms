@@ -16,7 +16,6 @@ class CreateActivitiesTable extends Migration
         Schema::create('activities', function (Blueprint $table) {
             $table->id();
             $table->foreignId('topic_id');
-            $table->foreignId('group_id');
             $table->string('name');
             $table->boolean('isShow');
             $table->date('start')->nullable();
