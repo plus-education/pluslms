@@ -3204,6 +3204,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -25967,24 +25974,38 @@ var render = function() {
     [
       _vm._v(" "),
       _c("section", { staticClass: "container m-auto mt-6  md:px-0 sm:px-4" }, [
-        _c("h1", { staticClass: "text-2xl text-gray-800" }, [
-          _vm._v("\n            " + _vm._s(_vm.course.name) + " "),
-          _c("span", { staticClass: "text-sm text-gray-500" }, [
-            _vm._v(_vm._s(_vm.course.code))
-          ])
-        ]),
-        _vm._v(" "),
-        _c("span", { staticClass: "text-sm text-gray-500" }, [
-          _vm._v("Grupo: " + _vm._s(_vm.course.group.name))
-        ]),
+        _c(
+          "header",
+          {
+            staticClass:
+              "flex items-center shadow rounded-lg p-8 md:h-48 sm:h-32  bg-fixed",
+            staticStyle: {
+              "background-image": "url('/img/courses/cover1.jpg')"
+            }
+          },
+          [
+            _c("div", [
+              _c("h1", { staticClass: "text-2xl text-white font-bold" }, [
+                _vm._v(
+                  "\n                    " + _vm._s(_vm.course.name) + " "
+                ),
+                _c("span", { staticClass: "text-sm text-white" }, [
+                  _vm._v(_vm._s(_vm.course.code))
+                ])
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "text-sm text-white" }, [
+                _vm._v("Grupo: " + _vm._s(_vm.course.group.name))
+              ])
+            ])
+          ]
+        ),
         _vm._v(" "),
         _c("div", { staticClass: "my-4" }, [
           _vm._v(
             "\n            " + _vm._s(_vm.course.description) + "\n        "
           )
         ]),
-        _vm._v(" "),
-        _c("hr"),
         _vm._v(" "),
         _c(
           "div",
@@ -27649,7 +27670,7 @@ var render = function() {
                 staticClass:
                   "h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden",
                 staticStyle: {
-                  "background-image": "url('https://picsum.photos/300')"
+                  "background-image": "url('/img/courses/cover1.jpg')"
                 },
                 attrs: { title: "Woman holding a mug" }
               }),

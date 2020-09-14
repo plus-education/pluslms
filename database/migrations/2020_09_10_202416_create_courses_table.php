@@ -19,6 +19,7 @@ class CreateCoursesTable extends Migration
             $table->string('name');
             $table->text('description')->nullable();
             $table->text('code')->nullable();
+            $table->text('cover')->nullable();
             $table->timestamps();
         });
     }

@@ -7,14 +7,21 @@
         </template>
 
         <section class="container m-auto mt-6  md:px-0 sm:px-4">
-            <h1 class="text-2xl text-gray-800">
-                {{ course.name }} <span class="text-sm text-gray-500">{{ course.code }}</span>
-            </h1>
-            <span class="text-sm text-gray-500">Grupo: {{ course.group.name}}</span>
+            <header class="flex items-center shadow rounded-lg p-8 md:h-48 sm:h-32  bg-fixed"
+                style="background-image: url('/img/courses/cover1.jpg')"
+            >
+                <div>
+                    <h1 class="text-2xl text-white font-bold">
+                        {{ course.name }} <span class="text-sm text-white">{{ course.code }}</span>
+                    </h1>
+                    <span class="text-sm text-white">Grupo: {{ course.group.name}}</span>
+                </div>
+
+            </header>
+
             <div class="my-4">
                 {{ course.description }}
             </div>
-            <hr>
 
             <div class="mt-6">
                 <inertia-link v-for="topic in course.topics"  :key="topic.id"  :href="`/courses/topic/${topic.id}`">
