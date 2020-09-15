@@ -2,7 +2,7 @@
     <div>
         <div class="" >
             <div class="flex h-screen">
-                <div class=" bg-gray-100 flex-1 p-8 h-full">
+                <div class=" bg-gray-100 flex-1 p-8 max-h-full">
                     <div v-if="!activity">
                         <h1 class="text-2xl text-gray-800">
                             Aun no cuentas con actividades
@@ -44,10 +44,8 @@
                              class="flex items-center py-6 px-2 border-b-2 border-gray-100 cursor-pointer"
                              @click="changeActivity(activity.id)"
                         >
-                            <div class="flex-shrink mr-2">
-                                <svg class="w-6 h-6 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                                </svg>
+                            <div class="flex-shrink mr-2" v-html="icons[activity.type]">
+
                             </div>
                             <div class="flex-1 text-lg text-gray-800">
                                 {{ activity.name }}
@@ -62,6 +60,7 @@
 </template>
 
 <script>
+    import sidebarIcons from './SidebarIcons.js'
     import AppLayout from './../../Layouts/AppLayout'
     import FileActivity from './Activities/File'
     import LinkActivity from './Activities/Link'
@@ -83,12 +82,17 @@
 
         data: () => {
           return {
-              activity: Object
+              activity: Object,
+              icons: Object
           }
         },
 
         created() {
             this.activity = this.initializeActivity()
+        },
+
+        mounted() {
+            this.icons = sidebarIcons
         },
 
         methods: {

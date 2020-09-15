@@ -3388,11 +3388,12 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.vue");
-/* harmony import */ var _Activities_File__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Activities/File */ "./resources/js/Pages/Course/Activities/File.vue");
-/* harmony import */ var _Activities_Link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Activities/Link */ "./resources/js/Pages/Course/Activities/Link.vue");
-/* harmony import */ var _Activities_Text__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Activities/Text */ "./resources/js/Pages/Course/Activities/Text.vue");
-/* harmony import */ var _Activities_Pdf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Activities/Pdf */ "./resources/js/Pages/Course/Activities/Pdf.vue");
+/* harmony import */ var _SidebarIcons_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SidebarIcons.js */ "./resources/js/Pages/Course/SidebarIcons.js");
+/* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.vue");
+/* harmony import */ var _Activities_File__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Activities/File */ "./resources/js/Pages/Course/Activities/File.vue");
+/* harmony import */ var _Activities_Link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Activities/Link */ "./resources/js/Pages/Course/Activities/Link.vue");
+/* harmony import */ var _Activities_Text__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Activities/Text */ "./resources/js/Pages/Course/Activities/Text.vue");
+/* harmony import */ var _Activities_Pdf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Activities/Pdf */ "./resources/js/Pages/Course/Activities/Pdf.vue");
 //
 //
 //
@@ -3454,8 +3455,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
+
 
 
 
@@ -3463,22 +3463,26 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__["default"],
-    FileActivity: _Activities_File__WEBPACK_IMPORTED_MODULE_1__["default"],
-    LinkActivity: _Activities_Link__WEBPACK_IMPORTED_MODULE_2__["default"],
-    TextActivity: _Activities_Text__WEBPACK_IMPORTED_MODULE_3__["default"],
-    PdfActivity: _Activities_Pdf__WEBPACK_IMPORTED_MODULE_4__["default"]
+    AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_1__["default"],
+    FileActivity: _Activities_File__WEBPACK_IMPORTED_MODULE_2__["default"],
+    LinkActivity: _Activities_Link__WEBPACK_IMPORTED_MODULE_3__["default"],
+    TextActivity: _Activities_Text__WEBPACK_IMPORTED_MODULE_4__["default"],
+    PdfActivity: _Activities_Pdf__WEBPACK_IMPORTED_MODULE_5__["default"]
   },
   props: {
     topic: Object
   },
   data: function data() {
     return {
-      activity: Object
+      activity: Object,
+      icons: Object
     };
   },
   created: function created() {
     this.activity = this.initializeActivity();
+  },
+  mounted: function mounted() {
+    this.icons = _SidebarIcons_js__WEBPACK_IMPORTED_MODULE_0__["default"];
   },
   methods: {
     initializeActivity: function initializeActivity() {
@@ -62789,7 +62793,7 @@ var render = function() {
   return _c("div", [
     _c("div", {}, [
       _c("div", { staticClass: "flex h-screen" }, [
-        _c("div", { staticClass: " bg-gray-100 flex-1 p-8 h-full" }, [
+        _c("div", { staticClass: " bg-gray-100 flex-1 p-8 max-h-full" }, [
           !_vm.activity
             ? _c("div", [
                 _c("h1", { staticClass: "text-2xl text-gray-800" }, [
@@ -62887,31 +62891,10 @@ var render = function() {
                     }
                   },
                   [
-                    _c("div", { staticClass: "flex-shrink mr-2" }, [
-                      _c(
-                        "svg",
-                        {
-                          staticClass: "w-6 h-6 text-gray-500",
-                          attrs: {
-                            xmlns: "http://www.w3.org/2000/svg",
-                            fill: "none",
-                            viewBox: "0 0 24 24",
-                            stroke: "currentColor"
-                          }
-                        },
-                        [
-                          _c("path", {
-                            attrs: {
-                              "stroke-linecap": "round",
-                              "stroke-linejoin": "round",
-                              "stroke-width": "2",
-                              d:
-                                "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                            }
-                          })
-                        ]
-                      )
-                    ]),
+                    _c("div", {
+                      staticClass: "flex-shrink mr-2",
+                      domProps: { innerHTML: _vm._s(_vm.icons[activity.type]) }
+                    }),
                     _vm._v(" "),
                     _c("div", { staticClass: "flex-1 text-lg text-gray-800" }, [
                       _vm._v(
@@ -78764,6 +78747,8 @@ var map = {
 	"./Course/Activities/Text.vue": "./resources/js/Pages/Course/Activities/Text.vue",
 	"./Course/Index": "./resources/js/Pages/Course/Index.vue",
 	"./Course/Index.vue": "./resources/js/Pages/Course/Index.vue",
+	"./Course/SidebarIcons": "./resources/js/Pages/Course/SidebarIcons.js",
+	"./Course/SidebarIcons.js": "./resources/js/Pages/Course/SidebarIcons.js",
 	"./Course/Topic": "./resources/js/Pages/Course/Topic.vue",
 	"./Course/Topic.vue": "./resources/js/Pages/Course/Topic.vue",
 	"./Dashboard": "./resources/js/Pages/Dashboard.vue",
@@ -79288,6 +79273,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_03993632_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Course/SidebarIcons.js":
+/*!***************************************************!*\
+  !*** ./resources/js/Pages/Course/SidebarIcons.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var sidebarIcons = {
+  'FILE': "<svg class=\"w-6 h-6 text-gray-500\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\n                <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0 010 18z\" />\n             </svg>",
+  'LINK': "<svg class=\"w-6 h-6 text-gray-500\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\n                <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1\" />\n             </svg>",
+  'TEXT': "<svg class=\"w-6 h-6 text-gray-500\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\n                <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z\" />\n             </svg>",
+  'PDF': "<svg class=\"w-6 h-6 text-gray-500\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\n              <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253\" />\n            </svg>"
+};
+/* harmony default export */ __webpack_exports__["default"] = (sidebarIcons);
 
 /***/ }),
 
