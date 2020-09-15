@@ -28,7 +28,9 @@
     "dependencies": {
         "@inertiajs/inertia": "^0.2.3",
         "@inertiajs/inertia-vue": "^0.2.3",
+        "pdfvuer": "^1.7.1",
         "tailwindcss": "^1.8.8",
-        "vue": "^2.6.12"
+        "vue": "^2.6.12",
+        "vue-pdf": "^4.1.0"
     }
 }

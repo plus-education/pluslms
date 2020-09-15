@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Link extends Model
 {
     use HasFactory;
+
+    const COMPONENT = 'LINK';
 }

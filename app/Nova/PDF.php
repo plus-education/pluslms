@@ -2,26 +2,18 @@
 
 namespace App\Nova;
 
-use DigitalCreative\Filepond\Filepond;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class File extends Resource
+class PDF extends Resource
 {
-    /**
-     * Indicates if the resource should be displayed in the sidebar.
-     *
-     * @var bool
-     */
-    public static $displayInNavigation = false;
-
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\File::class;
+    public static $model = \App\Models\PDF::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -48,9 +40,7 @@ class File extends Resource
     public function fields(Request $request)
     {
         return [
-            \Laravel\Nova\Fields\File::make('File', 'path')
-                ->disk('public')
-                ->required()
+            \Laravel\Nova\Fields\File::make(__('File'), 'path')
         ];
     }
 

@@ -3,22 +3,32 @@
         <div class="" >
             <div class="flex h-screen">
                 <div class=" bg-gray-100 flex-1 p-8 h-full">
-                    <div class="h-full container m-auto bg-white shadow rounded-lg p-4">
+                    <div v-if="!activity">
                         <h1 class="text-2xl text-gray-800">
-                            {{ activity.name }}
+                            Aun no cuentas con actividades
                         </h1>
                         <hr>
-
-                        <div class="mt-4">
-                            {{ activity.activityable.body }}
-                        </div>
                     </div>
+
+                    <div v-else class="h-full container m-auto bg-white shadow rounded-lg p-4">
+
+                        <file-activity v-if="activity.type == 'FILE'" :activity="activity"></file-activity>
+
+                        <link-activity v-if="activity.type == 'LINK'" :activity="activity"></link-activity>
+
+                        <text-activity v-if="activity.type == 'TEXT'" :activity="activity"></text-activity>
+
+                        <pdf-activity v-if="activity.type == 'PDF'" :activity="activity"></pdf-activity>
+
+                    </div>
+
+
                 </div>
 
                 <div class="flex-shrink w-2/12 bg-white shadow-lg border border-gray-200 h-screen">
-                    <header class="bg-orange-500 text-white py-2">
+                    <header class="bg-cover text-white py-2"  style="background-image: url('/img/courses/cover1.jpg')">
                         <inertia-link  :href="`/courses/${ topic.course.id}`">
-                            <h1 class="text-xl text-white text-center">{{ topic.course.name }}</h1>
+                            <h1 class="text-xl text-white text-center font-bold">{{ topic.course.name }}</h1>
                         </inertia-link>
                     </header>
 
@@ -53,10 +63,18 @@
 
 <script>
     import AppLayout from './../../Layouts/AppLayout'
+    import FileActivity from './Activities/File'
+    import LinkActivity from './Activities/Link'
+    import TextActivity from './Activities/Text'
+    import PdfActivity from "./Activities/Pdf";
 
     export default {
         components: {
             AppLayout,
+            FileActivity,
+            LinkActivity,
+            TextActivity,
+            PdfActivity
         },
 
         props: {
@@ -70,10 +88,15 @@
         },
 
         created() {
-           this.activity = this.topic.activities[0]
+            this.activity = this.initializeActivity()
         },
 
         methods: {
+            initializeActivity: function()
+            {
+                return (this.topic.activities.length > 0) ? this.activity = this.topic.activities[0] : false
+            },
+
             changeActivity: function(id) {
                 this.activity = this.topic.activities.find( (activity) => {
                     return activity.id == id

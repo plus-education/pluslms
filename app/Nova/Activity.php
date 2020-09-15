@@ -78,7 +78,8 @@ class Activity extends Resource
                 \App\Nova\Text::class,
                 File::class,
                 Link::class,
-                Homework::class
+                Homework::class,
+                PDF::class
             ])->required(),
 
             OrderField::make('order'),

@@ -11,11 +11,20 @@ class Activity extends Model implements Sortable
 {
     use HasFactory, SortableTrait;
 
-    protected $with = 'activityable';
+    protected $with = ['activityable'];
+
+    protected $appends = ['type'];
 
     public $sortable = [
         'order_column_name' => 'order',
         'sort_when_creating' => true,
+    ];
+
+    protected $types = [
+        Text::class,
+        File::class,
+        Link::class,
+        PDF::class
     ];
 
     public function topic()
@@ -26,5 +35,14 @@ class Activity extends Model implements Sortable
     public function activityable()
     {
         return $this->morphTo();
+    }
+
+    public function getTypeAttribute()
+    {
+        if (! in_array($this->activityable_type, $this->types)){
+            return false;
+        }
+
+        return $this->activityable_type::COMPONENT;
     }
 }
