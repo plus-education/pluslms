@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\TypesActivities;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Link extends Model
+class Homework extends Model
 {
     use HasFactory;
 
-    const COMPONENT = 'LINK';
+    const COMPONENT = 'HOMEWORK';
 }

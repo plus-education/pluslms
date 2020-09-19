@@ -13,7 +13,7 @@ class PDF extends Resource
      *
      * @var string
      */
-    public static $model = \App\Models\PDF::class;
+    public static $model = \App\Models\TypesActivities\PDF::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.

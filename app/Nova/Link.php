@@ -13,7 +13,7 @@ class Link extends Resource
      *
      * @var string
      */
-    public static $model = \App\Models\Link::class;
+    public static $model = \App\Models\TypesActivities\Link::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.

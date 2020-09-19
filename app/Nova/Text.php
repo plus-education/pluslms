@@ -22,7 +22,7 @@ class Text extends Resource
      *
      * @var string
      */
-    public static $model = \App\Models\Text::class;
+    public static $model = \App\Models\TypesActivities\Text::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
