@@ -62711,10 +62711,8 @@ var render = function() {
           "header",
           {
             staticClass:
-              "flex items-center shadow rounded-lg p-8 md:h-48 sm:h-32  bg-fixed",
-            staticStyle: {
-              "background-image": "url('/img/courses/cover1.jpg')"
-            }
+              "flex items-center shadow rounded-lg p-8 md:h-48 sm:h-32  bg-cover",
+            style: "background-image: url('" + _vm.course.coverPath + "')"
           },
           [
             _c("div", [
@@ -62842,9 +62840,8 @@ var render = function() {
               "header",
               {
                 staticClass: "bg-cover text-white py-2",
-                staticStyle: {
-                  "background-image": "url('/img/courses/cover1.jpg')"
-                }
+                style:
+                  "background-image: url('" + _vm.topic.course.coverPath + "')"
               },
               [
                 _c(
@@ -64397,9 +64394,7 @@ var render = function() {
               _c("div", {
                 staticClass:
                   "h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden",
-                staticStyle: {
-                  "background-image": "url('/img/courses/cover1.jpg')"
-                },
+                style: "background-image: url('" + course.coverPath + "')",
                 attrs: { title: "Woman holding a mug" }
               }),
               _vm._v(" "),

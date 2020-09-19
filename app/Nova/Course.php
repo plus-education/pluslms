@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use DigitalCreative\Filepond\Filepond;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
@@ -53,7 +54,8 @@ class Course extends Resource
 
             Text::make(__('Code'), 'code')->sortable(),
 
-            Image::make(__('Cover'), 'cover'),
+            Filepond::make(__('Cover'), 'cover')
+            ->mimesTypes('image/jpeg,image/png'),
 
             HasMany::make('Topics'),
 

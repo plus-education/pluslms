@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="flex-shrink w-2/12 bg-white shadow-lg border border-gray-200 h-screen">
-                    <header class="bg-cover text-white py-2"  style="background-image: url('/img/courses/cover1.jpg')">
+                    <header class="bg-cover text-white py-2"  :style="`background-image: url('${topic.course.coverPath}')`">
                         <inertia-link  :href="`/courses/${ topic.course.id}`">
                             <h1 class="text-xl text-white text-center font-bold">{{ topic.course.name }}</h1>
                         </inertia-link>

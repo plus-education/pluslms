@@ -25,7 +25,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
             'name' => $course->name,
             'code' => $course->code,
             'description' => $course->description,
-            'group' => $course->group->name
+            'group' => $course->group->name,
+            'coverPath' => $course->coverPath
         ];
     });
 

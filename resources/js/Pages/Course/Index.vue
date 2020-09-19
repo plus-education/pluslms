@@ -7,8 +7,8 @@
         </template>
 
         <section class="container m-auto mt-6  md:px-0 sm:px-4">
-            <header class="flex items-center shadow rounded-lg p-8 md:h-48 sm:h-32  bg-fixed"
-                style="background-image: url('/img/courses/cover1.jpg')"
+            <header class="flex items-center shadow rounded-lg p-8 md:h-48 sm:h-32  bg-cover"
+                :style="`background-image: url('${course.coverPath}')`"
             >
                 <div>
                     <h1 class="text-2xl text-white font-bold">
