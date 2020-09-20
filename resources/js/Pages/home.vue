@@ -3,11 +3,16 @@
            <h1 class="text-lg mt-6 mb-4 text-gray-800">Mis cursos</h1>
 
            <section class="mb-4">
-               <input type="text" class="w-full focus:no-underline py-2 px-4 shadow rounded-lg" placeholder="Buscar">
+               <input
+                   v-model="search"
+                   type="text"
+                   class="w-full focus:no-underline py-2 px-4 shadow rounded-lg"
+                   placeholder="Buscar"
+               >
            </section>
 
            <section class="grid  lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
-               <inertia-link v-for="course in courses"  :key="course.id"  :href="`/courses/${course.id}`">
+               <inertia-link v-for="course in filteredList"  :key="course.id"  :href="`/courses/${course.id}`">
                    <div class="p-2  w-full lg:max-w-full lg:flex">
                        <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" :style="`background-image: url('${course.coverPath}')`" title="Woman holding a mug">
                        </div>
@@ -43,6 +48,20 @@
         props: {
             courses: Object,
         },
+
+        data: () => {
+            return {
+                search: ''
+            }
+        },
+
+        computed: {
+            filteredList () {
+                return this.courses.filter( course => {
+                    return course.name.includes(this.search)
+                })
+            }
+        }
     }
 </script>
 

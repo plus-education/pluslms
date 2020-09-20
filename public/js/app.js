@@ -4423,10 +4423,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {},
   props: {
     courses: Object
+  },
+  data: function data() {
+    return {
+      search: ''
+    };
+  },
+  computed: {
+    filteredList: function filteredList() {
+      var _this = this;
+
+      return this.courses.filter(function (course) {
+        return course.name.includes(_this.search);
+      });
+    }
   }
 });
 
@@ -64380,12 +64399,34 @@ var render = function() {
       _vm._v("Mis cursos")
     ]),
     _vm._v(" "),
-    _vm._m(0),
+    _c("section", { staticClass: "mb-4" }, [
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.search,
+            expression: "search"
+          }
+        ],
+        staticClass: "w-full focus:no-underline py-2 px-4 shadow rounded-lg",
+        attrs: { type: "text", placeholder: "Buscar" },
+        domProps: { value: _vm.search },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.search = $event.target.value
+          }
+        }
+      })
+    ]),
     _vm._v(" "),
     _c(
       "section",
       { staticClass: "grid  lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1" },
-      _vm._l(_vm.courses, function(course) {
+      _vm._l(_vm.filteredList, function(course) {
         return _c(
           "inertia-link",
           { key: course.id, attrs: { href: "/courses/" + course.id } },
@@ -64468,19 +64509,7 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "mb-4" }, [
-      _c("input", {
-        staticClass: "w-full focus:no-underline py-2 px-4 shadow rounded-lg",
-        attrs: { type: "text", placeholder: "Buscar" }
-      })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
