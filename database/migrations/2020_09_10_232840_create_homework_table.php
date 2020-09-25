@@ -18,7 +18,6 @@ class CreateHomeworkTable extends Migration
             $table->text('description');
             $table->text('file')->nullable();
             $table->boolean('isVirtual');
-            $table->boolean('score');
             $table->timestamps();
         });
     }

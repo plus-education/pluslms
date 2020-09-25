@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Cards\Help;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
+use Vyuldashev\NovaPermission\PermissionPolicy;
+use Vyuldashev\NovaPermission\RolePolicy;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
@@ -79,6 +81,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     {
         return [
             new \Spatie\BackupTool\BackupTool(),
+            \Vyuldashev\NovaPermission\NovaPermissionTool::make()
+                ->rolePolicy(RolePolicy::class)
+                ->permissionPolicy(PermissionPolicy::class),
             //\ChrisWare\NovaBreadcrumbs\NovaBreadcrumbs::make(),
         ];
     }

@@ -2,6 +2,10 @@
 
 namespace App\Models;
 
+use App\Models\TypesActivities\File;
+use App\Models\TypesActivities\Link;
+use App\Models\TypesActivities\Text;
+use App\Nova\Homework;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\EloquentSortable\Sortable;
@@ -24,7 +28,7 @@ class Activity extends Model implements Sortable
         Text::class,
         File::class,
         Link::class,
-        PDF::class
+        Homework::class
     ];
 
     public function topic()

@@ -21,6 +21,7 @@ class CreateActivitiesTable extends Migration
             $table->date('start')->nullable();
             $table->date('end')->nullable();
             $table->unsignedInteger('order');
+            $table->unsignedDecimal('score')->default(0);
 
 
             $table->foreignId('activityable_id');

@@ -11,7 +11,6 @@
                     </div>
 
                     <div v-else class="h-full container m-auto bg-white shadow rounded-lg p-4">
-
                         <file-activity v-if="activity.type == 'FILE'" :activity="activity"></file-activity>
 
                         <link-activity v-if="activity.type == 'LINK'" :activity="activity"></link-activity>

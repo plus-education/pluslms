@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class GroupSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,8 +13,10 @@ class GroupSeeder extends Seeder
      */
     public function run()
     {
-        \DB::table('groups')->insert([
-            'name' => 'Curso Libre'
+        \DB::table('users')->insert([
+            'name' => 'Admin Demo',
+            'email' => 'admin@demo.com',
+            'password' => \Hash::make('demo'),
         ]);
     }
 }

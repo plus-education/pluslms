@@ -14,6 +14,7 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use MichielKempen\NovaOrderField\Orderable;
 use MichielKempen\NovaOrderField\OrderField;
+use Phalcon\Helper\Number;
 
 class Activity extends Resource
 {
@@ -81,6 +82,11 @@ class Activity extends Resource
                 Homework::class,
                 PDF::class
             ])->required(),
+
+           \Laravel\Nova\Fields\Number::make(__('Score'), 'score')
+               ->min(0)
+               ->max(100)
+               ->default(0),
 
             OrderField::make('order'),
         ];
