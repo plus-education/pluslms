@@ -20,6 +20,8 @@
                         <pdf-activity v-if="activity.type == 'PDF'" :activity="activity"></pdf-activity>
 
                         <homework-activity v-if="activity.type == 'HOMEWORK'" :activity="activity"></homework-activity>
+
+                        <youtube-activity v-if="activity.type == 'YOUTUBE'" :activity="activity"></youtube-activity>
                     </div>
 
 
@@ -68,6 +70,8 @@
     import TextActivity from './Activities/Text'
     import PdfActivity from "./Activities/Pdf"
     import HomeworkActivity from "./Activities/Homework";
+    import YoutubeActivity from "./Activities/Youtube";
+
 
     export default {
         components: {
@@ -77,6 +81,7 @@
             LinkActivity,
             TextActivity,
             PdfActivity,
+            YoutubeActivity
         },
 
         props: {

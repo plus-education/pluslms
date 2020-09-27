@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2c96efe0e738f0b75f5187cb60e37c25",
+    "content-hash": "a1fea2a8ea7494836bfe678f8b044a38",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2686,6 +2686,48 @@
             "transport-options": {
                 "relative": true
             }
+        },
+        {
+            "name": "media24si/nova-youtube-field",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Media24si/nova-youtube-field.git",
+                "reference": "dc45bf0f1be948cf860948b93d46106354964d98"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Media24si/nova-youtube-field/zipball/dc45bf0f1be948cf860948b93d46106354964d98",
+                "reference": "dc45bf0f1be948cf860948b93d46106354964d98",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Media24si\\NovaYoutubeField\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Media24si\\NovaYoutubeField\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova Youtube field.",
+            "keywords": [
+                "laravel",
+                "nova",
+                "youtube"
+            ],
+            "time": "2018-09-16T10:45:29+00:00"
         },
         {
             "name": "michielkempen/nova-order-field",
