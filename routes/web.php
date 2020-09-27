@@ -28,4 +28,16 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
 
     Route::get('/courses/topic/{id}', [CoursesController::class, 'topic'])
         ->name('courses.topic');
+
+
+    Route::get('/courses/usersByActivity/{id}', [CoursesController::class, 'usersByActivity'])
+        ->name('courses.userByActivity');
+
+    Route::post('/courses/saveActivity', [CoursesController::class, 'saveActivity'])
+        ->name('courses.saveActivity');
+
+
+    Route::get('/course/topic/gradebook/{id}', [CoursesController::class, 'topicGradebook'])
+        ->name('courses.topicGradebook');
+
 });

@@ -19,6 +19,7 @@
 
                         <pdf-activity v-if="activity.type == 'PDF'" :activity="activity"></pdf-activity>
 
+                        <homework-activity v-if="activity.type == 'HOMEWORK'" :activity="activity"></homework-activity>
                     </div>
 
 
@@ -61,18 +62,21 @@
 <script>
     import sidebarIcons from './SidebarIcons.js'
     import AppLayout from './../../Layouts/AppLayout'
+
     import FileActivity from './Activities/File'
     import LinkActivity from './Activities/Link'
     import TextActivity from './Activities/Text'
-    import PdfActivity from "./Activities/Pdf";
+    import PdfActivity from "./Activities/Pdf"
+    import HomeworkActivity from "./Activities/Homework";
 
     export default {
         components: {
             AppLayout,
             FileActivity,
+            HomeworkActivity,
             LinkActivity,
             TextActivity,
-            PdfActivity
+            PdfActivity,
         },
 
         props: {

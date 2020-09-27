@@ -27,6 +27,11 @@ class Course extends Model
         return $this->belongsToMany(User::class);
     }
 
+    public function students()
+    {
+        return $this->users();
+    }
+
     public function getCoverPathAttribute()
     {
         $random = rand(1,6);

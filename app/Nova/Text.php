@@ -94,6 +94,7 @@ class Text extends Resource
      */
     public function actions(Request $request)
     {
-        return [];
+        return [
+        ];
     }
 }

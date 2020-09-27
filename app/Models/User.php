@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\DB;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
@@ -68,5 +69,28 @@ class User extends Authenticatable
     public function courses()
     {
         return $this->belongsToMany(Course::class);
+    }
+
+    public function activities()
+    {
+        return $this->belongsToMany(Activity::class)
+            ->withPivot('score', 'comment');
+    }
+
+    public function activityScore($id)
+    {
+        $activityScore = $this->activities->where('id', $id)->first();
+        return   ($activityScore) ?  $activityScore->pivot->score : false;
+    }
+
+    public function scoreTopic($id)
+    {
+        return DB::table('activity_user')
+            ->select(DB::raw('sum(activity_user.score) as total'))
+            ->leftJoin('activities', 'activity_user.activity_id', '=', 'activities.id')
+            ->leftJoin('topics', 'activities.topic_id', '=', 'topics.id')
+            ->where('topics.id', $this->id)
+            ->where('activity_user.user_id', $this->id)
+            ->first()->total;
     }
 }

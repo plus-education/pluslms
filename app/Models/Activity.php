@@ -5,7 +5,7 @@ namespace App\Models;
 use App\Models\TypesActivities\File;
 use App\Models\TypesActivities\Link;
 use App\Models\TypesActivities\Text;
-use App\Nova\Homework;
+use App\Models\TypesActivities\Homework;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\EloquentSortable\Sortable;
@@ -39,6 +39,11 @@ class Activity extends Model implements Sortable
     public function activityable()
     {
         return $this->morphTo();
+    }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
     }
 
     public function getTypeAttribute()

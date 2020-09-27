@@ -12,6 +12,7 @@ use Laravel\Nova\Fields\MorphMany;
 use Laravel\Nova\Fields\MorphTo;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Lms\ActivityScores\ActivityScores;
 use MichielKempen\NovaOrderField\Orderable;
 use MichielKempen\NovaOrderField\OrderField;
 use Phalcon\Helper\Number;
@@ -75,6 +76,7 @@ class Activity extends Resource
                 })
                 ->required(),
 
+
             InlineMorphTo::make('Activityable')->types([
                 \App\Nova\Text::class,
                 File::class,
@@ -83,10 +85,14 @@ class Activity extends Resource
                 PDF::class
             ])->required(),
 
+
            \Laravel\Nova\Fields\Number::make(__('Score'), 'score')
                ->min(0)
                ->max(100)
                ->default(0),
+
+            ActivityScores::make()
+                ->withMeta(['model' => $this->model()]),
 
             OrderField::make('order'),
         ];

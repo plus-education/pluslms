@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use DigitalCreative\Filepond\Filepond;
+use Eminiarts\Tabs\Tabs;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
@@ -57,13 +58,15 @@ class Course extends Resource
             Filepond::make(__('Cover'), 'cover')
             ->mimesTypes('image/jpeg,image/png'),
 
-            HasMany::make('Topics'),
+            new Tabs(__('Tools'), [
+                HasMany::make('Topics'),
+
+                BelongsToMany::make('Users'),
+            ]),
 
             BelongsTo::make('Group')
                 ->hideFromIndex()
                 ->hideWhenCreating(),
-
-            BelongsToMany::make('Users'),
         ];
     }
 

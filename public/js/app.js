@@ -3201,6 +3201,45 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Course/Activities/Homework.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Course/Activities/Homework.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    activity: Object
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Course/Activities/Link.vue?vue&type=script&lang=js&":
 /*!****************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Course/Activities/Link.vue?vue&type=script&lang=js& ***!
@@ -3394,6 +3433,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Activities_Link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Activities/Link */ "./resources/js/Pages/Course/Activities/Link.vue");
 /* harmony import */ var _Activities_Text__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Activities/Text */ "./resources/js/Pages/Course/Activities/Text.vue");
 /* harmony import */ var _Activities_Pdf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Activities/Pdf */ "./resources/js/Pages/Course/Activities/Pdf.vue");
+/* harmony import */ var _Activities_Homework__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Activities/Homework */ "./resources/js/Pages/Course/Activities/Homework.vue");
 //
 //
 //
@@ -3454,6 +3494,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+
 
 
 
@@ -3464,6 +3506,7 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_1__["default"],
     FileActivity: _Activities_File__WEBPACK_IMPORTED_MODULE_2__["default"],
+    HomeworkActivity: _Activities_Homework__WEBPACK_IMPORTED_MODULE_6__["default"],
     LinkActivity: _Activities_Link__WEBPACK_IMPORTED_MODULE_3__["default"],
     TextActivity: _Activities_Text__WEBPACK_IMPORTED_MODULE_4__["default"],
     PdfActivity: _Activities_Pdf__WEBPACK_IMPORTED_MODULE_5__["default"]
@@ -62581,6 +62624,58 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Course/Activities/Homework.vue?vue&type=template&id=8318b472&scoped=true&":
+/*!************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Course/Activities/Homework.vue?vue&type=template&id=8318b472&scoped=true& ***!
+  \************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("h1", { staticClass: "text-2xl text-gray-800" }, [
+      _vm._v("\n        " + _vm._s(_vm.activity.name) + "\n    ")
+    ]),
+    _vm._v(" "),
+    _c("hr"),
+    _vm._v(" "),
+    _c("div", { staticClass: "mt-4" }, [
+      _vm._v(
+        "\n        " + _vm._s(_vm.activity.activityable.description) + "\n    "
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "flex items-center justify-center mt-8 w-full" }, [
+      _vm.activity.activityable.file != null
+        ? _c(
+            "a",
+            {
+              staticClass: "bg-blue-100 px-6 py-4 shadow rounded-lg font-bold",
+              attrs: {
+                href: "/storage/" + _vm.activity.activityable.path,
+                target: "_blank"
+              }
+            },
+            [_vm._v("Descargar Documento Adjunto")]
+          )
+        : _vm._e()
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Course/Activities/Link.vue?vue&type=template&id=44f8f85e&scoped=true&":
 /*!********************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Course/Activities/Link.vue?vue&type=template&id=44f8f85e&scoped=true& ***!
@@ -62841,6 +62936,12 @@ var render = function() {
                   _vm._v(" "),
                   _vm.activity.type == "PDF"
                     ? _c("pdf-activity", { attrs: { activity: _vm.activity } })
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm.activity.type == "HOMEWORK"
+                    ? _c("homework-activity", {
+                        attrs: { activity: _vm.activity }
+                      })
                     : _vm._e()
                 ],
                 1
@@ -78762,6 +78863,8 @@ var map = {
 	"./API/Index.vue": "./resources/js/Pages/API/Index.vue",
 	"./Course/Activities/File": "./resources/js/Pages/Course/Activities/File.vue",
 	"./Course/Activities/File.vue": "./resources/js/Pages/Course/Activities/File.vue",
+	"./Course/Activities/Homework": "./resources/js/Pages/Course/Activities/Homework.vue",
+	"./Course/Activities/Homework.vue": "./resources/js/Pages/Course/Activities/Homework.vue",
 	"./Course/Activities/Link": "./resources/js/Pages/Course/Activities/Link.vue",
 	"./Course/Activities/Link.vue": "./resources/js/Pages/Course/Activities/Link.vue",
 	"./Course/Activities/Pdf": "./resources/js/Pages/Course/Activities/Pdf.vue",
@@ -79018,6 +79121,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_File_vue_vue_type_template_id_6a7e3853_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_File_vue_vue_type_template_id_6a7e3853_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Course/Activities/Homework.vue":
+/*!***********************************************************!*\
+  !*** ./resources/js/Pages/Course/Activities/Homework.vue ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Homework_vue_vue_type_template_id_8318b472_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Homework.vue?vue&type=template&id=8318b472&scoped=true& */ "./resources/js/Pages/Course/Activities/Homework.vue?vue&type=template&id=8318b472&scoped=true&");
+/* harmony import */ var _Homework_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Homework.vue?vue&type=script&lang=js& */ "./resources/js/Pages/Course/Activities/Homework.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Homework_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Homework_vue_vue_type_template_id_8318b472_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Homework_vue_vue_type_template_id_8318b472_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "8318b472",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Pages/Course/Activities/Homework.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Course/Activities/Homework.vue?vue&type=script&lang=js&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/Pages/Course/Activities/Homework.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Homework_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Homework.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Course/Activities/Homework.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Homework_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Course/Activities/Homework.vue?vue&type=template&id=8318b472&scoped=true&":
+/*!******************************************************************************************************!*\
+  !*** ./resources/js/Pages/Course/Activities/Homework.vue?vue&type=template&id=8318b472&scoped=true& ***!
+  \******************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Homework_vue_vue_type_template_id_8318b472_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Homework.vue?vue&type=template&id=8318b472&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Course/Activities/Homework.vue?vue&type=template&id=8318b472&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Homework_vue_vue_type_template_id_8318b472_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Homework_vue_vue_type_template_id_8318b472_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -79312,7 +79484,8 @@ var sidebarIcons = {
   'FILE': "<svg class=\"w-6 h-6 text-gray-500\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\n                <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0 010 18z\" />\n             </svg>",
   'LINK': "<svg class=\"w-6 h-6 text-gray-500\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\n                <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1\" />\n             </svg>",
   'TEXT': "<svg class=\"w-6 h-6 text-gray-500\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\n                <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z\" />\n             </svg>",
-  'PDF': "<svg class=\"w-6 h-6 text-gray-500\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\n              <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253\" />\n            </svg>"
+  'PDF': "<svg class=\"w-6 h-6 text-gray-500\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\n              <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253\" />\n            </svg>",
+  'HOMEWORK': "<svg class=\"w-6 h-6 text-gray-500\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\n              <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253\" />\n            </svg>"
 };
 /* harmony default export */ __webpack_exports__["default"] = (sidebarIcons);
 
