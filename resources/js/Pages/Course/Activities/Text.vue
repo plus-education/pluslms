@@ -6,7 +6,8 @@
       <hr>
 
       <div class="mt-4">
-          {{ activity.activityable.body }}
+          <div class="px-8" v-html="activity.activityable.html">
+          </div>
       </div>
   </div>
 </template>

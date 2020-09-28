@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use Advoor\NovaEditorJs\NovaEditorJs;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Textarea;
@@ -49,7 +50,8 @@ class Text extends Resource
     public function fields(Request $request)
     {
         return [
-            Textarea::make(__('Body'), 'body')->required()
+            NovaEditorJs::make(__('Divider'), 'body')
+                ->required(),
         ];
     }
 

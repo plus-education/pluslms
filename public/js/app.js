@@ -3188,7 +3188,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     activity: Object
@@ -3371,6 +3370,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -62782,7 +62782,7 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "mt-4" }, [
       _c("div", {
-        staticClass: "editor-js-content",
+        staticClass: "px-8",
         domProps: { innerHTML: _vm._s(_vm.activity.activityable.html) }
       })
     ])
@@ -63002,7 +63002,10 @@ var render = function() {
     _c("hr"),
     _vm._v(" "),
     _c("div", { staticClass: "mt-4" }, [
-      _vm._v("\n        " + _vm._s(_vm.activity.activityable.body) + "\n    ")
+      _c("div", {
+        staticClass: "px-8",
+        domProps: { innerHTML: _vm._s(_vm.activity.activityable.html) }
+      })
     ])
   ])
 }
