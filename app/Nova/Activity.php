@@ -78,6 +78,7 @@ class Activity extends Resource
 
 
             InlineMorphTo::make('Activityable')->types([
+                Divider::class,
                 \App\Nova\Text::class,
                 File::class,
                 Link::class,

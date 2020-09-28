@@ -1,14 +1,16 @@
 <template>
-  <div>
-      <h1 class="text-2xl text-gray-800">
-          {{ activity.name }}
-      </h1>
-      <hr>
+    <div class="h-full overflow-y-scroll">
+        <h1 class="text-2xl text-gray-800">
+            {{ activity.name }}
+        </h1>
+        <hr>
 
-      <div class="mt-4">
-          {{ activity.activityable.body }}
-      </div>
-  </div>
+        <div class="mt-4" >
+            <div class="editor-js-content" v-html="activity.activityable.html">
+
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -27,7 +29,7 @@
         border-color:#bacad6;
         padding-left:.75rem;
         color:#7c858e;border-radius:.5rem;box-shadow:0 2px 4px 0 rgba(0,0,0,.05)}
-    .editor-js-content .editor-js-block{padding:.7em 0}.editor-js-content h2{padding:1em 0;margin:0 0 -.9em;line-height:1.5em}
+     .editor-js-content .editor-js-block{padding:.7em 0}.editor-js-content h2{padding:1em 0;margin:0 0 -.9em;line-height:1.5em}
     .editor-js-content p{line-height:1.6em}.editor-js-content li{padding:5.5px 0 5.5px 3px;line-height:1.6em}
     .editor-js-content .editor-js-code{min-height:200px;color:#41314e;line-height:1.6em;font-size:12px;background:#f8f7fa;border:1px solid #f1f1f4;box-shadow:none;white-space:pre;word-wrap:normal;overflow-x:auto;resize:vertical}.
                                                                                                                                                                                                                                     editor-js-content .editor-js-link{display:block;background:#fff;border:1px solid rgba(201,201,204,.48);box-shadow:0 1px 3px rgba(0,0,0,.1);border-radius:6px;padding:25px}

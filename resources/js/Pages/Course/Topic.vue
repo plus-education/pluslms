@@ -11,6 +11,8 @@
                     </div>
 
                     <div v-else class="h-full container m-auto bg-white shadow rounded-lg p-4">
+                        <divider-activity v-if="activity.type == 'DIVIDER'" :activity="activity"></divider-activity>
+
                         <file-activity v-if="activity.type == 'FILE'" :activity="activity"></file-activity>
 
                         <link-activity v-if="activity.type == 'LINK'" :activity="activity"></link-activity>
@@ -43,15 +45,27 @@
                     <section class="">
                         <div v-for="activity in topic.activities"
                              :key="activity.id"
-                             class="flex items-center py-6 px-2 border-b-2 border-gray-100 cursor-pointer"
+                             class="flex items-center  border-b-2 border-gray-100 cursor-pointer"
                              @click="changeActivity(activity.id)"
                         >
-                            <div class="flex-shrink mr-2" v-html="icons[activity.type]">
+                            <div v-if="activity.type == 'DIVIDER'" class="flex bg-yellow-300 w-full h-full py-4 px-2">
+                                <div class="flex-shrink mr-2" v-html="icons[activity.type]">
 
+                                </div>
+                                <div class="flex-1 text-lg font-bold text-gray-800">
+                                    {{ activity.name }}
+                                </div>
                             </div>
-                            <div class="flex-1 text-lg text-gray-800">
-                                {{ activity.name }}
+
+                            <div v-else class="flex w-full h-full py-4 px-2">
+                                <div class="flex-shrink mr-2" v-html="icons[activity.type]">
+
+                                </div>
+                                <div class="flex-1 text-gray-800">
+                                    {{ activity.name }}
+                                </div>
                             </div>
+
                         </div>
                     </section>
                 </div>
@@ -65,6 +79,7 @@
     import sidebarIcons from './SidebarIcons.js'
     import AppLayout from './../../Layouts/AppLayout'
 
+    import DividerActivity from "./Activities/Divider"
     import FileActivity from './Activities/File'
     import LinkActivity from './Activities/Link'
     import TextActivity from './Activities/Text'
@@ -77,6 +92,7 @@
         components: {
             AppLayout,
             FileActivity,
+            DividerActivity,
             HomeworkActivity,
             LinkActivity,
             TextActivity,

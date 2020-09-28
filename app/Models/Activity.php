@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\TypesActivities\Divider;
 use App\Models\TypesActivities\File;
 use App\Models\TypesActivities\Link;
 use App\Models\TypesActivities\PDF;
@@ -27,6 +28,7 @@ class Activity extends Model implements Sortable
     ];
 
     protected $types = [
+        Divider::class,
         Text::class,
         File::class,
         Link::class,
