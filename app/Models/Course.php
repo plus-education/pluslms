@@ -9,6 +9,7 @@ use Spatie\Tags\HasTags;
 class Course extends Model
 {
     use HasFactory;
+    use HasUsers;
 
     protected $appends = ['coverPath'];
 
@@ -20,16 +21,6 @@ class Course extends Model
     public function group()
     {
         return $this->belongsTo(Group::class);
-    }
-
-    public function users()
-    {
-        return $this->belongsToMany(User::class);
-    }
-
-    public function students()
-    {
-        return $this->users();
     }
 
     public function getCoverPathAttribute()

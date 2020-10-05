@@ -61,7 +61,8 @@ class Course extends Resource
             new Tabs(__('Tools'), [
                 HasMany::make('Topics'),
 
-                BelongsToMany::make('Users'),
+                BelongsToMany::make('Students')->searchable(),
+                BelongsToMany::make('Teachers')->searchable(),
             ]),
 
             BelongsTo::make('Group')

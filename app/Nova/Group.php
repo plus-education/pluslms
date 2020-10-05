@@ -59,8 +59,9 @@ class Group extends Resource
             DateTime::make(__('End'), 'end')->required(),
 
             new Tabs('Relations', [
-                BelongsToMany::make('Users'),
                 HasMany::make('Courses'),
+                BelongsToMany::make('Students')->searchable(),
+                BelongsToMany::make('Teachers')->searchable(),
             ]),
         ];
     }

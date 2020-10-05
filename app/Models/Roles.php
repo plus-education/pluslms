@@ -8,11 +8,11 @@ class Roles
 {
     const SUPER_ADMIN = 'SUPER ADMIN';
 
-    const ADMIN = 'Admin';
+    const ADMIN = 'admin';
 
-    const TEACHER = 'Teacher';
+    const TEACHER = 'teacher';
 
-    const TUTOR = 'Tutor';
+    const TUTOR = 'tutor';
 
-    const STUDENT = 'Student';
+    const STUDENT = 'student';
 }
