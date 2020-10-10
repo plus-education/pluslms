@@ -2,13 +2,15 @@
 
 namespace App\Nova;
 
-use Advoor\NovaEditorJs\NovaEditorJs;
 use Illuminate\Http\Request;
+use IziDev\KeyValueSuggestion\KeyValueSuggestion;
+use Jrodas4044\NovaKeyValueRulesField\NovaKeyValueRulesField;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\KeyValue;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Test extends Resource
+class SelectMultiple extends Resource
 {
     /**
      * Indicates if the resource should be displayed in the sidebar.
@@ -22,7 +24,7 @@ class Test extends Resource
      *
      * @var string
      */
-    public static $model = \App\Models\TypesActivities\Test::class;
+    public static $model = \App\Models\TypesActivities\Questions\SelectMultiple::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -49,13 +51,9 @@ class Test extends Resource
     public function fields(Request $request)
     {
         return [
-            \Laravel\Nova\Fields\Text::make(__('Name'), 'name'),
-
-            NovaEditorJs::make(__('Description'), 'description'),
-
-            Number::make(__('Number Of Attemps'), 'numberOfAttemps'),
-
-            Number::make(__('Time'), 'time'),
+            HasMany::make('Question Options', 'questionOptions')
+                ->inline()
+                ->sortUsing('order'),
         ];
     }
 
@@ -67,7 +65,9 @@ class Test extends Resource
      */
     public function cards(Request $request)
     {
-        return [];
+        return [
+
+        ];
     }
 
     /**

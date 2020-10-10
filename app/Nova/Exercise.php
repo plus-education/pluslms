@@ -2,47 +2,37 @@
 
 namespace App\Nova;
 
+use Advoor\NovaEditorJs\NovaEditorJs;
 use DigitalCreative\InlineMorphTo\InlineMorphTo;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\BelongsTo;
-use Laravel\Nova\Fields\Boolean;
-use Laravel\Nova\Fields\Date;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\MorphMany;
-use Laravel\Nova\Fields\MorphTo;
-use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\MorphOne;
+use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Lms\ActivityScores\ActivityScores;
-use MichielKempen\NovaOrderField\Orderable;
-use MichielKempen\NovaOrderField\OrderField;
-use Phalcon\Helper\Number;
 
-class Activity extends Resource
+class Exercise extends Resource
 {
-    use Orderable;
-
-    public static $defaultOrderField = 'order';
-
     /**
      * Indicates if the resource should be displayed in the sidebar.
      *
      * @var bool
      */
-
     public static $displayInNavigation = false;
+
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\Activity::class;
+    public static $model = \App\Models\TypesActivities\Exercise::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
@@ -50,7 +40,7 @@ class Activity extends Resource
      * @var array
      */
     public static $search = [
-        'name'
+        'name',
     ];
 
     /**
@@ -62,45 +52,15 @@ class Activity extends Resource
     public function fields(Request $request)
     {
         return [
-            BelongsTo::make('Topic'),
+            //MorphOne::make('Activity'),
 
-            Text::make(__('Name'), 'name')->required(),
+            NovaEditorJs::make(__('Description'), 'description'),
 
-            Date::make(__('Start Date'), 'start'),
+            Number::make(__('Number Of Attemps'), 'numberOfAttemps')->default(1),
 
-            Date::make(__('End Date'), 'end'),
+            Number::make(__('Time'), 'time'),
 
-            Boolean::make(__('Show'), 'isShow')
-                ->default(function (){
-                    return 0;
-                })
-                ->required(),
-
-
-            InlineMorphTo::make('Activityable')->types([
-                Divider::class,
-                \App\Nova\Text::class,
-                File::class,
-                Link::class,
-                Homework::class,
-                PDF::class,
-                Youtube::class,
-                Exercise::class,
-            ])->required(),
-
-
-           \Laravel\Nova\Fields\Number::make(__('Score'), 'score')
-               ->min(0)
-               ->max(100)
-               ->default(0),
-
-            ActivityScores::make()
-                ->withMeta(['model' => $this->model()])
-                ->canSee(function() {
-                    return ($this->score > 0) ? true : false;
-                }),
-
-            OrderField::make('order'),
+            HasMany::make(__('Questions')),
         ];
     }
 

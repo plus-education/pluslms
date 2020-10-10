@@ -164,6 +164,11 @@
       <path value="$PROJECT_DIR$/vendor/advoor/nova-editor-js" />
       <path value="$PROJECT_DIR$/vendor/league/glide" />
       <path value="$PROJECT_DIR$/vendor/codex-team/editor.js" />
+      <path value="$PROJECT_DIR$/vendor/izi-dev/nova-key-value-suggestion-field" />
+      <path value="$PROJECT_DIR$/vendor/jrodas4044/nova-key-value-rules-field" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/vendor/kirschbaum-development/nova-inline-relationship" />
+      <path value="$PROJECT_DIR$/vendor/optimistdigital/nova-tailwind" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

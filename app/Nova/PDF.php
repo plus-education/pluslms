@@ -13,7 +13,6 @@ class PDF extends Resource
      *
      * @var bool
      */
-
     public static $displayInNavigation = false;
 
     /**
