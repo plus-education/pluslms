@@ -77,6 +77,24 @@ class User extends Authenticatable
             ->withPivot('score', 'comment');
     }
 
+    public function gradeExercise($id, $score = 0, $comment = '')
+    {
+        $activity = Activity::find($id);
+        $userActivity = $this->activities->where('id', $activity->id)->first();
+
+        if ($userActivity) {
+            return $this->activities()->updateExistingPivot($activity->id,  [
+                'comment' => $comment,
+                'score' => $score
+            ]);
+        }
+
+        return $this->activities()->attach($activity->id,  [
+            'comment' => $comment,
+            'score' => $score
+        ]);
+    }
+
     public function activityScore($id)
     {
         $activityScore = $this->activities->where('id', $id)->first();

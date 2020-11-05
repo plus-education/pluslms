@@ -13,6 +13,8 @@
                     <div v-else class="h-full container m-auto bg-white shadow rounded-lg p-4">
                         <divider-activity v-if="activity.type == 'DIVIDER'" :activity="activity"></divider-activity>
 
+                        <exercise-activity v-if="activity.type == 'EXERCISE'" :activity="activity"></exercise-activity>
+
                         <file-activity v-if="activity.type == 'FILE'" :activity="activity"></file-activity>
 
                         <link-activity v-if="activity.type == 'LINK'" :activity="activity"></link-activity>
@@ -25,8 +27,6 @@
 
                         <youtube-activity v-if="activity.type == 'YOUTUBE'" :activity="activity"></youtube-activity>
                     </div>
-
-
                 </div>
 
                 <div class="flex-shrink w-2/12 bg-white shadow-lg border border-gray-200 h-screen">
@@ -80,6 +80,7 @@
     import AppLayout from './../../Layouts/AppLayout'
 
     import DividerActivity from "./Activities/Divider"
+    import ExerciseActivity from "./Activities/Exercise"
     import FileActivity from './Activities/File'
     import LinkActivity from './Activities/Link'
     import TextActivity from './Activities/Text'
@@ -87,12 +88,12 @@
     import HomeworkActivity from "./Activities/Homework";
     import YoutubeActivity from "./Activities/Youtube";
 
-
     export default {
         components: {
             AppLayout,
             FileActivity,
             DividerActivity,
+            ExerciseActivity,
             HomeworkActivity,
             LinkActivity,
             TextActivity,
@@ -120,8 +121,7 @@
         },
 
         methods: {
-            initializeActivity: function()
-            {
+            initializeActivity: function() {
                 return (this.topic.activities.length > 0) ? this.activity = this.topic.activities[0] : false
             },
 

@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 use \App\Http\Controllers\Dashboard,
-    \App\Http\Controllers\CoursesController;
+    \App\Http\Controllers\CoursesController,
+    \App\Http\Controllers\Student\ExerciseController;
 
 Route::get('/', function () {
     return Inertia\Inertia::render('home');
@@ -29,6 +30,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::get('/courses/topic/{id}', [CoursesController::class, 'topic'])
         ->name('courses.topic');
 
+    Route::get('/courses/topic/activities/{id}', [CoursesController::class, 'topicActivities'])
+        ->name('courses.topic.activities');
 
     Route::get('/courses/usersByActivity/{id}', [CoursesController::class, 'usersByActivity'])
         ->name('courses.userByActivity');
@@ -40,4 +43,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::get('/course/topic/gradebook/{id}', [CoursesController::class, 'topicGradebook'])
         ->name('courses.topicGradebook');
 
+    Route::get('/student/exercise/questions/{id}', [ExerciseController::class, 'getQuestion']);
+
+    Route::post('/student/exercise', \App\Http\Controllers\GradeExerciseController::class);
 });

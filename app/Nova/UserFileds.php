@@ -5,6 +5,7 @@ namespace App\Nova;
 
 
 use Laravel\Nova\Fields\Gravatar;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Fields\Text;
@@ -35,6 +36,8 @@ class UserFileds
                 ->updateRules('nullable', 'string', 'min:8'),
 
             RoleSelect::make('Role', 'roles'),
+
+            HasMany::make('Courses')
         ];
     }
 }

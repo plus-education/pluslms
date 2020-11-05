@@ -1,0 +1,23 @@
+@startuml
+Group "1" o--- "1 *" Course
+Student  o-- Course
+Course "1" o--  "1 *" Topic
+Topic o-- Activity
+Activity  <|-- Text
+Activity  <|- PDF
+Activity  <|-- Forum
+Activity  <|-- Video
+Activity  <|-- Exersice
+Activity  <|-- Video
+
+CompleteActivity"1"  *-- "1" Student
+CompleteActivity "1" *-- "1" Activity
+CompleteActivity <-- Score
+
+Course *-- Gradebook
+Gradebook o-- Score
+Gradebook <|-- Student
+
+Course *-- CourseWiner
+CourseWiner o-- Student
+@enduml

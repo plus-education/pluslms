@@ -12,6 +12,10 @@ class QuestionOption extends Model
 
     protected $guarded = [];
 
+    protected $casts = [
+        'isTrue' => 'boolean'
+    ];
+
     public function selectMultiple()
     {
         return $this->belongsTo(SelectMultiple::class);

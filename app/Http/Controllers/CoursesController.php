@@ -22,10 +22,15 @@ class CoursesController extends Controller
     public function topic($id)
     {
         $topic = Topic::find($id);
-        $topic->course;
         $topic->activities;
+        $topic->course;
         return Inertia::render('Course/Topic')
             ->with(compact('topic'));
+    }
+
+    public function topicActivities($id)
+    {
+        return Topic::find($id)->activities;
     }
 
     public function usersByActivity($id)
