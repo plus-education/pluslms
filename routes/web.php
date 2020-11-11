@@ -17,7 +17,7 @@ use \App\Http\Controllers\Dashboard,
     \App\Http\Controllers\Student\ExerciseController;
 
 Route::get('/', function () {
-    return Inertia\Inertia::render('home');
+    return view('welcome');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function() {
