@@ -62,4 +62,11 @@ class Activity extends Model implements Sortable
 
         return $this->activityable_type::COMPONENT;
     }
+
+    public function comments()
+    {
+        return $this->morphMany(Comment::class, 'commentable')
+            ->whereNull('parent_id')
+            ->orderBy('id', 'DESC');
+    }
 }

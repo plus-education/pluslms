@@ -45,9 +45,29 @@ class Topic extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'name'
+        'name'
     ];
 
+
+    /**
+     * Get the displayable label of the resource.
+     *
+     * @return string
+     */
+    public static function label()
+    {
+        return __('Topics');
+    }
+
+    /**
+     * Get the displayable singular label of the resource.
+     *
+     * @return string
+     */
+    public static function singularLabel()
+    {
+        return __('Topic');
+    }
     /**
      * Get the fields displayed by the resource.
      *
@@ -57,15 +77,13 @@ class Topic extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
-
             Text::make(__('Name'), 'name')->required(),
 
-            BelongsTo::make('Course'),
+            BelongsTo::make(__('Course'), 'Course', Course::class),
 
-            HasMany::make('Activities'),
+            HasMany::make(__('Activities'), 'Activities', Activity::class),
 
-            OrderField::make('Order'),
+            OrderField::make(__('Order'), 'order'),
         ];
     }
 

@@ -12,6 +12,7 @@ use Laravel\Nova\Fields\MorphMany;
 use Laravel\Nova\Fields\MorphTo;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Lms\ActivityComments\ActivityComments;
 use Lms\ActivityScores\ActivityScores;
 use MichielKempen\NovaOrderField\Orderable;
 use MichielKempen\NovaOrderField\OrderField;
@@ -54,6 +55,26 @@ class Activity extends Resource
     ];
 
     /**
+     * Get the displayable label of the resource.
+     *
+     * @return string
+     */
+    public static function label()
+    {
+        return __('Activities');
+    }
+
+    /**
+     * Get the displayable singular label of the resource.
+     *
+     * @return string
+     */
+    public static function singularLabel()
+    {
+        return __('Activity');
+    }
+
+    /**
      * Get the fields displayed by the resource.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -77,7 +98,7 @@ class Activity extends Resource
                 ->required(),
 
 
-            InlineMorphTo::make('Activityable')->types([
+            InlineMorphTo::make(__("Activityable"), 'Activityable')->types([
                 Divider::class,
                 \App\Nova\Text::class,
                 File::class,
@@ -100,7 +121,9 @@ class Activity extends Resource
                     return ($this->score > 0) ? true : false;
                 }),
 
-            OrderField::make('order'),
+            OrderField::make(__("Order"), 'order'),
+
+            ActivityComments::make(),
         ];
     }
 

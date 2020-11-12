@@ -46,4 +46,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::get('/student/exercise/questions/{id}', [ExerciseController::class, 'getQuestion']);
 
     Route::post('/student/exercise', \App\Http\Controllers\GradeExerciseController::class);
+
+    // System Comments
+    Route::get('/commnets/activity/{id}', [\App\Http\Controllers\CommentController::class, 'list']);
+    Route::post('/commnets/activity', [\App\Http\Controllers\CommentController::class, 'store']);
+    Route::post('/comments/delete', [\App\Http\Controllers\CommentController::class, 'delete']);
 });

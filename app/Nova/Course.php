@@ -40,7 +40,27 @@ class Course extends Resource
         'id', 'name', 'code'
     ];
 
+
     /**
+     * Get the displayable label of the resource.
+     *
+     * @return string
+     */
+    public static function label()
+    {
+        return __('Courses');
+    }
+
+    /**
+     * Get the displayable singular label of the resource.
+     *
+     * @return string
+     */
+    public static function singularLabel()
+    {
+        return __('Course');
+    }
+        /**
      * Get the fields displayed by the resource.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -51,7 +71,7 @@ class Course extends Resource
         return [
             Text::make(__('Name'), 'name')->sortable()->required(),
 
-            Textarea::make(__('Descripcion'), 'description'),
+            Textarea::make(__('Description'), 'description'),
 
             Text::make(__('Code'), 'code')->sortable(),
 
@@ -59,13 +79,13 @@ class Course extends Resource
             ->mimesTypes('image/jpeg,image/png'),
 
             new Tabs(__('Tools'), [
-                HasMany::make('Topics'),
+                HasMany::make(__('Topics'), 'topics', Topic::class),
 
-                BelongsToMany::make('Students')->searchable(),
-                BelongsToMany::make('Teachers')->searchable(),
+                BelongsToMany::make(__('Students'), 'Students', Student::class)->searchable(),
+                BelongsToMany::make(__('Teachers'), 'Teachers', Teacher::class)->searchable(),
             ]),
 
-            BelongsTo::make('Group')
+            BelongsTo::make(__('Group'), 'Group', Group::class)
                 ->hideFromIndex()
                 ->hideWhenCreating(),
         ];

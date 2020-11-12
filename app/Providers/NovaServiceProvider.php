@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\Facades\Gate;
+use Joedixon\NovaTranslation\NovaTranslation;
 use Laravel\Nova\Cards\Help;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
@@ -58,7 +59,6 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function cards()
     {
         return [
-            new Help,
         ];
     }
 
@@ -81,10 +81,13 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     {
         return [
             new \Spatie\BackupTool\BackupTool(),
+
             \Vyuldashev\NovaPermission\NovaPermissionTool::make()
                 ->rolePolicy(RolePolicy::class)
                 ->permissionPolicy(PermissionPolicy::class),
             //\ChrisWare\NovaBreadcrumbs\NovaBreadcrumbs::make(),
+
+            NovaTranslation::make()
         ];
     }
 
