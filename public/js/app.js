@@ -3174,6 +3174,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Comments__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Comments */ "./resources/js/Pages/Course/Comments.vue");
 //
 //
 //
@@ -3185,12 +3186,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    Comments: _Comments__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
   props: {
-    activity: Object
+    activity: Object,
+    user: Object
   }
 });
 
@@ -3264,14 +3267,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    activity: Object
+    activity: Object,
+    user: Object
   },
   data: function data() {
     return {
@@ -3330,6 +3329,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Comments__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Comments */ "./resources/js/Pages/Course/Comments.vue");
 //
 //
 //
@@ -3344,14 +3344,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    Comments: _Comments__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
   props: {
-    activity: Object
+    activity: Object,
+    user: Object
   }
 });
 
@@ -3366,80 +3366,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  props: {
-    activity: Object
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Course/Activities/Link.vue?vue&type=script&lang=js&":
-/*!****************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Course/Activities/Link.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  props: {
-    activity: Object
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Course/Activities/Pdf.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Course/Activities/Pdf.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue_pdf__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-pdf */ "./node_modules/vue-pdf/src/vuePdfNoSss.vue");
-//
-//
+/* harmony import */ var _Comments__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Comments */ "./resources/js/Pages/Course/Comments.vue");
 //
 //
 //
@@ -3462,7 +3389,84 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    pdf: vue_pdf__WEBPACK_IMPORTED_MODULE_0__["default"]
+    Comments: _Comments__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  props: {
+    activity: Object,
+    user: Object
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Course/Activities/Link.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Course/Activities/Link.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Comments__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Comments */ "./resources/js/Pages/Course/Comments.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    Comments: _Comments__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  props: {
+    activity: Object,
+    user: Object
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Course/Activities/Pdf.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Course/Activities/Pdf.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue_pdf__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-pdf */ "./node_modules/vue-pdf/src/vuePdfNoSss.vue");
+/* harmony import */ var _Comments__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Comments */ "./resources/js/Pages/Course/Comments.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    pdf: vue_pdf__WEBPACK_IMPORTED_MODULE_0__["default"],
+    Comments: _Comments__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
     return {
@@ -3471,7 +3475,8 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   props: {
-    activity: Object
+    activity: Object,
+    user: Object
   },
   beforeCreate: function beforeCreate() {},
   mounted: function mounted() {
@@ -3495,6 +3500,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Comments__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Comments */ "./resources/js/Pages/Course/Comments.vue");
 //
 //
 //
@@ -3506,12 +3512,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    Comments: _Comments__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
   props: {
-    activity: Object
+    activity: Object,
+    user: Object
   }
 });
 
@@ -3521,6 +3529,44 @@ __webpack_require__.r(__webpack_exports__);
 /*!*******************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Course/Activities/Youtube.vue?vue&type=script&lang=js& ***!
   \*******************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Comments__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Comments */ "./resources/js/Pages/Course/Comments.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    Comments: _Comments__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  props: {
+    activity: Object,
+    user: Object
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Course/Comments.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Course/Comments.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3544,9 +3590,85 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    activity: Object
+    activity: Object,
+    user: Object
+  },
+  data: function data() {
+    return {
+      comment: null,
+      comments: Object
+    };
+  },
+  mounted: function mounted() {
+    this.getComment();
+  },
+  methods: {
+    getComment: function getComment() {
+      var _this = this;
+
+      axios.get("/commnets/activity/".concat(this.activity.id)).then(function (response) {
+        _this.comments = response.data;
+      });
+    },
+    saveComment: function saveComment() {
+      var _this2 = this;
+
+      var data = {
+        'activityId': this.activity.id,
+        'comment': this.comment
+      };
+      axios.post("/commnets/activity", data).then(function (response) {
+        _this2.comments.unshift(response.data);
+      });
+      this.comment = '';
+    },
+    deleteComment: function deleteComment(comment) {
+      this.comments = this.comments.filter(function (item) {
+        return item.id != comment.id;
+      });
+      axios.post("/comments/delete", {
+        'commentId': comment.id
+      });
+    }
   }
 });
 
@@ -3629,6 +3751,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Activities_Pdf__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Activities/Pdf */ "./resources/js/Pages/Course/Activities/Pdf.vue");
 /* harmony import */ var _Activities_Homework__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Activities/Homework */ "./resources/js/Pages/Course/Activities/Homework.vue");
 /* harmony import */ var _Activities_Youtube__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Activities/Youtube */ "./resources/js/Pages/Course/Activities/Youtube.vue");
+/* harmony import */ var _Comments__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Comments */ "./resources/js/Pages/Course/Comments.vue");
 //
 //
 //
@@ -3706,6 +3829,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -3726,10 +3859,12 @@ __webpack_require__.r(__webpack_exports__);
     LinkActivity: _Activities_Link__WEBPACK_IMPORTED_MODULE_5__["default"],
     TextActivity: _Activities_Text__WEBPACK_IMPORTED_MODULE_6__["default"],
     PdfActivity: _Activities_Pdf__WEBPACK_IMPORTED_MODULE_7__["default"],
-    YoutubeActivity: _Activities_Youtube__WEBPACK_IMPORTED_MODULE_9__["default"]
+    YoutubeActivity: _Activities_Youtube__WEBPACK_IMPORTED_MODULE_9__["default"],
+    Comments: _Comments__WEBPACK_IMPORTED_MODULE_10__["default"]
   },
   props: {
-    topic: Object
+    topic: Object,
+    user: Object
   },
   data: function data() {
     return {
@@ -62901,20 +63036,21 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "h-full overflow-y-scroll" }, [
-    _c("h1", { staticClass: "text-2xl text-gray-800" }, [
-      _vm._v("\n        " + _vm._s(_vm.activity.name) + "\n    ")
-    ]),
-    _vm._v(" "),
-    _c("hr"),
-    _vm._v(" "),
-    _c("div", { staticClass: "mt-4" }, [
-      _c("div", {
-        staticClass: "px-8",
-        domProps: { innerHTML: _vm._s(_vm.activity.activityable.html) }
-      })
-    ])
-  ])
+  return _c(
+    "div",
+    { staticClass: "h-full overflow-y-scroll" },
+    [
+      _c("div", { staticClass: "mt-4" }, [
+        _c("div", {
+          staticClass: "px-8",
+          domProps: { innerHTML: _vm._s(_vm.activity.activityable.html) }
+        })
+      ]),
+      _vm._v(" "),
+      _c("comments", { attrs: { activity: _vm.activity, user: _vm.user } })
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -62939,12 +63075,6 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h1", { staticClass: "text-2xl text-gray-800" }, [
-      _vm._v("\n        " + _vm._s(_vm.activity.name) + "\n    ")
-    ]),
-    _vm._v(" "),
-    _c("hr"),
-    _vm._v(" "),
     _c("div", { staticClass: "mt-4" }, [
       _c("div", {
         staticClass: "px-8",
@@ -63151,36 +63281,35 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", {}, [
-    _c("div", [
-      _c("h1", { staticClass: "text-2xl text-gray-800" }, [
-        _vm._v("\n            " + _vm._s(_vm.activity.name) + "\n        ")
-      ]),
+  return _c(
+    "div",
+    {},
+    [
+      _c(
+        "div",
+        {
+          staticClass:
+            "flex items-center justify-center mt-8 w-full h-64 bg-gray-100 border-dashed border-4 border-gray-600"
+        },
+        [
+          _c(
+            "a",
+            {
+              staticClass: "bg-blue-100 px-6 py-4 shadow rounded-lg font-bold",
+              attrs: {
+                href: "/storage/" + _vm.activity.activityable.path,
+                target: "_blank"
+              }
+            },
+            [_vm._v("Descargar")]
+          )
+        ]
+      ),
       _vm._v(" "),
-      _c("hr")
-    ]),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        staticClass:
-          "flex items-center justify-center mt-8 w-full h-64 bg-gray-100 border-dashed border-4 border-gray-600"
-      },
-      [
-        _c(
-          "a",
-          {
-            staticClass: "bg-blue-100 px-6 py-4 shadow rounded-lg font-bold",
-            attrs: {
-              href: "/storage/" + _vm.activity.activityable.path,
-              target: "_blank"
-            }
-          },
-          [_vm._v("Descargar")]
-        )
-      ]
-    )
-  ])
+      _c("comments", { attrs: { activity: _vm.activity, user: _vm.user } })
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -63204,35 +63333,42 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("h1", { staticClass: "text-2xl text-gray-800" }, [
-      _vm._v("\n        " + _vm._s(_vm.activity.name) + "\n    ")
-    ]),
-    _vm._v(" "),
-    _c("hr"),
-    _vm._v(" "),
-    _c("div", { staticClass: "mt-4" }, [
-      _vm._v(
-        "\n        " + _vm._s(_vm.activity.activityable.description) + "\n    "
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "flex items-center justify-center mt-8 w-full" }, [
-      _vm.activity.activityable.file != null
-        ? _c(
-            "a",
-            {
-              staticClass: "bg-blue-100 px-6 py-4 shadow rounded-lg font-bold",
-              attrs: {
-                href: "/storage/" + _vm.activity.activityable.path,
-                target: "_blank"
-              }
-            },
-            [_vm._v("Descargar Documento Adjunto")]
-          )
-        : _vm._e()
-    ])
-  ])
+  return _c(
+    "div",
+    [
+      _c("div", { staticClass: "mt-4" }, [
+        _vm._v(
+          "\n        " +
+            _vm._s(_vm.activity.activityable.description) +
+            "\n    "
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "flex items-center justify-center mt-8 w-full" },
+        [
+          _vm.activity.activityable.file != null
+            ? _c(
+                "a",
+                {
+                  staticClass:
+                    "bg-blue-100 px-6 py-4 shadow rounded-lg font-bold",
+                  attrs: {
+                    href: "/storage/" + _vm.activity.activityable.path,
+                    target: "_blank"
+                  }
+                },
+                [_vm._v("Descargar Documento Adjunto")]
+              )
+            : _vm._e()
+        ]
+      ),
+      _vm._v(" "),
+      _c("comments", { attrs: { activity: _vm.activity, user: _vm.user } })
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -63256,18 +63392,19 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "h-full overflow-hidden" }, [
-    _c("h1", { staticClass: "text-2xl text-gray-800" }, [
-      _vm._v("\n        " + _vm._s(_vm.activity.name) + "\n    ")
-    ]),
-    _vm._v(" "),
-    _c("hr"),
-    _vm._v(" "),
-    _c("iframe", {
-      staticClass: "w-full h-full overflow-scroll",
-      attrs: { src: _vm.activity.activityable.link, frameborder: "0" }
-    })
-  ])
+  return _c(
+    "div",
+    { staticClass: "h-full overflow-hidden" },
+    [
+      _c("iframe", {
+        staticClass: "w-full h-full overflow-scroll",
+        attrs: { src: _vm.activity.activityable.link, frameborder: "0" }
+      }),
+      _vm._v(" "),
+      _c("comments", { attrs: { activity: _vm.activity, user: _vm.user } })
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -63291,27 +63428,26 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "h-full overflow-scroll" }, [
-    _c("div", [
-      _c("h1", { staticClass: "text-2xl text-gray-800" }, [
-        _vm._v("\n            " + _vm._s(_vm.activity.name) + "\n        ")
-      ]),
+  return _c(
+    "div",
+    { staticClass: "h-full overflow-scroll" },
+    [
+      _c(
+        "div",
+        _vm._l(_vm.numPages, function(i) {
+          return _c("pdf", {
+            key: i,
+            staticClass: "w-full",
+            attrs: { src: _vm.src, page: i }
+          })
+        }),
+        1
+      ),
       _vm._v(" "),
-      _c("hr")
-    ]),
-    _vm._v(" "),
-    _c(
-      "div",
-      _vm._l(_vm.numPages, function(i) {
-        return _c("pdf", {
-          key: i,
-          staticClass: "w-full",
-          attrs: { src: _vm.src, page: i }
-        })
-      }),
-      1
-    )
-  ])
+      _c("comments", { attrs: { activity: _vm.activity, user: _vm.user } })
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -63335,20 +63471,20 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("h1", { staticClass: "text-2xl text-gray-800" }, [
-      _vm._v("\n        " + _vm._s(_vm.activity.name) + "\n    ")
-    ]),
-    _vm._v(" "),
-    _c("hr"),
-    _vm._v(" "),
-    _c("div", { staticClass: "mt-4" }, [
-      _c("div", {
-        staticClass: "px-8",
-        domProps: { innerHTML: _vm._s(_vm.activity.activityable.html) }
-      })
-    ])
-  ])
+  return _c(
+    "div",
+    [
+      _c("div", { staticClass: "mt-4" }, [
+        _c("div", {
+          staticClass: "px-8",
+          domProps: { innerHTML: _vm._s(_vm.activity.activityable.html) }
+        })
+      ]),
+      _vm._v(" "),
+      _c("comments", { attrs: { activity: _vm.activity, user: _vm.user } })
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -63372,29 +63508,212 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("h1", { staticClass: "text-2xl text-gray-800" }, [
-      _vm._v("\n        " + _vm._s(_vm.activity.name) + "\n    ")
-    ]),
-    _vm._v(" "),
-    _c("hr"),
-    _vm._v(" "),
-    _c("div", { staticClass: "mt-4" }, [
-      _c("iframe", {
-        staticClass: "m-auto",
-        attrs: {
-          type: "text/html",
-          width: "640",
-          height: "360",
-          src:
-            "https://www.youtube.com/embed/" + _vm.activity.activityable.video,
-          frameborder: "0"
-        }
-      })
-    ])
-  ])
+  return _c(
+    "div",
+    [
+      _c("div", { staticClass: "mt-4" }, [
+        _c("iframe", {
+          staticClass: "m-auto",
+          attrs: {
+            type: "text/html",
+            width: "640",
+            height: "360",
+            src:
+              "https://www.youtube.com/embed/" +
+              _vm.activity.activityable.video,
+            frameborder: "0"
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c("comments", { attrs: { activity: _vm.activity, user: _vm.user } })
+    ],
+    1
+  )
 }
 var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Course/Comments.vue?vue&type=template&id=830c7222&scoped=true&":
+/*!*************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Course/Comments.vue?vue&type=template&id=830c7222&scoped=true& ***!
+  \*************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "border-t pt-4" }, [
+    _c("div", { staticClass: "flex items-center" }, [
+      _c("div", { staticClass: "mr-2" }, [
+        _c(
+          "svg",
+          {
+            staticClass: "w-8 text-green-500",
+            attrs: {
+              xmlns: "http://www.w3.org/2000/svg",
+              fill: "none",
+              viewBox: "0 0 24 24",
+              stroke: "currentColor"
+            }
+          },
+          [
+            _c("path", {
+              attrs: {
+                "stroke-linecap": "round",
+                "stroke-linejoin": "round",
+                "stroke-width": "2",
+                d:
+                  "M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"
+              }
+            })
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _vm._m(0)
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "card mb-6 py-4 px-6" },
+      [
+        _c("div", { staticClass: "text-center border-b border-gray-300" }, [
+          _c("h2", { staticClass: "text-90 text-sm mb-4 text-left" }, [
+            _vm._v("Comentar:")
+          ]),
+          _vm._v(" "),
+          _c("textarea", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.comment,
+                expression: "comment"
+              }
+            ],
+            staticClass:
+              "w-full form-control form-input form-input-bordered py-3 h-auto  mb-2",
+            domProps: { value: _vm.comment },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.comment = $event.target.value
+              }
+            }
+          }),
+          _vm._v(" "),
+          _vm.comment != null && _vm.comment != ""
+            ? _c(
+                "button",
+                {
+                  staticClass:
+                    "my-4 bg-green-500 shadow px-4 py-2 text-white rounded",
+                  on: {
+                    click: function($event) {
+                      return _vm.saveComment()
+                    }
+                  }
+                },
+                [_vm._v("Comentar")]
+              )
+            : _vm._e()
+        ]),
+        _vm._v(" "),
+        _vm._l(_vm.comments, function(comment) {
+          return _c(
+            "div",
+            { staticClass: "border-b border-gray-300 py-4 flex items-center" },
+            [
+              _c("div", { staticClass: "flex-shrink" }, [
+                _c("img", {
+                  staticClass: "w-12 rounded-full",
+                  attrs: { src: comment.user.profile_photo_url, alt: "" }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "ml-2 flex-1" }, [
+                _c("h2", { staticClass: "text-90 text-sm" }, [
+                  _vm._v(_vm._s(comment.user.name))
+                ]),
+                _vm._v(
+                  "\n\n                " +
+                    _vm._s(comment.comment) +
+                    "\n            "
+                )
+              ]),
+              _vm._v(" "),
+              _vm.user.id == comment.user.id
+                ? _c("div", { staticClass: "flex-shrink" }, [
+                    _c(
+                      "button",
+                      {
+                        on: {
+                          click: function($event) {
+                            return _vm.deleteComment(comment)
+                          }
+                        }
+                      },
+                      [
+                        _c(
+                          "svg",
+                          {
+                            staticClass: "w-4 text-red-600",
+                            attrs: {
+                              xmlns: "http://www.w3.org/2000/svg",
+                              fill: "none",
+                              viewBox: "0 0 24 24",
+                              stroke: "currentColor"
+                            }
+                          },
+                          [
+                            _c("path", {
+                              attrs: {
+                                "stroke-linecap": "round",
+                                "stroke-linejoin": "round",
+                                "stroke-width": "2",
+                                d:
+                                  "M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                              }
+                            })
+                          ]
+                        )
+                      ]
+                    )
+                  ])
+                : _vm._e()
+            ]
+          )
+        })
+      ],
+      2
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("h1", { staticClass: "text-2xl text-gray-800" }, [
+        _vm._v("Comentarios")
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -63531,46 +63850,75 @@ var render = function() {
                 "div",
                 {
                   staticClass:
-                    "h-full container m-auto bg-white shadow rounded-lg p-4"
+                    "h-full container m-auto bg-white shadow rounded-lg p-4 overflow-scroll"
                 },
                 [
+                  _c("div", { staticClass: "flex items-center" }, [
+                    _c("div", {
+                      staticClass: "flex-shrink mr-2",
+                      domProps: {
+                        innerHTML: _vm._s(_vm.icons[_vm.activity.type])
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "flex-1" }, [
+                      _c("h1", { staticClass: "text-2xl text-gray-800" }, [
+                        _vm._v(
+                          "\n                               " +
+                            _vm._s(_vm.activity.name) +
+                            "\n                           "
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("hr"),
+                  _vm._v(" "),
                   _vm.activity.type == "DIVIDER"
                     ? _c("divider-activity", {
-                        attrs: { activity: _vm.activity }
+                        attrs: { activity: _vm.activity, user: _vm.user }
                       })
                     : _vm._e(),
                   _vm._v(" "),
                   _vm.activity.type == "EXERCISE"
                     ? _c("exercise-activity", {
-                        attrs: { activity: _vm.activity }
+                        attrs: { activity: _vm.activity, user: _vm.user }
                       })
                     : _vm._e(),
                   _vm._v(" "),
                   _vm.activity.type == "FILE"
-                    ? _c("file-activity", { attrs: { activity: _vm.activity } })
+                    ? _c("file-activity", {
+                        attrs: { activity: _vm.activity, user: _vm.user }
+                      })
                     : _vm._e(),
                   _vm._v(" "),
                   _vm.activity.type == "LINK"
-                    ? _c("link-activity", { attrs: { activity: _vm.activity } })
+                    ? _c("link-activity", {
+                        attrs: { activity: _vm.activity, user: _vm.user }
+                      })
                     : _vm._e(),
                   _vm._v(" "),
                   _vm.activity.type == "TEXT"
-                    ? _c("text-activity", { attrs: { activity: _vm.activity } })
+                    ? _c("text-activity", {
+                        attrs: { activity: _vm.activity, user: _vm.user }
+                      })
                     : _vm._e(),
                   _vm._v(" "),
                   _vm.activity.type == "PDF"
-                    ? _c("pdf-activity", { attrs: { activity: _vm.activity } })
+                    ? _c("pdf-activity", {
+                        attrs: { activity: _vm.activity, user: _vm.user }
+                      })
                     : _vm._e(),
                   _vm._v(" "),
                   _vm.activity.type == "HOMEWORK"
                     ? _c("homework-activity", {
-                        attrs: { activity: _vm.activity }
+                        attrs: { activity: _vm.activity, user: _vm.user }
                       })
                     : _vm._e(),
                   _vm._v(" "),
                   _vm.activity.type == "YOUTUBE"
                     ? _c("youtube-activity", {
-                        attrs: { activity: _vm.activity }
+                        attrs: { activity: _vm.activity, user: _vm.user }
                       })
                     : _vm._e()
                 ],
@@ -79546,6 +79894,8 @@ var map = {
 	"./Course/Activities/Text.vue": "./resources/js/Pages/Course/Activities/Text.vue",
 	"./Course/Activities/Youtube": "./resources/js/Pages/Course/Activities/Youtube.vue",
 	"./Course/Activities/Youtube.vue": "./resources/js/Pages/Course/Activities/Youtube.vue",
+	"./Course/Comments": "./resources/js/Pages/Course/Comments.vue",
+	"./Course/Comments.vue": "./resources/js/Pages/Course/Comments.vue",
 	"./Course/Index": "./resources/js/Pages/Course/Index.vue",
 	"./Course/Index.vue": "./resources/js/Pages/Course/Index.vue",
 	"./Course/SidebarIcons": "./resources/js/Pages/Course/SidebarIcons.js",
@@ -80320,6 +80670,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Course/Comments.vue":
+/*!************************************************!*\
+  !*** ./resources/js/Pages/Course/Comments.vue ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Comments_vue_vue_type_template_id_830c7222_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Comments.vue?vue&type=template&id=830c7222&scoped=true& */ "./resources/js/Pages/Course/Comments.vue?vue&type=template&id=830c7222&scoped=true&");
+/* harmony import */ var _Comments_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Comments.vue?vue&type=script&lang=js& */ "./resources/js/Pages/Course/Comments.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Comments_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Comments_vue_vue_type_template_id_830c7222_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Comments_vue_vue_type_template_id_830c7222_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "830c7222",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Pages/Course/Comments.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Course/Comments.vue?vue&type=script&lang=js&":
+/*!*************************************************************************!*\
+  !*** ./resources/js/Pages/Course/Comments.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Comments_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./Comments.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Course/Comments.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Comments_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Course/Comments.vue?vue&type=template&id=830c7222&scoped=true&":
+/*!*******************************************************************************************!*\
+  !*** ./resources/js/Pages/Course/Comments.vue?vue&type=template&id=830c7222&scoped=true& ***!
+  \*******************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Comments_vue_vue_type_template_id_830c7222_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./Comments.vue?vue&type=template&id=830c7222&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Course/Comments.vue?vue&type=template&id=830c7222&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Comments_vue_vue_type_template_id_830c7222_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Comments_vue_vue_type_template_id_830c7222_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Course/Index.vue":
 /*!*********************************************!*\
   !*** ./resources/js/Pages/Course/Index.vue ***!
@@ -80399,9 +80818,9 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 var sidebarIcons = {
-  'DIVIDER': "<svg class=\"w-6 h-6 text-white\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\n                  <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z\" />\n                </svg>",
-  'EXERCISE': "<svg class=\"w-6 h-6 text-white\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\n                  <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z\" />\n                </svg>",
-  'FILE': "<svg class=\"w-6 h-6 text-gray-500\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\n                <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0 010 18z\" />\n             </svg>",
+  'DIVIDER': "<svg class=\"w-6 h-6 text-green-500\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\n                  <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z\" />\n                </svg>\n            ",
+  'EXERCISE': "<svg class=\"w-6 h-6 text-gray-500\"  xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\n                  <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z\" />\n                </svg>",
+  'FILE': "<svg class=\"w-6 h-6 text-gray-500\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\n                <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z\" />\n\n             </svg>",
   'LINK': "<svg class=\"w-6 h-6 text-gray-500\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\n                <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1\" />\n             </svg>",
   'TEXT': "<svg class=\"w-6 h-6 text-gray-500\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\n                <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z\" />\n             </svg>",
   'PDF': "<svg class=\"w-6 h-6 text-gray-500\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\n              <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253\" />\n            </svg>",

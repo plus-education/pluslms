@@ -1,10 +1,5 @@
 <template>
     <div>
-        <h1 class="text-2xl text-gray-800">
-            {{ activity.name }}
-        </h1>
-        <hr>
-
         <div class="mt-4">
             <div class="px-8" v-html="activity.activityable.html">
             </div>
@@ -65,7 +60,8 @@
 <script>
     export default {
         props: {
-            activity: Object
+            activity: Object,
+            user: Object,
         },
 
         data: () => {

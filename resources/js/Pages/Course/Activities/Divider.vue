@@ -1,21 +1,25 @@
 <template>
     <div class="h-full overflow-y-scroll">
-        <h1 class="text-2xl text-gray-800">
-            {{ activity.name }}
-        </h1>
-        <hr>
-
         <div class="mt-4" >
             <div class="px-8" v-html="activity.activityable.html">
             </div>
         </div>
+
+        <comments :activity="activity" :user="user"></comments>
     </div>
 </template>
 
 <script>
+    import Comments from "../Comments";
+
     export default {
+        components: {
+            Comments,
+        },
+
         props: {
-            activity: Object
+            activity: Object,
+            user: Object,
         }
     }
 </script>

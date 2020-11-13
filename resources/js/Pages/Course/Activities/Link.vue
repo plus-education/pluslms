@@ -1,22 +1,26 @@
 <template>
   <div class="h-full overflow-hidden">
-      <h1 class="text-2xl text-gray-800">
-          {{ activity.name }}
-      </h1>
-      <hr>
-
       <iframe
           class="w-full h-full overflow-scroll"
           :src="activity.activityable.link"
           frameborder="0"
       ></iframe>
+
+      <comments :activity="activity" :user="user"></comments>
   </div>
 </template>
 
 <script>
+    import Comments from "../Comments";
+
     export default {
+        components: {
+            Comments,
+        },
+
         props: {
-            activity: Object
+            activity: Object,
+            user: Object,
         }
     }
 </script>

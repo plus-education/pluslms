@@ -10,22 +10,34 @@
                         <hr>
                     </div>
 
-                    <div v-else class="h-full container m-auto bg-white shadow rounded-lg p-4">
-                        <divider-activity v-if="activity.type == 'DIVIDER'" :activity="activity"></divider-activity>
+                    <div v-else class="h-full container m-auto bg-white shadow rounded-lg p-4 overflow-scroll">
+                        <div class="flex items-center">
+                            <div class="flex-shrink mr-2" v-html="icons[activity.type]"></div>
 
-                        <exercise-activity v-if="activity.type == 'EXERCISE'" :activity="activity"></exercise-activity>
+                           <div class="flex-1">
+                               <h1 class="text-2xl text-gray-800">
+                                   {{ activity.name }}
+                               </h1>
+                           </div>
+                        </div>
 
-                        <file-activity v-if="activity.type == 'FILE'" :activity="activity"></file-activity>
+                        <hr>
 
-                        <link-activity v-if="activity.type == 'LINK'" :activity="activity"></link-activity>
+                        <divider-activity v-if="activity.type == 'DIVIDER'" :activity="activity" :user="user"></divider-activity>
 
-                        <text-activity v-if="activity.type == 'TEXT'" :activity="activity"></text-activity>
+                        <exercise-activity v-if="activity.type == 'EXERCISE'" :activity="activity" :user="user"></exercise-activity>
 
-                        <pdf-activity v-if="activity.type == 'PDF'" :activity="activity"></pdf-activity>
+                        <file-activity v-if="activity.type == 'FILE'" :activity="activity" :user="user"></file-activity>
 
-                        <homework-activity v-if="activity.type == 'HOMEWORK'" :activity="activity"></homework-activity>
+                        <link-activity v-if="activity.type == 'LINK'" :activity="activity" :user="user"></link-activity>
 
-                        <youtube-activity v-if="activity.type == 'YOUTUBE'" :activity="activity"></youtube-activity>
+                        <text-activity v-if="activity.type == 'TEXT'" :activity="activity" :user="user"></text-activity>
+
+                        <pdf-activity v-if="activity.type == 'PDF'" :activity="activity" :user="user"></pdf-activity>
+
+                        <homework-activity v-if="activity.type == 'HOMEWORK'" :activity="activity" :user="user"></homework-activity>
+
+                        <youtube-activity v-if="activity.type == 'YOUTUBE'" :activity="activity" :user="user"></youtube-activity>
                     </div>
                 </div>
 
@@ -49,9 +61,7 @@
                              @click="changeActivity(activity.id)"
                         >
                             <div v-if="activity.type == 'DIVIDER'" class="flex bg-yellow-300 w-full h-full py-4 px-2">
-                                <div class="flex-shrink mr-2" v-html="icons[activity.type]">
-
-                                </div>
+                                <div class="flex-shrink mr-2" v-html="icons[activity.type]"></div>
                                 <div class="flex-1 text-lg font-bold text-gray-800">
                                     {{ activity.name }}
                                 </div>
@@ -65,7 +75,6 @@
                                     {{ activity.name }}
                                 </div>
                             </div>
-
                         </div>
                     </section>
                 </div>
@@ -88,6 +97,8 @@
     import HomeworkActivity from "./Activities/Homework";
     import YoutubeActivity from "./Activities/Youtube";
 
+    import Comments from "./Comments";
+
     export default {
         components: {
             AppLayout,
@@ -98,11 +109,13 @@
             LinkActivity,
             TextActivity,
             PdfActivity,
-            YoutubeActivity
+            YoutubeActivity,
+            Comments,
         },
 
         props: {
             topic: Object,
+            user: Object
         },
 
         data: () => {

@@ -1,13 +1,6 @@
 <template>
     <div class="h-full overflow-scroll">
         <div>
-            <h1 class="text-2xl text-gray-800">
-                {{ activity.name }}
-            </h1>
-            <hr>
-        </div>
-
-        <div>
             <pdf
                 v-for="i in numPages"
                 :key="i"
@@ -16,16 +9,20 @@
                 class="w-full"
             ></pdf>
         </div>
+
+        <comments :activity="activity" :user="user"></comments>
     </div>
 </template>
 
 <script>
     import pdf from 'vue-pdf'
+    import Comments from "../Comments";
 
 
     export default {
         components: {
-            pdf
+            pdf,
+            Comments
         },
 
         data() {
@@ -36,7 +33,8 @@
         },
 
         props: {
-            activity: Object
+            activity: Object,
+            user: Object,
         },
 
         beforeCreate() {

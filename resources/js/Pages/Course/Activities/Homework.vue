@@ -1,10 +1,5 @@
 <template>
     <div>
-        <h1 class="text-2xl text-gray-800">
-            {{ activity.name }}
-        </h1>
-        <hr>
-
         <div class="mt-4">
             {{ activity.activityable.description }}
         </div>
@@ -17,13 +12,22 @@
                 target="_blank"
             >Descargar Documento Adjunto</a>
         </div>
+
+        <comments :activity="activity" :user="user"></comments>
     </div>
 </template>
 
 <script>
+    import Comments from "../Comments";
+
     export default {
+        components: {
+            Comments,
+        },
+
         props: {
-            activity: Object
+            activity: Object,
+            user: Object,
         }
     }
 </script>
