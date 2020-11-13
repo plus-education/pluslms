@@ -427,5 +427,19 @@
     "Group": "Grupo",
     "Activities": "Actividades",
     "Activity": "Actividad",
-    "Activityable": "Tipo de actividad  "
+    "Activityable": "Tipo de actividad",
+    "Divider": "Portada",
+    "Dividers": "Portadas",
+    "Exercices": "Examenes",
+    "Exercise": "Examen",
+    "Files": "Archivos",
+    "File": "Archivo",
+    "Homeworks": "Tarea",
+    "Homework": "Tareas",
+    "Pdfs": "Pdfs",
+    "Pdf": "Pdf",
+    "Texts": "Texto",
+    "Text": "Textos",
+    "Youtube videos": "Videos de Youtube",
+    "Youtube video": "Video de Youtube"
 }
