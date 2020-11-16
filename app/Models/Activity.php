@@ -21,11 +21,20 @@ class Activity extends Model implements Sortable
 
     protected $with = ['activityable'];
 
-    protected $appends = ['type'];
+    protected $appends = ['type', 'divider'];
 
     public $sortable = [
         'order_column_name' => 'order',
         'sort_when_creating' => true,
+    ];
+
+    /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = [
+        'start', 'end'
     ];
 
     protected $types = [
@@ -61,6 +70,11 @@ class Activity extends Model implements Sortable
         }
 
         return $this->activityable_type::COMPONENT;
+    }
+
+    public function getDividerAttribute()
+    {
+        return 0;
     }
 
     public function comments()

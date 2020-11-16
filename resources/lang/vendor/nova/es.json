@@ -430,7 +430,7 @@
     "Activityable": "Tipo de actividad",
     "Divider": "Portada",
     "Dividers": "Portadas",
-    "Exercices": "Examenes",
+    "Exercises": "Examenes",
     "Exercise": "Examen",
     "Files": "Archivos",
     "File": "Archivo",
@@ -441,5 +441,16 @@
     "Texts": "Texto",
     "Text": "Textos",
     "Youtube videos": "Videos de Youtube",
-    "Youtube video": "Video de Youtube"
+    "Youtube video": "Video de Youtube",
+    "Questions": "Preguntas",
+    "Question": "Pregunta",
+    "Number Of Attemps": "Numero de intentos",
+    "Time": "Tiempo (en minutos)",
+    "Description": "Descripción",
+    "Questionable": "Tipo de Pregunta",
+    "Options": "Opciones",
+    "Option": "Opcion",
+    "Label": "Titulo",
+    "Selection multiples": "Selección multiples",
+    "Selection multiple": "Selección multiple"
 }

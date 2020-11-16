@@ -23,6 +23,7 @@ class Topic extends Model implements Sortable
 
     public function activities()
     {
-        return $this->hasMany(Activity::class);
+        return $this->hasMany(Activity::class)
+            ->orderBy('order');
     }
 }

@@ -80,7 +80,7 @@ class Exercise extends Resource
 
             Number::make(__('Time'), 'time'),
 
-            HasMany::make(__('Questions')),
+            HasMany::make(__('Questions'), 'questions', Question::class),
         ];
     }
 

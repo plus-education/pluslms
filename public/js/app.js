@@ -3838,6 +3838,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -3874,6 +3875,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   created: function created() {
     this.activity = this.initializeActivity();
+    this.setDivider();
   },
   mounted: function mounted() {
     this.icons = _SidebarIcons_js__WEBPACK_IMPORTED_MODULE_0__["default"];
@@ -3882,9 +3884,39 @@ __webpack_require__.r(__webpack_exports__);
     initializeActivity: function initializeActivity() {
       return this.topic.activities.length > 0 ? this.activity = this.topic.activities[0] : false;
     },
-    changeActivity: function changeActivity(id) {
+    setDivider: function setDivider() {
+      var divider = 0;
+      this.topic.activities.forEach(function (activity) {
+        if (activity.type == 'DIVIDER') {
+          divider = activity.id;
+          activity.show = true;
+          return;
+        }
+
+        activity.divider = divider;
+        activity.show = divider == 0 ? true : false;
+        return activity;
+      });
+    },
+    changeActivity: function changeActivity(selectedActivity) {
       this.activity = this.topic.activities.find(function (activity) {
-        return activity.id == id;
+        return activity.id == selectedActivity.id;
+      });
+      this.showDividerActivities(selectedActivity);
+    },
+    showDividerActivities: function showDividerActivities(divider) {
+      if (divider.type != 'DIVIDER') {
+        return false;
+      }
+
+      this.topic.activities.forEach(function (activity) {
+        if (activity.divider != divider.id && activity.divider != 0) {
+          activity.show = false;
+          return;
+        }
+
+        activity.show = true;
+        return activity;
       });
     }
   }
@@ -63975,12 +64007,20 @@ var render = function() {
                 return _c(
                   "div",
                   {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: activity.show,
+                        expression: "activity.show"
+                      }
+                    ],
                     key: activity.id,
                     staticClass:
                       "flex items-center  border-b-2 border-gray-100 cursor-pointer",
                     on: {
                       click: function($event) {
-                        return _vm.changeActivity(activity.id)
+                        return _vm.changeActivity(activity)
                       }
                     }
                   },

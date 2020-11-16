@@ -43,6 +43,26 @@ class SelectMultiple extends Resource
     ];
 
     /**
+     * Get the displayable label of the resource.
+     *
+     * @return string
+     */
+    public static function label()
+    {
+        return __('Selection multiples');
+    }
+
+    /**
+     * Get the displayable singular label of the resource.
+     *
+     * @return string
+     */
+    public static function singularLabel()
+    {
+        return __('Select multiple');
+    }
+
+    /**
      * Get the fields displayed by the resource.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -51,7 +71,7 @@ class SelectMultiple extends Resource
     public function fields(Request $request)
     {
         return [
-            HasMany::make('Question Options', 'questionOptions')
+            HasMany::make(__('Options'), 'questionOptions', QuestionOption::class)
                 ->inline()
                 ->sortUsing('order'),
         ];

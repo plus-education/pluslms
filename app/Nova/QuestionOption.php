@@ -42,6 +42,26 @@ class QuestionOption extends Resource
     ];
 
     /**
+     * Get the displayable label of the resource.
+     *
+     * @return string
+     */
+    public static function label()
+    {
+        return __('Options');
+    }
+
+    /**
+     * Get the displayable singular label of the resource.
+     *
+     * @return string
+     */
+    public static function singularLabel()
+    {
+        return __('Option');
+    }
+
+    /**
      * Get the fields displayed by the resource.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -50,7 +70,7 @@ class QuestionOption extends Resource
     public function fields(Request $request)
     {
         return [
-            \Laravel\Nova\Fields\Text::make(__('Label')),
+            \Laravel\Nova\Fields\Text::make(__('Label'), 'label'),
 
             Textarea::make(__('Feedback')),
 

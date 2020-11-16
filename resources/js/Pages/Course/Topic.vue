@@ -57,17 +57,18 @@
                     <section class="">
                         <div v-for="activity in topic.activities"
                              :key="activity.id"
+                             v-show="activity.show"
                              class="flex items-center  border-b-2 border-gray-100 cursor-pointer"
-                             @click="changeActivity(activity.id)"
+                             @click="changeActivity(activity)"
                         >
                             <div v-if="activity.type == 'DIVIDER'" class="flex bg-yellow-300 w-full h-full py-4 px-2">
                                 <div class="flex-shrink mr-2" v-html="icons[activity.type]"></div>
-                                <div class="flex-1 text-lg font-bold text-gray-800">
+                                <div class="flex-1 text-lg font-bold text-gray-800" >
                                     {{ activity.name }}
                                 </div>
                             </div>
 
-                            <div v-else class="flex w-full h-full py-4 px-2">
+                            <div v-else class="flex w-full h-full py-4 px-2" >
                                 <div class="flex-shrink mr-2" v-html="icons[activity.type]">
 
                                 </div>
@@ -127,6 +128,7 @@
 
         created() {
             this.activity = this.initializeActivity()
+            this.setDivider()
         },
 
         mounted() {
@@ -138,11 +140,46 @@
                 return (this.topic.activities.length > 0) ? this.activity = this.topic.activities[0] : false
             },
 
-            changeActivity: function(id) {
-                this.activity = this.topic.activities.find( (activity) => {
-                    return activity.id == id
+            setDivider: function() {
+                let divider = 0
+
+                this.topic.activities.forEach(activity => {
+                    if(activity.type == 'DIVIDER'){
+                        divider = activity.id
+                        activity.show = true
+                        return
+                    }
+
+                    activity.divider = divider;
+                    activity.show = divider == 0 ? true : false;
+                    return activity
                 })
-            }
+            },
+
+            changeActivity: function(selectedActivity) {
+                this.activity = this.topic.activities.find( (activity) => {
+                    return activity.id == selectedActivity.id
+                })
+
+                this.showDividerActivities(selectedActivity)
+            },
+
+            showDividerActivities: function(divider) {
+                if(divider.type != 'DIVIDER'){
+                    return false;
+                }
+
+                this.topic.activities.forEach(activity => {
+                    if(activity.divider != divider.id && activity.divider != 0){
+                        activity.show = false
+                        return
+                    }
+
+                    activity.show = true
+                    return activity
+                })
+
+            },
         }
     }
 </script>

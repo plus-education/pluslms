@@ -43,6 +43,26 @@ class Question extends Resource
     ];
 
     /**
+     * Get the displayable label of the resource.
+     *
+     * @return string
+     */
+    public static function label()
+    {
+        return __('Questions');
+    }
+
+    /**
+     * Get the displayable singular label of the resource.
+     *
+     * @return string
+     */
+    public static function singularLabel()
+    {
+        return __('Question');
+    }
+
+    /**
      * Get the fields displayed by the resource.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -51,11 +71,11 @@ class Question extends Resource
     public function fields(Request $request)
     {
         return [
-            \Laravel\Nova\Fields\Text::make(__('name')),
+            \Laravel\Nova\Fields\Text::make(__('Name')),
 
             NovaEditorJs::make(__('Description'))->hideFromIndex(),
 
-            InlineMorphTo::make('Questionable')->types([
+            InlineMorphTo::make(__('Questionable'), 'questionable')->types([
                 SelectMultiple::class,
             ]),
 

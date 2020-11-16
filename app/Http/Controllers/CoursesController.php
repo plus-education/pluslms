@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Activity;
 use App\Models\Course;
 use App\Models\Topic;
+use App\Models\TypesActivities\Divider;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 use Inertia\Inertia;
 
 class CoursesController extends Controller
@@ -24,6 +26,7 @@ class CoursesController extends Controller
         $topic = Topic::find($id);
         $topic->activities;
         $topic->course;
+
         return Inertia::render('Course/Topic')
             ->with(compact('topic'));
     }
