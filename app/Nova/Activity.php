@@ -97,7 +97,6 @@ class Activity extends Resource
                 })
                 ->required(),
 
-
             InlineMorphTo::make(__("Activityable"), 'Activityable')->types([
                 Divider::class,
                 \App\Nova\Text::class,

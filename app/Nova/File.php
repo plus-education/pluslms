@@ -69,7 +69,6 @@ class File extends Resource
     {
         return [
             \Laravel\Nova\Fields\File::make('File', 'path')
-                ->disk(env('FILESYSTEM_DRIVER'))
                 ->required()
         ];
     }

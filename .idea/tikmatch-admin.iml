@@ -20,7 +20,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/brick/math" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/brick/money" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/cakephp/chronos" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/chris-ware/nova-breadcrumbs" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/coderello/laravel-nova-lang" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/codex-team/editor.js" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
