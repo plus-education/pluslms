@@ -75,6 +75,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/league/mime-type-detection" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/lms/activity-comments" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/lms/activity-scores" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/lms/my-courses" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/media24si/nova-youtube-field" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/michielkempen/nova-order-field" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/mnapoli/silly" />

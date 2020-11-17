@@ -40,7 +40,8 @@
         "spatie/nova-backup-tool": "^4.0",
         "spatie/nova-tags-field": "^3.0",
         "vyuldashev/nova-permission": "^2.9",
-        "whitecube/nova-flexible-content": "^0.2.5"
+        "whitecube/nova-flexible-content": "^0.2.5",
+        "lms/my-courses": "*"
     },
     "repositories": [
         {
@@ -54,6 +55,10 @@
         {
             "type": "path",
             "url": "./nova-components/ActivityComments"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/MyCourses"
         }
     ],
     "require-dev": {

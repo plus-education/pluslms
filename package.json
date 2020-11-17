@@ -15,7 +15,9 @@
         "build-nova-key-value-rules-field": "cd nova-components/NovaKeyValueRulesField && npm run dev",
         "build-nova-key-value-rules-field-prod": "cd nova-components/NovaKeyValueRulesField && npm run prod",
         "build-activity-comments": "cd nova-components/ActivityComments && npm run dev",
-        "build-activity-comments-prod": "cd nova-components/ActivityComments && npm run prod"
+        "build-activity-comments-prod": "cd nova-components/ActivityComments && npm run prod",
+        "build-my-courses": "cd nova-components/MyCourses && npm run dev",
+        "build-my-courses-prod": "cd nova-components/MyCourses && npm run prod"
     },
     "devDependencies": {
         "@inertiajs/inertia": "^0.1.7",

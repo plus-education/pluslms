@@ -188,6 +188,7 @@
       <path value="$PROJECT_DIR$/vendor/joedixon/nova-translation" />
       <path value="$PROJECT_DIR$/vendor/lms/activity-comments" />
       <path value="$PROJECT_DIR$/vendor/league/flysystem-aws-s3-v3" />
+      <path value="$PROJECT_DIR$/vendor/lms/my-courses" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

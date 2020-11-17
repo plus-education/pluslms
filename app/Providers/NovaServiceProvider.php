@@ -7,6 +7,7 @@ use Joedixon\NovaTranslation\NovaTranslation;
 use Laravel\Nova\Cards\Help;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
+use Lms\MyCourses\MyCourses;
 use Vyuldashev\NovaPermission\PermissionPolicy;
 use Vyuldashev\NovaPermission\RolePolicy;
 
@@ -80,6 +81,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function tools()
     {
         return [
+            MyCourses::make(),
+
             new \Spatie\BackupTool\BackupTool(),
 
             \Vyuldashev\NovaPermission\NovaPermissionTool::make()
@@ -87,7 +90,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 ->permissionPolicy(PermissionPolicy::class),
             //\ChrisWare\NovaBreadcrumbs\NovaBreadcrumbs::make(),
 
-            NovaTranslation::make()
+            NovaTranslation::make(),
         ];
     }
 
