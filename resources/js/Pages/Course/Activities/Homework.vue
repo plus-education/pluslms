@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="mt-4">
-            {{ activity.activityable.description }}
+            {{ activity.activityable.html }}
         </div>
 
         <div class="flex items-center justify-center mt-8 w-full">

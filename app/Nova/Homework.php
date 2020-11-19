@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use Advoor\NovaEditorJs\NovaEditorJs;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
@@ -70,7 +71,7 @@ class Homework extends Resource
     public function fields(Request $request)
     {
         return [
-            Textarea::make(__('Description'), 'description')->required(),
+            NovaEditorJs::make(__('Description'), 'description')->required(),
 
             \Laravel\Nova\Fields\File::make(__('File'), 'file'),
 

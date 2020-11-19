@@ -83,14 +83,23 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         return [
             MyCourses::make(),
 
-            new \Spatie\BackupTool\BackupTool(),
+            \Spatie\BackupTool\BackupTool::make()
+                ->canSee(function (){
+                    return auth()->user()->can('manage backup');
+                }),
 
             \Vyuldashev\NovaPermission\NovaPermissionTool::make()
                 ->rolePolicy(RolePolicy::class)
-                ->permissionPolicy(PermissionPolicy::class),
+                ->permissionPolicy(PermissionPolicy::class)
+                ->canSee(function (){
+                    return auth()->user()->can('manage roles');
+                }),
             //\ChrisWare\NovaBreadcrumbs\NovaBreadcrumbs::make(),
 
-            NovaTranslation::make(),
+            NovaTranslation::make()
+                ->canSee(function (){
+                    return auth()->user()->can('manage translations');
+                }),
         ];
     }
 

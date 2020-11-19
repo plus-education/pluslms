@@ -20,6 +20,11 @@ class RolesAndPermissionsSeeder extends Seeder
         /*
          * create permissions
          */
+        Permission::create(['name' => 'manage roles']);
+        Permission::create(['name' => 'manage translations']);
+        Permission::create(['name' => 'manage backup']);
+
+
         Permission::create(['name' => 'list courses']);
         Permission::create(['name' => 'list only my courses']);
         Permission::create(['name' => 'create courses']);
@@ -27,6 +32,7 @@ class RolesAndPermissionsSeeder extends Seeder
         Permission::create(['name' => 'delete courses']);
 
         Permission::create(['name' => 'list group']);
+        Permission::create(['name' => 'show group']);
         Permission::create(['name' => 'create group']);
         Permission::create(['name' => 'edit group']);
         Permission::create(['name' => 'delete group']);

@@ -2,9 +2,11 @@
 
 namespace App\Nova;
 
+use App\Models\Roles;
 use DigitalCreative\Filepond\Filepond;
 use Eminiarts\Tabs\Tabs;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\HasMany;
@@ -60,6 +62,24 @@ class Course extends Resource
     {
         return __('Course');
     }
+
+    /**
+     * Build an "index" query for the given resource.
+     *
+     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public static function indexQuery(NovaRequest $request, $query)
+    {
+        if (auth()->user()->can('list courses') && auth()->user()->can('list only my courses')) {
+            return $query;
+        }
+
+        return $query->whereHas('users', function ($q) {
+            $q->where('id',auth()->user()->id);
+        })->get();
+    }
         /**
      * Get the fields displayed by the resource.
      *
@@ -85,8 +105,7 @@ class Course extends Resource
                 BelongsToMany::make(__('Teachers'), 'Teachers', Teacher::class)->searchable(),
             ]),
 
-            BelongsTo::make(__('Group'), 'Group', Group::class)
-                ->hideFromIndex()
+            BelongsTo::make(__('Group'), 'Group', Group::class)->sortable()
                 ->hideWhenCreating(),
         ];
     }

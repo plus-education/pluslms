@@ -63369,11 +63369,7 @@ var render = function() {
     "div",
     [
       _c("div", { staticClass: "mt-4" }, [
-        _vm._v(
-          "\n        " +
-            _vm._s(_vm.activity.activityable.description) +
-            "\n    "
-        )
+        _vm._v("\n        " + _vm._s(_vm.activity.activityable.html) + "\n    ")
       ]),
       _vm._v(" "),
       _c(

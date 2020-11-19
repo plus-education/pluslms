@@ -74,9 +74,13 @@ class Group extends Resource
 
             Textarea::make(__('Description'), 'description'),
 
-            DateTime::make(__('Start'), 'start')->required(),
+            DateTime::make(__('Start Date'), 'start')
+                ->sortable()
+                ->required(),
 
-            DateTime::make(__('End'), 'end')->required(),
+            DateTime::make(__('End Date'), 'end')
+                ->sortable()
+                ->required(),
 
             new Tabs('Relations', [
                 HasMany::make('Courses'),

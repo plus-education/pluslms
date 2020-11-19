@@ -25,6 +25,20 @@ class Activity extends Resource
     public static $defaultOrderField = 'order';
 
     /**
+     * The pagination per-page options configured for this resource.
+     *
+     * @return array
+     */
+    public static $perPageOptions = [50, 100, 150];
+
+    /**
+     * The number of resources to show per page via relationships.
+     *
+     * @var int
+     */
+    public static $perPageViaRelationship = 50;
+
+    /**
      * Indicates if the resource should be displayed in the sidebar.
      *
      * @var bool
