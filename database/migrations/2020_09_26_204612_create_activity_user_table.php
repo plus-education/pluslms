@@ -17,7 +17,7 @@ class CreateActivityUserTable extends Migration
             $table->foreignId('activity_id');
             $table->foreignId('user_id');
             $table->string('comment')->nullable();
-            $table->double('score')->default(0);
+            $table->unsignedDecimal('score')->default(0);
             $table->timestamps();
         });
     }

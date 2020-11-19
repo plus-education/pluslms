@@ -8,19 +8,27 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Collection;
 use Laravel\Nova\Actions\Action;
 use Laravel\Nova\Fields\ActionFields;
+use Laravel\Nova\Fields\Select;
+use Laravel\Nova\Nova;
 
 class TopicGradebook extends Action
 {
     use InteractsWithQueue, Queueable;
 
-    public $name = 'Grabook PDF';
 
     public $showOnTableRow = true;
 
     public $showOnIndex = false;
 
-    public $withoutConfirmation = true;
-
+    /**
+     * Get the displayable name of the action.
+     *
+     * @return string
+     */
+    public function name()
+    {
+        return __('Gradebook') ?: Nova::humanize($this);
+    }
     /**
      * Perform the action on the given models.
      *
@@ -30,7 +38,11 @@ class TopicGradebook extends Action
      */
     public function handle(ActionFields $fields, Collection $models)
     {
-        return Action::redirect('/course/topic/gradebook/' . $models->first()->id);
+        if($fields->format == 'PDF') {
+            return Action::redirect('/course/topic/gradebookPdf/' . $models->first()->id);
+        }
+
+        return Action::redirect('/course/topic/gradebookExcel/' . $models->first()->id);
     }
 
     /**
@@ -40,6 +52,12 @@ class TopicGradebook extends Action
      */
     public function fields()
     {
-        return [];
+        return [
+            Select::make(__('Format'), 'format')
+                ->options([
+                    'PDF' => "PDF",
+                    'Excel' => "Excel"
+                ])
+        ];
     }
 }

@@ -40,8 +40,11 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
         ->name('courses.saveActivity');
 
 
-    Route::get('/course/topic/gradebook/{id}', [CoursesController::class, 'topicGradebook'])
-        ->name('courses.topicGradebook');
+    Route::get('/course/topic/gradebookPdf/{id}', [CoursesController::class, 'topicGradebookPdf'])
+        ->name('courses.topicGradebookPdf');
+
+    Route::get('/course/topic/gradebookExcel/{id}', [CoursesController::class, 'topicGradebookExcel'])
+        ->name('courses.topicGradebookExcel');
 
     Route::get('/student/exercise/questions/{id}', [ExerciseController::class, 'getQuestion']);
 

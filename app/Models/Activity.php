@@ -19,13 +19,17 @@ class Activity extends Model implements Sortable
 {
     use HasFactory, SortableTrait;
 
+    public $sortable = [
+        'order_column_name' => 'order',
+        'sort_when_creating' => true,
+    ];
+
     protected $with = ['activityable'];
 
     protected $appends = ['type', 'divider'];
 
-    public $sortable = [
-        'order_column_name' => 'order',
-        'sort_when_creating' => true,
+    protected $attributes = [
+        'isShow' => true,
     ];
 
     /**

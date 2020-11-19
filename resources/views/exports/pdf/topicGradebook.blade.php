@@ -21,7 +21,8 @@
 
 <div>
     <h3>Curso: {{ $topic->course->name  }} </h3>
-    <div>Cuadro de notas: {{ $topic->name  }}</div>
+    <div><strong>Grupo: </strong>{{ $topic->course->group->name }}</div>
+    <div><strong>Cuadro de notas modulo: </strong>{{ $topic->name  }}</div>
     <hr>
 </div>
 
@@ -32,7 +33,7 @@
                 <th>Alumno</th>
                 @foreach($activities as $activity)
                     <th width="200">
-                        {{ $activity->name }}
+                        {{ $activity->name }} pts. {{ $activity->score }}
                     </th>
                 @endforeach
                 <th width="75">
@@ -46,7 +47,7 @@
                 <td>{{ $student->name }}</td>
                 @foreach($activities as $activity)
                     <td>
-                        {{ $student->activityScore($activity->id) }}
+                        {{ $student->activityScore($activity->id) }} / {{ $activity->score }}
                     </td>
                 @endforeach
                 <td>

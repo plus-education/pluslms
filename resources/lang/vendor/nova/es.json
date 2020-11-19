@@ -452,5 +452,7 @@
     "Option": "Opcion",
     "Label": "Titulo",
     "Selection multiples": "Selección multiples",
-    "Selection multiple": "Selección multiple"
+    "Selection multiple": "Selección multiple",
+    "Gradebook": "Cuadro de notas",
+    "Format": "Formato"
 }

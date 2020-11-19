@@ -106,9 +106,6 @@ class Activity extends Resource
             Date::make(__('End Date'), 'end'),
 
             Boolean::make(__('Show'), 'isShow')
-                ->default(function (){
-                    return 0;
-                })
                 ->required(),
 
             InlineMorphTo::make(__("Activityable"), 'Activityable')->types([

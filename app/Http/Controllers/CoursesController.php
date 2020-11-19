@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\CourseGradebookExport;
 use App\Models\Activity;
 use App\Models\Course;
 use App\Models\Topic;
@@ -10,6 +11,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Inertia\Inertia;
+use Maatwebsite\Excel\Facades\Excel;
 
 class CoursesController extends Controller
 {
@@ -69,16 +71,21 @@ class CoursesController extends Controller
         ]);
     }
 
-    public function topicGradebook($id)
+    public function topicGradebookPdf($id)
     {
         $topic = Topic::find($id);
         $students = $topic->course->students;
         $activities = $topic->activities->where('score', '>', 0);
 
-        $pdf = \PDF::loadView('topicGradebook', compact('topic', 'students', 'activities'));
+        $pdf = \PDF::loadView('exports.pdf.topicGradebook', compact('topic', 'students', 'activities'));
         $pdf->setPaper('legal', 'landscape');
 
         return $pdf->download('gradebook.pdf');
-        #return view('topicGradebook')->with(compact('topic', 'students', 'activities'));
+        //return view('exports.topicGradebook')->with(compact('topic', 'students', 'activities'));
+    }
+
+    public function topicGradebookExcel($id)
+    {
+        return Excel::download(new CourseGradebookExport($id), __('Gradebook') . '.xlsx');
     }
 }
