@@ -89,7 +89,10 @@ class Course extends Resource
     public function fields(Request $request)
     {
         return [
-            Text::make(__('Name'), 'name')->sortable()->required(),
+            Text::make(__('Name'), 'name')
+                ->sortable()
+                ->required()
+                ->rules('required', 'max:255'),
 
             Textarea::make(__('Description'), 'description'),
 

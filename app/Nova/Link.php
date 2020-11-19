@@ -48,7 +48,9 @@ class Link extends Resource
     public function fields(Request $request)
     {
         return [
-            \Khalin\Nova\Field\Link::make('Link')->required()
+            \Khalin\Nova\Field\Link::make('Link')
+                ->rules('required')
+                ->required(),
         ];
     }
 

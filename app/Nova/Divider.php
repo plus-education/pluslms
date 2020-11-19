@@ -68,7 +68,8 @@ class Divider extends Resource
     public function fields(Request $request)
     {
         return [
-            NovaEditorJs::make(__('Divider'), 'body'),
+            NovaEditorJs::make(__('Divider'), 'body')
+                ->rules('required'),
         ];
     }
 

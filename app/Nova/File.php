@@ -70,6 +70,7 @@ class File extends Resource
         return [
             \Laravel\Nova\Fields\File::make('File', 'path')
                 ->required()
+                ->rules('required'),
         ];
     }
 

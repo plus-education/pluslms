@@ -117,7 +117,10 @@ class Activity extends Resource
                 PDF::class,
                 Youtube::class,
                 Exercise::class,
-            ])->required(),
+            ])
+                ->required()
+                ->rules('required')
+            ,
 
 
            \Laravel\Nova\Fields\Number::make(__('Score'), 'score')

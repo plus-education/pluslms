@@ -71,9 +71,12 @@ class Question extends Resource
     public function fields(Request $request)
     {
         return [
-            \Laravel\Nova\Fields\Text::make(__('Name')),
+            \Laravel\Nova\Fields\Text::make(__('Name'), 'name')
+                ->required()
+                ->rules('required', 'max:255')
+            ,
 
-            NovaEditorJs::make(__('Description'))->hideFromIndex(),
+            NovaEditorJs::make(__('Description'), 'description')->hideFromIndex(),
 
             InlineMorphTo::make(__('Questionable'), 'questionable')->types([
                 SelectMultiple::class,

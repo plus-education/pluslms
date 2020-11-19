@@ -77,7 +77,10 @@ class Topic extends Resource
     public function fields(Request $request)
     {
         return [
-            Text::make(__('Name'), 'name')->required(),
+            Text::make(__('Name'), 'name')
+                ->required()
+                ->rules('required', 'max:255')
+            ,
 
             BelongsTo::make(__('Course'), 'Course', Course::class),
 

@@ -17,7 +17,9 @@
         "build-activity-comments": "cd nova-components/ActivityComments && npm run dev",
         "build-activity-comments-prod": "cd nova-components/ActivityComments && npm run prod",
         "build-my-courses": "cd nova-components/MyCourses && npm run dev",
-        "build-my-courses-prod": "cd nova-components/MyCourses && npm run prod"
+        "build-my-courses-prod": "cd nova-components/MyCourses && npm run prod",
+        "build-users-types": "cd nova-components/UsersTypes && npm run dev",
+        "build-users-types-prod": "cd nova-components/UsersTypes && npm run prod"
     },
     "devDependencies": {
         "@inertiajs/inertia": "^0.1.7",

@@ -71,7 +71,8 @@ class Text extends Resource
     {
         return [
             NovaEditorJs::make(__('Divider'), 'body')
-                ->required(),
+                ->required()
+                ->rules('required'),
         ];
     }
 

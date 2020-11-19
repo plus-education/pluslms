@@ -68,6 +68,8 @@ class Youtube extends Resource
     {
         return [
             \Media24si\NovaYoutubeField\Youtube::make('Video')
+                ->required()
+                ->rules('required'),
         ];
     }
 

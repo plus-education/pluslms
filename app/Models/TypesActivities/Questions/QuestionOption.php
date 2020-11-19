@@ -16,6 +16,10 @@ class QuestionOption extends Model
         'isTrue' => 'boolean'
     ];
 
+    protected $attributes = [
+        'isTrue' => true,
+    ];
+
     public function selectMultiple()
     {
         return $this->belongsTo(SelectMultiple::class);

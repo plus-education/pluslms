@@ -68,6 +68,8 @@ class PDF extends Resource
     {
         return [
             \Laravel\Nova\Fields\File::make(__('File'), 'path')
+                ->required()
+                ->rules('required'),
         ];
     }
 

@@ -74,11 +74,13 @@ class Exercise extends Resource
         return [
             //MorphOne::make('Activity'),
 
-            NovaEditorJs::make(__('Description'), 'description'),
+            NovaEditorJs::make(__('Description'), 'description')
+                ->rules(['required']),
 
             Number::make(__('Number Of Attemps'), 'numberOfAttemps')->default(1),
 
-            Number::make(__('Time'), 'time'),
+            Number::make(__('Time'), 'time')
+                ->default(30),
 
             HasMany::make(__('Questions'), 'questions', Question::class),
         ];

@@ -24,6 +24,11 @@ class RolesAndPermissionsSeeder extends Seeder
         Permission::create(['name' => 'manage translations']);
         Permission::create(['name' => 'manage backup']);
 
+        Permission::create(['name' => 'list users']);
+        Permission::create(['name' => 'show user']);
+        Permission::create(['name' => 'create user']);
+        Permission::create(['name' => 'update user']);
+        Permission::create(['name' => 'delete user']);
 
         Permission::create(['name' => 'list courses']);
         Permission::create(['name' => 'list only my courses']);

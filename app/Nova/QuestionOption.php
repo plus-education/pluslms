@@ -70,7 +70,9 @@ class QuestionOption extends Resource
     public function fields(Request $request)
     {
         return [
-            \Laravel\Nova\Fields\Text::make(__('Label'), 'label'),
+            \Laravel\Nova\Fields\Text::make(__('Label'), 'label')
+                ->rules('required', 'max:255')
+            ,
 
             Textarea::make(__('Feedback')),
 

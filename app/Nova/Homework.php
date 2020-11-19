@@ -71,7 +71,9 @@ class Homework extends Resource
     public function fields(Request $request)
     {
         return [
-            NovaEditorJs::make(__('Description'), 'description')->required(),
+            NovaEditorJs::make(__('Description'), 'description')
+                ->required()
+                ->rules('required'),
 
             \Laravel\Nova\Fields\File::make(__('File'), 'file'),
 

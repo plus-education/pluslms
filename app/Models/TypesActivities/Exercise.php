@@ -13,6 +13,10 @@ class Exercise extends Model
 
     protected $appends = ['html'];
 
+    protected $attributes = [
+        'time' => 30,
+    ];
+
     const COMPONENT = 'EXERCISE';
 
     public function getHtmlAttribute()

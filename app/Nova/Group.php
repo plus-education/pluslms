@@ -83,9 +83,9 @@ class Group extends Resource
                 ->required(),
 
             new Tabs('Relations', [
-                HasMany::make('Courses'),
-                BelongsToMany::make('Students')->searchable(),
-                BelongsToMany::make('Teachers')->searchable(),
+                HasMany::make(__('Courses'), 'Courses', Course::class),
+                BelongsToMany::make(__('Students'), 'Students', Student::class)->searchable(),
+                BelongsToMany::make(__('Teachers'), 'Teachers', Teacher::class)->searchable(),
             ]),
         ];
     }
