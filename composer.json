@@ -42,7 +42,8 @@
         "spatie/nova-tags-field": "^3.0",
         "vyuldashev/nova-permission": "^2.9",
         "whitecube/nova-flexible-content": "^0.2.5",
-        "lms/users-types": "*"
+        "lms/users-types": "*",
+        "jrodas4044/grid-multiselect-belogs-to-many": "*"
     },
     "repositories": [
         {
@@ -64,6 +65,10 @@
         {
             "type": "path",
             "url": "./nova-components/UsersTypes"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/GridMultiselectBelogsToMany"
         }
     ],
     "require-dev": {

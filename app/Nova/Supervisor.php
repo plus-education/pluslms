@@ -2,32 +2,26 @@
 
 namespace App\Nova;
 
+use App\Models\Roles;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class PDF extends Resource
+class Supervisor extends Resource
 {
-    /**
-     * Indicates if the resource should be displayed in the sidebar.
-     *
-     * @var bool
-     */
-    public static $displayInNavigation = false;
-
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\TypesActivities\PDF::class;
+    public static $model = \App\Models\User::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'name';
 
     /**
      * The columns that should be searched.
@@ -35,7 +29,7 @@ class PDF extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'name', 'email'
     ];
 
     /**
@@ -45,7 +39,7 @@ class PDF extends Resource
      */
     public static function label()
     {
-        return __('Pdfs');
+        return __('Supervisors');
     }
 
     /**
@@ -55,7 +49,19 @@ class PDF extends Resource
      */
     public static function singularLabel()
     {
-        return __('Pdf');
+        return __('Supervisor');
+    }
+
+    /**
+     * Build an "index" query for the given resource.
+     *
+     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public static function indexQuery(NovaRequest $request, $query)
+    {
+        return $query->role(Roles::SUPERVISOR)->get();
     }
 
     /**
@@ -66,16 +72,7 @@ class PDF extends Resource
      */
     public function fields(Request $request)
     {
-        return [
-            \Laravel\Nova\Fields\File::make(__('File'), 'path')
-                ->disk(env('FILESYSTEM_DRIVER'))
-                ->download(function(){
-                    return \Storage::disk('s3')->download($this->path);
-                })
-                ->path('/activities/pdf')
-                ->required()
-                ->rules('required'),
-        ];
+        return UserFileds::fields();
     }
 
     /**

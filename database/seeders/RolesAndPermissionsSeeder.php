@@ -36,7 +36,8 @@ class RolesAndPermissionsSeeder extends Seeder
         Permission::create(['name' => 'edit courses']);
         Permission::create(['name' => 'delete courses']);
 
-        Permission::create(['name' => 'list group']);
+        Permission::create(['name' => 'list groups']);
+        Permission::create(['name' => 'list only my groups']);
         Permission::create(['name' => 'show group']);
         Permission::create(['name' => 'create group']);
         Permission::create(['name' => 'edit group']);
@@ -46,6 +47,7 @@ class RolesAndPermissionsSeeder extends Seeder
         $admin = Role::create(['name' => 'admin']);
         $admin->givePermissionTo(Permission::all());
 
+        $teacher = Role::create(['name' => 'supervisor']);
         $teacher = Role::create(['name' => 'teacher']);
         $student = Role::create(['name' => 'student']);
     }

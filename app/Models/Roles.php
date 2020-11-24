@@ -10,6 +10,8 @@ class Roles
 
     const ADMIN = 'admin';
 
+    const SUPERVISOR = 'supervisor';
+
     const TEACHER = 'teacher';
 
     const TUTOR = 'tutor';

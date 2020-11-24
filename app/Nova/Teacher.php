@@ -42,6 +42,7 @@ class Teacher extends Resource
     {
         return __('Teacher');
     }
+
     /**
      * Build an "index" query for the given resource.
      *

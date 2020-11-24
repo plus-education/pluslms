@@ -41,7 +41,7 @@ class GroupUserObserver
      */
     public function deleted(GroupUser $groupUser)
     {
-        //
+        // @todo detach user when deleted from group
     }
 
     /**

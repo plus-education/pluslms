@@ -56,9 +56,26 @@ class Group extends Resource
         return __('Group');
     }
 
+    /**
+     * Build an "index" query for the given resource.
+     *
+     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @return \Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection
+     */
     public static function indexQuery(NovaRequest $request, $query)
     {
-        return $query->whereKeyNot(1);
+        if (auth()->user()->can('list groups')) {
+            return $query->whereKeyNot(1);
+        }
+
+        if (auth()->user()->can('list only my groups')) {
+            return $query->whereHas('users', function ($q) {
+                $q->where('id',auth()->user()->id);
+            })
+                ->whereKeyNot(1)
+                ->get();
+        }
     }
 
     /**
@@ -84,8 +101,9 @@ class Group extends Resource
 
             new Tabs('Relations', [
                 HasMany::make(__('Courses'), 'Courses', Course::class),
-                BelongsToMany::make(__('Students'), 'Students', Student::class)->searchable(),
-                BelongsToMany::make(__('Teachers'), 'Teachers', Teacher::class)->searchable(),
+                BelongsToMany::make(__('Students'), 'students', Student::class)->searchable(),
+                BelongsToMany::make(__('Teachers'), 'teachers', Teacher::class)->searchable(),
+                BelongsToMany::make(__('Supervisors'), 'supervisors', Supervisor::class)->searchable(),
             ]),
         ];
     }

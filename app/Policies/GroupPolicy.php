@@ -18,7 +18,7 @@ class GroupPolicy
      */
     public function viewAny(User $user)
     {
-        return $user->can('list group');
+        return $user->can('list groups') ||  $user->can('list only my groups');
     }
 
     /**
