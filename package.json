@@ -21,7 +21,11 @@
         "build-users-types": "cd nova-components/UsersTypes && npm run dev",
         "build-users-types-prod": "cd nova-components/UsersTypes && npm run prod",
         "build-grid-multiselect-belogs-to-many": "cd nova-components/GridMultiselectBelogsToMany && npm run dev",
-        "build-grid-multiselect-belogs-to-many-prod": "cd nova-components/GridMultiselectBelogsToMany && npm run prod"
+        "build-grid-multiselect-belogs-to-many-prod": "cd nova-components/GridMultiselectBelogsToMany && npm run prod",
+        "build-files": "cd nova-components/Files && npm run dev",
+        "build-files-prod": "cd nova-components/Files && npm run prod",
+        "build-link-file": "cd nova-components/LinkFile && npm run dev",
+        "build-link-file-prod": "cd nova-components/LinkFile && npm run prod"
     },
     "devDependencies": {
         "@inertiajs/inertia": "^0.1.7",

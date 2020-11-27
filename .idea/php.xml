@@ -195,6 +195,9 @@
       <path value="$PROJECT_DIR$/vendor/maennchen/zipstream-php" />
       <path value="$PROJECT_DIR$/vendor/maatwebsite/excel" />
       <path value="$PROJECT_DIR$/vendor/lms/users-types" />
+      <path value="$PROJECT_DIR$/vendor/jrodas4044/grid-multiselect-belogs-to-many" />
+      <path value="$PROJECT_DIR$/vendor/lms/files" />
+      <path value="$PROJECT_DIR$/vendor/lms/link-file" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

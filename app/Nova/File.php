@@ -4,8 +4,11 @@ namespace App\Nova;
 
 use DigitalCreative\Filepond\Filepond;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Heading;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Lms\Files\Files;
+use Lms\LinkFile\LinkFile;
 
 class File extends Resource
 {
@@ -68,10 +71,11 @@ class File extends Resource
     public function fields(Request $request)
     {
         return [
-            \Laravel\Nova\Fields\File::make('File', 'path')
-                ->required()
-                ->disk('s3')
-                ->rules('required'),
+            Filepond::make(__('File'), 'path')
+                ->rules('required')
+                ->required(),
+
+            LinkFile::make('Download','path')->onlyOnDetail()
         ];
     }
 

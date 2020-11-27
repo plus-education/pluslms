@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "28a0e20940a5d362f455f761fba0784a",
+    "content-hash": "feeae1fc39de5ba38de27dd24905d0ff",
     "packages": [
         {
             "name": "advoor/nova-editor-js",
@@ -120,16 +120,16 @@
         },
         {
             "name": "async-aws/cloud-formation",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/async-aws/cloud-formation.git",
-                "reference": "2ec093fe23575b973dec42a39570336846f0be84"
+                "reference": "ad3e58942eafdef8472b5e55ca70b4667d6c9fd7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/async-aws/cloud-formation/zipball/2ec093fe23575b973dec42a39570336846f0be84",
-                "reference": "2ec093fe23575b973dec42a39570336846f0be84",
+                "url": "https://api.github.com/repos/async-aws/cloud-formation/zipball/ad3e58942eafdef8472b5e55ca70b4667d6c9fd7",
+                "reference": "ad3e58942eafdef8472b5e55ca70b4667d6c9fd7",
                 "shasum": ""
             },
             "require": {
@@ -162,7 +162,7 @@
                 "sdk"
             ],
             "support": {
-                "source": "https://github.com/async-aws/cloud-formation/tree/master"
+                "source": "https://github.com/async-aws/cloud-formation/tree/1.0.1"
             },
             "funding": [
                 {
@@ -174,7 +174,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-06-28T11:14:14+00:00"
+            "time": "2020-11-21T10:41:37+00:00"
         },
         {
             "name": "async-aws/core",
@@ -245,16 +245,16 @@
         },
         {
             "name": "async-aws/lambda",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/async-aws/lambda.git",
-                "reference": "3a58b2bdfba95d7e75635d65dc3f87725ba90bd8"
+                "reference": "07fb25c18511a7dd9590d2b4311a16f13ebef3f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/async-aws/lambda/zipball/3a58b2bdfba95d7e75635d65dc3f87725ba90bd8",
-                "reference": "3a58b2bdfba95d7e75635d65dc3f87725ba90bd8",
+                "url": "https://api.github.com/repos/async-aws/lambda/zipball/07fb25c18511a7dd9590d2b4311a16f13ebef3f7",
+                "reference": "07fb25c18511a7dd9590d2b4311a16f13ebef3f7",
                 "shasum": ""
             },
             "require": {
@@ -265,7 +265,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
+                    "dev-master": "1.2-dev"
                 }
             },
             "autoload": {
@@ -286,7 +286,7 @@
                 "sdk"
             ],
             "support": {
-                "source": "https://github.com/async-aws/lambda/tree/1.1.0"
+                "source": "https://github.com/async-aws/lambda/tree/1.1.1"
             },
             "funding": [
                 {
@@ -298,20 +298,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-09-26T16:48:43+00:00"
+            "time": "2020-11-21T10:41:37+00:00"
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.163.0",
+            "version": "3.164.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "d3f51c57f17581d79151c9b5265e131391bd191f"
+                "reference": "39ecf57d828eb50ab23fd70255a68b8996392ac9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/d3f51c57f17581d79151c9b5265e131391bd191f",
-                "reference": "d3f51c57f17581d79151c9b5265e131391bd191f",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/39ecf57d828eb50ab23fd70255a68b8996392ac9",
+                "reference": "39ecf57d828eb50ab23fd70255a68b8996392ac9",
                 "shasum": ""
             },
             "require": {
@@ -386,9 +386,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.163.0"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.164.0"
             },
-            "time": "2020-11-18T19:12:41+00:00"
+            "time": "2020-11-24T19:18:22+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -511,16 +511,16 @@
         },
         {
             "name": "bref/bref",
-            "version": "0.5.32",
+            "version": "0.5.33",
             "source": {
                 "type": "git",
                 "url": "https://github.com/brefphp/bref.git",
-                "reference": "f9383bf0f58451b182a48afb131690e46e679729"
+                "reference": "efe0598d5bad9ea6b9fedd7a7b81b23d5e7ab4f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/brefphp/bref/zipball/f9383bf0f58451b182a48afb131690e46e679729",
-                "reference": "f9383bf0f58451b182a48afb131690e46e679729",
+                "url": "https://api.github.com/repos/brefphp/bref/zipball/efe0598d5bad9ea6b9fedd7a7b81b23d5e7ab4f9",
+                "reference": "efe0598d5bad9ea6b9fedd7a7b81b23d5e7ab4f9",
                 "shasum": ""
             },
             "require": {
@@ -573,7 +573,7 @@
             ],
             "support": {
                 "issues": "https://github.com/brefphp/bref/issues",
-                "source": "https://github.com/brefphp/bref/tree/0.5.32"
+                "source": "https://github.com/brefphp/bref/tree/0.5.33"
             },
             "funding": [
                 {
@@ -585,7 +585,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-11-04T18:01:01+00:00"
+            "time": "2020-11-21T18:05:13+00:00"
         },
         {
             "name": "bref/laravel-bridge",
@@ -1667,26 +1667,29 @@
         },
         {
             "name": "dragonmantank/cron-expression",
-            "version": "v3.0.2",
+            "version": "v3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dragonmantank/cron-expression.git",
-                "reference": "48212cdc0a79051d50d7fc2f0645c5a321caf926"
+                "reference": "7a8c6e56ab3ffcc538d05e8155bb42269abf1a0c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dragonmantank/cron-expression/zipball/48212cdc0a79051d50d7fc2f0645c5a321caf926",
-                "reference": "48212cdc0a79051d50d7fc2f0645c5a321caf926",
+                "url": "https://api.github.com/repos/dragonmantank/cron-expression/zipball/7a8c6e56ab3ffcc538d05e8155bb42269abf1a0c",
+                "reference": "7a8c6e56ab3ffcc538d05e8155bb42269abf1a0c",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1|^8.0"
+                "php": "^7.2|^8.0",
+                "webmozart/assert": "^1.7.0"
             },
             "replace": {
                 "mtdowling/cron-expression": "^1.0"
             },
             "require-dev": {
-                "phpstan/phpstan": "^0.11|^0.12",
+                "phpstan/extension-installer": "^1.0",
+                "phpstan/phpstan": "^0.12",
+                "phpstan/phpstan-webmozart-assert": "^0.12.7",
                 "phpunit/phpunit": "^7.0|^8.0|^9.0"
             },
             "type": "library",
@@ -1713,7 +1716,7 @@
             ],
             "support": {
                 "issues": "https://github.com/dragonmantank/cron-expression/issues",
-                "source": "https://github.com/dragonmantank/cron-expression/tree/v3.0.2"
+                "source": "https://github.com/dragonmantank/cron-expression/tree/v3.1.0"
             },
             "funding": [
                 {
@@ -1721,7 +1724,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-10-13T01:26:01+00:00"
+            "time": "2020-11-24T19:55:57+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -1793,16 +1796,16 @@
         },
         {
             "name": "eminiarts/nova-tabs",
-            "version": "1.3.0",
+            "version": "1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/eminiarts/nova-tabs.git",
-                "reference": "6ea378040ba990abfed7c5bf17fd2eca2759f562"
+                "reference": "36a666bf435fd619471d75d7ff3025950e567b10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/eminiarts/nova-tabs/zipball/6ea378040ba990abfed7c5bf17fd2eca2759f562",
-                "reference": "6ea378040ba990abfed7c5bf17fd2eca2759f562",
+                "url": "https://api.github.com/repos/eminiarts/nova-tabs/zipball/36a666bf435fd619471d75d7ff3025950e567b10",
+                "reference": "36a666bf435fd619471d75d7ff3025950e567b10",
                 "shasum": ""
             },
             "require": {
@@ -1840,9 +1843,9 @@
             ],
             "support": {
                 "issues": "https://github.com/eminiarts/nova-tabs/issues",
-                "source": "https://github.com/eminiarts/nova-tabs/tree/1.3.0"
+                "source": "https://github.com/eminiarts/nova-tabs/tree/1.3.1"
             },
-            "time": "2020-11-05T06:46:17+00:00"
+            "time": "2020-11-22T10:40:58+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -2333,16 +2336,16 @@
         },
         {
             "name": "hollodotme/fast-cgi-client",
-            "version": "v3.1.3",
+            "version": "v3.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hollodotme/fast-cgi-client.git",
-                "reference": "8eb9d5c3b2685d9e16904c1229d455b42f0b9377"
+                "reference": "b7bdfa2c3e871c90eaaa5283d72f0857986d40cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hollodotme/fast-cgi-client/zipball/8eb9d5c3b2685d9e16904c1229d455b42f0b9377",
-                "reference": "8eb9d5c3b2685d9e16904c1229d455b42f0b9377",
+                "url": "https://api.github.com/repos/hollodotme/fast-cgi-client/zipball/b7bdfa2c3e871c90eaaa5283d72f0857986d40cf",
+                "reference": "b7bdfa2c3e871c90eaaa5283d72f0857986d40cf",
                 "shasum": ""
             },
             "require": {
@@ -2350,7 +2353,8 @@
                 "php": ">=7.1"
             },
             "require-dev": {
-                "tm/tooly-composer-script": "^1.0"
+                "ext-xdebug": ">=2.6.0",
+                "tm/tooly-composer-script": "^1.4.1"
             },
             "type": "library",
             "extra": {
@@ -2396,9 +2400,9 @@
             ],
             "support": {
                 "issues": "https://github.com/hollodotme/fast-cgi-client/issues",
-                "source": "https://github.com/hollodotme/fast-cgi-client/tree/v3.1.3"
+                "source": "https://github.com/hollodotme/fast-cgi-client/tree/v3.1.4"
             },
-            "time": "2020-08-13T09:09:20+00:00"
+            "time": "2020-11-23T11:37:41+00:00"
         },
         {
             "name": "inertiajs/inertia-laravel",
@@ -2585,16 +2589,16 @@
         },
         {
             "name": "jaybizzle/crawler-detect",
-            "version": "v1.2.102",
+            "version": "v1.2.103",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JayBizzle/Crawler-Detect.git",
-                "reference": "346cfd72d11bb41f15e82654e532dc55360612ac"
+                "reference": "3efa2860959cc971f17624b40bf0699823f9d0f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JayBizzle/Crawler-Detect/zipball/346cfd72d11bb41f15e82654e532dc55360612ac",
-                "reference": "346cfd72d11bb41f15e82654e532dc55360612ac",
+                "url": "https://api.github.com/repos/JayBizzle/Crawler-Detect/zipball/3efa2860959cc971f17624b40bf0699823f9d0f3",
+                "reference": "3efa2860959cc971f17624b40bf0699823f9d0f3",
                 "shasum": ""
             },
             "require": {
@@ -2631,9 +2635,9 @@
             ],
             "support": {
                 "issues": "https://github.com/JayBizzle/Crawler-Detect/issues",
-                "source": "https://github.com/JayBizzle/Crawler-Detect/tree/v1.2.102"
+                "source": "https://github.com/JayBizzle/Crawler-Detect/tree/v1.2.103"
             },
-            "time": "2020-11-04T19:23:01+00:00"
+            "time": "2020-11-23T19:49:25+00:00"
         },
         {
             "name": "jenssegers/agent",
@@ -2815,6 +2819,42 @@
             "time": "2019-09-09T20:06:06+00:00"
         },
         {
+            "name": "jrodas4044/grid-multiselect-belogs-to-many",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "./nova-components/GridMultiselectBelogsToMany",
+                "reference": "9081d730c95eb955b3ceb079b6e00a2887a88029"
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Jrodas4044\\GridMultiselectBelogsToMany\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Jrodas4044\\GridMultiselectBelogsToMany\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova field.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "khalin/nova-link-field",
             "version": "v1.2.4",
             "source": {
@@ -2914,16 +2954,16 @@
         },
         {
             "name": "laravel/fortify",
-            "version": "v1.7.1",
+            "version": "v1.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/fortify.git",
-                "reference": "b2430958fa93883ab0e5f0caf486ef3688711608"
+                "reference": "1333184e4797de9f6fe5891e4b6f07919a151289"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/fortify/zipball/b2430958fa93883ab0e5f0caf486ef3688711608",
-                "reference": "b2430958fa93883ab0e5f0caf486ef3688711608",
+                "url": "https://api.github.com/repos/laravel/fortify/zipball/1333184e4797de9f6fe5891e4b6f07919a151289",
+                "reference": "1333184e4797de9f6fe5891e4b6f07919a151289",
                 "shasum": ""
             },
             "require": {
@@ -2973,20 +3013,20 @@
                 "issues": "https://github.com/laravel/fortify/issues",
                 "source": "https://github.com/laravel/fortify"
             },
-            "time": "2020-11-13T13:55:54+00:00"
+            "time": "2020-11-24T16:52:33+00:00"
         },
         {
             "name": "laravel/framework",
-            "version": "v8.15.0",
+            "version": "v8.16.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "22e4182fa0885dea3772106c3b6df705b7c7363e"
+                "reference": "f7dfc22e6c42e9ed4dda14c05814349af6943206"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/22e4182fa0885dea3772106c3b6df705b7c7363e",
-                "reference": "22e4182fa0885dea3772106c3b6df705b7c7363e",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/f7dfc22e6c42e9ed4dda14c05814349af6943206",
+                "reference": "f7dfc22e6c42e9ed4dda14c05814349af6943206",
                 "shasum": ""
             },
             "require": {
@@ -3059,7 +3099,7 @@
                 "illuminate/view": "self.version"
             },
             "require-dev": {
-                "aws/aws-sdk-php": "^3.0",
+                "aws/aws-sdk-php": "^3.155",
                 "doctrine/dbal": "^2.6|^3.0",
                 "filp/whoops": "^2.8",
                 "guzzlehttp/guzzle": "^6.5.5|^7.0.1",
@@ -3072,7 +3112,7 @@
                 "symfony/cache": "^5.1"
             },
             "suggest": {
-                "aws/aws-sdk-php": "Required to use the SQS queue driver, DynamoDb failed job storage and SES mail driver (^3.0).",
+                "aws/aws-sdk-php": "Required to use the SQS queue driver, DynamoDb failed job storage and SES mail driver (^3.155).",
                 "doctrine/dbal": "Required to rename columns and drop SQLite columns (^2.6|^3.0).",
                 "ext-ftp": "Required to use the Flysystem FTP driver.",
                 "ext-gd": "Required to use Illuminate\\Http\\Testing\\FileFactory::image().",
@@ -3140,20 +3180,20 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2020-11-17T14:53:20+00:00"
+            "time": "2020-11-25T15:01:02+00:00"
         },
         {
             "name": "laravel/jetstream",
-            "version": "v1.6.1",
+            "version": "v1.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/jetstream.git",
-                "reference": "daba98419164024e2c071f5547dd5569aba69d98"
+                "reference": "a563ab284ccf356a2bccec82d0d70ae504dc97ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/jetstream/zipball/daba98419164024e2c071f5547dd5569aba69d98",
-                "reference": "daba98419164024e2c071f5547dd5569aba69d98",
+                "url": "https://api.github.com/repos/laravel/jetstream/zipball/a563ab284ccf356a2bccec82d0d70ae504dc97ae",
+                "reference": "a563ab284ccf356a2bccec82d0d70ae504dc97ae",
                 "shasum": ""
             },
             "require": {
@@ -3206,7 +3246,7 @@
                 "issues": "https://github.com/laravel/jetstream/issues",
                 "source": "https://github.com/laravel/jetstream"
             },
-            "time": "2020-11-17T16:31:17+00:00"
+            "time": "2020-11-24T17:14:06+00:00"
         },
         {
             "name": "laravel/nova",
@@ -3300,16 +3340,16 @@
         },
         {
             "name": "laravel/sanctum",
-            "version": "v2.8.1",
+            "version": "v2.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sanctum.git",
-                "reference": "9b8cc455eadee5330d849bb3e41dc5931ccbe8ee"
+                "reference": "331bd6572610b06ad6dd6b2a7c15a0465a3ca9c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sanctum/zipball/9b8cc455eadee5330d849bb3e41dc5931ccbe8ee",
-                "reference": "9b8cc455eadee5330d849bb3e41dc5931ccbe8ee",
+                "url": "https://api.github.com/repos/laravel/sanctum/zipball/331bd6572610b06ad6dd6b2a7c15a0465a3ca9c9",
+                "reference": "331bd6572610b06ad6dd6b2a7c15a0465a3ca9c9",
                 "shasum": ""
             },
             "require": {
@@ -3360,7 +3400,7 @@
                 "issues": "https://github.com/laravel/sanctum/issues",
                 "source": "https://github.com/laravel/sanctum"
             },
-            "time": "2020-11-17T16:45:56+00:00"
+            "time": "2020-11-24T17:31:19+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -3919,6 +3959,78 @@
                 "MIT"
             ],
             "description": "A Laravel Nova resource tool.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "lms/files",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "./nova-components/Files",
+                "reference": "9692109f249e66b958bac5a83731cb52339d3f59"
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Lms\\Files\\ToolServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Lms\\Files\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova resource tool.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "lms/link-file",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "./nova-components/LinkFile",
+                "reference": "f2497a40ea294fa00f6c06a5b805414fd1942e2d"
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Lms\\LinkFile\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Lms\\LinkFile\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova field.",
             "keywords": [
                 "laravel",
                 "nova"
@@ -6716,26 +6828,25 @@
         },
         {
             "name": "spatie/eloquent-sortable",
-            "version": "3.9.0",
+            "version": "3.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/eloquent-sortable.git",
-                "reference": "51bca09f0c49ac2da8cd480e1e667ddcfce5a3f2"
+                "reference": "efc786971d5308ff75d5af8e04f7f759dd8450c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/eloquent-sortable/zipball/51bca09f0c49ac2da8cd480e1e667ddcfce5a3f2",
-                "reference": "51bca09f0c49ac2da8cd480e1e667ddcfce5a3f2",
+                "url": "https://api.github.com/repos/spatie/eloquent-sortable/zipball/efc786971d5308ff75d5af8e04f7f759dd8450c2",
+                "reference": "efc786971d5308ff75d5af8e04f7f759dd8450c2",
                 "shasum": ""
             },
             "require": {
-                "illuminate/database": "~5.8.0|^6.0|^7.0|^8.0",
-                "illuminate/support": "~5.8.0|^6.0|^7.0|^8.0",
-                "php": "^7.3"
+                "illuminate/database": "^6.0|^7.0|^8.0",
+                "illuminate/support": "^6.0|^7.0|^8.0",
+                "php": "^7.3|^8.0"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.16",
-                "orchestra/testbench": "~3.8.0|^4.0|^5.0|^6.0",
+                "orchestra/testbench": "^4.0|^5.0|^6.0",
                 "phpunit/phpunit": "^8.0|^9.0"
             },
             "type": "library",
@@ -6773,7 +6884,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/eloquent-sortable/issues",
-                "source": "https://github.com/spatie/eloquent-sortable/tree/3.9.0"
+                "source": "https://github.com/spatie/eloquent-sortable/tree/3.10.0"
             },
             "funding": [
                 {
@@ -6781,7 +6892,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-09-15T06:48:07+00:00"
+            "time": "2020-11-25T12:55:36+00:00"
         },
         {
             "name": "spatie/image",
@@ -6852,16 +6963,16 @@
         },
         {
             "name": "spatie/image-optimizer",
-            "version": "1.3.0",
+            "version": "1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/image-optimizer.git",
-                "reference": "f87f8328ca5bfabb3811241f5d35f17e146f7f83"
+                "reference": "b622d0cf29f57d7735d49f2b62471e6b788cb291"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/image-optimizer/zipball/f87f8328ca5bfabb3811241f5d35f17e146f7f83",
-                "reference": "f87f8328ca5bfabb3811241f5d35f17e146f7f83",
+                "url": "https://api.github.com/repos/spatie/image-optimizer/zipball/b622d0cf29f57d7735d49f2b62471e6b788cb291",
+                "reference": "b622d0cf29f57d7735d49f2b62471e6b788cb291",
                 "shasum": ""
             },
             "require": {
@@ -6900,43 +7011,42 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/image-optimizer/issues",
-                "source": "https://github.com/spatie/image-optimizer/tree/1.3.0"
+                "source": "https://github.com/spatie/image-optimizer/tree/1.3.1"
             },
-            "time": "2020-11-10T13:45:49+00:00"
+            "time": "2020-11-20T11:36:11+00:00"
         },
         {
             "name": "spatie/laravel-backup",
-            "version": "6.11.6",
+            "version": "6.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-backup.git",
-                "reference": "3ab6fa26eeed1552571ed06d5be91dfa20477962"
+                "reference": "08a76a1366c3cc98ec3ddd4ce90a28c3b73cc8bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/3ab6fa26eeed1552571ed06d5be91dfa20477962",
-                "reference": "3ab6fa26eeed1552571ed06d5be91dfa20477962",
+                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/08a76a1366c3cc98ec3ddd4ce90a28c3b73cc8bf",
+                "reference": "08a76a1366c3cc98ec3ddd4ce90a28c3b73cc8bf",
                 "shasum": ""
             },
             "require": {
-                "illuminate/console": "^5.8.15|^6.0|^7.0|^8.0",
-                "illuminate/contracts": "^5.8.15|^6.0|^7.0|^8.0",
-                "illuminate/events": "^5.8.15|^6.0|^7.0|^8.0",
-                "illuminate/filesystem": "^5.8.15|^6.0|^7.0|^8.0",
-                "illuminate/notifications": "^5.8.15|^6.0|^7.0|^8.0",
-                "illuminate/support": "^5.8.15|^6.0|^7.0|^8.0",
+                "illuminate/console": "^6.0|^7.0|^8.0",
+                "illuminate/contracts": "^6.0|^7.0|^8.0",
+                "illuminate/events": "^6.0|^7.0|^8.0",
+                "illuminate/filesystem": "^6.0|^7.0|^8.0",
+                "illuminate/notifications": "^6.0|^7.0|^8.0",
+                "illuminate/support": "^6.0|^7.0|^8.0",
                 "league/flysystem": "^1.0.49",
-                "php": "^7.3",
+                "php": "^7.3|^8.0",
                 "spatie/db-dumper": "^2.12",
                 "spatie/temporary-directory": "^1.1",
                 "symfony/finder": "^4.2|^5.0"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.16",
-                "laravel/slack-notification-channel": "^1.0",
+                "laravel/slack-notification-channel": "^2.3",
                 "league/flysystem-aws-s3-v3": "^1.0",
-                "mockery/mockery": "^1.3",
-                "orchestra/testbench": "3.8.*|4.*|5.*|6.*",
+                "mockery/mockery": "^1.4.2",
+                "orchestra/testbench": "4.*|5.*|6.*",
                 "phpunit/phpunit": "^8.4|^9.0"
             },
             "suggest": {
@@ -6980,7 +7090,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-backup/issues",
-                "source": "https://github.com/spatie/laravel-backup/tree/6.11.6"
+                "source": "https://github.com/spatie/laravel-backup/tree/6.13.0"
             },
             "funding": [
                 {
@@ -6992,7 +7102,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2020-10-19T06:58:51+00:00"
+            "time": "2020-11-25T12:24:28+00:00"
         },
         {
             "name": "spatie/laravel-permission",
@@ -7142,27 +7252,26 @@
         },
         {
             "name": "spatie/laravel-translatable",
-            "version": "4.5.2",
+            "version": "4.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-translatable.git",
-                "reference": "73e5c922a0004967e6be2bf73e36780af4090155"
+                "reference": "5900d6002a5795712058a04c7ca7c2c44b3e0850"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-translatable/zipball/73e5c922a0004967e6be2bf73e36780af4090155",
-                "reference": "73e5c922a0004967e6be2bf73e36780af4090155",
+                "url": "https://api.github.com/repos/spatie/laravel-translatable/zipball/5900d6002a5795712058a04c7ca7c2c44b3e0850",
+                "reference": "5900d6002a5795712058a04c7ca7c2c44b3e0850",
                 "shasum": ""
             },
             "require": {
-                "illuminate/database": "~5.8.0|^6.0|^7.0|^8.0",
-                "illuminate/support": "~5.8.0|^6.0|^7.0|^8.0",
-                "php": "^7.2"
+                "illuminate/database": "^6.0|^7.0|^8.0",
+                "illuminate/support": "^6.0|^7.0|^8.0",
+                "php": "^7.2|^8.0"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.16",
-                "mockery/mockery": "^1.3",
-                "orchestra/testbench": "~3.8.0|^4.0|^5.0|^6.0"
+                "mockery/mockery": "^1.4",
+                "orchestra/testbench": "^4.0|^5.0|^6.0"
             },
             "type": "library",
             "extra": {
@@ -7213,7 +7322,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-translatable/issues",
-                "source": "https://github.com/spatie/laravel-translatable/tree/4.5.2"
+                "source": "https://github.com/spatie/laravel-translatable/tree/4.6.0"
             },
             "funding": [
                 {
@@ -7221,7 +7330,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2020-10-22T13:52:25+00:00"
+            "time": "2020-11-19T14:19:29+00:00"
         },
         {
             "name": "spatie/nova-backup-tool",
@@ -10263,6 +10372,59 @@
             "time": "2020-04-25T18:30:25+00:00"
         },
         {
+            "name": "webmozart/assert",
+            "version": "1.9.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webmozart/assert.git",
+                "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webmozart/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
+                "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.3 || ^7.0 || ^8.0",
+                "symfony/polyfill-ctype": "^1.8"
+            },
+            "conflict": {
+                "phpstan/phpstan": "<0.12.20",
+                "vimeo/psalm": "<3.9.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.36 || ^7.5.13"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Webmozart\\Assert\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bernhard Schussek",
+                    "email": "bschussek@gmail.com"
+                }
+            ],
+            "description": "Assertions to validate method input/output with nice error messages.",
+            "keywords": [
+                "assert",
+                "check",
+                "validate"
+            ],
+            "support": {
+                "issues": "https://github.com/webmozart/assert/issues",
+                "source": "https://github.com/webmozart/assert/tree/master"
+            },
+            "time": "2020-07-08T17:02:28+00:00"
+        },
+        {
             "name": "whitecube/nova-flexible-content",
             "version": "v0.2.6",
             "source": {
@@ -12749,59 +12911,6 @@
                 }
             ],
             "time": "2020-07-12T23:59:07+00:00"
-        },
-        {
-            "name": "webmozart/assert",
-            "version": "1.9.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/webmozart/assert.git",
-                "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/webmozart/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
-                "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.3.3 || ^7.0 || ^8.0",
-                "symfony/polyfill-ctype": "^1.8"
-            },
-            "conflict": {
-                "phpstan/phpstan": "<0.12.20",
-                "vimeo/psalm": "<3.9.1"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8.36 || ^7.5.13"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Webmozart\\Assert\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Bernhard Schussek",
-                    "email": "bschussek@gmail.com"
-                }
-            ],
-            "description": "Assertions to validate method input/output with nice error messages.",
-            "keywords": [
-                "assert",
-                "check",
-                "validate"
-            ],
-            "support": {
-                "issues": "https://github.com/webmozart/assert/issues",
-                "source": "https://github.com/webmozart/assert/tree/master"
-            },
-            "time": "2020-07-08T17:02:28+00:00"
         }
     ],
     "aliases": [],

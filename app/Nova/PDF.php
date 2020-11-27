@@ -2,9 +2,12 @@
 
 namespace App\Nova;
 
+use DigitalCreative\Filepond\Filepond;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Lms\Files\Files;
+use Lms\LinkFile\LinkFile;
 
 class PDF extends Resource
 {
@@ -67,14 +70,11 @@ class PDF extends Resource
     public function fields(Request $request)
     {
         return [
-            \Laravel\Nova\Fields\File::make(__('File'), 'path')
-                ->disk(env('FILESYSTEM_DRIVER'))
-                ->download(function(){
-                    return \Storage::disk('s3')->download($this->path);
-                })
-                ->path('/activities/pdf')
-                ->required()
-                ->rules('required'),
+            Filepond::make(__('File'), 'path')
+                 ->rules('required')
+                 ->required(),
+
+            LinkFile::make('Download','path')->onlyOnDetail()
         ];
     }
 

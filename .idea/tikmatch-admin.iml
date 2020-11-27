@@ -58,6 +58,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/jenssegers/agent" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/joedixon/laravel-translation" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/joedixon/nova-translation" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/jrodas4044/grid-multiselect-belogs-to-many" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/khalin/nova-link-field" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/kirschbaum-development/nova-inline-relationship" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/fortify" />
@@ -74,6 +75,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/league/mime-type-detection" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/lms/activity-comments" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/lms/activity-scores" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/lms/files" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/lms/link-file" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/lms/my-courses" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/lms/users-types" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/maatwebsite/excel" />
