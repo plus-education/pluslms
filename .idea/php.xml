@@ -198,6 +198,9 @@
       <path value="$PROJECT_DIR$/vendor/jrodas4044/grid-multiselect-belogs-to-many" />
       <path value="$PROJECT_DIR$/vendor/lms/files" />
       <path value="$PROJECT_DIR$/vendor/lms/link-file" />
+      <path value="$PROJECT_DIR$/vendor/rodneyrehm/plist" />
+      <path value="$PROJECT_DIR$/vendor/genealabs/nova-file-upload-field" />
+      <path value="$PROJECT_DIR$/vendor/symfony/thanks" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

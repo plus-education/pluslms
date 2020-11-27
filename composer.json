@@ -19,6 +19,7 @@
         "eminiarts/nova-tabs": "^1.2",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
+        "genealabs/nova-file-upload-field": "^0.4.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "inertiajs/inertia-laravel": "^0.2.11",
         "izi-dev/nova-key-value-suggestion-field": "^1.0",
@@ -26,7 +27,7 @@
         "jrodas4044/grid-multiselect-belogs-to-many": "*",
         "khalin/nova-link-field": "^1.2",
         "kirschbaum-development/nova-inline-relationship": "^0.3.0",
-        "laravel/framework": "^8.0",
+        "laravel/framework": "^8.16.1",
         "laravel/jetstream": "^1.1",
         "laravel/nova": "~3.15.0",
         "laravel/sanctum": "^2.6",
@@ -35,6 +36,7 @@
         "lms/activity-comments": "*",
         "lms/activity-scores": "*",
         "lms/files": "*",
+        "lms/link-file": "*",
         "lms/my-courses": "*",
         "lms/users-types": "*",
         "maatwebsite/excel": "^3.1",
@@ -44,8 +46,7 @@
         "spatie/nova-backup-tool": "^4.0",
         "spatie/nova-tags-field": "^3.0",
         "vyuldashev/nova-permission": "^2.9",
-        "whitecube/nova-flexible-content": "^0.2.5",
-        "lms/link-file": "*"
+        "whitecube/nova-flexible-content": "^0.2.5"
     },
     "repositories": [
         {

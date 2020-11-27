@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "feeae1fc39de5ba38de27dd24905d0ff",
+    "content-hash": "5faee5da2e4c41204273982afb7ac831",
     "packages": [
         {
             "name": "advoor/nova-editor-js",
@@ -2035,6 +2035,61 @@
                 }
             ],
             "time": "2020-10-22T13:57:20+00:00"
+        },
+        {
+            "name": "genealabs/nova-file-upload-field",
+            "version": "0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GeneaLabs/nova-file-upload-field.git",
+                "reference": "58fb73a5ea97ab93c9bcc2b4d1117c1249d04551"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GeneaLabs/nova-file-upload-field/zipball/58fb73a5ea97ab93c9bcc2b4d1117c1249d04551",
+                "reference": "58fb73a5ea97ab93c9bcc2b4d1117c1249d04551",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "^8.0",
+                "illuminate/support": "^8.0",
+                "laravel/nova": "^3.9",
+                "rodneyrehm/plist": "^2.0",
+                "symfony/thanks": "^1.2"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "GeneaLabs\\NovaFileUploadField\\Providers\\Service"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GeneaLabs\\NovaFileUploadField\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova field.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/GeneaLabs/nova-file-upload-field/issues",
+                "source": "https://github.com/GeneaLabs/nova-file-upload-field/tree/0.4.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/mikebronner",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-09-12T21:14:16+00:00"
         },
         {
             "name": "graham-campbell/result-type",
@@ -6718,6 +6773,73 @@
             "time": "2020-01-24T09:39:24+00:00"
         },
         {
+            "name": "rodneyrehm/plist",
+            "version": "v2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TECLIB/CFPropertyList.git",
+                "reference": "d904cd36c1f72716ce2d4efd98ebaf0a57dc7306"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TECLIB/CFPropertyList/zipball/d904cd36c1f72716ce2d4efd98ebaf0a57dc7306",
+                "reference": "d904cd36c1f72716ce2d4efd98ebaf0a57dc7306",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.0 || ^6.0 ||^7.0 ||^8.5",
+                "squizlabs/php_codesniffer": "^3.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "CFPropertyList\\": "src/CFPropertyList/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Kruse",
+                    "email": "cjk@wwwtech.de",
+                    "role": "developer"
+                },
+                {
+                    "name": "Rodney Rehm",
+                    "email": "mail+github@rodneyrehm.de",
+                    "role": "developer"
+                },
+                {
+                    "name": "Thierry Bugier",
+                    "email": "tbugier@teclib.com",
+                    "role": "developer"
+                }
+            ],
+            "description": "Library for reading and writing Apple's CFPropertyList (plist) files in XML as well as binary format.",
+            "homepage": "https://github.com/TECLIB/CFPropertyList",
+            "keywords": [
+                "CFPropertyList",
+                "Core Foundation",
+                "apple",
+                "binary",
+                "plist",
+                "xml"
+            ],
+            "support": {
+                "docs": "http://teclib.github.io/CFPropertyList/howtos/",
+                "email": "contact@teclib.com",
+                "issues": "https://github.com/TECLIB/CFPropertyList/issues",
+                "rss": "https://teclib.github.io/CFPropertyList/feed.xml",
+                "source": "https://github.com/TECLIB/CFPropertyList"
+            },
+            "time": "2020-08-13T10:08:39+00:00"
+        },
+        {
             "name": "sabberworm/php-css-parser",
             "version": "8.3.1",
             "source": {
@@ -9857,6 +9979,67 @@
                 }
             ],
             "time": "2020-10-24T12:01:57+00:00"
+        },
+        {
+            "name": "symfony/thanks",
+            "version": "v1.2.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/thanks.git",
+                "reference": "e9c4709560296acbd4fe9e12b8d57a925aa7eae8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/thanks/zipball/e9c4709560296acbd4fe9e12b8d57a925aa7eae8",
+                "reference": "e9c4709560296acbd4fe9e12b8d57a925aa7eae8",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0|^2.0",
+                "php": ">=5.5.9"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.2-dev"
+                },
+                "class": "Symfony\\Thanks\\Thanks"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Thanks\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                }
+            ],
+            "description": "Encourages sending ⭐ and 💵 to fellow PHP package maintainers (not limited to Symfony components)!",
+            "support": {
+                "issues": "https://github.com/symfony/thanks/issues",
+                "source": "https://github.com/symfony/thanks/tree/v1.2.10"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-10-14T17:47:37+00:00"
         },
         {
             "name": "symfony/translation",

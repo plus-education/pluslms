@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use DigitalCreative\Filepond\Filepond;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Laravel\Nova\Fields\Heading;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -71,11 +72,14 @@ class File extends Resource
     public function fields(Request $request)
     {
         return [
-            \Laravel\Nova\Fields\File::make(__('File'), 'path')
-                ->disableDownload()
-                ->required(),
+            Filepond::make(__('File'), 'path')
+                ->disk(env('FILESYSTEM_DRIVER'))
+                ->help('Carga'),
 
-            LinkFile::make('Download','path')->onlyOnDetail()
+            \Laravel\Nova\Fields\Text::make('', function () {
+                $path = Storage::url($this->path);
+                return "<a href='{$path}' class='btn btn-default btn-icon bg-primary text-white text-center'>Descargar</a>";
+            } )->asHtml()
         ];
     }
 
