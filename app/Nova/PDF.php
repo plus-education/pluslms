@@ -2,7 +2,6 @@
 
 namespace App\Nova;
 
-use DigitalCreative\Filepond\Filepond;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -70,11 +69,14 @@ class PDF extends Resource
     public function fields(Request $request)
     {
         return [
-            Filepond::make(__('File'), 'path')
-                 ->rules('required')
-                 ->required(),
+            \Laravel\Nova\Fields\File::make(__('File'), 'path')
+                ->disk('public')
+                ->disableDownload()
+                ->required(),
 
             LinkFile::make('Download','path')->onlyOnDetail()
+
+
         ];
     }
 

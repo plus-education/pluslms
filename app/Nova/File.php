@@ -71,8 +71,8 @@ class File extends Resource
     public function fields(Request $request)
     {
         return [
-            Filepond::make(__('File'), 'path')
-                ->rules('required')
+            \Laravel\Nova\Fields\File::make(__('File'), 'path')
+                ->disableDownload()
                 ->required(),
 
             LinkFile::make('Download','path')->onlyOnDetail()
