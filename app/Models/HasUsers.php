@@ -6,10 +6,7 @@ namespace App\Models;
 
 trait HasUsers
 {
-    public function users()
-    {
-        return $this->belongsToMany(User::class)->using(GroupUser::class);
-    }
+
 
     public function students()
     {

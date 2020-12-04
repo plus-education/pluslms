@@ -73,7 +73,7 @@ class Question extends Resource
         return [
             \Laravel\Nova\Fields\Text::make(__('Name'), 'name')
                 ->required()
-                ->rules('required', 'max:255')
+                
             ,
 
             NovaEditorJs::make(__('Description'), 'description')->hideFromIndex(),

@@ -37,7 +37,7 @@ return [
             'activated' => true,
             'shortcut' => 'CMD+SHIFT+I',
             'path' => 'public/images',
-            'disk' => 's3',
+            'disk' => 'public',
             'alterations' => [
                 'resize' => [
                     'width' => false, // integer

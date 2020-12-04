@@ -71,7 +71,7 @@ class QuestionOption extends Resource
     {
         return [
             \Laravel\Nova\Fields\Text::make(__('Label'), 'label')
-                ->rules('required', 'max:255')
+                
             ,
 
             Textarea::make(__('Feedback')),

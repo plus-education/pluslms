@@ -18,6 +18,6 @@ class PDF extends Model
 
     public function getRealPathAttribute()
     {
-        return Storage::disk(env('FILESYSTEM_DRIVER'))->temporaryUrl($this->path, now()->addMinutes(30));
+        return Storage::disk(env('local'))->url($this->path, now()->addMinutes(30));
     }
 }

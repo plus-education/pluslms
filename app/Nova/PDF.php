@@ -72,7 +72,7 @@ class PDF extends Resource
     {
         return [
             Filepond::make(__('File'), 'path')
-                ->disk(env('FILESYSTEM_DRIVER'))
+                ->disk('public')
             ->help('Carga'),
 
             \Laravel\Nova\Fields\Text::make('', function () {
