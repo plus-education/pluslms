@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5faee5da2e4c41204273982afb7ac831",
+    "content-hash": "27341e84e87af46d7138755e4ebca6a1",
     "packages": [
         {
             "name": "advoor/nova-editor-js",
@@ -5249,6 +5249,68 @@
             "time": "2020-11-07T02:01:34+00:00"
         },
         {
+            "name": "optimistdigital/nova-settings",
+            "version": "3.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/optimistdigital/nova-settings.git",
+                "reference": "90cf967fbee60e22ac6683502989d38d9350263c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/optimistdigital/nova-settings/zipball/90cf967fbee60e22ac6683502989d38d9350263c",
+                "reference": "90cf967fbee60e22ac6683502989d38d9350263c",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": "^3.0",
+                "optimistdigital/nova-translations-loader": "^3.0",
+                "php": ">=7.2.0"
+            },
+            "require-dev": {
+                "laravel/nova-dusk-suite": "7.x-dev|dev-master",
+                "orchestra/testbench": "^5.0|^6.0",
+                "orchestra/testbench-dusk": "^5.0|^6.0",
+                "phpunit/phpunit": "^8.0|^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "OptimistDigital\\NovaSettings\\NovaSettingsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "OptimistDigital\\NovaSettings\\": "src/"
+                },
+                "files": [
+                    "./src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova tool for editing custom settings using native Nova fields.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/optimistdigital/nova-settings/issues",
+                "source": "https://github.com/optimistdigital/nova-settings/tree/3.1.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/optimistdigital",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-12-04T08:22:05+00:00"
+        },
+        {
             "name": "optimistdigital/nova-tailwind",
             "version": "1.0.2",
             "source": {
@@ -5307,6 +5369,54 @@
                 "source": "https://github.com/optimistdigital/nova-tailwind/tree/master"
             },
             "time": "2020-08-31T07:54:36+00:00"
+        },
+        {
+            "name": "optimistdigital/nova-translations-loader",
+            "version": "3.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/optimistdigital/nova-translations-loader.git",
+                "reference": "ce511b1685bd975ec0f86087bbec33949ad04730"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/optimistdigital/nova-translations-loader/zipball/ce511b1685bd975ec0f86087bbec33949ad04730",
+                "reference": "ce511b1685bd975ec0f86087bbec33949ad04730",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^7.0 || ^8.0",
+                "laravel/nova": "^3.0",
+                "php": ">=7.2.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [],
+                    "aliases": []
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "OptimistDigital\\NovaTranslationsLoader\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "This Laravel Nova package helps developers load translations into their packages.",
+            "keywords": [
+                "laravel",
+                "nova",
+                "optimistdigital",
+                "translations"
+            ],
+            "support": {
+                "issues": "https://github.com/optimistdigital/nova-translations-loader/issues",
+                "source": "https://github.com/optimistdigital/nova-translations-loader/tree/3.1.0"
+            },
+            "time": "2020-11-20T10:46:16+00:00"
         },
         {
             "name": "paragonie/constant_time_encoding",

@@ -1,3 +1,7 @@
-<h2 style="text-align: center">
-    <span style="color:#f26722">Plus</span> School
-</h2>
+<div class="flex w-full items-center">
+    <div class="w-full m-auto text-center">
+        <img src="{{ \Illuminate\Support\Facades\URL::asset( 'storage/'. nova_get_setting('logo')) }}"
+             width="100"
+             alt="Plus School">
+    </div>
+</div>

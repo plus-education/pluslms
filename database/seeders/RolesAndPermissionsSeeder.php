@@ -20,6 +20,8 @@ class RolesAndPermissionsSeeder extends Seeder
         /*
          * create permissions
          */
+        Permission::create(['name' => 'manage settings']);
+
         Permission::create(['name' => 'manage roles']);
         Permission::create(['name' => 'manage translations']);
         Permission::create(['name' => 'manage backup']);

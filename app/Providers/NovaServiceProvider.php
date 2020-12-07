@@ -5,6 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\Facades\Gate;
 use Joedixon\NovaTranslation\NovaTranslation;
 use Laravel\Nova\Cards\Help;
+use Laravel\Nova\Fields\Image;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
 use Lms\MyCourses\MyCourses;
@@ -21,6 +23,10 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function boot()
     {
         parent::boot();
+
+        \OptimistDigital\NovaSettings\NovaSettings::addSettingsFields([
+            Image::make('Logo', 'logo'),
+        ]);
     }
 
     /**
@@ -100,6 +106,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 ->canSee(function (){
                     return auth()->user()->can('manage translations');
                 }),
+
+            \OptimistDigital\NovaSettings\NovaSettings::make()->canSee(fn () => auth()->user()->can('manage settings')),
         ];
     }
 
