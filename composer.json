@@ -9,7 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.3",
-        "advoor/nova-editor-js": "^2.0",
+        "advoor/nova-editor-js": "^2.0.3",
         "barryvdh/laravel-dompdf": "^0.8.7",
         "bref/bref": "^0.5.31",
         "bref/laravel-bridge": "^0.2.2",

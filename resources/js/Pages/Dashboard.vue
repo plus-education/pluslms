@@ -11,7 +11,12 @@
                 <div v-html="group.html"></div>
             </div>
 
-            <hr>
+            <div class="text-center">
+                <a :href="group.zoom" class="btn bg-green-500 p-4 text-white m-4 rounded-lg">
+                    Ingresar a mi aula virtual
+                </a>
+            </div>
+
 
             <home :courses="courses"></home>
         </section>

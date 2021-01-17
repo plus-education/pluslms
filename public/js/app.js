@@ -3956,6 +3956,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -64135,7 +64140,20 @@ var render = function() {
             _c("div", { domProps: { innerHTML: _vm._s(_vm.group.html) } })
           ]),
           _vm._v(" "),
-          _c("hr"),
+          _c("div", { staticClass: "text-center" }, [
+            _c(
+              "a",
+              {
+                staticClass: "btn bg-green-500 p-4 text-white m-4 rounded-lg",
+                attrs: { href: _vm.group.zoom }
+              },
+              [
+                _vm._v(
+                  "\n                Ingresar a mi aula virtual\n            "
+                )
+              ]
+            )
+          ]),
           _vm._v(" "),
           _c("home", { attrs: { courses: _vm.courses } })
         ],
