@@ -7,6 +7,12 @@
         </template>
 
         <section class="container m-auto">
+            <div>
+                <div v-html="group.html"></div>
+            </div>
+
+            <hr>
+
             <home :courses="courses"></home>
         </section>
 
@@ -25,6 +31,7 @@
 
         props: {
             courses: Object,
+            group: Object,
         },
     }
 </script>

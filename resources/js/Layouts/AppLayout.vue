@@ -8,7 +8,7 @@
                         <!-- Logo -->
                         <div class="flex-shrink-0 flex items-center">
                             <a href="/dashboard">
-                                <jet-application-mark class="block h-9 w-auto" />
+                                <img src="/img/logo.png" alt="" with="50">
                             </a>
                         </div>
 

@@ -2,8 +2,10 @@
 
 namespace App\Nova;
 
+use Advoor\NovaEditorJs\NovaEditorJs;
 use Eminiarts\Tabs\Tabs;
 use Illuminate\Http\Request;
+use Jrodas4044\GridMultiselectBelogsToMany\GridMultiselectBelogsToMany;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\HasMany;
@@ -89,7 +91,7 @@ class Group extends Resource
         return [
             \Laravel\Nova\Fields\Text::make(__('Name'), 'name')->sortable()->required(),
 
-            Textarea::make(__('Description'), 'description'),
+            NovaEditorJs::make(__('Description'), 'Description'),
 
             DateTime::make(__('Start Date'), 'start')
                 ->sortable()

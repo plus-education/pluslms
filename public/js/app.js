@@ -3950,6 +3950,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -3958,7 +3964,8 @@ __webpack_require__.r(__webpack_exports__);
     Home: _home__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   props: {
-    courses: Object
+    courses: Object,
+    group: Object
   }
 });
 
@@ -61734,18 +61741,7 @@ var render = function() {
         _c("div", { staticClass: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" }, [
           _c("div", { staticClass: "flex justify-between h-16" }, [
             _c("div", { staticClass: "flex" }, [
-              _c("div", { staticClass: "flex-shrink-0 flex items-center" }, [
-                _c(
-                  "a",
-                  { attrs: { href: "/dashboard" } },
-                  [
-                    _c("jet-application-mark", {
-                      staticClass: "block h-9 w-auto"
-                    })
-                  ],
-                  1
-                )
-              ]),
+              _vm._m(0),
               _vm._v(" "),
               _c(
                 "div",
@@ -62356,7 +62352,18 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "flex-shrink-0 flex items-center" }, [
+      _c("a", { attrs: { href: "/dashboard" } }, [
+        _c("img", { attrs: { src: "/img/logo.png", alt: "", with: "50" } })
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -64123,7 +64130,15 @@ var render = function() {
       _c(
         "section",
         { staticClass: "container m-auto" },
-        [_c("home", { attrs: { courses: _vm.courses } })],
+        [
+          _c("div", [
+            _c("div", { domProps: { innerHTML: _vm._s(_vm.group.html) } })
+          ]),
+          _vm._v(" "),
+          _c("hr"),
+          _vm._v(" "),
+          _c("home", { attrs: { courses: _vm.courses } })
+        ],
         1
       )
     ]

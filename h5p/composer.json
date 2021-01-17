@@ -1,0 +1,45 @@
+{
+    "name": "djoudi/laravel-h5p",
+    "description": "H5P Plugin for laravel platform",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Abdelouahab Djoudi",
+            "email": "info@djoudi.net"
+        }
+    ],
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Djoudi\\LaravelH5p\\": "src/LaravelH5p"
+        }
+    },
+    "require": {
+        "php": "^7.2",
+        "laravel/framework": "8.*",
+        "laravelcollective/html": "6.*",
+         "h5p/h5p-core": "^1.24.0",
+         "h5p/h5p-editor": "^1.24.0",
+        "guzzlehttp/guzzle": "7.*"
+    },
+    "require-dev": {
+        "fzaninotto/faker": "^1.8",
+        "mockery/mockery": "1.2.*",
+        "phpunit/phpunit": "~7.0",
+        "xethron/migrations-generator": "^2.0"
+    },
+
+     "extra": {
+        "laravel": {
+            "providers": [
+                "Djoudi\\LaravelH5p\\LaravelH5pServiceProvider"
+            ],
+            "aliases": {
+                "LaravelH5p": "Djoudi\\LaravelH5p\\Facades"
+            }
+        }
+    }
+
+}

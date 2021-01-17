@@ -21,6 +21,8 @@
         "fruitcake/laravel-cors": "^2.0",
         "genealabs/nova-file-upload-field": "^0.4.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "h5p/h5p-core": "^1.24",
+        "h5p/h5p-editor": "^1.24",
         "inertiajs/inertia-laravel": "^0.2.11",
         "izi-dev/nova-key-value-suggestion-field": "^1.0",
         "joedixon/nova-translation": "^1.0",
@@ -47,12 +49,17 @@
         "spatie/nova-backup-tool": "^4.0",
         "spatie/nova-tags-field": "^3.0",
         "vyuldashev/nova-permission": "^2.9",
-        "whitecube/nova-flexible-content": "^0.2.5"
+        "whitecube/nova-flexible-content": "^0.2.5",
+        "djoudi/laravel-h5p": "*"
     },
     "repositories": [
         {
             "type": "composer",
             "url": "https://nova.laravel.com"
+        },
+        {
+            "type": "path",
+            "url": "./h5p"
         },
         {
             "type": "path",

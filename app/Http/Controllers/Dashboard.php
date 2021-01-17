@@ -26,6 +26,8 @@ class Dashboard extends Controller
             ];
         });
 
-        return Inertia::render('Dashboard')->with(compact('courses'));
+        $group = auth()->user()->groups()->first();
+
+        return Inertia::render('Dashboard')->with(compact('courses', 'group'));
     }
 }
