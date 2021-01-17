@@ -100,8 +100,7 @@ class Course extends Resource
             Text::make(__('Code'), 'code')->sortable(),
 
             Filepond::make(__('Cover'), 'cover')
-            ->mimesTypes('image/jpeg,image/png')
-            ->disk(env('FILESYSTEM_DRIVER')),
+            ->mimesTypes('image/jpeg,image/png'),
 
             new Tabs(__('Tools'), [
                 HasMany::make(__('Topics'), 'topics', Topic::class),

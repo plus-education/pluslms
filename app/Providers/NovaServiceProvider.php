@@ -107,7 +107,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     return auth()->user()->can('manage translations');
                 }),
 
-            \OptimistDigital\NovaSettings\NovaSettings::make()->canSee(fn () => auth()->user()->can('manage settings')),
+            \OptimistDigital\NovaSettings\NovaSettings::make(),
         ];
     }
 
