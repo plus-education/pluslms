@@ -3385,7 +3385,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -63381,9 +63380,10 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("div", { staticClass: "mt-4" }, [
-        _vm._v("\n        " + _vm._s(_vm.activity.activityable.html) + "\n    ")
-      ]),
+      _c("div", {
+        staticClass: "mt-4",
+        domProps: { innerHTML: _vm._s(_vm.activity.activityable.html) }
+      }),
       _vm._v(" "),
       _c(
         "div",
