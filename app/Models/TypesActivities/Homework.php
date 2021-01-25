@@ -16,6 +16,6 @@ class Homework extends Model
 
     public function getHtmlAttribute()
     {
-        return NovaEditorJs::generateHtmlOutput($this->body);
+        return NovaEditorJs::generateHtmlOutput($this->description);
     }
 }
