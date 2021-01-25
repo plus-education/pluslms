@@ -12,6 +12,8 @@
             >Descargar Documento Adjunto</a>
         </div>
 
+
+
         <comments :activity="activity" :user="user"></comments>
     </div>
 </template>

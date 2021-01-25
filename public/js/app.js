@@ -3385,6 +3385,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -3444,6 +3446,21 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_pdf__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-pdf */ "./node_modules/vue-pdf/src/vuePdfNoSss.vue");
 /* harmony import */ var _Comments__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Comments */ "./resources/js/Pages/Course/Comments.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -63473,12 +63490,66 @@ var render = function() {
     "div",
     { staticClass: "h-full overflow-scroll" },
     [
+      _c("div", {}, [
+        _c(
+          "a",
+          {
+            staticClass:
+              "btn btn-primary bg-green-500 text-white px-4 py-2 shadow-lg flex",
+            attrs: {
+              href: "/storage/" + this.activity.activityable.path,
+              download: "",
+              target: "_blank"
+            }
+          },
+          [
+            _c(
+              "div",
+              { staticClass: "flex items-center align-middle w-auto m-auto" },
+              [
+                _c("div", { staticClass: "flex-shrink" }, [
+                  _c(
+                    "svg",
+                    {
+                      staticClass: "text-white w-8",
+                      attrs: {
+                        xmlns: "http://www.w3.org/2000/svg",
+                        fill: "none",
+                        viewBox: "0 0 24 24",
+                        stroke: "currentColor"
+                      }
+                    },
+                    [
+                      _c("path", {
+                        attrs: {
+                          "stroke-linecap": "round",
+                          "stroke-linejoin": "round",
+                          "stroke-width": "2",
+                          d:
+                            "M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                        }
+                      })
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "ml-2" }, [
+                  _vm._v(
+                    "\n                    Descargar documento\n                "
+                  )
+                ])
+              ]
+            )
+          ]
+        )
+      ]),
+      _vm._v(" "),
       _c(
         "div",
         _vm._l(_vm.numPages, function(i) {
           return _c("pdf", {
             key: i,
-            staticClass: "w-full",
+            staticClass: "w-full shadow-lg border",
             attrs: { src: _vm.src, page: i }
           })
         }),
