@@ -50,7 +50,7 @@ class Video extends Resource
         return [
             Filepond::make( 'path'),
         ];
-    }git
+    }
 
     /**
      * Get the cards available for the request.
