@@ -2,16 +2,12 @@
 
 namespace App\Nova;
 
-use App\Models\Roles;
+use DigitalCreative\Filepond\Filepond;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Password;
-use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Vyuldashev\NovaPermission\RoleSelect;
 
-class Student extends Resource
+class Video extends Resource
 {
     /**
      * Indicates if the resource should be displayed in the sidebar.
@@ -25,21 +21,14 @@ class Student extends Resource
      *
      * @var string
      */
-    public static $model = \App\Models\User::class;
+    public static $model = \App\Models\TypesActivities\Video::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'name';
-
-    /**
-     * The number of resources to show per page via relationships.
-     *
-     * @var int
-     */
-    public static $perPageViaRelationship = 50;
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
@@ -47,41 +36,8 @@ class Student extends Resource
      * @var array
      */
     public static $search = [
-        'name', 'email',
+        'id',
     ];
-
-    /**
-     * Get the displayable label of the resource.
-     *
-     * @return string
-     */
-    public static function label()
-    {
-        return __('Students');
-    }
-
-    /**
-     * Get the displayable singular label of the resource.
-     *
-     * @return string
-     */
-    public static function singularLabel()
-    {
-        return __('Student');
-    }
-
-    /**
-     * Build an "index" query for the given resource.
-     *
-     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    public static function indexQuery(NovaRequest $request, $query)
-    {
-        return $query->role(Roles::STUDENT)->get();
-    }
-
 
     /**
      * Get the fields displayed by the resource.
@@ -91,8 +47,10 @@ class Student extends Resource
      */
     public function fields(Request $request)
     {
-        return UserFileds::fields();
-    }
+        return [
+            Filepond::make( 'path'),
+        ];
+    }git
 
     /**
      * Get the cards available for the request.

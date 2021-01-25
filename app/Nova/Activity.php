@@ -116,6 +116,7 @@ class Activity extends Resource
                 Homework::class,
                 PDF::class,
                 Youtube::class,
+                Video::class,
                 Exercise::class,
             ])
                 ->required()

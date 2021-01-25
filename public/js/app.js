@@ -3893,16 +3893,16 @@ __webpack_require__.r(__webpack_exports__);
           return;
         }
 
-        activity.divider = divider;
-        activity.show = divider == 0 ? true : false;
+        activity.divider = divider; //activity.show = divider == 0 ? true : false;
+
+        activity.show = true;
         return activity;
       });
     },
     changeActivity: function changeActivity(selectedActivity) {
       this.activity = this.topic.activities.find(function (activity) {
         return activity.id == selectedActivity.id;
-      });
-      this.showDividerActivities(selectedActivity);
+      }); //this.showDividerActivities(selectedActivity)
     },
     showDividerActivities: function showDividerActivities(divider) {
       if (divider.type != 'DIVIDER') {
@@ -3935,6 +3935,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.vue");
 /* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./home */ "./resources/js/Pages/home.vue");
+//
 //
 //
 //
@@ -64136,24 +64137,29 @@ var render = function() {
         "section",
         { staticClass: "container m-auto" },
         [
-          _c("div", [
-            _c("div", { domProps: { innerHTML: _vm._s(_vm.group.html) } })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "text-center" }, [
-            _c(
-              "a",
-              {
-                staticClass: "btn bg-green-500 p-4 text-white m-4 rounded-lg",
-                attrs: { href: _vm.group.zoom }
-              },
-              [
-                _vm._v(
-                  "\n                Ingresar a mi aula virtual\n            "
-                )
-              ]
-            )
-          ]),
+          _vm.group != null
+            ? _c("div", [
+                _c("div", { staticClass: "mb-4" }, [
+                  _c("div", { domProps: { innerHTML: _vm._s(_vm.group.html) } })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "text-center" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass:
+                        "btn bg-green-500 p-4 text-white m-4 rounded-lg",
+                      attrs: { href: _vm.group.zoom }
+                    },
+                    [
+                      _vm._v(
+                        "\n                   Ingresar a mi aula virtual\n               "
+                      )
+                    ]
+                  )
+                ])
+              ])
+            : _vm._e(),
           _vm._v(" "),
           _c("home", { attrs: { courses: _vm.courses } })
         ],

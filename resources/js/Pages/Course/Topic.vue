@@ -151,7 +151,8 @@
                     }
 
                     activity.divider = divider;
-                    activity.show = divider == 0 ? true : false;
+                    //activity.show = divider == 0 ? true : false;
+                    activity.show = true
                     return activity
                 })
             },
@@ -161,7 +162,7 @@
                     return activity.id == selectedActivity.id
                 })
 
-                this.showDividerActivities(selectedActivity)
+                //this.showDividerActivities(selectedActivity)
             },
 
             showDividerActivities: function(divider) {

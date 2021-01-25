@@ -31,7 +31,7 @@
         "kirschbaum-development/nova-inline-relationship": "^0.3.0",
         "laravel/framework": "^8.16.1",
         "laravel/jetstream": "^1.1",
-        "laravel/nova": "~3.15.0",
+        "laravel/nova": "~3.20.0",
         "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.0",
         "league/flysystem-aws-s3-v3": "^1.0",

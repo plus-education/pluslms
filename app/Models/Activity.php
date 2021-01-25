@@ -9,6 +9,7 @@ use App\Models\TypesActivities\Link;
 use App\Models\TypesActivities\PDF;
 use App\Models\TypesActivities\Text;
 use App\Models\TypesActivities\Homework;
+use App\Models\TypesActivities\Video;
 use App\Models\TypesActivities\Youtube;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -50,6 +51,7 @@ class Activity extends Model implements Sortable
         Homework::class,
         PDF::class,
         Youtube::class,
+        Video::class,
     ];
 
     public function topic()

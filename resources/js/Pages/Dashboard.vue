@@ -7,16 +7,17 @@
         </template>
 
         <section class="container m-auto">
-            <div>
-                <div v-html="group.html"></div>
-            </div>
+           <div v-if="group != null">
+               <div class="mb-4">
+                   <div v-html="group.html"></div>
+               </div>
 
-            <div class="text-center">
-                <a :href="group.zoom" class="btn bg-green-500 p-4 text-white m-4 rounded-lg">
-                    Ingresar a mi aula virtual
-                </a>
-            </div>
-
+               <div class="text-center">
+                   <a :href="group.zoom" class="btn bg-green-500 p-4 text-white m-4 rounded-lg">
+                       Ingresar a mi aula virtual
+                   </a>
+               </div>
+           </div>
 
             <home :courses="courses"></home>
         </section>

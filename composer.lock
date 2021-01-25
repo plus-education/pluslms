@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1f75c1c763c19fffcdf50d6e213b4705",
+    "content-hash": "19b364b2d766f31ebc3ccc8997173c7a",
     "packages": [
         {
             "name": "advoor/nova-editor-js",
@@ -302,16 +302,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.171.19",
+            "version": "3.172.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "e786e4a8b2ec85b258833d0570ff6b61348cbdb6"
+                "reference": "5a5e66c4d54c392042820703eeb8a6bd3d222924"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/e786e4a8b2ec85b258833d0570ff6b61348cbdb6",
-                "reference": "e786e4a8b2ec85b258833d0570ff6b61348cbdb6",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/5a5e66c4d54c392042820703eeb8a6bd3d222924",
+                "reference": "5a5e66c4d54c392042820703eeb8a6bd3d222924",
                 "shasum": ""
             },
             "require": {
@@ -386,9 +386,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.171.19"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.172.0"
             },
-            "time": "2021-01-15T19:26:11+00:00"
+            "time": "2021-01-22T19:21:38+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -656,26 +656,26 @@
         },
         {
             "name": "brick/math",
-            "version": "0.9.1",
+            "version": "0.9.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/brick/math.git",
-                "reference": "283a40c901101e66de7061bd359252c013dcc43c"
+                "reference": "dff976c2f3487d42c1db75a3b180e2b9f0e72ce0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/brick/math/zipball/283a40c901101e66de7061bd359252c013dcc43c",
-                "reference": "283a40c901101e66de7061bd359252c013dcc43c",
+                "url": "https://api.github.com/repos/brick/math/zipball/dff976c2f3487d42c1db75a3b180e2b9f0e72ce0",
+                "reference": "dff976c2f3487d42c1db75a3b180e2b9f0e72ce0",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "php": "^7.1|^8.0"
+                "php": "^7.1 || ^8.0"
             },
             "require-dev": {
                 "php-coveralls/php-coveralls": "^2.2",
-                "phpunit/phpunit": "^7.5.15|^8.5",
-                "vimeo/psalm": "^3.5"
+                "phpunit/phpunit": "^7.5.15 || ^8.5 || ^9.0",
+                "vimeo/psalm": "4.3.2"
             },
             "type": "library",
             "autoload": {
@@ -700,7 +700,7 @@
             ],
             "support": {
                 "issues": "https://github.com/brick/math/issues",
-                "source": "https://github.com/brick/math/tree/master"
+                "source": "https://github.com/brick/math/tree/0.9.2"
             },
             "funding": [
                 {
@@ -708,7 +708,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-08-18T23:57:15+00:00"
+            "time": "2021-01-20T22:51:39+00:00"
         },
         {
             "name": "brick/money",
@@ -768,16 +768,16 @@
         },
         {
             "name": "cakephp/chronos",
-            "version": "2.0.6",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/chronos.git",
-                "reference": "30baea51824076719921c6c2d720bfd6b49e6dca"
+                "reference": "3f119d1eb8105ed2c43bb72e8fc5c78487620089"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/chronos/zipball/30baea51824076719921c6c2d720bfd6b49e6dca",
-                "reference": "30baea51824076719921c6c2d720bfd6b49e6dca",
+                "url": "https://api.github.com/repos/cakephp/chronos/zipball/3f119d1eb8105ed2c43bb72e8fc5c78487620089",
+                "reference": "3f119d1eb8105ed2c43bb72e8fc5c78487620089",
                 "shasum": ""
             },
             "require": {
@@ -785,8 +785,7 @@
             },
             "require-dev": {
                 "cakephp/cakephp-codesniffer": "^4.0",
-                "phpbench/phpbench": "^1.0@dev",
-                "phpunit/phpunit": "^8.0"
+                "phpunit/phpunit": "^8.0 || ^9.0"
             },
             "type": "library",
             "autoload": {
@@ -824,7 +823,7 @@
                 "issues": "https://github.com/cakephp/chronos/issues",
                 "source": "https://github.com/cakephp/chronos"
             },
-            "time": "2020-08-22T02:42:12+00:00"
+            "time": "2021-01-16T14:35:30+00:00"
         },
         {
             "name": "coderello/laravel-nova-lang",
@@ -3183,16 +3182,16 @@
         },
         {
             "name": "laravel/fortify",
-            "version": "v1.7.4",
+            "version": "v1.7.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/fortify.git",
-                "reference": "2ca0c06bf7385d26730cfc3783865a9c06a51f63"
+                "reference": "12c33249673f16cc1e01d6a3a0e92372153a2f92"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/fortify/zipball/2ca0c06bf7385d26730cfc3783865a9c06a51f63",
-                "reference": "2ca0c06bf7385d26730cfc3783865a9c06a51f63",
+                "url": "https://api.github.com/repos/laravel/fortify/zipball/12c33249673f16cc1e01d6a3a0e92372153a2f92",
+                "reference": "12c33249673f16cc1e01d6a3a0e92372153a2f92",
                 "shasum": ""
             },
             "require": {
@@ -3242,20 +3241,20 @@
                 "issues": "https://github.com/laravel/fortify/issues",
                 "source": "https://github.com/laravel/fortify"
             },
-            "time": "2021-01-07T18:43:41+00:00"
+            "time": "2021-01-19T15:01:25+00:00"
         },
         {
             "name": "laravel/framework",
-            "version": "v8.22.1",
+            "version": "v8.24.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "5c70991b96c5722afed541a996479b5112654c8b"
+                "reference": "d16e9f875e4d7609a05d5007393e22ba95efd1fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/5c70991b96c5722afed541a996479b5112654c8b",
-                "reference": "5c70991b96c5722afed541a996479b5112654c8b",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/d16e9f875e4d7609a05d5007393e22ba95efd1fc",
+                "reference": "d16e9f875e4d7609a05d5007393e22ba95efd1fc",
                 "shasum": ""
             },
             "require": {
@@ -3409,7 +3408,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-01-13T13:37:56+00:00"
+            "time": "2021-01-21T14:19:29+00:00"
         },
         {
             "name": "laravel/jetstream",
@@ -3479,17 +3478,17 @@
         },
         {
             "name": "laravel/nova",
-            "version": "3.15.0",
+            "version": "3.20.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:laravel/nova.git",
-                "reference": "54057eedd1b500f1d9b3395f21d882190c08cd50"
+                "reference": "1aac226bb9cd928bde1c7daa9b90c53e8b62e3ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-54057eedd1b500f1d9b3395f21d882190c08cd50-zip-1ef7d6.zip",
-                "reference": "54057eedd1b500f1d9b3395f21d882190c08cd50",
-                "shasum": "84bfb83819c0c80f44afd195cf347d42ae79bfb6"
+                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-1aac226bb9cd928bde1c7daa9b90c53e8b62e3ea-zip-38e8b1.zip",
+                "reference": "1aac226bb9cd928bde1c7daa9b90c53e8b62e3ea",
+                "shasum": "9782ab64f7dc798b5499b8eb0f65f1a2985629fb"
             },
             "require": {
                 "brick/money": "^0.5.0",
@@ -3498,8 +3497,8 @@
                 "illuminate/support": "^7.0|^8.0",
                 "laravel/ui": "^2.0|^3.0",
                 "moontoast/math": "^1.1",
-                "php": "^7.2.5",
-                "spatie/once": "^1.1 | ^2.0",
+                "php": "^7.2.5|^8.0",
+                "spatie/once": "^1.1|^2.0|^3.0",
                 "symfony/console": "^5.0",
                 "symfony/finder": "^5.0",
                 "symfony/intl": "^5.0",
@@ -3507,9 +3506,9 @@
             },
             "require-dev": {
                 "laravel/legacy-factories": "^1.0",
-                "laravel/nova-dusk-suite": "dev-master",
-                "mockery/mockery": "^1.0",
-                "orchestra/testbench-dusk": "^6.3",
+                "laravel/nova-dusk-suite": "8.x-dev",
+                "mockery/mockery": "^1.3.3|^1.4.2",
+                "orchestra/testbench-dusk": "^6.5",
                 "phpunit/phpunit": "^8.4",
                 "predis/predis": "^1.1"
             },
@@ -3544,6 +3543,7 @@
                     "@php -r \"if (file_exists('.env.dusk')) { copy('.env.dusk', 'vendor/laravel/nova-dusk-suite/.env'); } else { copy('.env.dusk.example', 'vendor/laravel/nova-dusk-suite/.env'); }\""
                 ],
                 "dusk:assets": [
+                    "yarn install",
                     "yarn run prod",
                     "./vendor/bin/testbench-dusk nova:publish"
                 ],
@@ -3565,7 +3565,7 @@
                 "admin",
                 "laravel"
             ],
-            "time": "2020-11-10T16:05:55+00:00"
+            "time": "2021-01-19T18:52:03+00:00"
         },
         {
             "name": "laravel/sanctum",
@@ -4143,16 +4143,16 @@
         },
         {
             "name": "league/mime-type-detection",
-            "version": "1.5.1",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/mime-type-detection.git",
-                "reference": "353f66d7555d8a90781f6f5e7091932f9a4250aa"
+                "reference": "3b9dff8aaf7323590c1d2e443db701eb1f9aa0d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/mime-type-detection/zipball/353f66d7555d8a90781f6f5e7091932f9a4250aa",
-                "reference": "353f66d7555d8a90781f6f5e7091932f9a4250aa",
+                "url": "https://api.github.com/repos/thephpleague/mime-type-detection/zipball/3b9dff8aaf7323590c1d2e443db701eb1f9aa0d3",
+                "reference": "3b9dff8aaf7323590c1d2e443db701eb1f9aa0d3",
                 "shasum": ""
             },
             "require": {
@@ -4160,8 +4160,9 @@
                 "php": "^7.2 || ^8.0"
             },
             "require-dev": {
-                "phpstan/phpstan": "^0.12.36",
-                "phpunit/phpunit": "^8.5.8"
+                "friendsofphp/php-cs-fixer": "^2.18",
+                "phpstan/phpstan": "^0.12.68",
+                "phpunit/phpunit": "^8.5.8 || ^9.3"
             },
             "type": "library",
             "autoload": {
@@ -4182,7 +4183,7 @@
             "description": "Mime-type detection for Flysystem",
             "support": {
                 "issues": "https://github.com/thephpleague/mime-type-detection/issues",
-                "source": "https://github.com/thephpleague/mime-type-detection/tree/1.5.1"
+                "source": "https://github.com/thephpleague/mime-type-detection/tree/1.7.0"
             },
             "funding": [
                 {
@@ -4194,7 +4195,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-10-18T11:50:25+00:00"
+            "time": "2021-01-18T20:58:21+00:00"
         },
         {
             "name": "lms/activity-comments",
@@ -4662,20 +4663,20 @@
         },
         {
             "name": "markbaker/matrix",
-            "version": "2.0.0",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/MarkBaker/PHPMatrix.git",
-                "reference": "9567d9c4c519fbe40de01dbd1e4469dbbb66f46a"
+                "reference": "35a2d1a919a1de732402f694925168c53c17c838"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MarkBaker/PHPMatrix/zipball/9567d9c4c519fbe40de01dbd1e4469dbbb66f46a",
-                "reference": "9567d9c4c519fbe40de01dbd1e4469dbbb66f46a",
+                "url": "https://api.github.com/repos/MarkBaker/PHPMatrix/zipball/35a2d1a919a1de732402f694925168c53c17c838",
+                "reference": "35a2d1a919a1de732402f694925168c53c17c838",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.2 || ^8.0"
+                "php": "^7.1 || ^8.0"
             },
             "require-dev": {
                 "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
@@ -4693,22 +4694,22 @@
                     "Matrix\\": "classes/src/"
                 },
                 "files": [
-                    "classes/src/functions/adjoint.php",
-                    "classes/src/functions/antidiagonal.php",
-                    "classes/src/functions/cofactors.php",
-                    "classes/src/functions/determinant.php",
-                    "classes/src/functions/diagonal.php",
-                    "classes/src/functions/identity.php",
-                    "classes/src/functions/inverse.php",
-                    "classes/src/functions/minors.php",
-                    "classes/src/functions/trace.php",
-                    "classes/src/functions/transpose.php",
-                    "classes/src/operations/add.php",
-                    "classes/src/operations/directsum.php",
-                    "classes/src/operations/subtract.php",
-                    "classes/src/operations/multiply.php",
-                    "classes/src/operations/divideby.php",
-                    "classes/src/operations/divideinto.php"
+                    "classes/src/Functions/adjoint.php",
+                    "classes/src/Functions/antidiagonal.php",
+                    "classes/src/Functions/cofactors.php",
+                    "classes/src/Functions/determinant.php",
+                    "classes/src/Functions/diagonal.php",
+                    "classes/src/Functions/identity.php",
+                    "classes/src/Functions/inverse.php",
+                    "classes/src/Functions/minors.php",
+                    "classes/src/Functions/trace.php",
+                    "classes/src/Functions/transpose.php",
+                    "classes/src/Operations/add.php",
+                    "classes/src/Operations/directsum.php",
+                    "classes/src/Operations/subtract.php",
+                    "classes/src/Operations/multiply.php",
+                    "classes/src/Operations/divideby.php",
+                    "classes/src/Operations/divideinto.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -4730,9 +4731,9 @@
             ],
             "support": {
                 "issues": "https://github.com/MarkBaker/PHPMatrix/issues",
-                "source": "https://github.com/MarkBaker/PHPMatrix/tree/PHP8"
+                "source": "https://github.com/MarkBaker/PHPMatrix/tree/2.1.1"
             },
-            "time": "2020-08-28T17:11:00+00:00"
+            "time": "2021-01-21T13:53:09+00:00"
         },
         {
             "name": "media24si/nova-youtube-field",
@@ -5497,16 +5498,16 @@
         },
         {
             "name": "optimistdigital/nova-settings",
-            "version": "3.1.0",
+            "version": "3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/optimistdigital/nova-settings.git",
-                "reference": "90cf967fbee60e22ac6683502989d38d9350263c"
+                "reference": "96cf5c88998185f635349d3b6ab22b47f6b79906"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/optimistdigital/nova-settings/zipball/90cf967fbee60e22ac6683502989d38d9350263c",
-                "reference": "90cf967fbee60e22ac6683502989d38d9350263c",
+                "url": "https://api.github.com/repos/optimistdigital/nova-settings/zipball/96cf5c88998185f635349d3b6ab22b47f6b79906",
+                "reference": "96cf5c88998185f635349d3b6ab22b47f6b79906",
                 "shasum": ""
             },
             "require": {
@@ -5547,7 +5548,7 @@
             ],
             "support": {
                 "issues": "https://github.com/optimistdigital/nova-settings/issues",
-                "source": "https://github.com/optimistdigital/nova-settings/tree/3.1.0"
+                "source": "https://github.com/optimistdigital/nova-settings/tree/3.1.1"
             },
             "funding": [
                 {
@@ -5555,20 +5556,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-12-04T08:22:05+00:00"
+            "time": "2021-01-18T10:23:46+00:00"
         },
         {
             "name": "optimistdigital/nova-tailwind",
-            "version": "1.0.2",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/optimistdigital/nova-tailwind.git",
-                "reference": "0eceb682f9a275d2d5e3b45917ea12c91c643d11"
+                "reference": "fd2b4791185b3ec26a12f7f193db3725a38ec27a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/optimistdigital/nova-tailwind/zipball/0eceb682f9a275d2d5e3b45917ea12c91c643d11",
-                "reference": "0eceb682f9a275d2d5e3b45917ea12c91c643d11",
+                "url": "https://api.github.com/repos/optimistdigital/nova-tailwind/zipball/fd2b4791185b3ec26a12f7f193db3725a38ec27a",
+                "reference": "fd2b4791185b3ec26a12f7f193db3725a38ec27a",
                 "shasum": ""
             },
             "require": {
@@ -5613,9 +5614,9 @@
             ],
             "support": {
                 "issues": "https://github.com/optimistdigital/nova-tailwind/issues",
-                "source": "https://github.com/optimistdigital/nova-tailwind/tree/master"
+                "source": "https://github.com/optimistdigital/nova-tailwind/tree/1.1.0"
             },
-            "time": "2020-08-31T07:54:36+00:00"
+            "time": "2021-01-21T11:26:54+00:00"
         },
         {
             "name": "optimistdigital/nova-translations-loader",
@@ -6847,16 +6848,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.10.5",
+            "version": "v0.10.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "7c710551d4a2653afa259c544508dc18a9098956"
+                "reference": "6f990c19f91729de8b31e639d6e204ea59f19cf3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/7c710551d4a2653afa259c544508dc18a9098956",
-                "reference": "7c710551d4a2653afa259c544508dc18a9098956",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/6f990c19f91729de8b31e639d6e204ea59f19cf3",
+                "reference": "6f990c19f91729de8b31e639d6e204ea59f19cf3",
                 "shasum": ""
             },
             "require": {
@@ -6885,7 +6886,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.10.x-dev"
+                    "dev-main": "0.10.x-dev"
                 }
             },
             "autoload": {
@@ -6917,9 +6918,9 @@
             ],
             "support": {
                 "issues": "https://github.com/bobthecow/psysh/issues",
-                "source": "https://github.com/bobthecow/psysh/tree/v0.10.5"
+                "source": "https://github.com/bobthecow/psysh/tree/v0.10.6"
             },
-            "time": "2020-12-04T02:51:30+00:00"
+            "time": "2021-01-18T15:53:43+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -6967,16 +6968,16 @@
         },
         {
             "name": "ramsey/collection",
-            "version": "1.1.1",
+            "version": "1.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ramsey/collection.git",
-                "reference": "24d93aefb2cd786b7edd9f45b554aea20b28b9b1"
+                "reference": "28a5c4ab2f5111db6a60b2b4ec84057e0f43b9c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ramsey/collection/zipball/24d93aefb2cd786b7edd9f45b554aea20b28b9b1",
-                "reference": "24d93aefb2cd786b7edd9f45b554aea20b28b9b1",
+                "url": "https://api.github.com/repos/ramsey/collection/zipball/28a5c4ab2f5111db6a60b2b4ec84057e0f43b9c1",
+                "reference": "28a5c4ab2f5111db6a60b2b4ec84057e0f43b9c1",
                 "shasum": ""
             },
             "require": {
@@ -6986,19 +6987,19 @@
                 "captainhook/captainhook": "^5.3",
                 "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
                 "ergebnis/composer-normalize": "^2.6",
-                "fzaninotto/faker": "^1.5",
+                "fakerphp/faker": "^1.5",
                 "hamcrest/hamcrest-php": "^2",
-                "jangregor/phpstan-prophecy": "^0.6",
+                "jangregor/phpstan-prophecy": "^0.8",
                 "mockery/mockery": "^1.3",
                 "phpstan/extension-installer": "^1",
                 "phpstan/phpstan": "^0.12.32",
                 "phpstan/phpstan-mockery": "^0.12.5",
                 "phpstan/phpstan-phpunit": "^0.12.11",
-                "phpunit/phpunit": "^8.5",
+                "phpunit/phpunit": "^8.5 || ^9",
                 "psy/psysh": "^0.10.4",
                 "slevomat/coding-standard": "^6.3",
                 "squizlabs/php_codesniffer": "^3.5",
-                "vimeo/psalm": "^3.12.2"
+                "vimeo/psalm": "^4.4"
             },
             "type": "library",
             "autoload": {
@@ -7028,15 +7029,19 @@
             ],
             "support": {
                 "issues": "https://github.com/ramsey/collection/issues",
-                "source": "https://github.com/ramsey/collection/tree/1.1.1"
+                "source": "https://github.com/ramsey/collection/tree/1.1.3"
             },
             "funding": [
                 {
                     "url": "https://github.com/ramsey",
                     "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/ramsey/collection",
+                    "type": "tidelift"
                 }
             ],
-            "time": "2020-09-10T20:58:17+00:00"
+            "time": "2021-01-21T17:40:04+00:00"
         },
         {
             "name": "ramsey/uuid",
@@ -7364,16 +7369,16 @@
         },
         {
             "name": "spatie/eloquent-sortable",
-            "version": "3.10.0",
+            "version": "3.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/eloquent-sortable.git",
-                "reference": "efc786971d5308ff75d5af8e04f7f759dd8450c2"
+                "reference": "b06fa886559f8d40e31c8a69fd32bd45401dc5da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/eloquent-sortable/zipball/efc786971d5308ff75d5af8e04f7f759dd8450c2",
-                "reference": "efc786971d5308ff75d5af8e04f7f759dd8450c2",
+                "url": "https://api.github.com/repos/spatie/eloquent-sortable/zipball/b06fa886559f8d40e31c8a69fd32bd45401dc5da",
+                "reference": "b06fa886559f8d40e31c8a69fd32bd45401dc5da",
                 "shasum": ""
             },
             "require": {
@@ -7420,7 +7425,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/eloquent-sortable/issues",
-                "source": "https://github.com/spatie/eloquent-sortable/tree/3.10.0"
+                "source": "https://github.com/spatie/eloquent-sortable/tree/3.11.0"
             },
             "funding": [
                 {
@@ -7428,7 +7433,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-11-25T12:55:36+00:00"
+            "time": "2021-01-18T00:32:12+00:00"
         },
         {
             "name": "spatie/image",
@@ -10799,16 +10804,16 @@
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v5.2.0",
+            "version": "v5.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "fba64139db67123c7a57072e5f8d3db10d160b66"
+                "reference": "b3eac5c7ac896e52deab4a99068e3f4ab12d9e56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/fba64139db67123c7a57072e5f8d3db10d160b66",
-                "reference": "fba64139db67123c7a57072e5f8d3db10d160b66",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/b3eac5c7ac896e52deab4a99068e3f4ab12d9e56",
+                "reference": "b3eac5c7ac896e52deab4a99068e3f4ab12d9e56",
                 "shasum": ""
             },
             "require": {
@@ -10823,7 +10828,7 @@
             "require-dev": {
                 "bamarni/composer-bin-plugin": "^1.4.1",
                 "ext-filter": "*",
-                "phpunit/phpunit": "^7.5.20 || ^8.5.2 || ^9.0"
+                "phpunit/phpunit": "^7.5.20 || ^8.5.14 || ^9.5.1"
             },
             "suggest": {
                 "ext-filter": "Required to use the boolean validator."
@@ -10831,7 +10836,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "5.2-dev"
+                    "dev-master": "5.3-dev"
                 }
             },
             "autoload": {
@@ -10863,7 +10868,7 @@
             ],
             "support": {
                 "issues": "https://github.com/vlucas/phpdotenv/issues",
-                "source": "https://github.com/vlucas/phpdotenv/tree/v5.2.0"
+                "source": "https://github.com/vlucas/phpdotenv/tree/v5.3.0"
             },
             "funding": [
                 {
@@ -10875,7 +10880,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-09-14T15:57:31+00:00"
+            "time": "2021-01-20T15:23:13+00:00"
         },
         {
             "name": "voku/portable-ascii",
@@ -11006,12 +11011,12 @@
             "version": "1.9.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/webmozart/assert.git",
+                "url": "https://github.com/webmozarts/assert.git",
                 "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozart/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
+                "url": "https://api.github.com/repos/webmozarts/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
                 "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389",
                 "shasum": ""
             },
@@ -11049,8 +11054,8 @@
                 "validate"
             ],
             "support": {
-                "issues": "https://github.com/webmozart/assert/issues",
-                "source": "https://github.com/webmozart/assert/tree/master"
+                "issues": "https://github.com/webmozarts/assert/issues",
+                "source": "https://github.com/webmozarts/assert/tree/1.9.1"
             },
             "time": "2020-07-08T17:02:28+00:00"
         },
@@ -11385,16 +11390,16 @@
         },
         {
             "name": "filp/whoops",
-            "version": "2.9.1",
+            "version": "2.9.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "307fb34a5ab697461ec4c9db865b20ff2fd40771"
+                "reference": "df7933820090489623ce0be5e85c7e693638e536"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/307fb34a5ab697461ec4c9db865b20ff2fd40771",
-                "reference": "307fb34a5ab697461ec4c9db865b20ff2fd40771",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/df7933820090489623ce0be5e85c7e693638e536",
+                "reference": "df7933820090489623ce0be5e85c7e693638e536",
                 "shasum": ""
             },
             "require": {
@@ -11444,9 +11449,15 @@
             ],
             "support": {
                 "issues": "https://github.com/filp/whoops/issues",
-                "source": "https://github.com/filp/whoops/tree/2.9.1"
+                "source": "https://github.com/filp/whoops/tree/2.9.2"
             },
-            "time": "2020-11-01T12:00:00+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/denis-sokolov",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-01-24T12:00:00+00:00"
         },
         {
             "name": "fzaninotto/faker",
