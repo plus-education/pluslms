@@ -40,6 +40,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::post('/courses/saveActivity', [CoursesController::class, 'saveActivity'])
         ->name('courses.saveActivity');
 
+    Route::post('/courses/saveStudentHomework/{id}', [CoursesController::class, 'saveStudentHomework']);
+    Route::get('/courses/studentHomework/{id}', [CoursesController::class, 'studentHomework']);
+
 
     Route::get('/course/topic/gradebookPdf/{id}', [CoursesController::class, 'topicGradebookPdf'])
         ->name('courses.topicGradebookPdf');

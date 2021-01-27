@@ -71,6 +71,43 @@ class CoursesController extends Controller
         ]);
     }
 
+    public function saveStudentHomework(Request $request, $activity_id)
+    {
+        if(!$request->file('file')) {
+            return false;
+        }
+
+        $activity = Activity::find($activity_id);
+
+        $path = $request->file('file')->store('homework');
+
+        $score = auth()->user()->activities->where('id', $activity->id)->first();
+
+        if ($score) {
+            return auth()->user()->activities()->updateExistingPivot($activity->id,  [
+                'file' =>  $path,
+            ]);
+        }
+
+        auth()->user()->activities()->attach($activity->id,  [
+            'comment' =>  '',
+            'score' => 0,
+            'file' => $path
+        ]);
+    }
+
+
+    public function studentHomework($activityId)
+    {
+        $file = auth()->user()->activities->where('id', $activityId)->first()->pivot->file;
+
+        if ($file == ''){
+            return json_encode(['status'=> false]);
+        }
+
+        return json_encode(['status'=> true, 'file' => $file]);
+    }
+
     public function topicGradebookPdf($id)
     {
         $topic = Topic::find($id);

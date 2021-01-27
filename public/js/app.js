@@ -3387,6 +3387,30 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -3395,6 +3419,66 @@ __webpack_require__.r(__webpack_exports__);
   props: {
     activity: Object,
     user: Object
+  },
+  data: function data() {
+    return {
+      file: '',
+      studentSendFile: false,
+      studentSendFilePath: ''
+    };
+  },
+  mounted: function mounted() {
+    this.getHomework();
+  },
+  methods: {
+    getHomework: function getHomework() {
+      var _this = this;
+
+      axios.get("/courses/studentHomework/".concat(this.activity.id)).then(function (response) {
+        if (response.status == false) {
+          return false;
+        }
+
+        _this.studentSendFile = true;
+        _this.studentSendFilePath = response.file;
+      });
+    },
+
+    /*
+       Submits the file to the server
+     */
+    submitFile: function submitFile() {
+      /*
+              Initialize the form data
+          */
+      var formData = new FormData();
+      /*
+          Add the form data we need to submit
+      */
+
+      formData.append('file', this.file);
+      /*
+        Make the request to the POST /single-file URL
+      */
+
+      axios.post("/courses/saveStudentHomework/".concat(this.activity.id), formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      }).then(function () {
+        console.log('SUCCESS!!');
+        this.getHomework();
+      })["catch"](function () {
+        console.log('FAILURE!!');
+      });
+    },
+
+    /*
+      Handles a change on the file upload
+    */
+    handleFileUpload: function handleFileUpload() {
+      this.file = this.$refs.file.files[0];
+    }
   }
 });
 
@@ -63423,12 +63507,121 @@ var render = function() {
         ]
       ),
       _vm._v(" "),
+      _c("div", { staticClass: "text-center" }, [
+        _c("strong", [_vm._v("Punteo: ")]),
+        _vm._v(" 0 / " + _vm._s(_vm.activity.score) + "\n    ")
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.studentSendFile == false,
+              expression: "studentSendFile == false"
+            }
+          ],
+          staticClass: "my-4 mx-auto bg-gray-200 p-6 flex flex-col align-middle"
+        },
+        [
+          _c("div", { staticClass: "text-center m-8" }, [
+            _c("label", [
+              _c("strong", [_vm._v("Cargar Archivo: ")]),
+              _vm._v(" "),
+              _c("input", {
+                ref: "file",
+                attrs: { type: "file", id: "file" },
+                on: {
+                  change: function($event) {
+                    return _vm.handleFileUpload()
+                  }
+                }
+              })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "text-center" }, [
+            _c(
+              "button",
+              {
+                staticClass: "btn bg-green-500 shadow-lg px-4 py-2 text-white",
+                on: {
+                  click: function($event) {
+                    return _vm.submitFile()
+                  }
+                }
+              },
+              [_vm._v("Entregar")]
+            )
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.studentSendFile == true,
+              expression: "studentSendFile == true"
+            }
+          ],
+          staticClass: "mb-4"
+        },
+        [
+          _c("div", { staticClass: "iten" }, [
+            _c(
+              "svg",
+              {
+                staticClass:
+                  "text-center mx-auto text-green-400 font-bold text-lg w-24",
+                attrs: {
+                  xmlns: "http://www.w3.org/2000/svg",
+                  fill: "none",
+                  viewBox: "0 0 24 24",
+                  stroke: "currentColor"
+                }
+              },
+              [
+                _c("path", {
+                  attrs: {
+                    "stroke-linecap": "round",
+                    "stroke-linejoin": "round",
+                    "stroke-width": "2",
+                    d: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  }
+                })
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _vm._m(0)
+        ]
+      ),
+      _vm._v(" "),
       _c("comments", { attrs: { activity: _vm.activity, user: _vm.user } })
     ],
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c(
+        "h4",
+        { staticClass: "text-center text-green-400 font-bold text-lg" },
+        [_vm._v("Tarea Entregada")]
+      )
+    ])
+  }
+]
 render._withStripped = true
 
 

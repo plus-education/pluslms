@@ -12,10 +12,15 @@ class Homework extends Model
 
     const COMPONENT = 'HOMEWORK';
 
-    protected $appends = ['html'];
+    protected $appends = ['html', 'userFile'];
 
     public function getHtmlAttribute()
     {
         return NovaEditorJs::generateHtmlOutput($this->description);
+    }
+
+    public function getUserFileAttribute()
+    {
+        //return auth()->user()->activities->where('id', $this->id)->first()->file;
     }
 }

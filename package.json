@@ -50,6 +50,7 @@
         "serverless": "^2.10.0",
         "tailwindcss": "^1.8.8",
         "vue": "^2.6.12",
+        "vue-file-agent": "^1.7.3",
         "vue-pdf": "^4.1.0"
     }
 }
