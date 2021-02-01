@@ -12,7 +12,7 @@
             <a
                 v-if="activity.activityable.file != null"
                 class="bg-blue-100 px-6 py-4 shadow rounded-lg font-bold"
-                :href="`/storage/${activity.activityable.path}`"
+                :href="`/storage/${activity.activityable.file}`"
                 target="_blank"
             >Descargar Documento Adjunto</a>
         </div>

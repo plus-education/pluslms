@@ -63562,7 +63562,7 @@ var render = function() {
                   staticClass:
                     "bg-blue-100 px-6 py-4 shadow rounded-lg font-bold",
                   attrs: {
-                    href: "/storage/" + _vm.activity.activityable.path,
+                    href: "/storage/" + _vm.activity.activityable.file,
                     target: "_blank"
                   }
                 },
