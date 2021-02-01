@@ -75,7 +75,8 @@ class Homework extends Resource
                 ->required()
                 ->rules('required'),
 
-            \Laravel\Nova\Fields\File::make(__('File'), 'file'),
+            \Laravel\Nova\Fields\File::make(__('File'), 'file')
+                ->disk('public'),
 
             Boolean::make(__('Is Virtual'), 'isVirtual')->default(true),
         ];

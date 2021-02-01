@@ -42,6 +42,15 @@ class Activity extends Model implements Sortable
         'start', 'end'
     ];
 
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'end' => 'datetime:d-m-Y',
+    ];
+
     protected $types = [
         Divider::class,
         Exercise::class,

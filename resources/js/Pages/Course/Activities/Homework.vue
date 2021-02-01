@@ -1,5 +1,10 @@
 <template>
     <div>
+        <div class="bg-yellow-200 text-center p-2 shadow-lg">
+            <p>
+                <strong>Último  día para entrega: </strong> {{ activity.end }}
+            </p>
+        </div>
         <div class="mt-4" v-html="activity.activityable.html">
         </div>
 
@@ -27,14 +32,48 @@
             </div>
         </div>
 
-        <div  v-show="studentSendFile == true"  class="mb-4">
+        <div  v-show="studentSendFile == true"  class="mb-4 mt-4">
             <div class="iten">
                 <svg class="text-center mx-auto text-green-400 font-bold text-lg w-24" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
             </div>
+
             <div>
                 <h4 class="text-center text-green-400 font-bold text-lg">Tarea Entregada</h4>
+            </div>
+
+            <div class="text-center text-gray-400 font-bold text-sm mt-4">
+                <a :href="`/storage/${studentSendFilePath}`"  target="_blank"  download>
+                    <div class="flex m-auto justify-center items-center">
+                       <div class="flex-shrink">
+                           <svg class="w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
+                           </svg>
+                       </div>
+
+                        <div class="ml-2">
+                            Descargar mi archivo
+                        </div>
+                    </div>
+                </a>
+
+
+                <div class="flex justify-end text-red-400 font-bold text-xs mt-4">
+                    <button @click="deleteHomework()">
+                        <div class="flex m-auto justify-end item-center">
+                            <div class="flex-shrink">
+                                <svg class="w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                </svg>
+                            </div>
+
+                            <div class="ml-2">
+                                Eliminar entrega de tarea
+                            </div>
+                        </div>
+                    </button>
+                </div>
             </div>
         </div>
 
@@ -44,9 +83,11 @@
 
 <script>
     import Comments from "../Comments";
+    import Button from "../../../Jetstream/Button";
 
     export default {
         components: {
+            Button,
             Comments,
         },
 
@@ -70,14 +111,29 @@
         methods: {
             getHomework() {
                 axios.get(`/courses/studentHomework/${this.activity.id}`).then(response => {
-                    if(response.status == false) {
+                    if(response.data.status == false) {
+                        this.studentSendFile = false
+                        this.studentSendFilePath = ''
                         return false
                     }
 
                     this.studentSendFile = true
-                    this.studentSendFilePath = response.file
+                    this.studentSendFilePath = response.data.file
                 })
             },
+
+            deleteHomework() {
+                let confirm = window.confirm("Estas a punto de eliminar la entrega de tu tarea!")
+
+                if(confirm == false) {
+                    return false;
+                }
+
+                axios.get(`/courses/studentDeleteHomework/${this.activity.id}`).then(response => {
+                    this.getHomework()
+                })
+            },
+
             /*
                Submits the file to the server
              */
@@ -102,13 +158,10 @@
                             'Content-Type': 'multipart/form-data'
                         }
                     }
-                ).then(function(){
+                ).then(response => {
                     console.log('SUCCESS!!');
                     this.getHomework()
                 })
-                    .catch(function(){
-                        console.log('FAILURE!!');
-                    });
             },
 
             /*

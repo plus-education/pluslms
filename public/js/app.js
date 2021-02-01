@@ -3367,6 +3367,46 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Comments__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Comments */ "./resources/js/Pages/Course/Comments.vue");
+/* harmony import */ var _Jetstream_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../Jetstream/Button */ "./resources/js/Jetstream/Button.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3412,8 +3452,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
+    Button: _Jetstream_Button__WEBPACK_IMPORTED_MODULE_1__["default"],
     Comments: _Comments__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   props: {
@@ -3435,12 +3477,27 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get("/courses/studentHomework/".concat(this.activity.id)).then(function (response) {
-        if (response.status == false) {
+        if (response.data.status == false) {
+          _this.studentSendFile = false;
+          _this.studentSendFilePath = '';
           return false;
         }
 
         _this.studentSendFile = true;
-        _this.studentSendFilePath = response.file;
+        _this.studentSendFilePath = response.data.file;
+      });
+    },
+    deleteHomework: function deleteHomework() {
+      var _this2 = this;
+
+      var confirm = window.confirm("Estas a punto de eliminar la entrega de tu tarea!");
+
+      if (confirm == false) {
+        return false;
+      }
+
+      axios.get("/courses/studentDeleteHomework/".concat(this.activity.id)).then(function (response) {
+        _this2.getHomework();
       });
     },
 
@@ -3448,6 +3505,8 @@ __webpack_require__.r(__webpack_exports__);
        Submits the file to the server
      */
     submitFile: function submitFile() {
+      var _this3 = this;
+
       /*
               Initialize the form data
           */
@@ -3465,11 +3524,10 @@ __webpack_require__.r(__webpack_exports__);
         headers: {
           'Content-Type': 'multipart/form-data'
         }
-      }).then(function () {
+      }).then(function (response) {
         console.log('SUCCESS!!');
-        this.getHomework();
-      })["catch"](function () {
-        console.log('FAILURE!!');
+
+        _this3.getHomework();
       });
     },
 
@@ -63481,6 +63539,13 @@ var render = function() {
   return _c(
     "div",
     [
+      _c("div", { staticClass: "bg-yellow-200 text-center p-2 shadow-lg" }, [
+        _c("p", [
+          _c("strong", [_vm._v("Último  día para entrega: ")]),
+          _vm._v(" " + _vm._s(_vm.activity.end) + "\n        ")
+        ])
+      ]),
+      _vm._v(" "),
       _c("div", {
         staticClass: "mt-4",
         domProps: { innerHTML: _vm._s(_vm.activity.activityable.html) }
@@ -63570,7 +63635,7 @@ var render = function() {
               expression: "studentSendFile == true"
             }
           ],
-          staticClass: "mb-4"
+          staticClass: "mb-4 mt-4"
         },
         [
           _c("div", { staticClass: "iten" }, [
@@ -63599,7 +63664,122 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _vm._m(0)
+          _vm._m(0),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "text-center text-gray-400 font-bold text-sm mt-4" },
+            [
+              _c(
+                "a",
+                {
+                  attrs: {
+                    href: "/storage/" + _vm.studentSendFilePath,
+                    target: "_blank",
+                    download: ""
+                  }
+                },
+                [
+                  _c(
+                    "div",
+                    { staticClass: "flex m-auto justify-center items-center" },
+                    [
+                      _c("div", { staticClass: "flex-shrink" }, [
+                        _c(
+                          "svg",
+                          {
+                            staticClass: "w-8",
+                            attrs: {
+                              xmlns: "http://www.w3.org/2000/svg",
+                              fill: "none",
+                              viewBox: "0 0 24 24",
+                              stroke: "currentColor"
+                            }
+                          },
+                          [
+                            _c("path", {
+                              attrs: {
+                                "stroke-linecap": "round",
+                                "stroke-linejoin": "round",
+                                "stroke-width": "2",
+                                d:
+                                  "M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"
+                              }
+                            })
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "ml-2" }, [
+                        _vm._v(
+                          "\n                        Descargar mi archivo\n                    "
+                        )
+                      ])
+                    ]
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "flex justify-end text-red-400 font-bold text-xs mt-4"
+                },
+                [
+                  _c(
+                    "button",
+                    {
+                      on: {
+                        click: function($event) {
+                          return _vm.deleteHomework()
+                        }
+                      }
+                    },
+                    [
+                      _c(
+                        "div",
+                        { staticClass: "flex m-auto justify-end item-center" },
+                        [
+                          _c("div", { staticClass: "flex-shrink" }, [
+                            _c(
+                              "svg",
+                              {
+                                staticClass: "w-4",
+                                attrs: {
+                                  xmlns: "http://www.w3.org/2000/svg",
+                                  fill: "none",
+                                  viewBox: "0 0 24 24",
+                                  stroke: "currentColor"
+                                }
+                              },
+                              [
+                                _c("path", {
+                                  attrs: {
+                                    "stroke-linecap": "round",
+                                    "stroke-linejoin": "round",
+                                    "stroke-width": "2",
+                                    d:
+                                      "M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                                  }
+                                })
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "ml-2" }, [
+                            _vm._v(
+                              "\n                            Eliminar entrega de tarea\n                        "
+                            )
+                          ])
+                        ]
+                      )
+                    ]
+                  )
+                ]
+              )
+            ]
+          )
         ]
       ),
       _vm._v(" "),

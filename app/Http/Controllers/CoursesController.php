@@ -84,9 +84,11 @@ class CoursesController extends Controller
         $score = auth()->user()->activities->where('id', $activity->id)->first();
 
         if ($score) {
-            return auth()->user()->activities()->updateExistingPivot($activity->id,  [
+            auth()->user()->activities()->updateExistingPivot($activity->id,  [
                 'file' =>  $path,
             ]);
+
+            return json_encode(['status'=> true, 'file' => $path]);
         }
 
         auth()->user()->activities()->attach($activity->id,  [
@@ -94,6 +96,9 @@ class CoursesController extends Controller
             'score' => 0,
             'file' => $path
         ]);
+
+        return json_encode(['status'=> true, 'file' => $path]);
+
     }
 
 
@@ -106,6 +111,13 @@ class CoursesController extends Controller
         }
 
         return json_encode(['status'=> true, 'file' => $file]);
+    }
+
+    public function studentDeleteHomework($activityId)
+    {
+        return auth()->user()->activities()->updateExistingPivot($activityId,  [
+            'file' =>  '',
+        ]);
     }
 
     public function topicGradebookPdf($id)

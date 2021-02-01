@@ -42,6 +42,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
 
     Route::post('/courses/saveStudentHomework/{id}', [CoursesController::class, 'saveStudentHomework']);
     Route::get('/courses/studentHomework/{id}', [CoursesController::class, 'studentHomework']);
+    Route::get('/courses/studentDeleteHomework/{id}', [CoursesController::class, 'studentDeleteHomework']);
 
 
     Route::get('/course/topic/gradebookPdf/{id}', [CoursesController::class, 'topicGradebookPdf'])
