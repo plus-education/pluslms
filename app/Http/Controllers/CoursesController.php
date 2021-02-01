@@ -104,6 +104,11 @@ class CoursesController extends Controller
 
     public function studentHomework($activityId)
     {
+        if(!auth()->user()->activities->where('id', $activityId)->first()) {
+            return json_encode(['status'=> false]);
+
+        }
+
         $file = auth()->user()->activities->where('id', $activityId)->first()->pivot->file;
 
         if ($file == ''){

@@ -3472,10 +3472,14 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     this.getHomework();
   },
+  updated: function updated() {
+    this.getHomework();
+  },
   methods: {
     getHomework: function getHomework() {
       var _this = this;
 
+      console.log(this.activity.id);
       axios.get("/courses/studentHomework/".concat(this.activity.id)).then(function (response) {
         if (response.data.status == false) {
           _this.studentSendFile = false;

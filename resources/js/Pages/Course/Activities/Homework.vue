@@ -108,8 +108,13 @@
            this.getHomework()
         },
 
+        updated() {
+            this.getHomework()
+        },
+
         methods: {
             getHomework() {
+                console.log(this.activity.id)
                 axios.get(`/courses/studentHomework/${this.activity.id}`).then(response => {
                     if(response.data.status == false) {
                         this.studentSendFile = false
