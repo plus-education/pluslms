@@ -3944,7 +3944,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Activities_Pdf__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Activities/Pdf */ "./resources/js/Pages/Course/Activities/Pdf.vue");
 /* harmony import */ var _Activities_Homework__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Activities/Homework */ "./resources/js/Pages/Course/Activities/Homework.vue");
 /* harmony import */ var _Activities_Youtube__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Activities/Youtube */ "./resources/js/Pages/Course/Activities/Youtube.vue");
-/* harmony import */ var _Comments__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Comments */ "./resources/js/Pages/Course/Comments.vue");
+/* harmony import */ var _Activities_Video__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Activities/Video */ "./resources/js/Pages/Course/Activities/Video.vue");
+/* harmony import */ var _Comments__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Comments */ "./resources/js/Pages/Course/Comments.vue");
 //
 //
 //
@@ -4032,6 +4033,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
 
 
 
@@ -4054,7 +4059,8 @@ __webpack_require__.r(__webpack_exports__);
     TextActivity: _Activities_Text__WEBPACK_IMPORTED_MODULE_6__["default"],
     PdfActivity: _Activities_Pdf__WEBPACK_IMPORTED_MODULE_7__["default"],
     YoutubeActivity: _Activities_Youtube__WEBPACK_IMPORTED_MODULE_9__["default"],
-    Comments: _Comments__WEBPACK_IMPORTED_MODULE_10__["default"]
+    VideoActivity: _Activities_Video__WEBPACK_IMPORTED_MODULE_10__["default"],
+    Comments: _Comments__WEBPACK_IMPORTED_MODULE_11__["default"]
   },
   props: {
     topic: Object,
@@ -64479,6 +64485,12 @@ var render = function() {
                   _vm._v(" "),
                   _vm.activity.type == "YOUTUBE"
                     ? _c("youtube-activity", {
+                        attrs: { activity: _vm.activity, user: _vm.user }
+                      })
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm.activity.type == "VIDEO"
+                    ? _c("video-activity", {
                         attrs: { activity: _vm.activity, user: _vm.user }
                       })
                     : _vm._e()

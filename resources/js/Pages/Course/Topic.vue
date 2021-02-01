@@ -38,6 +38,9 @@
                         <homework-activity v-if="activity.type == 'HOMEWORK'" :activity="activity" :user="user"></homework-activity>
 
                         <youtube-activity v-if="activity.type == 'YOUTUBE'" :activity="activity" :user="user"></youtube-activity>
+
+                        <video-activity v-if="activity.type == 'VIDEO'" :activity="activity" :user="user"></video-activity>
+
                     </div>
                 </div>
 
@@ -97,7 +100,7 @@
     import PdfActivity from "./Activities/Pdf"
     import HomeworkActivity from "./Activities/Homework";
     import YoutubeActivity from "./Activities/Youtube";
-
+    import VideoActivity from "./Activities/Video";
     import Comments from "./Comments";
 
     export default {
@@ -111,6 +114,7 @@
             TextActivity,
             PdfActivity,
             YoutubeActivity,
+            VideoActivity,
             Comments,
         },
 
