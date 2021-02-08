@@ -311,6 +311,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['resourceName', 'resourceId', 'panel'],
@@ -366,7 +379,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("h1", { staticClass: "text-90 font-normal text-2xl mb-3" }, [
-      _vm._v("Activity Scores")
+      _vm._v("Calificar")
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "card mb-6" }, [
@@ -393,6 +406,33 @@ var render = function() {
                   "\n                          " +
                     _vm._s(student.name) +
                     "\n                      "
+                )
+              ]),
+              _vm._v(" "),
+              _c("td", { staticClass: "text-center" }, [
+                _c(
+                  "a",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: student.homework != false,
+                        expression: "student.homework != false"
+                      }
+                    ],
+                    staticClass: "btn text-sm px-4 py-2 btn-default",
+                    attrs: {
+                      href: "/storage/" + student.homework,
+                      target: "_blank",
+                      download: ""
+                    }
+                  },
+                  [
+                    _vm._v(
+                      "\n                             Descargar\n                          "
+                    )
+                  ]
                 )
               ]),
               _vm._v(" "),
@@ -485,15 +525,21 @@ var staticRenderFns = [
         _c("th"),
         _vm._v(" "),
         _c("th", [
-          _vm._v("\n                          Student\n                      ")
+          _vm._v("\n                          Alumno\n                      ")
         ]),
         _vm._v(" "),
         _c("th", [
-          _vm._v("\n                          Comment\n                      ")
+          _vm._v("\n                          Tarea\n                      ")
+        ]),
+        _vm._v(" "),
+        _c("th", [
+          _vm._v(
+            "\n                          Comentario\n                      "
+          )
         ]),
         _vm._v(" "),
         _c("th", { staticStyle: { width: "200px" } }, [
-          _vm._v("\n                          Score\n                      ")
+          _vm._v("\n                          Nota\n                      ")
         ])
       ])
     ])

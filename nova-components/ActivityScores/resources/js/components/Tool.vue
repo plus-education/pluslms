@@ -1,6 +1,6 @@
 <template>
   <div>
-      <h1 class="text-90 font-normal text-2xl mb-3">Activity Scores</h1>
+      <h1 class="text-90 font-normal text-2xl mb-3">Calificar</h1>
 
       <div class="card mb-6">
             <table class="table w-full rounded-lg">
@@ -8,13 +8,16 @@
                     <tr>
                         <th></th>
                         <th>
-                            Student
+                            Alumno
                         </th>
                         <th>
-                            Comment
+                            Tarea
+                        </th>
+                        <th>
+                            Comentario
                         </th>
                         <th style="width: 200px">
-                            Score
+                            Nota
                         </th>
                     </tr>
                 </thead>
@@ -33,6 +36,16 @@
                         </td>
                         <td>
                             {{ student.name }}
+                        </td>
+                        <td class="text-center">
+                            <a v-show="student.homework != false"
+                               :href="`/storage/${student.homework}`"
+                               class="btn text-sm px-4 py-2 btn-default"
+                               target="_blank"
+                               download
+                            >
+                               Descargar
+                            </a>
                         </td>
                         <td>
                             <input
