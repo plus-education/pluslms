@@ -417,8 +417,11 @@ var render = function() {
                       {
                         name: "show",
                         rawName: "v-show",
-                        value: student.activity.file != false,
-                        expression: "student.activity.file != false"
+                        value:
+                          student.activity.file != false ||
+                          student.activity.file != "undefined",
+                        expression:
+                          "student.activity.file != false || student.activity.file != 'undefined'"
                       }
                     ],
                     staticClass: "btn text-sm px-4 py-2 btn-default",

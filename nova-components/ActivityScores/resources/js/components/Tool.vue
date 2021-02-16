@@ -38,7 +38,7 @@
                             {{ student.name }}
                         </td>
                         <td class="text-center">
-                            <a v-show="student.activity.file != false"
+                            <a v-show="student.activity.file != false || student.activity.file != 'undefined'"
                                :href="`/storage/${student.activity.file}`"
                                class="btn text-sm px-4 py-2 btn-default"
                                target="_blank"
