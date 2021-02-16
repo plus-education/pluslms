@@ -417,13 +417,13 @@ var render = function() {
                       {
                         name: "show",
                         rawName: "v-show",
-                        value: student.homework != false,
-                        expression: "student.homework != false"
+                        value: student.activity.file != false,
+                        expression: "student.activity.file != false"
                       }
                     ],
                     staticClass: "btn text-sm px-4 py-2 btn-default",
                     attrs: {
-                      href: "/storage/" + student.homework,
+                      href: "/storage/" + student.activity.file,
                       target: "_blank",
                       download: ""
                     }
