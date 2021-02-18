@@ -132,7 +132,7 @@
 
         created() {
             this.activity = this.initializeActivity()
-            this.setDivider()
+            //this.setDivider()
         },
 
         mounted() {
