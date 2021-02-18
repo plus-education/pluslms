@@ -42,14 +42,28 @@ class CoursesController extends Controller
     {
         return Activity::findOrFail($id)->topic->course->students->map(function ($student) use($id) {
             $activity =   ($student->activities->where('id', $id)->first()) ? $student->activities->where('id', $id)->first()->pivot : [ 'comment' => '' ,'score' => 0 ];
+
+
             return [
                 'id' => $student->id,
                 'name' => $student->name,
                 'email' => $student->email,
                 'profile_photo_url' => $student->profile_photo_url,
-                'activity' => $activity
+                'activity' => $activity,
+                'homework' => $this->getStudentHomework($student, $id)
             ];
         });
+    }
+
+    private function getStudentHomework(User $student, $activityId)
+    {
+        $studentActivities = $student->activities->where('id', $activityId)->first();
+
+        if ($studentActivities) {
+           return $studentActivities->pivot->file;
+        }
+
+        return false;
     }
 
     public function saveActivity(Request $request)

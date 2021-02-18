@@ -15,7 +15,7 @@
             </a>
         </div>
 
-        <div>
+        <div v-if="src != false">
             <pdf
                 v-for="i in numPages"
                 :key="i"
@@ -42,7 +42,7 @@
 
         data() {
             return {
-                src: Object,
+                src: false,
                 numPages: undefined,
             }
         },
@@ -56,14 +56,24 @@
         },
 
         mounted() {
-        this.src  = pdf.createLoadingTask(`/storage/${this.activity.activityable.path}`);
+            this.src = false
 
-        this.src.promise.then(pdf => {
+            this.src  = pdf.createLoadingTask(`/storage/${this.activity.activityable.path}`);
+
+            this.src.promise.then(pdf => {
+
+                this.numPages = pdf.numPages;
+            });
+        },
+
+        updated() {
+            this.src  = pdf.createLoadingTask(`/storage/${this.activity.activityable.path}`);
+
+            this.src.promise.then(pdf => {
 
                 this.numPages = pdf.numPages;
             });
         }
-
     }
 </script>
 

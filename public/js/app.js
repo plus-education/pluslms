@@ -3632,7 +3632,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      src: Object,
+      src: false,
       numPages: undefined
     };
   },
@@ -3644,9 +3644,18 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
+    this.src = false;
     this.src = vue_pdf__WEBPACK_IMPORTED_MODULE_0__["default"].createLoadingTask("/storage/".concat(this.activity.activityable.path));
     this.src.promise.then(function (pdf) {
       _this.numPages = pdf.numPages;
+    });
+  },
+  updated: function updated() {
+    var _this2 = this;
+
+    this.src = vue_pdf__WEBPACK_IMPORTED_MODULE_0__["default"].createLoadingTask("/storage/".concat(this.activity.activityable.path));
+    this.src.promise.then(function (pdf) {
+      _this2.numPages = pdf.numPages;
     });
   }
 });
@@ -63962,17 +63971,19 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _c(
-        "div",
-        _vm._l(_vm.numPages, function(i) {
-          return _c("pdf", {
-            key: i,
-            staticClass: "w-full shadow-lg border",
-            attrs: { src: _vm.src, page: i }
-          })
-        }),
-        1
-      ),
+      _vm.src != false
+        ? _c(
+            "div",
+            _vm._l(_vm.numPages, function(i) {
+              return _c("pdf", {
+                key: i,
+                staticClass: "w-full shadow-lg border",
+                attrs: { src: _vm.src, page: i }
+              })
+            }),
+            1
+          )
+        : _vm._e(),
       _vm._v(" "),
       _c("comments", { attrs: { activity: _vm.activity, user: _vm.user } })
     ],
@@ -64507,7 +64518,7 @@ var render = function() {
           "div",
           {
             staticClass:
-              "flex-shrink w-2/12 bg-white shadow-lg border border-gray-200 h-screen"
+              "flex-shrink w-2/12 bg-white shadow-lg border border-gray-200 h-screen overflow-y-scroll"
           },
           [
             _c(
@@ -80505,6 +80516,8 @@ var map = {
 	"./Course/Activities/Text.vue": "./resources/js/Pages/Course/Activities/Text.vue",
 	"./Course/Activities/Video": "./resources/js/Pages/Course/Activities/Video.vue",
 	"./Course/Activities/Video.vue": "./resources/js/Pages/Course/Activities/Video.vue",
+	"./Course/Activities/VideoPlayer": "./resources/js/Pages/Course/Activities/VideoPlayer.vue",
+	"./Course/Activities/VideoPlayer.vue": "./resources/js/Pages/Course/Activities/VideoPlayer.vue",
 	"./Course/Activities/Youtube": "./resources/js/Pages/Course/Activities/Youtube.vue",
 	"./Course/Activities/Youtube.vue": "./resources/js/Pages/Course/Activities/Youtube.vue",
 	"./Course/Comments": "./resources/js/Pages/Course/Comments.vue",
@@ -81280,6 +81293,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Video_vue_vue_type_template_id_f45da998_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Course/Activities/VideoPlayer.vue":
+/*!**************************************************************!*\
+  !*** ./resources/js/Pages/Course/Activities/VideoPlayer.vue ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+var render, staticRenderFns
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__["default"])(
+  script,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+component.options.__file = "resources/js/Pages/Course/Activities/VideoPlayer.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 

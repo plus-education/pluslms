@@ -101,6 +101,8 @@ class Activity extends Resource
 
             Text::make(__('Name'), 'name')->required(),
 
+            Date::make('Created At', 'created_at')->onlyOnDetail(),
+
             Date::make(__('Start Date'), 'start'),
 
             Date::make(__('End Date'), 'end'),
