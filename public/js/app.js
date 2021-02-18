@@ -4086,7 +4086,8 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   created: function created() {
-    this.activity = this.initializeActivity(); //this.setDivider()
+    this.activity = this.initializeActivity();
+    this.setDivider();
   },
   mounted: function mounted() {
     this.icons = _SidebarIcons_js__WEBPACK_IMPORTED_MODULE_0__["default"];
@@ -4116,6 +4117,8 @@ __webpack_require__.r(__webpack_exports__);
       }); //this.showDividerActivities(selectedActivity)
     },
     showDividerActivities: function showDividerActivities(divider) {
+      return divider.show = true;
+
       if (divider.type != 'DIVIDER') {
         return false;
       }

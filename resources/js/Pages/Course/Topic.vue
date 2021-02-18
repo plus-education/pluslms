@@ -132,7 +132,7 @@
 
         created() {
             this.activity = this.initializeActivity()
-            //this.setDivider()
+            this.setDivider()
         },
 
         mounted() {
@@ -170,6 +170,9 @@
             },
 
             showDividerActivities: function(divider) {
+                return divider.show = true
+
+
                 if(divider.type != 'DIVIDER'){
                     return false;
                 }
