@@ -162,11 +162,15 @@
             },
 
             changeActivity: function(selectedActivity) {
+
+                this.selectNewActivity(selectedActivity)
+                //this.showDividerActivities(selectedActivity)
+            },
+
+            selectNewActivity: function(selectedActivity) {
                 this.activity = this.topic.activities.find( (activity) => {
                     return activity.id == selectedActivity.id
                 })
-
-                //this.showDividerActivities(selectedActivity)
             },
 
             showDividerActivities: function(divider) {

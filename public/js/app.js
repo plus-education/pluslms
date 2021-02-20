@@ -3633,30 +3633,38 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       src: false,
-      numPages: undefined
+      numPages: undefined,
+      isLoaded: false
     };
   },
   props: {
     activity: Object,
     user: Object
   },
-  beforeCreate: function beforeCreate() {},
-  mounted: function mounted() {
-    var _this = this;
+  watch: {
+    activity: function activity() {
+      var _this = this;
 
-    this.src = false;
-    this.src = vue_pdf__WEBPACK_IMPORTED_MODULE_0__["default"].createLoadingTask("/storage/".concat(this.activity.activityable.path));
-    this.src.promise.then(function (pdf) {
-      _this.numPages = pdf.numPages;
-    });
+      this.src = false;
+      setTimeout(function () {
+        _this.src = vue_pdf__WEBPACK_IMPORTED_MODULE_0__["default"].createLoadingTask("/storage/".concat(_this.activity.activityable.path));
+
+        _this.src.promise.then(function (pdf) {
+          _this.numPages = pdf.numPages;
+        });
+      }, 500);
+    }
   },
-  updated: function updated() {
+  mounted: function mounted() {
     var _this2 = this;
 
     this.src = vue_pdf__WEBPACK_IMPORTED_MODULE_0__["default"].createLoadingTask("/storage/".concat(this.activity.activityable.path));
     this.src.promise.then(function (pdf) {
       _this2.numPages = pdf.numPages;
     });
+  },
+  destroyed: function destroyed() {
+    console.log('XD me esto destrullendo');
   }
 });
 
@@ -4112,9 +4120,12 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     changeActivity: function changeActivity(selectedActivity) {
+      this.selectNewActivity(selectedActivity); //this.showDividerActivities(selectedActivity)
+    },
+    selectNewActivity: function selectNewActivity(selectedActivity) {
       this.activity = this.topic.activities.find(function (activity) {
         return activity.id == selectedActivity.id;
-      }); //this.showDividerActivities(selectedActivity)
+      });
     },
     showDividerActivities: function showDividerActivities(divider) {
       return divider.show = true;

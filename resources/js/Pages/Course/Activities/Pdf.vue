@@ -44,6 +44,7 @@
             return {
                 src: false,
                 numPages: undefined,
+                isLoaded: false
             }
         },
 
@@ -52,12 +53,22 @@
             user: Object,
         },
 
-        beforeCreate() {
+        watch: {
+            activity: function () {
+                this.src = false
+
+                setTimeout(() => {
+                    this.src  = pdf.createLoadingTask(`/storage/${this.activity.activityable.path}`);
+
+                    this.src.promise.then(pdf => {
+
+                        this.numPages = pdf.numPages;
+                    });
+                }, 500);
+            }
         },
 
         mounted() {
-            this.src = false
-
             this.src  = pdf.createLoadingTask(`/storage/${this.activity.activityable.path}`);
 
             this.src.promise.then(pdf => {
@@ -66,13 +77,8 @@
             });
         },
 
-        updated() {
-            this.src  = pdf.createLoadingTask(`/storage/${this.activity.activityable.path}`);
-
-            this.src.promise.then(pdf => {
-
-                this.numPages = pdf.numPages;
-            });
+        destroyed() {
+            console.log('XD me esto destrullendo')
         }
     }
 </script>
