@@ -139,6 +139,9 @@ class Activity extends Resource
 
             OrderField::make(__("Order"), 'order'),
 
+            \Laravel\Nova\Fields\Number::make(__("Order"), 'order')
+                ->hideWhenCreating(),
+
             ActivityComments::make(),
         ];
     }
