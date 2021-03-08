@@ -64580,8 +64580,8 @@ var render = function() {
                       {
                         name: "show",
                         rawName: "v-show",
-                        value: activity.show,
-                        expression: "activity.show"
+                        value: activity.isShow,
+                        expression: "activity.isShow"
                       }
                     ],
                     key: activity.id,

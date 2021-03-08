@@ -60,7 +60,7 @@
                     <section class="">
                         <div v-for="activity in topic.activities"
                              :key="activity.id"
-                             v-show="activity.show"
+                             v-show="activity.isShow"
                              class="flex items-center  border-b-2 border-gray-100 cursor-pointer"
                              @click="changeActivity(activity)"
                         >
