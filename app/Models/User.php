@@ -111,4 +111,10 @@ class User extends Authenticatable
             ->where('activity_user.user_id', $this->id)
             ->first()->total;
     }
+
+    public function topics()
+    {
+        return $this->belongsToMany(Topic::class)
+            ->withPivot('comment');
+    }
 }

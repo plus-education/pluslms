@@ -26,11 +26,11 @@ class CoursesController extends Controller
     public function topic($id)
     {
         $topic = Topic::find($id);
-        $topic->activities;
+        $activities = $topic->activities->where('isShow', true);
         $topic->course;
 
         return Inertia::render('Course/Topic')
-            ->with(compact('topic'));
+            ->with(compact('topic', 'activities'));
     }
 
     public function topicActivities($id)

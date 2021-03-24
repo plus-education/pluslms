@@ -50,7 +50,8 @@
         "spatie/nova-tags-field": "^3.0",
         "vyuldashev/nova-permission": "^2.9",
         "whitecube/nova-flexible-content": "^0.2.5",
-        "djoudi/laravel-h5p": "*"
+        "djoudi/laravel-h5p": "*",
+        "lms/teacher-topic-comment": "*"
     },
     "repositories": [
         {
@@ -88,6 +89,10 @@
         {
             "type": "path",
             "url": "./nova-components/LinkFile"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/TeacherTopicComment"
         }
     ],
     "require-dev": {

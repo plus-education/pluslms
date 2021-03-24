@@ -83,6 +83,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/lms/files" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/lms/link-file" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/lms/my-courses" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/lms/teacher-topic-comment" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/lms/users-types" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/maatwebsite/excel" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/maennchen/zipstream-php" />

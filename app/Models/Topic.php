@@ -26,4 +26,10 @@ class Topic extends Model implements Sortable
         return $this->hasMany(Activity::class)
             ->orderBy('order');
     }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class)
+            ->withPivot('comment');
+    }
 }

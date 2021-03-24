@@ -3270,7 +3270,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     activity: Object,
-    user: Object
+    user: Object,
+    showQuizz: true
   },
   data: function data() {
     return {
@@ -64580,8 +64581,8 @@ var render = function() {
                       {
                         name: "show",
                         rawName: "v-show",
-                        value: activity.isShow,
-                        expression: "activity.isShow"
+                        value: activity.isShow == 1,
+                        expression: "activity.isShow == 1"
                       }
                     ],
                     key: activity.id,

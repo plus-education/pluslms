@@ -62,6 +62,7 @@
         props: {
             activity: Object,
             user: Object,
+            showQuizz: true
         },
 
         data: () => {

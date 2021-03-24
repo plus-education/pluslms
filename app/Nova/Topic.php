@@ -3,12 +3,14 @@
 namespace App\Nova;
 
 use App\Nova\Actions\TopicGradebook;
+use Eminiarts\Tabs\Tabs;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Lms\TeacherTopicComment\TeacherTopicComment;
 use MichielKempen\NovaOrderField\Orderable;
 use MichielKempen\NovaOrderField\OrderField;
 
@@ -84,7 +86,11 @@ class Topic extends Resource
 
             BelongsTo::make(__('Course'), 'Course', Course::class),
 
-            HasMany::make(__('Activities'), 'Activities', Activity::class),
+            new Tabs(__('Tools'), [
+                HasMany::make(__('Activities'), 'Activities', Activity::class),
+
+                TeacherTopicComment::make()
+            ]),
 
             OrderField::make(__('Order'), 'order'),
         ];
