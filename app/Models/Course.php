@@ -15,8 +15,21 @@ class Course extends Model
 
 
 
-public function users() { return $this->belongsToMany(User::class);
-}    public function topics()
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
+
+    public function students()
+    {
+        return $this->users->filter(function ($user) {
+            if ($user->hasRole(Roles::STUDENT)) {
+               return $user;
+            }
+        });
+    }
+
+    public function topics()
     {
         return $this->hasMany(Topic::class);
     }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Roles;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,14 +20,24 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/students/{topicId}', function ($topicId) {
-   $student = \App\Models\Topic::find($topicId)->course->users->map(function ($student) use($topicId) {
-       $comment = ($student->topics->where('id', $topicId)->first()) ? $student->topics->where('id', $topicId)->first()->pivot->comment : '';
+   $student = \App\Models\Topic::find($topicId)->course->users
+       ->filter(function ($student){
+           if ($student->hasRole(Roles::STUDENT)) {
+               return $student;
+           }
+       })
+       ->map(function ($student) use($topicId) {
+           if (!$student->hasRole(Roles::STUDENT)) {
+               return false;
+           }
 
-        return [
-            'id' => $student->id,
-            'name' => $student->name,
-            'comment' => $comment
-        ];
+           $comment = ($student->topics->where('id', $topicId)->first()) ? $student->topics->where('id', $topicId)->first()->pivot->comment : '';
+
+            return [
+                'id' => $student->id,
+                'name' => $student->name,
+                'comment' => $comment
+            ];
    });
 
    return $student;
