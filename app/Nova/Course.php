@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use Advoor\NovaEditorJs\NovaEditorJs;
 use App\Models\Roles;
 use DigitalCreative\Filepond\Filepond;
 use Eminiarts\Tabs\Tabs;
@@ -95,7 +96,7 @@ class Course extends Resource
                 ->required()
                 ->rules('required', 'max:255'),
 
-            Textarea::make(__('Description'), 'description'),
+            NovaEditorJs::make(__('Description'), 'description'),
 
             Text::make(__('Code'), 'code')->sortable(),
 

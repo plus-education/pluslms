@@ -25,6 +25,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::get('/dashboard', Dashboard::class)
         ->name('dashboard');
 
+    Route::get('/gradebook', \App\Http\Controllers\StudentGradebook::class);
+
     Route::get('/courses/{id}', [CoursesController::class, 'index'])
         ->name('courses.index');
 

@@ -123,13 +123,19 @@ class CoursesController extends Controller
 
         }
 
-        $file = auth()->user()->activities->where('id', $activityId)->first()->pivot->file;
+        $activity = auth()->user()->activities->where('id', $activityId)->first();
+        $file = $activity->pivot->file;
 
         if ($file == ''){
             return json_encode(['status'=> false]);
         }
 
-        return json_encode(['status'=> true, 'file' => $file]);
+        return json_encode([
+            'status'=> true,
+            'file' => $file,
+            'score' => $activity->pivot->score,
+            'comment' => $activity->pivot->comment
+        ]);
     }
 
     public function studentDeleteHomework($activityId)

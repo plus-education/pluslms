@@ -21,6 +21,9 @@
                             <jet-nav-link href="/notifications" :active="$page.currentRouteName == 'notifications'">
                                 Notificaciones
                             </jet-nav-link>
+
+                            <jet-nav-link href="/gradebook" :active="$page.currentRouteName == 'gradebook'">
+                            </jet-nav-link>
                         </div>
                     </div>
 

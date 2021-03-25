@@ -18,7 +18,10 @@
         </div>
 
         <div class="text-center">
-            <strong>Punteo: </strong> 0 / {{activity.score}}
+            <strong>Punteo: </strong> {{ studentScore }} / {{activity.score}}
+            <div class="mx-4 p-4 bg-green-100 shadow-lg" v-if="studentScoreComment != '' ">
+                {{ studentScoreComment }}
+            </div>
         </div>
 
         <div  v-show="studentSendFile == false" class="my-4 mx-auto bg-gray-200 p-6 flex flex-col align-middle">
@@ -99,6 +102,8 @@
         data: function() {
             return {
                 file: '',
+                studentScore: 0,
+                studentScoreComment: '',
                 studentSendFile: false,
                 studentSendFilePath: '',
             }
@@ -124,6 +129,8 @@
 
                     this.studentSendFile = true
                     this.studentSendFilePath = response.data.file
+                    this.studentScore = response.data.score
+                    this.studentScoreComment = response.data.comment
                 })
             },
 

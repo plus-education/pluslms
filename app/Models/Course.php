@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Advoor\NovaEditorJs\NovaEditorJs;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Tags\HasTags;
@@ -11,9 +12,12 @@ class Course extends Model
     use HasFactory;
     use HasUsers;
 
-    protected $appends = ['coverPath'];
+    protected $appends = ['coverPath', 'html'];
 
-
+    public function getHtmlAttribute()
+    {
+        return NovaEditorJs::generateHtmlOutput($this->description);
+    }
 
     public function users()
     {

@@ -19,8 +19,7 @@
 
             </header>
 
-            <div class="my-4">
-                {{ course.description }}
+            <div class="my-4" v-html="course.html">
             </div>
 
             <div class="mt-6">
