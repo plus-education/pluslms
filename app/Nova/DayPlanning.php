@@ -2,44 +2,30 @@
 
 namespace App\Nova;
 
-use App\Nova\Actions\TopicGradebook;
-use Eminiarts\Tabs\Tabs;
+use Advoor\NovaEditorJs\NovaEditorJs;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
-use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\DateTime;
+use Laravel\Nova\Fields\Heading;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Lms\TeacherTopicComment\TeacherTopicComment;
-use MichielKempen\NovaOrderField\Orderable;
-use MichielKempen\NovaOrderField\OrderField;
+use Naoray\NovaJson\JSON;
 
-class Topic extends Resource
+class DayPlanning extends Resource
 {
-    use Orderable;
-
-    public static $defaultOrderField = 'order';
-
-    /**
-     * Indicates if the resource should be displayed in the sidebar.
-     *
-     * @var bool
-     */
-    public static $displayInNavigation = false;
-
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\Topic::class;
+    public static $model = \App\Models\DayPlanning::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'day';
 
     /**
      * The columns that should be searched.
@@ -47,29 +33,9 @@ class Topic extends Resource
      * @var array
      */
     public static $search = [
-        'name'
+        'day',
     ];
 
-
-    /**
-     * Get the displayable label of the resource.
-     *
-     * @return string
-     */
-    public static function label()
-    {
-        return __('Topics');
-    }
-
-    /**
-     * Get the displayable singular label of the resource.
-     *
-     * @return string
-     */
-    public static function singularLabel()
-    {
-        return __('Topic');
-    }
     /**
      * Get the fields displayed by the resource.
      *
@@ -79,22 +45,38 @@ class Topic extends Resource
     public function fields(Request $request)
     {
         return [
-            Text::make(__('Name'), 'name')
+            BelongsTo::make('Planificación Semanal', 'weeklyPlanning', WeeklyPlanning::class),
+
+            \Laravel\Nova\Fields\Text::make( 'Dia','day')
                 ->required()
-                ->rules('required', 'max:255')
-            ,
+                ->rules('required'),
 
-            BelongsTo::make(__('Course'), 'Course', Course::class),
 
-            new Tabs(__('Tools'), [
-                HasMany::make(__('Activities'), 'Activities', Activity::class),
+            NovaEditorJs::make(__('Materiales'), 'resources')
+                ->hideFromIndex()
+                ->required()
+                ->rules('required'),
 
-                TeacherTopicComment::make(),
+            NovaEditorJs::make(__('Tarea'), 'Homework')
+                ->hideFromIndex()
+                ->required()
+                ->rules('required'),
 
-                HasMany::make('Planificaciones semanales', 'weeklyPlannings', WeeklyPlanning::class),
+            Heading::make('Actividades de clase:'),
+
+            JSON::make(__('Actividades de clase'), 'activities', [
+                \Laravel\Nova\Fields\Text::make('Reglas de clase')->hideFromIndex(),
+                \Laravel\Nova\Fields\Text::make('Tema')->hideFromIndex(),
+                \Laravel\Nova\Fields\Text::make('Actividad Inicial')->hideFromIndex(),
+                \Laravel\Nova\Fields\Text::make('Proceso de aprendizaje')->hideFromIndex(),
+                \Laravel\Nova\Fields\Text::make('Evaluación')->hideFromIndex(),
+                \Laravel\Nova\Fields\Text::make('Dudas y respuestas')->hideFromIndex()
             ]),
 
-            OrderField::make(__('Order'), 'order'),
+            DateTime::make('Creado el ', 'created_at')
+                ->format('DD-MM-Y h:m')
+                ->onlyOnIndex()
+
         ];
     }
 
@@ -117,8 +99,7 @@ class Topic extends Resource
      */
     public function filters(Request $request)
     {
-        return [
-        ];
+        return [];
     }
 
     /**
@@ -140,8 +121,6 @@ class Topic extends Resource
      */
     public function actions(Request $request)
     {
-        return [
-            new TopicGradebook
-        ];
+        return [];
     }
 }

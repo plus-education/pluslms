@@ -32,4 +32,9 @@ class Topic extends Model implements Sortable
         return $this->belongsToMany(User::class)
             ->withPivot('comment');
     }
+
+    public function  weeklyPlannings()
+    {
+        return $this->hasMany(WeeklyPlanning::class);
+    }
 }

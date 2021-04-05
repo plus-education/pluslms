@@ -3,10 +3,12 @@
 namespace App\Nova;
 
 use DigitalCreative\InlineMorphTo\InlineMorphTo;
+use Eminiarts\Tabs\Tabs;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Date;
+use Laravel\Nova\Fields\Heading;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\MorphMany;
 use Laravel\Nova\Fields\MorphTo;
@@ -99,7 +101,8 @@ class Activity extends Resource
         return [
             BelongsTo::make('Topic'),
 
-            Text::make(__('Name'), 'name')->required(),
+            Text::make(__('Name'), 'name')->required()
+                ->rules('required'),
 
             Date::make('Created At', 'created_at')->onlyOnDetail(),
 
@@ -125,6 +128,10 @@ class Activity extends Resource
                 ->rules('required')
             ,
 
+            \Laravel\Nova\Fields\File::make('Archivo de respaldo', 'original_file')
+                ->required()
+                ->rules('required'),
+
 
            \Laravel\Nova\Fields\Number::make(__('Score'), 'score')
                ->min(0)
@@ -142,7 +149,14 @@ class Activity extends Resource
             \Laravel\Nova\Fields\Number::make(__("Order"), 'order')
                 ->hideWhenCreating(),
 
-            ActivityComments::make(),
+
+
+            Heading::make('Meta'),
+
+            new Tabs(__('Tools'), [
+                ActivityComments::make()
+                    ->typeOfComment('activity'),
+            ]),
         ];
     }
 

@@ -58,7 +58,11 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::post('/student/exercise', \App\Http\Controllers\GradeExerciseController::class);
 
     // System Comments
-    Route::get('/commnets/activity/{id}', [\App\Http\Controllers\CommentController::class, 'list']);
-    Route::post('/commnets/activity', [\App\Http\Controllers\CommentController::class, 'store']);
+    Route::get('/commnets/activity/{id}/{type}', [\App\Http\Controllers\CommentController::class, 'list']);
+    Route::get('/commnets/answers/{id}', [\App\Http\Controllers\CommentController::class, 'answers']);
+
+    Route::post('/commnets/activity/{type}', [\App\Http\Controllers\CommentController::class, 'store']);
+    Route::post('/commnets/storeAnswer/{type}', [\App\Http\Controllers\CommentController::class, 'storeAnswer']);
+
     Route::post('/comments/delete', [\App\Http\Controllers\CommentController::class, 'delete']);
 });

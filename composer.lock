@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9ff649bfc962d4101a4e59b690508cb9",
+    "content-hash": "724c44a36976c5079b4b58a93b18b097",
     "packages": [
         {
             "name": "advoor/nova-editor-js",
@@ -2216,6 +2216,60 @@
             "time": "2020-04-13T13:17:36+00:00"
         },
         {
+            "name": "gregoriohc/laravel-nova-theme-responsive",
+            "version": "v0.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gregoriohc/laravel-nova-theme-responsive.git",
+                "reference": "a37f8162872ea7483d2dec7091d29e49376df273"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gregoriohc/laravel-nova-theme-responsive/zipball/a37f8162872ea7483d2dec7091d29e49376df273",
+                "reference": "a37f8162872ea7483d2dec7091d29e49376df273",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Gregoriohc\\LaravelNovaThemeResponsive\\ThemeServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Gregoriohc\\LaravelNovaThemeResponsive\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gregorio Hernández Caso",
+                    "email": "gregoriohc@gmail.com",
+                    "homepage": "https://github.com/gregoriohc",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Laravel Nova responsive theme.",
+            "homepage": "https://github.com/gregoriohc/laravel-nova-theme-responsive",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/gregoriohc/laravel-nova-theme-responsive/issues",
+                "source": "https://github.com/gregoriohc/laravel-nova-theme-responsive/tree/master"
+            },
+            "time": "2020-03-08T16:15:03+00:00"
+        },
+        {
             "name": "guzzlehttp/guzzle",
             "version": "7.3.0",
             "source": {
@@ -2705,6 +2759,70 @@
             "time": "2020-10-02T12:53:20+00:00"
         },
         {
+            "name": "infinety-es/nova-filemanager",
+            "version": "2.8.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/InfinetyEs/Nova-Filemanager.git",
+                "reference": "c6595c29e23cab01be6b7e37a069b13844397c91"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/InfinetyEs/Nova-Filemanager/zipball/c6595c29e23cab01be6b7e37a069b13844397c91",
+                "reference": "c6595c29e23cab01be6b7e37a069b13844397c91",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": "~2.0|~3.0",
+                "php": ">=7.1.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.6",
+                "phpunit/phpunit": "7.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Infinety\\Filemanager\\FilemanagerServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Infinety\\Filemanager\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Eric Lagarda",
+                    "email": "eric@infinety.es",
+                    "role": "Developer"
+                },
+                {
+                    "name": "InfinetyEs",
+                    "email": "apps@infinety.es",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Filemanager tool for Laravel Nova",
+            "homepage": "https://github.com/InfinetyEs/nova-filemanager",
+            "keywords": [
+                "filemanager",
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/InfinetyEs/Nova-Filemanager/issues",
+                "source": "https://github.com/InfinetyEs/Nova-Filemanager/tree/2.8.3"
+            },
+            "time": "2020-08-21T07:36:54+00:00"
+        },
+        {
             "name": "intervention/image",
             "version": "2.5.1",
             "source": {
@@ -3187,6 +3305,60 @@
                 "source": "https://github.com/kirschbaum-development/nova-inline-relationship/tree/0.3.0"
             },
             "time": "2020-03-05T22:07:37+00:00"
+        },
+        {
+            "name": "kpolicar/nova-date-range",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kpolicar/nova-date-range.git",
+                "reference": "0385d78575ba847b8d7b2a2473c1af34d1df4e74"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kpolicar/nova-date-range/zipball/0385d78575ba847b8d7b2a2473c1af34d1df4e74",
+                "reference": "0385d78575ba847b8d7b2a2473c1af34d1df4e74",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Kpolicar\\DateRange\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Kpolicar\\DateRange\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Custom date range picker field for Laravel Nova",
+            "keywords": [
+                "custom",
+                "date",
+                "daterange",
+                "field",
+                "from",
+                "laravel",
+                "multiple",
+                "nova",
+                "range",
+                "to"
+            ],
+            "support": {
+                "issues": "https://github.com/kpolicar/nova-date-range/issues",
+                "source": "https://github.com/kpolicar/nova-date-range/tree/master"
+            },
+            "time": "2020-03-27T14:57:55+00:00"
         },
         {
             "name": "laravel/fortify",
@@ -4876,6 +5048,56 @@
             "time": "2019-11-30T18:02:55+00:00"
         },
         {
+            "name": "mirovit/nova-notifications",
+            "version": "1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mirovit/nova-notifications.git",
+                "reference": "01e75d101ce887a3f0ed3cf28507cdd8b5b2188d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mirovit/nova-notifications/zipball/01e75d101ce887a3f0ed3cf28507cdd8b5b2188d",
+                "reference": "01e75d101ce887a3f0ed3cf28507cdd8b5b2188d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": ">=5.6",
+                "nesbot/carbon": "^2.00",
+                "php": ">=7.1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Mirovit\\NovaNotifications\\NovaNotificationsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Mirovit\\NovaNotifications\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova tool to display user notifications.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/mirovit/nova-notifications/issues",
+                "source": "https://github.com/mirovit/nova-notifications/tree/1.0.5"
+            },
+            "time": "2020-11-04T12:18:41+00:00"
+        },
+        {
             "name": "mnapoli/silly",
             "version": "1.7.2",
             "source": {
@@ -5258,6 +5480,61 @@
                 }
             ],
             "time": "2021-02-15T16:11:48+00:00"
+        },
+        {
+            "name": "naoray/nova-json",
+            "version": "v1.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Naoray/nova-json.git",
+                "reference": "65b590cff88c33be8d8e33659c6598947c57d5ba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Naoray/nova-json/zipball/65b590cff88c33be8d8e33659c6598947c57d5ba",
+                "reference": "65b590cff88c33be8d8e33659c6598947c57d5ba",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "^8.0",
+                "illuminate/support": "^8.0",
+                "laravel/nova": "^3.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.0"
+            },
+            "type": "package",
+            "autoload": {
+                "psr-4": {
+                    "Naoray\\NovaJson\\": "./src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Krishan Koenig",
+                    "email": "krishan.koenig@googlemail.com"
+                }
+            ],
+            "description": "Nova json field to spread a json column throughout multiple fields.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/Naoray/nova-json/issues",
+                "source": "https://github.com/Naoray/nova-json/tree/v1.2.3"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/naoray",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-03-10T11:16:34+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -13613,7 +13890,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "kpolicar/nova-date-range": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

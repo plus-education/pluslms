@@ -2,44 +2,29 @@
 
 namespace App\Nova;
 
-use App\Nova\Actions\TopicGradebook;
-use Eminiarts\Tabs\Tabs;
 use Illuminate\Http\Request;
+use Kpolicar\DateRange\DateRange;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Lms\TeacherTopicComment\TeacherTopicComment;
-use MichielKempen\NovaOrderField\Orderable;
-use MichielKempen\NovaOrderField\OrderField;
+use Lms\ActivityComments\ActivityComments;
 
-class Topic extends Resource
+class WeeklyPlanning extends Resource
 {
-    use Orderable;
-
-    public static $defaultOrderField = 'order';
-
-    /**
-     * Indicates if the resource should be displayed in the sidebar.
-     *
-     * @var bool
-     */
-    public static $displayInNavigation = false;
-
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\Topic::class;
+    public static $model = \App\Models\WeeklyPlanning::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'title';
 
     /**
      * The columns that should be searched.
@@ -47,29 +32,9 @@ class Topic extends Resource
      * @var array
      */
     public static $search = [
-        'name'
+        'title',
     ];
 
-
-    /**
-     * Get the displayable label of the resource.
-     *
-     * @return string
-     */
-    public static function label()
-    {
-        return __('Topics');
-    }
-
-    /**
-     * Get the displayable singular label of the resource.
-     *
-     * @return string
-     */
-    public static function singularLabel()
-    {
-        return __('Topic');
-    }
     /**
      * Get the fields displayed by the resource.
      *
@@ -79,22 +44,16 @@ class Topic extends Resource
     public function fields(Request $request)
     {
         return [
-            Text::make(__('Name'), 'name')
-                ->required()
-                ->rules('required', 'max:255')
-            ,
+            BelongsTo::make( 'topic'),
 
-            BelongsTo::make(__('Course'), 'Course', Course::class),
+            \Laravel\Nova\Fields\Text::make(__('Titulo'), 'title'),
 
-            new Tabs(__('Tools'), [
-                HasMany::make(__('Activities'), 'Activities', Activity::class),
+            DateRange::make('Between', ['from', 'to']),
 
-                TeacherTopicComment::make(),
+            HasMany::make('Planificaciónes diarias', 'dayPlannings', DayPlanning::class),
 
-                HasMany::make('Planificaciones semanales', 'weeklyPlannings', WeeklyPlanning::class),
-            ]),
-
-            OrderField::make(__('Order'), 'order'),
+            ActivityComments::make()
+            ->typeOfComment('weeklyPlanning'),
         ];
     }
 
@@ -117,8 +76,7 @@ class Topic extends Resource
      */
     public function filters(Request $request)
     {
-        return [
-        ];
+        return [];
     }
 
     /**
@@ -140,8 +98,6 @@ class Topic extends Resource
      */
     public function actions(Request $request)
     {
-        return [
-            new TopicGradebook
-        ];
+        return [];
     }
 }

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use phpDocumentor\Reflection\Types\Self_;
 
 class Comment extends Model
 {
@@ -12,6 +13,20 @@ class Comment extends Model
     protected $guarded = [];
 
     protected $with = ['user'];
+
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'created_at' => 'datetime:d-m-y h:m',
+    ];
+
+    const TYPE = [
+        'activity' => Activity::class,
+        'weeklyPlanning' => WeeklyPlanning::class
+    ];
 
     public function user()
     {

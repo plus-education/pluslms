@@ -13,7 +13,7 @@ class ActivityComments extends ResourceTool
      */
     public function name()
     {
-        return 'Activity Comments';
+        return 'Commentarios de Alumnos ';
     }
 
     /**
@@ -24,5 +24,10 @@ class ActivityComments extends ResourceTool
     public function component()
     {
         return 'activity-comments';
+    }
+
+    public function typeOfComment($type)
+    {
+        return $this->withMeta(['typeOfcomment' => $type]);
     }
 }

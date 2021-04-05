@@ -4236,6 +4236,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -64826,10 +64848,65 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("app-layout", [
-    _c("section", { staticClass: "container m-auto" }, [
+    _c("section", { staticClass: "container m-auto my-4" }, [
       _c("h1", [_vm._v("\n            Boleta de Calificaciones\n        ")]),
       _vm._v(" "),
-      _c("div", [_c("table")])
+      _c("div", {}, [
+        _c("div", { staticClass: "w-3/4 m-auto " }, [
+          _c(
+            "table",
+            {
+              staticClass:
+                "table table-auto w-full  border-collapse border mt-6 shadow-lg bg-white"
+            },
+            [
+              _c("thead", [
+                _c("tr", [
+                  _c(
+                    "th",
+                    { staticClass: "border border-green-600 px-4 w-2/5" },
+                    [_vm._v("Curso")]
+                  ),
+                  _vm._v(" "),
+                  _c("th", { staticClass: "border border-green-600 px-4" }, [
+                    _vm._v("Bimestre 1")
+                  ]),
+                  _vm._v(" "),
+                  _c("th", { staticClass: "border border-green-600 px-4" }, [
+                    _vm._v("Bimestre 2")
+                  ]),
+                  _vm._v(" "),
+                  _c("th", { staticClass: "border border-green-600 px-4" }, [
+                    _vm._v("Bimestre 3")
+                  ]),
+                  _vm._v(" "),
+                  _c("th", { staticClass: "border border-green-600 px-4" }, [
+                    _vm._v("Bimestre 4")
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("tbody", [
+                _c("tr", [
+                  _c("td", { staticClass: "border border-green-600 px-4" }, [
+                    _vm._v("Matematicas")
+                  ]),
+                  _vm._v(" "),
+                  _c("td", { staticClass: "border border-green-600 px-4" }, [
+                    _vm._v("10")
+                  ]),
+                  _vm._v(" "),
+                  _c("td", { staticClass: "border border-green-600 px-4" }),
+                  _vm._v(" "),
+                  _c("td", { staticClass: "border border-green-600 px-4" }),
+                  _vm._v(" "),
+                  _c("td", { staticClass: "border border-green-600 px-4" })
+                ])
+              ])
+            ]
+          )
+        ])
+      ])
     ])
   ])
 }

@@ -48,6 +48,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/fzaninotto/faker" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/genealabs/nova-file-upload-field" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/graham-campbell/result-type" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/gregoriohc/laravel-nova-theme-responsive" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/guzzle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/promises" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/psr7" />
@@ -56,6 +57,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/hamcrest/hamcrest-php" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/hollodotme/fast-cgi-client" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/inertiajs/inertia-laravel" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/infinety-es/nova-filemanager" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/intervention/image" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/izi-dev/nova-key-value-suggestion-field" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/jaybizzle/crawler-detect" />
@@ -65,6 +67,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/jrodas4044/grid-multiselect-belogs-to-many" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/khalin/nova-link-field" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/kirschbaum-development/nova-inline-relationship" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/kpolicar/nova-date-range" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/fortify" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/framework" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/jetstream" />
@@ -91,6 +94,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/markbaker/matrix" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/media24si/nova-youtube-field" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/michielkempen/nova-order-field" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/mirovit/nova-notifications" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/mnapoli/silly" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/mobiledetect/mobiledetectlib" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/mockery/mockery" />
@@ -99,6 +103,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/mtdowling/jmespath.php" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/myclabs/deep-copy" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/myclabs/php-enum" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/naoray/nova-json" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nesbot/carbon" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nikic/php-parser" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nunomaduro/collision" />

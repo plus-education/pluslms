@@ -209,6 +209,11 @@
       <path value="$PROJECT_DIR$/vendor/djoudi/laravel-h5p" />
       <path value="$PROJECT_DIR$/vendor/laravelcollective/html" />
       <path value="$PROJECT_DIR$/vendor/lms/teacher-topic-comment" />
+      <path value="$PROJECT_DIR$/vendor/mirovit/nova-notifications" />
+      <path value="$PROJECT_DIR$/vendor/infinety-es/nova-filemanager" />
+      <path value="$PROJECT_DIR$/vendor/gregoriohc/laravel-nova-theme-responsive" />
+      <path value="$PROJECT_DIR$/vendor/kpolicar/nova-date-range" />
+      <path value="$PROJECT_DIR$/vendor/naoray/nova-json" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

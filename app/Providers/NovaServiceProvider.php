@@ -89,6 +89,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         return [
             MyCourses::make(),
 
+            new \Infinety\Filemanager\FilemanagerTool(),
+
             \Spatie\BackupTool\BackupTool::make()
                 ->canSee(function (){
                     return auth()->user()->can('manage backup');
@@ -108,6 +110,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 }),
 
             \OptimistDigital\NovaSettings\NovaSettings::make(),
+
         ];
     }
 
