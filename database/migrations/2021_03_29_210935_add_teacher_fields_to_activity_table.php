@@ -14,7 +14,7 @@ class AddTeacherFieldsToActivityTable extends Migration
     public function up()
     {
         Schema::table('activities', function (Blueprint $table) {
-            $table->string('original_file');
+            $table->string('original_file')->nullable();
             $table->boolean('is_approved')->default(false);
         });
     }

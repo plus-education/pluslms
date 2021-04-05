@@ -129,9 +129,7 @@ class Activity extends Resource
             ,
 
             \Laravel\Nova\Fields\File::make('Archivo de respaldo', 'original_file')
-                ->required()
-                ->rules('required'),
-
+                ->required(),
 
            \Laravel\Nova\Fields\Number::make(__('Score'), 'score')
                ->min(0)
