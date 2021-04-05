@@ -101,7 +101,8 @@ class Group extends Resource
                 ->sortable()
                 ->required(),
 
-            \Laravel\Nova\Fields\Text::make('Zoom Link', 'zoom'),
+            \Laravel\Nova\Fields\Text::make('Zoom Link', 'zoom')
+                ->hideFromIndex(),
 
             new Tabs('Relations', [
                 HasMany::make(__('Courses'), 'Courses', Course::class),
