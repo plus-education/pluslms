@@ -5,7 +5,7 @@
                 Boleta de Calificaciones
             </h1>
 
-            <div  v-if="user.is_solvent">
+            <div>
                 <div
                     class="">
                     <div class="w-3/4 m-auto ">
@@ -95,9 +95,7 @@
                 </div>
             </div>
 
-            <div v-else class="bg-yellow-300 text-center p-4 text-2xl mt-4">
-                Por favor comunicarse a dirección. <br> Teléfono 2458-2191
-            </div>
+
 
         </section>
     </app-layout>
