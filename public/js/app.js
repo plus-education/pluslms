@@ -4330,12 +4330,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
-  props: ['gradebook', 'comments']
+  props: ['gradebook', 'comments', 'user']
 });
 
 /***/ }),
@@ -64946,192 +64954,230 @@ var render = function() {
         _vm._v("\n            Boleta de Calificaciones\n        ")
       ]),
       _vm._v(" "),
-      _c("div", {}, [
-        _c("div", { staticClass: "w-3/4 m-auto " }, [
-          _c(
-            "table",
-            {
-              staticClass:
-                "table table-auto w-full  border-collapse border mt-6 shadow-lg bg-white"
-            },
-            [
-              _c("thead", { staticClass: "bg-blue-900 text-white text-90" }, [
-                _c("tr", [
-                  _c(
-                    "th",
-                    { staticClass: "border border-green-600 px-4 w-2/5" },
-                    [_vm._v("Curso")]
-                  ),
-                  _vm._v(" "),
-                  _c("th", { staticClass: "border border-green-600 px-4" }, [
-                    _vm._v("Bimestre 1")
-                  ]),
-                  _vm._v(" "),
-                  _c("th", { staticClass: "border border-green-600 px-4" }, [
-                    _vm._v("Bimestre 2")
-                  ]),
-                  _vm._v(" "),
-                  _c("th", { staticClass: "border border-green-600 px-4" }, [
-                    _vm._v("Bimestre 3")
-                  ]),
-                  _vm._v(" "),
-                  _c("th", { staticClass: "border border-green-600 px-4" }, [
-                    _vm._v("Bimestre 4")
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c(
-                "tbody",
-                _vm._l(_vm.gradebook, function(course) {
-                  return _c("tr", [
-                    _c("td", { staticClass: "border border-green-600 px-4" }, [
-                      _vm._v(_vm._s(course.name))
-                    ]),
-                    _vm._v(" "),
-                    course.total < 35
-                      ? _c(
-                          "td",
-                          {
-                            staticClass:
-                              "border border-green-600 px-4 text-center"
-                          },
-                          [
-                            _vm._v(
-                              "\n                            65\n                        "
-                            )
-                          ]
-                        )
-                      : course.total < 55
-                      ? _c(
-                          "td",
-                          {
-                            staticClass:
-                              "border border-green-600 px-4 text-center"
-                          },
-                          [
-                            _vm._v(
-                              "\n                            72\n                        "
-                            )
-                          ]
-                        )
-                      : course.total < 65
-                      ? _c(
-                          "td",
-                          {
-                            staticClass:
-                              "border border-green-600 px-4 text-center"
-                          },
-                          [
-                            _vm._v(
-                              "\n                            75\n                        "
-                            )
-                          ]
-                        )
-                      : course.total < 71
-                      ? _c(
-                          "td",
-                          {
-                            staticClass:
-                              "border border-green-600 px-4 text-center"
-                          },
-                          [
-                            _vm._v(
-                              "\n                            78\n                        "
-                            )
-                          ]
-                        )
-                      : _c(
-                          "td",
-                          {
-                            staticClass:
-                              "border border-green-600 px-4 text-center"
-                          },
-                          [
-                            _vm._v(
-                              "\n                            " +
-                                _vm._s(
-                                  course.total + 5 > 100
-                                    ? 100
-                                    : parseInt(course.total)
-                                ) +
-                                "\n                        "
-                            )
-                          ]
-                        ),
-                    _vm._v(" "),
-                    _c("td", { staticClass: "border border-green-600 px-4" }),
-                    _vm._v(" "),
-                    _c("td", { staticClass: "border border-green-600 px-4" }),
-                    _vm._v(" "),
-                    _c("td", { staticClass: "border border-green-600 px-4" })
-                  ])
-                }),
-                0
-              )
-            ]
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _vm.comments.length > 0
-        ? _c("div", {}, [
-            _c("div", { staticClass: "w-3/4 m-auto " }, [
-              _c(
-                "table",
-                {
-                  staticClass:
-                    "table table-auto w-full  border-collapse border mt-6 shadow-lg bg-white"
-                },
-                [
-                  _c("thead", { staticClass: "bg-green-500 text-white" }, [
-                    _c("tr", [
-                      _c(
-                        "th",
-                        { staticClass: "border border-green-600 px-4" },
-                        [
-                          _vm._v(
-                            "\n                                Curso\n                            "
+      _vm.user.is_solvent
+        ? _c("div", [
+            _c("div", {}, [
+              _c("div", { staticClass: "w-3/4 m-auto " }, [
+                _c(
+                  "table",
+                  {
+                    staticClass:
+                      "table table-auto w-full  border-collapse border mt-6 shadow-lg bg-white"
+                  },
+                  [
+                    _c(
+                      "thead",
+                      { staticClass: "bg-blue-900 text-white text-90" },
+                      [
+                        _c("tr", [
+                          _c(
+                            "th",
+                            {
+                              staticClass: "border border-green-600 px-4 w-2/5"
+                            },
+                            [_vm._v("Curso")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "th",
+                            { staticClass: "border border-green-600 px-4" },
+                            [_vm._v("Bimestre 1")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "th",
+                            { staticClass: "border border-green-600 px-4" },
+                            [_vm._v("Bimestre 2")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "th",
+                            { staticClass: "border border-green-600 px-4" },
+                            [_vm._v("Bimestre 3")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "th",
+                            { staticClass: "border border-green-600 px-4" },
+                            [_vm._v("Bimestre 4")]
                           )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "th",
-                        { staticClass: "border border-green-600 px-4" },
-                        [
-                          _vm._v(
-                            "\n                                Commentario\n                            "
-                          )
-                        ]
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "tbody",
-                    _vm._l(_vm.comments, function(comment) {
-                      return _c("tr", [
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "tbody",
+                      _vm._l(_vm.gradebook, function(course) {
+                        return _c("tr", [
+                          _c(
+                            "td",
+                            { staticClass: "border border-green-600 px-4" },
+                            [_vm._v(_vm._s(course.name))]
+                          ),
+                          _vm._v(" "),
+                          course.total < 35
+                            ? _c(
+                                "td",
+                                {
+                                  staticClass:
+                                    "border border-green-600 px-4 text-center"
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                65\n                            "
+                                  )
+                                ]
+                              )
+                            : course.total < 55
+                            ? _c(
+                                "td",
+                                {
+                                  staticClass:
+                                    "border border-green-600 px-4 text-center"
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                72\n                            "
+                                  )
+                                ]
+                              )
+                            : course.total < 65
+                            ? _c(
+                                "td",
+                                {
+                                  staticClass:
+                                    "border border-green-600 px-4 text-center"
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                75\n                            "
+                                  )
+                                ]
+                              )
+                            : course.total < 71
+                            ? _c(
+                                "td",
+                                {
+                                  staticClass:
+                                    "border border-green-600 px-4 text-center"
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                78\n                            "
+                                  )
+                                ]
+                              )
+                            : _c(
+                                "td",
+                                {
+                                  staticClass:
+                                    "border border-green-600 px-4 text-center"
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                " +
+                                      _vm._s(
+                                        course.total + 5 > 100
+                                          ? 100
+                                          : parseInt(course.total)
+                                      ) +
+                                      "\n                            "
+                                  )
+                                ]
+                              ),
+                          _vm._v(" "),
+                          _c("td", {
+                            staticClass: "border border-green-600 px-4"
+                          }),
+                          _vm._v(" "),
+                          _c("td", {
+                            staticClass: "border border-green-600 px-4"
+                          }),
+                          _vm._v(" "),
+                          _c("td", {
+                            staticClass: "border border-green-600 px-4"
+                          })
+                        ])
+                      }),
+                      0
+                    )
+                  ]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _vm.comments.length > 0
+              ? _c("div", {}, [
+                  _c("div", { staticClass: "w-3/4 m-auto " }, [
+                    _c(
+                      "table",
+                      {
+                        staticClass:
+                          "table table-auto w-full  border-collapse border mt-6 shadow-lg bg-white"
+                      },
+                      [
                         _c(
-                          "td",
-                          { staticClass: "border border-green-600 px-4" },
-                          [_vm._v(_vm._s(comment.name))]
+                          "thead",
+                          { staticClass: "bg-green-500 text-white" },
+                          [
+                            _c("tr", [
+                              _c(
+                                "th",
+                                { staticClass: "border border-green-600 px-4" },
+                                [
+                                  _vm._v(
+                                    "\n                                Curso\n                            "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "th",
+                                { staticClass: "border border-green-600 px-4" },
+                                [
+                                  _vm._v(
+                                    "\n                                Commentario\n                            "
+                                  )
+                                ]
+                              )
+                            ])
+                          ]
                         ),
                         _vm._v(" "),
                         _c(
-                          "td",
-                          { staticClass: "border border-green-600 px-4" },
-                          [_vm._v(_vm._s(comment.comment))]
+                          "tbody",
+                          _vm._l(_vm.comments, function(comment) {
+                            return _c("tr", [
+                              _c(
+                                "td",
+                                { staticClass: "border border-green-600 px-4" },
+                                [_vm._v(_vm._s(comment.name))]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "td",
+                                { staticClass: "border border-green-600 px-4" },
+                                [_vm._v(_vm._s(comment.comment))]
+                              )
+                            ])
+                          }),
+                          0
                         )
-                      ])
-                    }),
-                    0
-                  )
-                ]
-              )
-            ])
+                      ]
+                    )
+                  ])
+                ])
+              : _vm._e()
           ])
-        : _vm._e()
+        : _c(
+            "div",
+            { staticClass: "bg-yellow-300 text-center p-4 text-2xl mt-4" },
+            [
+              _vm._v("\n            Por favor comunicarse a dirección. "),
+              _c("br"),
+              _vm._v(" Teléfono 2458-2191\n        ")
+            ]
+          )
     ])
   ])
 }
