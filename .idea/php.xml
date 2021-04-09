@@ -214,6 +214,12 @@
       <path value="$PROJECT_DIR$/vendor/gregoriohc/laravel-nova-theme-responsive" />
       <path value="$PROJECT_DIR$/vendor/kpolicar/nova-date-range" />
       <path value="$PROJECT_DIR$/vendor/naoray/nova-json" />
+      <path value="$PROJECT_DIR$/vendor/czemu/nova-calendar-tool" />
+      <path value="$PROJECT_DIR$/vendor/google/apiclient" />
+      <path value="$PROJECT_DIR$/vendor/google/auth" />
+      <path value="$PROJECT_DIR$/vendor/firebase/php-jwt" />
+      <path value="$PROJECT_DIR$/vendor/google/apiclient-services" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-google-calendar" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

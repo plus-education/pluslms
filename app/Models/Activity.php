@@ -20,6 +20,8 @@ class Activity extends Model implements Sortable
 {
     use HasFactory, SortableTrait;
 
+    protected $guarded = [];
+
     public $sortable = [
         'order_column_name' => 'order',
         'sort_when_creating' => true,

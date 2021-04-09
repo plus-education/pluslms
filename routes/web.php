@@ -66,3 +66,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
 
     Route::post('/comments/delete', [\App\Http\Controllers\CommentController::class, 'delete']);
 });
+
+
+Route::get('/gradebook/api', \App\Http\Controllers\GradebookController::class);

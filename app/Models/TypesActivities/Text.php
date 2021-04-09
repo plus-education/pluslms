@@ -12,6 +12,8 @@ class Text extends Model
 
     const COMPONENT = 'TEXT';
 
+    protected $guarded = [];
+
     protected $appends = ['html'];
 
     public function getHtmlAttribute()

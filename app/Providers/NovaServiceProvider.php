@@ -111,6 +111,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
             \OptimistDigital\NovaSettings\NovaSettings::make(),
 
+            new \Czemu\NovaCalendarTool\NovaCalendarTool,
+
         ];
     }
 

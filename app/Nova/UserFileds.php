@@ -4,6 +4,7 @@
 namespace App\Nova;
 
 
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
@@ -35,7 +36,9 @@ class UserFileds
 
             RoleSelect::make(__('Role'), 'roles'),
 
-            HasMany::make('Courses')
+            HasMany::make('Courses'),
+
+            Boolean::make('Es solvente', 'is_solvent')
         ];
     }
 }

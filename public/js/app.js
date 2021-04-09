@@ -2800,6 +2800,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -4258,11 +4269,73 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__["default"]
-  }
+  },
+  props: ['gradebook', 'comments']
 });
 
 /***/ }),
@@ -62072,24 +62145,44 @@ var render = function() {
                   _c(
                     "jet-nav-link",
                     {
+                      staticClass: "bg-gray-100",
                       attrs: {
-                        href: "/notifications",
-                        active: _vm.$page.currentRouteName == "notifications"
+                        href: "/gradebook",
+                        active: _vm.$page.currentRouteName == "gradebook"
                       }
                     },
                     [
-                      _vm._v(
-                        "\n                            Notificaciones\n                        "
-                      )
+                      _c("div", { staticClass: "flex items-center" }, [
+                        _c("div", { staticClass: "flex-shrink" }, [
+                          _c(
+                            "svg",
+                            {
+                              staticClass: "h-5 w-5 text-green-500",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 20 20",
+                                fill: "currentColor"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  d:
+                                    "M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"
+                                }
+                              })
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "flex-1" }, [
+                          _vm._v(
+                            "\n                                    Notas\n                                "
+                          )
+                        ])
+                      ])
                     ]
-                  ),
-                  _vm._v(" "),
-                  _c("jet-nav-link", {
-                    attrs: {
-                      href: "/gradebook",
-                      active: _vm.$page.currentRouteName == "gradebook"
-                    }
-                  })
+                  )
                 ],
                 1
               )
@@ -64849,7 +64942,9 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("app-layout", [
     _c("section", { staticClass: "container m-auto my-4" }, [
-      _c("h1", [_vm._v("\n            Boleta de Calificaciones\n        ")]),
+      _c("h1", { staticClass: "text-xl text-gray-700" }, [
+        _vm._v("\n            Boleta de Calificaciones\n        ")
+      ]),
       _vm._v(" "),
       _c("div", {}, [
         _c("div", { staticClass: "w-3/4 m-auto " }, [
@@ -64860,7 +64955,7 @@ var render = function() {
                 "table table-auto w-full  border-collapse border mt-6 shadow-lg bg-white"
             },
             [
-              _c("thead", [
+              _c("thead", { staticClass: "bg-blue-900 text-white text-90" }, [
                 _c("tr", [
                   _c(
                     "th",
@@ -64886,27 +64981,141 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
-              _c("tbody", [
-                _c("tr", [
-                  _c("td", { staticClass: "border border-green-600 px-4" }, [
-                    _vm._v("Matematicas")
-                  ]),
-                  _vm._v(" "),
-                  _c("td", { staticClass: "border border-green-600 px-4" }, [
-                    _vm._v("10")
-                  ]),
-                  _vm._v(" "),
-                  _c("td", { staticClass: "border border-green-600 px-4" }),
-                  _vm._v(" "),
-                  _c("td", { staticClass: "border border-green-600 px-4" }),
-                  _vm._v(" "),
-                  _c("td", { staticClass: "border border-green-600 px-4" })
-                ])
-              ])
+              _c(
+                "tbody",
+                _vm._l(_vm.gradebook, function(course) {
+                  return _c("tr", [
+                    _c("td", { staticClass: "border border-green-600 px-4" }, [
+                      _vm._v(_vm._s(course.name))
+                    ]),
+                    _vm._v(" "),
+                    course.total < 35
+                      ? _c(
+                          "td",
+                          {
+                            staticClass:
+                              "border border-green-600 px-4 text-center"
+                          },
+                          [
+                            _vm._v(
+                              "\n                            65\n                        "
+                            )
+                          ]
+                        )
+                      : course.total < 55
+                      ? _c(
+                          "td",
+                          {
+                            staticClass:
+                              "border border-green-600 px-4 text-center"
+                          },
+                          [
+                            _vm._v(
+                              "\n                            72\n                        "
+                            )
+                          ]
+                        )
+                      : course.total < 65
+                      ? _c(
+                          "td",
+                          {
+                            staticClass:
+                              "border border-green-600 px-4 text-center"
+                          },
+                          [
+                            _vm._v(
+                              "\n                            75\n                        "
+                            )
+                          ]
+                        )
+                      : course.total < 71
+                      ? _c(
+                          "td",
+                          {
+                            staticClass:
+                              "border border-green-600 px-4 text-center"
+                          },
+                          [
+                            _vm._v(
+                              "\n                            78\n                        "
+                            )
+                          ]
+                        )
+                      : _c(
+                          "td",
+                          {
+                            staticClass:
+                              "border border-green-600 px-4 text-center"
+                          },
+                          [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(
+                                  course.total + 5 > 100
+                                    ? 100
+                                    : parseInt(course.total)
+                                ) +
+                                "\n                        "
+                            )
+                          ]
+                        ),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "border border-green-600 px-4" }),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "border border-green-600 px-4" }),
+                    _vm._v(" "),
+                    _c("td", { staticClass: "border border-green-600 px-4" })
+                  ])
+                }),
+                0
+              )
             ]
           )
         ])
-      ])
+      ]),
+      _vm._v(" "),
+      _vm.comments.length > 0
+        ? _c("div", {}, [
+            _c("div", { staticClass: "w-3/4 m-auto " }, [
+              _c(
+                "table",
+                {
+                  staticClass:
+                    "table table-auto w-full  border-collapse border mt-6 shadow-lg bg-white"
+                },
+                [
+                  _c("thead", [
+                    _c("tr", [
+                      _c("th", [
+                        _vm._v(
+                          "\n                                Curso\n                            "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("th", [
+                        _vm._v(
+                          "\n                                Commentario\n                            "
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "tbody",
+                    _vm._l(_vm.comments, function(comment) {
+                      return _c("tr", [
+                        _c("td", [_vm._v(_vm._s(comment.name))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(comment.comment))])
+                      ])
+                    }),
+                    0
+                  )
+                ]
+              )
+            ])
+          ])
+        : _vm._e()
     ])
   ])
 }
