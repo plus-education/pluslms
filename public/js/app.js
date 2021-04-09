@@ -65084,19 +65084,27 @@ var render = function() {
                     "table table-auto w-full  border-collapse border mt-6 shadow-lg bg-white"
                 },
                 [
-                  _c("thead", [
+                  _c("thead", { staticClass: "bg-green-500 text-white" }, [
                     _c("tr", [
-                      _c("th", [
-                        _vm._v(
-                          "\n                                Curso\n                            "
-                        )
-                      ]),
+                      _c(
+                        "th",
+                        { staticClass: "border border-green-600 px-4" },
+                        [
+                          _vm._v(
+                            "\n                                Curso\n                            "
+                          )
+                        ]
+                      ),
                       _vm._v(" "),
-                      _c("th", [
-                        _vm._v(
-                          "\n                                Commentario\n                            "
-                        )
-                      ])
+                      _c(
+                        "th",
+                        { staticClass: "border border-green-600 px-4" },
+                        [
+                          _vm._v(
+                            "\n                                Commentario\n                            "
+                          )
+                        ]
+                      )
                     ])
                   ]),
                   _vm._v(" "),
@@ -65104,9 +65112,17 @@ var render = function() {
                     "tbody",
                     _vm._l(_vm.comments, function(comment) {
                       return _c("tr", [
-                        _c("td", [_vm._v(_vm._s(comment.name))]),
+                        _c(
+                          "td",
+                          { staticClass: "border border-green-600 px-4" },
+                          [_vm._v(_vm._s(comment.name))]
+                        ),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(comment.comment))])
+                        _c(
+                          "td",
+                          { staticClass: "border border-green-600 px-4" },
+                          [_vm._v(_vm._s(comment.comment))]
+                        )
                       ])
                     }),
                     0

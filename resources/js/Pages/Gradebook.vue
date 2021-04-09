@@ -72,20 +72,20 @@
             <div class="" v-if="comments.length > 0">
                 <div class="w-3/4 m-auto ">
                     <table class="table table-auto w-full  border-collapse border mt-6 shadow-lg bg-white">
-                        <thead>
+                        <thead class="bg-green-500 text-white">
                             <tr>
-                                <th>
+                                <th class="border border-green-600 px-4">
                                     Curso
                                 </th>
-                                <th>
+                                <th class="border border-green-600 px-4">
                                     Commentario
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr v-for="comment in comments">
-                                <td>{{ comment.name }}</td>
-                                <td>{{ comment.comment }}</td>
+                                <td class="border border-green-600 px-4">{{ comment.name }}</td>
+                                <td class="border border-green-600 px-4">{{ comment.comment }}</td>
                             </tr>
                         </tbody>
                     </table>
