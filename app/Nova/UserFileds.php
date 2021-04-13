@@ -34,7 +34,7 @@ class UserFileds
                 ->creationRules('required', 'string', 'min:8')
                 ->updateRules('nullable', 'string', 'min:8'),
 
-            Text::make(__('Code'), 'Code' )
+            Text::make(__('Code'), 'code' )
                 ->sortable()
                 ->rules('max:255'),
 
