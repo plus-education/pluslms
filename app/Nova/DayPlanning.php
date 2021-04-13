@@ -64,7 +64,7 @@ class DayPlanning extends Resource
                 ->required()
                 ->rules('required'),
 
-            NovaEditorJs::make(__('Tarea'), 'Homework')
+            NovaEditorJs::make(__('Tarea'), 'homework')
                 ->hideFromIndex()
                 ->required()
                 ->rules('required'),

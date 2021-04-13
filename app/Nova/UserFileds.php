@@ -34,6 +34,11 @@ class UserFileds
                 ->creationRules('required', 'string', 'min:8')
                 ->updateRules('nullable', 'string', 'min:8'),
 
+            Text::make(__('Code'), 'Code' )
+                ->sortable()
+                ->rules('max:255'),
+
+
             RoleSelect::make(__('Role'), 'roles'),
 
             HasMany::make('Courses'),

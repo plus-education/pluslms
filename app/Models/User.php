@@ -75,7 +75,7 @@ class User extends Authenticatable
     public function activities()
     {
         return $this->belongsToMany(Activity::class)
-            ->withPivot('score', 'comment', 'file');
+            ->withPivot('score', 'comment', 'file', 'created_at', 'updated_at');
     }
 
     public function gradeExercise($id, $score = 0, $comment = '')
