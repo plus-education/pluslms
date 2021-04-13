@@ -10,6 +10,8 @@
                         <th>
                             Alumno
                         </th>
+                        <th>Entrega</th>
+                        <th>Modificación</th>
                         <th>
                             Tarea
                         </th>
@@ -36,6 +38,12 @@
                         </td>
                         <td>
                             {{ student.name }}
+                        </td>
+                        <td>
+                            {{ student.activity.created_at }}
+                        </td>
+                        <td>
+                            {{ student.activity.update_at }}
                         </td>
                         <td class="text-center">
                             <a v-show="student.activity.hasOwnProperty('file')"

@@ -324,6 +324,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['resourceName', 'resourceId', 'panel'],
@@ -405,6 +413,22 @@ var render = function() {
                 _vm._v(
                   "\n                          " +
                     _vm._s(student.name) +
+                    "\n                      "
+                )
+              ]),
+              _vm._v(" "),
+              _c("td", [
+                _vm._v(
+                  "\n                          " +
+                    _vm._s(student.activity.created_at) +
+                    "\n                      "
+                )
+              ]),
+              _vm._v(" "),
+              _c("td", [
+                _vm._v(
+                  "\n                          " +
+                    _vm._s(student.activity.update_at) +
                     "\n                      "
                 )
               ]),
@@ -527,6 +551,10 @@ var staticRenderFns = [
         _c("th", [
           _vm._v("\n                          Alumno\n                      ")
         ]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Entrega")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Modificación")]),
         _vm._v(" "),
         _c("th", [
           _vm._v("\n                          Tarea\n                      ")
