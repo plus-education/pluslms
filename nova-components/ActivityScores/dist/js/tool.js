@@ -332,6 +332,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['resourceName', 'resourceId', 'panel'],
@@ -434,30 +436,34 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("td", { staticClass: "text-center" }, [
-                _c(
-                  "a",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: student.activity.hasOwnProperty("file"),
-                        expression: "student.activity.hasOwnProperty('file')"
-                      }
-                    ],
-                    staticClass: "btn text-sm px-4 py-2 btn-default",
-                    attrs: {
-                      href: "/storage/" + student.activity.file,
-                      target: "_blank",
-                      download: ""
-                    }
-                  },
-                  [
-                    _vm._v(
-                      "\n                             Descargar\n                          "
-                    )
-                  ]
-                )
+                student.activity.hasOwnProperty("file")
+                  ? _c("div", [
+                      _c(
+                        "a",
+                        {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value: student.activity.file != null,
+                              expression: "student.activity.file != null "
+                            }
+                          ],
+                          staticClass: "btn text-sm px-4 py-2 btn-default",
+                          attrs: {
+                            href: "/storage/" + student.activity.file,
+                            target: "_blank",
+                            download: ""
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                                  Descargar\n                              "
+                          )
+                        ]
+                      )
+                    ])
+                  : _vm._e()
               ]),
               _vm._v(" "),
               _c("td", [

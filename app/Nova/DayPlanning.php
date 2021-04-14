@@ -75,7 +75,7 @@ class DayPlanning extends Resource
                 \Laravel\Nova\Fields\Text::make('Reglas de clase')->hideFromIndex(),
                 \Laravel\Nova\Fields\Text::make('Tema')->hideFromIndex(),
                 \Laravel\Nova\Fields\Text::make('Actividad Inicial')->hideFromIndex(),
-                \Laravel\Nova\Fields\Text::make('Proceso de aprendizaje')->hideFromIndex(),
+                NovaEditorJs::make('Proceso de aprendizaje')->hideFromIndex(),
                 \Laravel\Nova\Fields\Text::make('Evaluación')->hideFromIndex(),
                 \Laravel\Nova\Fields\Text::make('Dudas y respuestas')->hideFromIndex()
             ]),

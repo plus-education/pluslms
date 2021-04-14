@@ -46,14 +46,16 @@
                             {{ student.activity.update_at }}
                         </td>
                         <td class="text-center">
-                            <a v-show="student.activity.hasOwnProperty('file')"
-                               :href="`/storage/${student.activity.file}`"
-                               class="btn text-sm px-4 py-2 btn-default"
-                               target="_blank"
-                               download
-                            >
-                               Descargar
-                            </a>
+                            <div v-if="student.activity.hasOwnProperty('file')">
+                                <a v-show="student.activity.file != null "
+                                   :href="`/storage/${student.activity.file}`"
+                                   class="btn text-sm px-4 py-2 btn-default"
+                                   target="_blank"
+                                   download
+                                >
+                                    Descargar
+                                </a>
+                            </div>
                         </td>
                         <td>
                             <input
