@@ -37,4 +37,9 @@ class Topic extends Model implements Sortable
     {
         return $this->hasMany(WeeklyPlanning::class);
     }
+
+    public function getTotalActivitiesAttribute()
+    {
+        return $this->activities()->sum('score');
+    }
 }

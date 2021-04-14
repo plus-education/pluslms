@@ -95,6 +95,8 @@ class Topic extends Resource
             ]),
 
             OrderField::make(__('Order'), 'order'),
+
+            Text::make('Punte Asignado', 'totalActivities')
         ];
     }
 
