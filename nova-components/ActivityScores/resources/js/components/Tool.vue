@@ -47,7 +47,7 @@
                         </td>
                         <td class="text-center">
                             <div v-if="student.activity.hasOwnProperty('file')">
-                                <a v-show="student.activity.file != null "
+                                <a v-if="student.activity.file != null || student.activity.file == 'null'  "
                                    :href="`/storage/${student.activity.file}`"
                                    class="btn text-sm px-4 py-2 btn-default"
                                    target="_blank"

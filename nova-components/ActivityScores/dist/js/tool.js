@@ -438,30 +438,25 @@ var render = function() {
               _c("td", { staticClass: "text-center" }, [
                 student.activity.hasOwnProperty("file")
                   ? _c("div", [
-                      _c(
-                        "a",
-                        {
-                          directives: [
+                      student.activity.file != null ||
+                      student.activity.file == "null"
+                        ? _c(
+                            "a",
                             {
-                              name: "show",
-                              rawName: "v-show",
-                              value: student.activity.file != null,
-                              expression: "student.activity.file != null "
-                            }
-                          ],
-                          staticClass: "btn text-sm px-4 py-2 btn-default",
-                          attrs: {
-                            href: "/storage/" + student.activity.file,
-                            target: "_blank",
-                            download: ""
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "\n                                  Descargar\n                              "
+                              staticClass: "btn text-sm px-4 py-2 btn-default",
+                              attrs: {
+                                href: "/storage/" + student.activity.file,
+                                target: "_blank",
+                                download: ""
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                  Descargar\n                              "
+                              )
+                            ]
                           )
-                        ]
-                      )
+                        : _vm._e()
                     ])
                   : _vm._e()
               ]),
