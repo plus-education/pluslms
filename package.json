@@ -48,7 +48,9 @@
     "dependencies": {
         "@inertiajs/inertia": "^0.2.3",
         "@inertiajs/inertia-vue": "^0.2.3",
+        "laravel-echo": "^1.10.0",
         "pdfvuer": "^1.7.1",
+        "pusher-js": "^7.0.3",
         "serverless": "^2.10.0",
         "tailwindcss": "^1.8.8",
         "vue": "^2.6.12",

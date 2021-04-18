@@ -4,6 +4,7 @@ namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Notifications\Messages\BroadcastMessage;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
@@ -11,14 +12,16 @@ class NewComment extends Notification
 {
     use Queueable;
 
+    private $details;
+
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($details)
     {
-        //
+        $this->details = $details;
     }
 
     /**
@@ -29,7 +32,10 @@ class NewComment extends Notification
      */
     public function via($notifiable)
     {
-        return ['database'];
+        return [
+            'database',
+            'broadcast'
+        ];
     }
 
     /**
@@ -54,8 +60,10 @@ class NewComment extends Notification
      */
     public function toArray($notifiable)
     {
-        return [
-            //
-        ];
+        return \Mirovit\NovaNotifications\Notification::make()
+            ->info($this->details['title'])
+            ->subtitle($this->details['details'])
+            ->routeDetail($this->details['resourceName'], $this->details['resourceId'])
+            ->toArray();
     }
 }

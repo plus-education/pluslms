@@ -60,7 +60,7 @@ class WeeklyPlanning extends Resource
             HasMany::make('Planificaciónes diarias', 'dayPlannings', DayPlanning::class),
 
             ActivityComments::make()
-            ->typeOfComment('weeklyPlanning'),
+                ->typeOfComment('weeklyPlanning')
         ];
     }
 

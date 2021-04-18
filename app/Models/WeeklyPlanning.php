@@ -23,6 +23,8 @@ class WeeklyPlanning extends Model
     ];
 
 
+    protected $appends = ['course'];
+
     public function topic () {
         return $this->belongsTo(Topic::class);
     }
@@ -37,5 +39,10 @@ class WeeklyPlanning extends Model
         return $this->morphMany(Comment::class, 'commentable')
             ->whereNull('parent_id')
             ->orderBy('id', 'DESC');
+    }
+
+    public function getCourseAttribute()
+    {
+        return $this->topic->course;
     }
 }

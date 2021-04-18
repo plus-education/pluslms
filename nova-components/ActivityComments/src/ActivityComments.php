@@ -30,4 +30,9 @@ class ActivityComments extends ResourceTool
     {
         return $this->withMeta(['typeOfcomment' => $type]);
     }
+
+    public function withCourse($course)
+    {
+        return $this->withMeta(['typeOfcomment' => $course]);
+    }
 }

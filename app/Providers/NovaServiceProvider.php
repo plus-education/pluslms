@@ -113,6 +113,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
             new \Czemu\NovaCalendarTool\NovaCalendarTool,
 
+            \Mirovit\NovaNotifications\NovaNotifications::make(),
         ];
     }
 

@@ -6,7 +6,7 @@
 
       <div class="card mb-6 py-4 px-6" v-if="!showAnswers">
           <div class="text-center shadow-md rounded-lg  mb-4 p-4">
-              <h2 class="text-90 text-sm mb-4 text-left">Comentar:</h2>
+              <h2 class="text-90 text-sm mb-4 text-left">Comentar: XD</h2>
               <vue-editor v-model="comment" :editor-toolbar="customToolbar"  />
 
               <button
@@ -193,6 +193,10 @@
                 }
 
                 return this.$attrs.field.typeOfcomment
+            },
+
+            course: function () {
+                return this.panel.fields[0].withCourse
             }
         },
 
@@ -204,14 +208,19 @@
             getComment: function () {
                 Nova.request().get(`/commnets/activity/${this.resourceId}/${this.typeOfcomment}`).then(response => {
                     this.comments = response.data
+                    console.log('zxd')
                 })
             },
 
             saveComment: function () {
                 let data = {
                     'activityId': this.resourceId,
-                    'comment': this.comment
+                    'comment': this.comment,
+                    'resourceId': this.resourceId,
+                    'resourceName': this.resourceName,
                 }
+
+                console.log(data)
 
                 Nova.request().post(`/commnets/activity/${this.typeOfcomment}`, data).then(response => {
                     this.comments.unshift(response.data)

@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Bundles\Notifications\Aplication\CommentNotificator;
+use App\Bundles\Notifications\Domain\Notification;
 use App\Models\Activity;
 use App\Models\Comment;
+use App\Models\Roles;
+use App\Notifications\NewComment;
 use Illuminate\Http\Request;
 
 class CommentController extends Controller
@@ -14,7 +18,7 @@ class CommentController extends Controller
         return $model::findOrFail($activityId)->comments->sortByDesc('id');
     }
 
-    public function store(Request $request, $type)
+    public function store(Request $request, $type, CommentNotificator $notificator)
     {
         $comment = new Comment();
         $comment->comment = $request->get('comment');
@@ -23,6 +27,17 @@ class CommentController extends Controller
 
         $model = comment::TYPE[$type];
         $model = $model::find($request->get('activityId'));
+
+
+        /*$notification = new Notification('Nuevo Comentario',
+            substr(strip_tags($comment->comment), 0, 25) . '...',
+            $request->get('resourceId'),
+            $request->get('resourceName')
+        );
+
+        $notificator->sendToUsersWithRole( Roles::ADMIN, $notification);
+        $notificator->sendToTeacherCourse($model->course, $notification);
+*/
         return $model->comments()->save($comment);
     }
 

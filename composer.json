@@ -54,6 +54,7 @@
         "naoray/nova-json": "^1.2",
         "optimistdigital/nova-settings": "^3.1",
         "optimistdigital/nova-tailwind": "^1.0",
+        "pusher/pusher-php-server": "^6.1",
         "spatie/nova-backup-tool": "^4.0",
         "spatie/nova-tags-field": "^3.0",
         "vyuldashev/nova-permission": "^2.9",
