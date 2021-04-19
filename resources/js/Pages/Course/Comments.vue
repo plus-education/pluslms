@@ -1,52 +1,162 @@
 <template>
-    <div class="border-t pt-4">
-        <div class="flex items-center">
-            <div class="mr-2">
-                <svg class="w-8 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
-                </svg>
+    <div>
+        <h1 class="text-90 font-normal text-2xl mb-3">
+            Commentarios
+        </h1>
+
+        <div class="card mb-6 py-4 px-6" v-if="!showAnswers">
+            <div class="text-center shadow-md rounded-lg  mb-4 p-4">
+                <h2 class="text-90 text-sm mb-4 text-left">Comentar:</h2>
+                <vue-editor v-model="comment" :editor-toolbar="customToolbar"  />
+
+                <button
+                    class="my-4 btn-default btn-primary"
+                    v-if="comment != null  && comment != '' "
+                    @click="saveComment()"
+                >Commentar</button>
             </div>
 
-            <div>
-                <h1 class="text-2xl text-gray-800">Comentarios</h1>
+            <div v-for="comment in comments" class="mb-4 p-4  shadow-md rounded-lg">
+                <div
+                    class="flex items-center"
+                >
+                    <div class="flex-shrink">
+                        <img :src="comment.user.profile_photo_url" alt="" class="w-12 rounded-full">
+                    </div>
+                    <div class="ml-2 flex-1">
+                        <div class="flex items-center">
+                            <div class="flex-shrink">
+                                <h2 class="text-90 text-sm">
+                                    {{ comment.user.name }}
+                                </h2>
+                            </div>
+                            <div class="text-xs  bg-gray-200 ml-2 px-2 py-2 rounded-lg">
+                                {{ comment.created_at }}
+                            </div>
+                        </div>
+
+                        <div v-html="comment.comment" class="mt-2"></div>
+
+                        <div class="text-left">
+                            <button class="mt-4"  @click="showComment(comment)">
+                                <div class="flex items-center align-middle">
+                                    <div class="flex-shrink">
+                                        <svg class="w-6  text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+                                        </svg>
+                                    </div>
+
+                                    <div class="flex-1 ml-2  text-blue-600">
+                                        Respuestas
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex-shrink">
+                        <button @click="deleteComment(comment)">
+                            <svg class="w-4 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
             </div>
         </div>
 
-        <div class="card mb-6 py-4 px-6">
-            <div class="text-center border-b border-gray-300">
-                <h2 class="text-90 text-sm mb-4 text-left">Comentar:</h2>
-                <textarea v-model="comment" class="w-full form-control form-input form-input-bordered py-3 h-auto  mb-2"></textarea>
+        <div v-else>
+            <div class="mb-4 p-4 shadow-md rounded-lg bg-gray-100">
+                <div
+                    class="flex items-center"
+                >
+                    <div class="flex-shrink">
+                        <img :src="comment.user.profile_photo_url" alt="" class="w-12 rounded-full">
+                    </div>
+                    <div class="ml-2 flex-1">
+                        <div class="flex items-center">
+                            <div class="flex-shrink">
+                                <h2 class="text-90 text-sm">
+                                    {{ comment.user.name }}
+                                </h2>
+                            </div>
+                            <div class="text-xs  bg-gray-200 ml-2 px-2 py-2 rounded-lg">
+                                {{ comment.created_at }}
+                            </div>
+                        </div>
 
-                <button
-                    class="my-4 bg-green-500 shadow px-4 py-2 text-white rounded"
-                    v-if="comment != null  && comment != '' "
-                    @click="saveComment()"
-                >Comentar</button>
+                        <div v-html="comment.comment" class="mt-2"></div>
+
+                        <div class="text-left">
+                            <button class="mt-4" @click="returnToComments()">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink">
+                                        <svg class="w-6  text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                                        </svg>
+                                    </div>
+
+                                    <div class="flex-1 ml-2  text-green-600">
+                                        Regresar
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex-shrink">
+                        <button @click="deleteComment(comment)">
+                            <svg class="w-4 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
             </div>
 
-            <div
-                v-for="comment in comments"
-                class="border-b border-gray-300 py-4 flex items-center"
-            >
-                <div class="flex-shrink">
-                    <img :src="comment.user.profile_photo_url" alt="" class="w-12 rounded-full">
-                </div>
-                <div class="ml-2 flex-1">
-                    <h2 class="text-90 text-sm">{{ comment.user.name }}</h2>
-
-                    {{ comment.comment }}
-                </div>
-
+            <div v-for="comment in answers" class="mb-4 p-4  shadow-md rounded-lg bg-white">
                 <div
-                    v-if="user.id == comment.user.id"
-                    class="flex-shrink"
+                    class="flex items-center"
                 >
-                    <button @click="deleteComment(comment)">
-                        <svg class="w-4 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                        </svg>
-                    </button>
+                    <div class="flex-shrink">
+                        <img :src="comment.user.profile_photo_url" alt="" class="w-12 rounded-full">
+                    </div>
+                    <div class="ml-2 flex-1">
+                        <div class="flex items-center">
+                            <div class="flex-shrink">
+                                <h2 class="text-90 text-sm">
+                                    {{ comment.user.name }}
+                                </h2>
+                            </div>
+                            <div class="text-xs  bg-gray-200 ml-2 px-2 py-2 rounded-lg">
+                                {{ comment.created_at }}
+                            </div>
+                        </div>
+
+                        <div v-html="comment.comment" class="mt-2"></div>
+                    </div>
+
+                    <div class="flex-shrink">
+                        <button @click="deleteComment(comment)">
+                            <svg class="w-4 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
+
+            </div>
+
+
+            <div class="text-center shadow-md rounded-lg  mb-4 p-4 bg-white">
+                <h2 class="text-90 text-sm mb-4 text-left">Responder:</h2>
+                <vue-editor v-model="answer" :editor-toolbar="customToolbar"  />
+
+                <button
+                    class="my-4 btn-default btn-primary"
+                    v-if="answer != null  && answer != '' "
+                    @click="saveAnswer()"
+                >Responder</button>
             </div>
         </div>
 
@@ -54,17 +164,33 @@
 </template>
 
 <script>
+    import { VueEditor } from "vue2-editor";
+
     export default {
         props: {
             activity: Object,
             user: Object
         },
 
+        components: { VueEditor },
+
         data: function () {
             return {
                 comment: null,
-                comments: Object
+                comments: Object,
+                showAnswers: false,
+                answer: null,
+                answers: Object,
+                customToolbar: [
+                    ['font' ,"bold", "italic", "underline"],
+                    [{ list: "ordered" }, { list: "bullet" }],
+                    ["image"]
+                ]
             }
+        },
+
+        computed: {
+
         },
 
         mounted() {
@@ -73,18 +199,21 @@
 
         methods: {
             getComment: function () {
-                axios.get(`/commnets/activity/${this.activity.id}`).then(response => {
+                axios.get(`/commnets/activity/${this.activity.id}/activity`).then(response => {
                     this.comments = response.data
+                    console.log('zxd')
                 })
             },
 
             saveComment: function () {
                 let data = {
                     'activityId': this.activity.id,
-                    'comment': this.comment
+                    'comment': this.comment,
+                    'resourceId': this.activity.id,
+                    'resourceName': 'activities',
                 }
 
-                axios.post(`/commnets/activity`, data).then(response => {
+                axios.post(`/commnets/activity/activity`, data).then(response => {
                     this.comments.unshift(response.data)
                 })
 
@@ -95,11 +224,40 @@
                 this.comments = this.comments.filter(item => item.id != comment.id)
 
                 axios.post(`/comments/delete`, {'commentId': comment.id})
-            }
+            },
+
+            showComment: function (comment) {
+                this.comment = comment
+                this.showAnswers = true
+                this.getAnswers()
+            },
+
+            returnToComments: function () {
+                this.comment = null
+                this.showAnswers = false
+                this.answers = Object
+            },
+
+            getAnswers: function () {
+                axios.get(`/commnets/answers/${this.comment.id}/`).then(response => {
+                    this.answers = response.data
+                })
+            },
+
+            saveAnswer: function () {
+                let data = {
+                    'activityId': this.activity.id,
+                    'comment': this.answer,
+                    'parent_id': this.comment.id
+                }
+
+                axios.post(`/commnets/storeAnswer/activity`, data).then(response => {
+                    this.answers.push(response.data)
+                })
+
+                this.answer = ''
+            },
+
         }
     }
 </script>
-
-<style scoped>
-
-</style>

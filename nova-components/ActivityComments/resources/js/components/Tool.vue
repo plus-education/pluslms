@@ -6,7 +6,7 @@
 
       <div class="card mb-6 py-4 px-6" v-if="!showAnswers">
           <div class="text-center shadow-md rounded-lg  mb-4 p-4">
-              <h2 class="text-90 text-sm mb-4 text-left">Comentar: XD</h2>
+              <h2 class="text-90 text-sm mb-4 text-left">Comentar:</h2>
               <vue-editor v-model="comment" :editor-toolbar="customToolbar"  />
 
               <button

@@ -71,5 +71,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
 Route::get('/gradebook/api', \App\Http\Controllers\GradebookController::class);
 
 Route::get('/test', function (\App\Repositories\UserRepositoryInterface $userRepository) {
-    dd($userRepository->withTeacherRoleByCourse(\App\Models\Course::find(210)));
+    $user = auth()->user();
+
+    $user->notify(new \App\Notifications\StudentAlert([
+        'title' => 'Hola Camaron sin cola'
+    ]));
 });

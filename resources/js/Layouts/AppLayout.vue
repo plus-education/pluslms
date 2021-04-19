@@ -38,6 +38,8 @@
                         </div>
                     </div>
 
+
+
                     <!-- Settings Dropdown -->
                     <div class="hidden sm:flex sm:items-center sm:ml-6">
                         <div class="ml-3 relative">
@@ -110,7 +112,6 @@
                             </jet-dropdown>
                         </div>
                     </div>
-
                     <!-- Hamburger -->
                     <div class="-mr-2 flex items-center sm:hidden">
                         <button @click="showingNavigationDropdown = ! showingNavigationDropdown" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
@@ -128,6 +129,10 @@
                 <div class="pt-2 pb-3 space-y-1">
                     <jet-responsive-nav-link href="/dashboard" :active="$page.currentRouteName == 'dashboard'">
                         Dashboard
+                    </jet-responsive-nav-link>
+
+                    <jet-responsive-nav-link href="/gradebook" :active="$page.currentRouteName == 'gradebook'">
+                        Notas
                     </jet-responsive-nav-link>
                 </div>
 
@@ -147,10 +152,6 @@
                     <div class="mt-3 space-y-1">
                         <jet-responsive-nav-link href="/user/profile" :active="$page.currentRouteName == 'profile.show'">
                             Profile
-                        </jet-responsive-nav-link>
-
-                        <jet-responsive-nav-link href="/user/api-tokens" :active="$page.currentRouteName == 'api-tokens.index'" v-if="$page.jetstream.hasApiFeatures">
-                            API Tokens
                         </jet-responsive-nav-link>
 
                         <!-- Authentication -->
@@ -200,6 +201,7 @@
             </div>
         </nav>
 
+        <notifications position="bottom right"/>
         <!-- Page Heading -->
         <header class="bg-white shadow">
             <div class="max-w-7xl mx-auto py-2 px-4 sm:px-6 lg:px-8">
@@ -226,6 +228,7 @@
     import JetNavLink from './../Jetstream/NavLink'
     import JetResponsiveNavLink from './../Jetstream/ResponsiveNavLink'
 
+
     export default {
         components: {
             JetApplicationLogo,
@@ -240,6 +243,17 @@
             return {
                 showingNavigationDropdown: false,
             }
+        },
+
+        mounted() {
+            Echo.private('App.Models.User.' + 76)
+                .notification((notification) => {
+                    this.$notify({
+                        title: 'Authorization',
+                        text: 'You have been logged in!',
+                        duration: 6000
+                    })
+                });
         },
 
         methods: {

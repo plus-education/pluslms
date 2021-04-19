@@ -29,7 +29,7 @@ class Activity extends Model implements Sortable
 
     protected $with = ['activityable'];
 
-    protected $appends = ['type', 'divider'];
+    protected $appends = ['type', 'divider', 'course'];
 
     protected $attributes = [
         'isShow' => true,
@@ -99,5 +99,10 @@ class Activity extends Model implements Sortable
         return $this->morphMany(Comment::class, 'commentable')
             ->whereNull('parent_id')
             ->orderBy('id', 'DESC');
+    }
+
+    public function getCourseAttribute()
+    {
+        return $this->topic->course;
     }
 }

@@ -29,7 +29,7 @@ class CommentController extends Controller
         $model = $model::find($request->get('activityId'));
 
 
-        /*$notification = new Notification('Nuevo Comentario',
+        $notification = new Notification('Nuevo Comentario',
             substr(strip_tags($comment->comment), 0, 25) . '...',
             $request->get('resourceId'),
             $request->get('resourceName')
@@ -37,9 +37,10 @@ class CommentController extends Controller
 
         $notificator->sendToUsersWithRole( Roles::ADMIN, $notification);
         $notificator->sendToTeacherCourse($model->course, $notification);
-*/
+
         return $model->comments()->save($comment);
     }
+
 
     public function answers($id) {
         return Comment::where('parent_id', $id)->get();

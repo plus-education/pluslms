@@ -37,4 +37,9 @@ class Comment extends Model
     {
         return $this->hasMany(Comment::class, 'parent_id');
     }
+
+    public function getTotalAnswersAttribute()
+    {
+        return Comment::where('parent_id', $this->id)->get()->count();
+    }
 }

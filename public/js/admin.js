@@ -6232,7 +6232,7 @@ window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/jonathanrodas/Documents/proyectos/pluslms/resources/js/admin.js */"./resources/js/admin.js");
+module.exports = __webpack_require__(/*! /Users/jonathanrodas/Documents/proyectos/tikmatch-admin/resources/js/admin.js */"./resources/js/admin.js");
 
 
 /***/ })
