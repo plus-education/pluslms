@@ -91,7 +91,7 @@
                                 </svg>
                             </div>
                             <div class="flex-1 text-white font-extrabold">
-                                Punteo Acumulada
+                                Punteo Acumulado
                             </div>
                         </a>
                     </section>

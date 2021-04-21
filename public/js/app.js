@@ -83145,7 +83145,7 @@ var render = function() {
                       { staticClass: "flex-1 text-white font-extrabold" },
                       [
                         _vm._v(
-                          "\n                            Punteo Acumulada\n                        "
+                          "\n                            Punteo Acumulado\n                        "
                         )
                       ]
                     )
