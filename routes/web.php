@@ -95,7 +95,11 @@ Route::get('/courseGradebook/{id}', function ($id) {
         ->get();
 
     $totalScore = $gradebook->sum('score');
+    $totalScore = $totalScore > 100 ? 100 :  $totalScore;
+
     $totalResult = $gradebook->sum('result');
+    $totalResult = $totalResult > 100 ? 100 : $totalResult;
+
 
     ##return ($gradebook);
     return \Inertia\Inertia::render('CourseGradebook')
