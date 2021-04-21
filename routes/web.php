@@ -77,3 +77,27 @@ Route::get('/test', function (\App\Repositories\UserRepositoryInterface $userRep
         'title' => 'Hola Camaron sin cola'
     ]));
 });
+
+Route::get('/courseGradebook/{id}', function ($id) {
+    $topic = \App\Models\Topic::find($id);
+    $course = $topic->course;
+
+    $gradebook = \Illuminate\Support\Facades\DB::table('activities')
+        ->select('activities.name',
+            'activities.score',
+            'activities.end',
+            'activity_user.score as result',
+            'activity_user.comment'
+        )
+        ->leftJoin('activity_user', 'activity_user.activity_id', '=', 'activities.id')
+        ->where('activities.topic_id', $id)
+        ->where('activity_user.user_id', auth()->user()->id)
+        ->get();
+
+    $totalScore = $gradebook->sum('score');
+    $totalResult = $gradebook->sum('result');
+
+    ##return ($gradebook);
+    return \Inertia\Inertia::render('CourseGradebook')
+        ->with(compact('course', 'topic', 'gradebook', 'totalScore', 'totalResult'));
+});

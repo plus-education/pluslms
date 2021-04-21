@@ -4248,6 +4248,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -4336,6 +4350,72 @@ __webpack_require__.r(__webpack_exports__);
       });
     }
   }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/CourseGradebook.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/CourseGradebook.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  props: ['course', 'topic', 'gradebook', 'totalScore', 'totalResult']
 });
 
 /***/ }),
@@ -82343,43 +82423,45 @@ var render = function() {
                       ])
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "flex-shrink" }, [
-                      _c(
-                        "button",
-                        {
-                          on: {
-                            click: function($event) {
-                              return _vm.deleteComment(comment)
-                            }
-                          }
-                        },
-                        [
+                    comment.user_id == _vm.user.id
+                      ? _c("div", { staticClass: "flex-shrink" }, [
                           _c(
-                            "svg",
+                            "button",
                             {
-                              staticClass: "w-4 text-red-600",
-                              attrs: {
-                                xmlns: "http://www.w3.org/2000/svg",
-                                fill: "none",
-                                viewBox: "0 0 24 24",
-                                stroke: "currentColor"
+                              on: {
+                                click: function($event) {
+                                  return _vm.deleteComment(comment)
+                                }
                               }
                             },
                             [
-                              _c("path", {
-                                attrs: {
-                                  "stroke-linecap": "round",
-                                  "stroke-linejoin": "round",
-                                  "stroke-width": "2",
-                                  d:
-                                    "M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                                }
-                              })
+                              _c(
+                                "svg",
+                                {
+                                  staticClass: "w-4 text-red-600",
+                                  attrs: {
+                                    xmlns: "http://www.w3.org/2000/svg",
+                                    fill: "none",
+                                    viewBox: "0 0 24 24",
+                                    stroke: "currentColor"
+                                  }
+                                },
+                                [
+                                  _c("path", {
+                                    attrs: {
+                                      "stroke-linecap": "round",
+                                      "stroke-linejoin": "round",
+                                      "stroke-width": "2",
+                                      d:
+                                        "M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                                    }
+                                  })
+                                ]
+                              )
                             ]
                           )
-                        ]
-                      )
-                    ])
+                        ])
+                      : _vm._e()
                   ])
                 ]
               )
@@ -82491,43 +82573,45 @@ var render = function() {
                     ])
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "flex-shrink" }, [
-                    _c(
-                      "button",
-                      {
-                        on: {
-                          click: function($event) {
-                            return _vm.deleteComment(_vm.comment)
-                          }
-                        }
-                      },
-                      [
+                  _vm.comment.user_id == _vm.user.id
+                    ? _c("div", { staticClass: "flex-shrink" }, [
                         _c(
-                          "svg",
+                          "button",
                           {
-                            staticClass: "w-4 text-red-600",
-                            attrs: {
-                              xmlns: "http://www.w3.org/2000/svg",
-                              fill: "none",
-                              viewBox: "0 0 24 24",
-                              stroke: "currentColor"
+                            on: {
+                              click: function($event) {
+                                return _vm.deleteComment(_vm.comment)
+                              }
                             }
                           },
                           [
-                            _c("path", {
-                              attrs: {
-                                "stroke-linecap": "round",
-                                "stroke-linejoin": "round",
-                                "stroke-width": "2",
-                                d:
-                                  "M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                              }
-                            })
+                            _c(
+                              "svg",
+                              {
+                                staticClass: "w-4 text-red-600",
+                                attrs: {
+                                  xmlns: "http://www.w3.org/2000/svg",
+                                  fill: "none",
+                                  viewBox: "0 0 24 24",
+                                  stroke: "currentColor"
+                                }
+                              },
+                              [
+                                _c("path", {
+                                  attrs: {
+                                    "stroke-linecap": "round",
+                                    "stroke-linejoin": "round",
+                                    "stroke-width": "2",
+                                    d:
+                                      "M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                                  }
+                                })
+                              ]
+                            )
                           ]
                         )
-                      ]
-                    )
-                  ])
+                      ])
+                    : _vm._e()
                 ])
               ]
             ),
@@ -82535,7 +82619,9 @@ var render = function() {
             _vm._l(_vm.answers, function(comment) {
               return _c(
                 "div",
-                { staticClass: "mb-4 p-4  shadow-md rounded-lg bg-white" },
+                {
+                  staticClass: "mb-4 p-4  shadow-md rounded-lg bg-white border"
+                },
                 [
                   _c("div", { staticClass: "flex items-center" }, [
                     _c("div", { staticClass: "flex-shrink" }, [
@@ -82928,84 +83014,279 @@ var render = function() {
             _c(
               "section",
               {},
-              _vm._l(_vm.topic.activities, function(activity) {
-                return _c(
-                  "div",
+              [
+                _vm._l(_vm.topic.activities, function(activity) {
+                  return _c(
+                    "div",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: activity.isShow == 1,
+                          expression: "activity.isShow == 1"
+                        }
+                      ],
+                      key: activity.id,
+                      staticClass:
+                        "flex items-center  border-b-2 border-gray-100 cursor-pointer",
+                      on: {
+                        click: function($event) {
+                          return _vm.changeActivity(activity)
+                        }
+                      }
+                    },
+                    [
+                      activity.type == "DIVIDER"
+                        ? _c(
+                            "div",
+                            {
+                              staticClass:
+                                "flex bg-yellow-300 w-full h-full py-4 px-2"
+                            },
+                            [
+                              _c("div", {
+                                staticClass: "flex-shrink mr-2",
+                                domProps: {
+                                  innerHTML: _vm._s(_vm.icons[activity.type])
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "flex-1 text-lg font-bold text-gray-800"
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                " +
+                                      _vm._s(activity.name) +
+                                      "\n                            "
+                                  )
+                                ]
+                              )
+                            ]
+                          )
+                        : _c(
+                            "div",
+                            { staticClass: "flex w-full h-full py-4 px-2" },
+                            [
+                              _c("div", {
+                                staticClass: "flex-shrink mr-2",
+                                domProps: {
+                                  innerHTML: _vm._s(_vm.icons[activity.type])
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "flex-1 text-gray-800" },
+                                [
+                                  _vm._v(
+                                    "\n                                " +
+                                      _vm._s(activity.name) +
+                                      "\n                            "
+                                  )
+                                ]
+                              )
+                            ]
+                          )
+                    ]
+                  )
+                }),
+                _vm._v(" "),
+                _c(
+                  "a",
                   {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: activity.isShow == 1,
-                        expression: "activity.isShow == 1"
-                      }
-                    ],
-                    key: activity.id,
-                    staticClass:
-                      "flex items-center  border-b-2 border-gray-100 cursor-pointer",
-                    on: {
-                      click: function($event) {
-                        return _vm.changeActivity(activity)
-                      }
-                    }
+                    staticClass: "flex w-full h-full py-4 px-2 bg-green-500",
+                    attrs: { href: "/courseGradebook/" + _vm.topic.id }
                   },
                   [
-                    activity.type == "DIVIDER"
-                      ? _c(
-                          "div",
-                          {
-                            staticClass:
-                              "flex bg-yellow-300 w-full h-full py-4 px-2"
-                          },
-                          [
-                            _c("div", {
-                              staticClass: "flex-shrink mr-2",
-                              domProps: {
-                                innerHTML: _vm._s(_vm.icons[activity.type])
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              {
-                                staticClass:
-                                  "flex-1 text-lg font-bold text-gray-800"
-                              },
-                              [
-                                _vm._v(
-                                  "\n                                " +
-                                    _vm._s(activity.name) +
-                                    "\n                            "
-                                )
-                              ]
-                            )
-                          ]
+                    _c("div", { staticClass: "flex-shrink mr-2" }, [
+                      _c(
+                        "svg",
+                        {
+                          staticClass: "h-6 w-6  text-white",
+                          attrs: {
+                            xmlns: "http://www.w3.org/2000/svg",
+                            fill: "none",
+                            viewBox: "0 0 24 24",
+                            stroke: "currentColor"
+                          }
+                        },
+                        [
+                          _c("path", {
+                            attrs: { d: "M12 14l9-5-9-5-9 5 9 5z" }
+                          }),
+                          _vm._v(" "),
+                          _c("path", {
+                            attrs: {
+                              d:
+                                "M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("path", {
+                            attrs: {
+                              "stroke-linecap": "round",
+                              "stroke-linejoin": "round",
+                              "stroke-width": "2",
+                              d:
+                                "M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
+                            }
+                          })
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "flex-1 text-white font-extrabold" },
+                      [
+                        _vm._v(
+                          "\n                            Punteo Acumulada\n                        "
                         )
-                      : _c(
-                          "div",
-                          { staticClass: "flex w-full h-full py-4 px-2" },
-                          [
-                            _c("div", {
-                              staticClass: "flex-shrink mr-2",
-                              domProps: {
-                                innerHTML: _vm._s(_vm.icons[activity.type])
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "flex-1 text-gray-800" }, [
-                              _vm._v(
-                                "\n                                " +
-                                  _vm._s(activity.name) +
-                                  "\n                            "
-                              )
-                            ])
-                          ]
-                        )
+                      ]
+                    )
                   ]
                 )
+              ],
+              2
+            )
+          ]
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/CourseGradebook.vue?vue&type=template&id=1b6f444c&":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/CourseGradebook.vue?vue&type=template&id=1b6f444c& ***!
+  \*************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("app-layout", [
+    _c("div", { staticClass: "container m-auto mt-4" }, [
+      _c("h1", { staticClass: "text-xl text-gray-700" }, [
+        _vm._v("\n            " + _vm._s(_vm.course.name) + "\n        ")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "text-gray-700" }, [
+        _vm._v("\n            " + _vm._s(_vm.topic.name) + "\n        ")
+      ]),
+      _vm._v(" "),
+      _c("section", { staticClass: "flex justify-center my-4 w-full" }, [
+        _c(
+          "table",
+          {
+            staticClass:
+              "table table-responsive  w-full border-collapse border mt-6 shadow-lg bg-white"
+          },
+          [
+            _c("thead", { staticClass: "bg-blue-900 text-white text-90" }, [
+              _c("tr", [
+                _c(
+                  "th",
+                  { staticClass: "border border-green-600 px-4 w-2/5" },
+                  [_vm._v("Actividad")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "th",
+                  { staticClass: "border border-green-600 px-4 w-1/6" },
+                  [_vm._v("Fecha de entrega")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "th",
+                  { staticClass: "border border-green-600 px-4 w-1/6" },
+                  [_vm._v("Punteo")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "th",
+                  { staticClass: "border border-green-600 px-4 w-3/5" },
+                  [_vm._v("Comentarios")]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "tbody",
+              _vm._l(_vm.gradebook, function(activity) {
+                return _c("tr", [
+                  _c("td", { staticClass: "border border-gray-6000 px-4" }, [
+                    _vm._v(_vm._s(activity.name))
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "td",
+                    { staticClass: "border border-gray-6000 px-4 text-center" },
+                    [_vm._v(_vm._s(activity.end))]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "td",
+                    { staticClass: "border border-gray-6000 px-4 text-center" },
+                    [
+                      _vm._v(
+                        _vm._s(activity.result) +
+                          " / " +
+                          _vm._s(activity.score) +
+                          " "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("td", { staticClass: "border border-gray-6000 px-4" }, [
+                    _vm._v(_vm._s(activity.comment))
+                  ])
+                ])
               }),
               0
             )
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "flex justify-center" }, [
+        _c(
+          "div",
+          { staticClass: "mt-6 w-auto m-auto container flex items-center" },
+          [
+            _c("div", { staticClass: "text-center flex item-center" }, [
+              _c("img", {
+                staticClass: "w-16",
+                attrs: { src: "/img/score.png" }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "text-center text-xl" }, [
+              _c("strong", [_vm._v("Punteo: ")]),
+              _vm._v(
+                _vm._s(_vm.totalResult) +
+                  " / " +
+                  _vm._s(_vm.totalScore) +
+                  "\n                "
+              )
+            ])
           ]
         )
       ])
@@ -106092,6 +106373,8 @@ var map = {
 	"./Course/SidebarIcons.js": "./resources/js/Pages/Course/SidebarIcons.js",
 	"./Course/Topic": "./resources/js/Pages/Course/Topic.vue",
 	"./Course/Topic.vue": "./resources/js/Pages/Course/Topic.vue",
+	"./CourseGradebook": "./resources/js/Pages/CourseGradebook.vue",
+	"./CourseGradebook.vue": "./resources/js/Pages/CourseGradebook.vue",
 	"./Dashboard": "./resources/js/Pages/Dashboard.vue",
 	"./Dashboard.vue": "./resources/js/Pages/Dashboard.vue",
 	"./Gradebook": "./resources/js/Pages/Gradebook.vue",
@@ -107189,6 +107472,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Topic_vue_vue_type_template_id_457b92c4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Topic_vue_vue_type_template_id_457b92c4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/CourseGradebook.vue":
+/*!************************************************!*\
+  !*** ./resources/js/Pages/CourseGradebook.vue ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CourseGradebook_vue_vue_type_template_id_1b6f444c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CourseGradebook.vue?vue&type=template&id=1b6f444c& */ "./resources/js/Pages/CourseGradebook.vue?vue&type=template&id=1b6f444c&");
+/* harmony import */ var _CourseGradebook_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CourseGradebook.vue?vue&type=script&lang=js& */ "./resources/js/Pages/CourseGradebook.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CourseGradebook_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CourseGradebook_vue_vue_type_template_id_1b6f444c___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CourseGradebook_vue_vue_type_template_id_1b6f444c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Pages/CourseGradebook.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/CourseGradebook.vue?vue&type=script&lang=js&":
+/*!*************************************************************************!*\
+  !*** ./resources/js/Pages/CourseGradebook.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CourseGradebook_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./CourseGradebook.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/CourseGradebook.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CourseGradebook_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/Pages/CourseGradebook.vue?vue&type=template&id=1b6f444c&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/Pages/CourseGradebook.vue?vue&type=template&id=1b6f444c& ***!
+  \*******************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CourseGradebook_vue_vue_type_template_id_1b6f444c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./CourseGradebook.vue?vue&type=template&id=1b6f444c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/CourseGradebook.vue?vue&type=template&id=1b6f444c&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CourseGradebook_vue_vue_type_template_id_1b6f444c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CourseGradebook_vue_vue_type_template_id_1b6f444c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

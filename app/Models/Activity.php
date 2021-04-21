@@ -35,14 +35,6 @@ class Activity extends Model implements Sortable
         'isShow' => true,
     ];
 
-    /**
-     * The attributes that should be mutated to dates.
-     *
-     * @var array
-     */
-    protected $dates = [
-        'start', 'end'
-    ];
 
     /**
      * The attributes that should be cast.
@@ -50,7 +42,8 @@ class Activity extends Model implements Sortable
      * @var array
      */
     protected $casts = [
-        'end' => 'datetime:d-m-Y',
+        'start' => 'date:d-m-Y',
+        'end' => 'date:d-m-Y',
     ];
 
     protected $types = [
@@ -77,7 +70,8 @@ class Activity extends Model implements Sortable
 
     public function users()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class)
+            ->withPivot('score', 'comment', 'file', 'created_at', 'updated_at');
     }
 
     public function getTypeAttribute()
@@ -104,5 +98,12 @@ class Activity extends Model implements Sortable
     public function getCourseAttribute()
     {
         return $this->topic->course;
+    }
+
+    public function studentScore($user)
+    {
+        return $this->users()
+            ->where('user_id', $user->id)
+            ->first();
     }
 }
