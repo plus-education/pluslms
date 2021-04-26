@@ -29,7 +29,7 @@ class CommentController extends Controller
         $model = $model::find($request->get('activityId'));
 
 
-        $notification = new Notification('Nuevo Comentario',
+        $notification = new Notification("Nuevo Comentario | {$model->course->name}  {$model->course->group->name}",
             substr(strip_tags($comment->comment), 0, 25) . '...',
             $request->get('resourceId'),
             $request->get('resourceName')

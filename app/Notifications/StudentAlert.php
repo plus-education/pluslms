@@ -60,8 +60,9 @@ class StudentAlert extends Notification
      */
     public function toArray($notifiable)
     {
-        return [
-            'title' =>  $this->details['title']
-        ];
+        return \Mirovit\NovaNotifications\Notification::make()
+            ->info($this->details['title'])
+            ->subtitle($this->details['details'])
+            ->toArray();
     }
 }

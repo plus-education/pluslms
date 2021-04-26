@@ -78,6 +78,7 @@ Route::get('/test', function (\App\Repositories\UserRepositoryInterface $userRep
     ]));
 });
 
+
 Route::get('/courseGradebook/{id}', function ($id) {
     $topic = \App\Models\Topic::find($id);
     $course = $topic->course;
@@ -104,4 +105,8 @@ Route::get('/courseGradebook/{id}', function ($id) {
     ##return ($gradebook);
     return \Inertia\Inertia::render('CourseGradebook')
         ->with(compact('course', 'topic', 'gradebook', 'totalScore', 'totalResult'));
+});
+
+Route::get('/notifications', function () {
+    return auth()->user()->notifications;
 });
