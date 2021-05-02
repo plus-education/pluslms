@@ -4539,6 +4539,32 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -83587,6 +83613,75 @@ var render = function() {
     },
     [
       _vm._v(" "),
+      _c("section", [
+        _c(
+          "div",
+          {
+            staticClass:
+              "container m-auto mt-6 mb-6 flex flex-col  md:flex-row   items-center justify-between bg-white shadow-lg"
+          },
+          [
+            _c("div", { staticClass: "flex-1 card  p-6   mr-4" }, [
+              _c("div", { staticClass: "w-full" }, [
+                _c("div", { staticClass: "w-24 m-auto" }, [
+                  _c("img", {
+                    staticClass: "w-24 h-24 rounded-full mb-6",
+                    attrs: { src: _vm.$page.user.profile_photo_url, alt: "" }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", [
+                _c(
+                  "h3",
+                  {
+                    staticClass: "text-center font-bold text-lg text-gray-700"
+                  },
+                  [
+                    _vm._v(
+                      "\n                        " +
+                        _vm._s(_vm.$page.user.name) +
+                        "\n                    "
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "text-center  text-gray-500" }, [
+                  _c("strong", [_vm._v("Código: ")]),
+                  _vm._v(
+                    " " + _vm._s(_vm.$page.user.code) + "\n                    "
+                  )
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "flex-1  card  p-6   ml-4  md:border-l" },
+              [
+                _vm.group != null
+                  ? _c("div", { staticClass: "text-center" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass:
+                            "btn bg-green-500 p-4 text-white m-4 rounded-lg",
+                          attrs: { href: _vm.group.zoom }
+                        },
+                        [
+                          _vm._v(
+                            "\n                        Ingresar a mi aula virtual\n                    "
+                          )
+                        ]
+                      )
+                    ])
+                  : _vm._e()
+              ]
+            )
+          ]
+        )
+      ]),
+      _vm._v(" "),
       _c(
         "section",
         { staticClass: "container m-auto" },
@@ -83595,22 +83690,6 @@ var render = function() {
             ? _c("div", [
                 _c("div", { staticClass: "mb-4" }, [
                   _c("div", { domProps: { innerHTML: _vm._s(_vm.group.html) } })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "text-center" }, [
-                  _c(
-                    "a",
-                    {
-                      staticClass:
-                        "btn bg-green-500 p-4 text-white m-4 rounded-lg",
-                      attrs: { href: _vm.group.zoom }
-                    },
-                    [
-                      _vm._v(
-                        "\n                   Ingresar a mi aula virtual\n               "
-                      )
-                    ]
-                  )
                 ])
               ])
             : _vm._e(),
