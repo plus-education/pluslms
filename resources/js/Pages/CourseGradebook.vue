@@ -33,7 +33,7 @@
             <div class="flex justify-center">
                 <div class="mt-6 w-auto m-auto container flex items-center">
                     <div class="text-center flex item-center">
-                        <img src="/img/score.png" class="w-16">
+                        <img src="/img/score.png" class="w-16 h-16">
                     </div>
                     <div class="text-center text-xl">
                         <strong>Punteo: </strong>{{ totalResult }} / {{ totalScore }}

@@ -83556,7 +83556,7 @@ var render = function() {
           [
             _c("div", { staticClass: "text-center flex item-center" }, [
               _c("img", {
-                staticClass: "w-16",
+                staticClass: "w-16 h-16",
                 attrs: { src: "/img/score.png" }
               })
             ]),

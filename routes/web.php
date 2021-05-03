@@ -84,16 +84,31 @@ Route::get('/courseGradebook/{id}', function ($id) {
     $course = $topic->course;
 
     $gradebook = \Illuminate\Support\Facades\DB::table('activities')
-        ->select('activities.name',
+        ->select('activities.id',
+            'activities.name',
             'activities.score',
             'activities.end',
-            'activity_user.score as result',
-            'activity_user.comment'
         )
-        ->leftJoin('activity_user', 'activity_user.activity_id', '=', 'activities.id')
+        ->where('score', '>', 0)
         ->where('activities.topic_id', $id)
-        ->where('activity_user.user_id', auth()->user()->id)
         ->get();
+
+    $user = auth()->user();
+
+    $gradebook = $gradebook->map(function ($activity) use ($user) {
+        $homework = \Illuminate\Support\Facades\DB::table('activity_user')
+            ->where('activity_id', $activity->id)
+            ->where('user_id', $user->id)
+            ->first();
+
+        if ($homework) {
+            $activity->result = $homework->score;
+            $activity->comment = $homework->comment;
+        }
+
+        return $activity;
+    });
+
 
     $totalScore = $gradebook->sum('score');
     $totalScore = $totalScore > 100 ? 100 :  $totalScore;
