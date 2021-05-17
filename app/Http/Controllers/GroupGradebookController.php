@@ -23,9 +23,9 @@ class GroupGradebookController extends Controller
             ->with(compact('group', 'students'));
     }
 
-    public function gradebook($group)
+    public function gradebook($group, $user)
     {
-            $this->student = User::find(116);
+            $this->student = User::find($user);
 
             $group = Group::find($group);
 
