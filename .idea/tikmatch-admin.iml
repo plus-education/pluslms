@@ -7,6 +7,7 @@
       <sourceFolder url="file://$MODULE_DIR$/database/seeders" isTestSource="false" packagePrefix="Database\Seeders\" />
       <sourceFolder url="file://$MODULE_DIR$/database/factories" isTestSource="false" packagePrefix="Database\Factories\" />
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/nova-modules" isTestSource="false" packagePrefix="NovaModules\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/advoor/nova-editor-js" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/asm89/stack-cors" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/async-aws/cloud-formation" />
@@ -28,7 +29,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/digital-creative/nova-filepond" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/digital-creative/nova-inline-morph-to" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/djoudi/laravel-h5p" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/dnoegel/php-xdg-base-dir" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/cache" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/dbal" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/event-manager" />
@@ -227,6 +227,10 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/vyuldashev/nova-permission" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/assert" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/whitecube/nova-flexible-content" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/mycmdev/nova-modules" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/deprecations" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/lms/gradebook" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/monaye/simple-link-button" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

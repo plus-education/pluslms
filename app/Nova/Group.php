@@ -3,15 +3,16 @@
 namespace App\Nova;
 
 use Advoor\NovaEditorJs\NovaEditorJs;
+use App\Nova\Actions\GradebookGroup;
 use Eminiarts\Tabs\Tabs;
 use Illuminate\Http\Request;
-use Jrodas4044\GridMultiselectBelogsToMany\GridMultiselectBelogsToMany;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Monaye\SimpleLinkButton\SimpleLinkButton;
 
 class Group extends Resource
 {
@@ -106,10 +107,20 @@ class Group extends Resource
 
             new Tabs('Relations', [
                 HasMany::make(__('Courses'), 'Courses', Course::class),
-                BelongsToMany::make(__('Students'), 'students', Student::class)->searchable(),
+
+                BelongsToMany::make(__('Students'), 'students', Student::class)
+                    ->searchable(),
+
                 BelongsToMany::make(__('Teachers'), 'teachers', Teacher::class)->searchable(),
+
                 BelongsToMany::make(__('Supervisors'), 'supervisors', Supervisor::class)->searchable(),
             ]),
+
+            SimpleLinkButton::make('Notas', function () {
+                return "/groupGradebook/{$this->id}" ;
+            })
+                ->type('link')  // fill, outline, link
+                ->attributes(['target' => '_blank']),
         ];
     }
 
@@ -154,6 +165,7 @@ class Group extends Resource
      */
     public function actions(Request $request)
     {
-        return [];
+        return [
+        ];
     }
 }

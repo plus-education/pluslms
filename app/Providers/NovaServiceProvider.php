@@ -9,7 +9,9 @@ use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
+use Lms\Gradebook\Gradebook;
 use Lms\MyCourses\MyCourses;
+use Lms\StudentGradebook\StudentGradebook;
 use Vyuldashev\NovaPermission\PermissionPolicy;
 use Vyuldashev\NovaPermission\RolePolicy;
 
@@ -110,8 +112,6 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 }),
 
             \OptimistDigital\NovaSettings\NovaSettings::make(),
-
-            new \Czemu\NovaCalendarTool\NovaCalendarTool,
 
             \Mirovit\NovaNotifications\NovaNotifications::make(),
         ];

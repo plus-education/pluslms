@@ -65,6 +65,10 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::post('/commnets/storeAnswer/{type}', [\App\Http\Controllers\CommentController::class, 'storeAnswer']);
 
     Route::post('/comments/delete', [\App\Http\Controllers\CommentController::class, 'delete']);
+
+    Route::get('/groupGradebook/{id}', [\App\Http\Controllers\GroupGradebookController::class, 'index']);
+
+    Route::get('/groupGradebook/gradebook/{group}/{student}', [\App\Http\Controllers\GroupGradebookController::class, 'gradebook']);
 });
 
 

@@ -16,10 +16,14 @@ class Group extends Model {
     }
 
     public function users() {
-        return $this->belongsToMany(User::class)->using(GroupUser::class);
+        return $this->belongsToMany(User::class)
+            ->using(GroupUser::class)
+            ->orderBy('name');
     }
 
 
-    public function courses() { return $this->hasMany(Course::class);
+    public function courses() {
+        return $this->hasMany(Course::class)
+            ->orderBy('name');
     }
 }

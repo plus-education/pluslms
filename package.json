@@ -27,7 +27,13 @@
         "build-link-file": "cd nova-components/LinkFile && npm run dev",
         "build-link-file-prod": "cd nova-components/LinkFile && npm run prod",
         "build-teacher-topic-comment": "cd nova-components/TeacherTopicComment && npm run dev",
-        "build-teacher-topic-comment-prod": "cd nova-components/TeacherTopicComment && npm run prod"
+        "build-teacher-topic-comment-prod": "cd nova-components/TeacherTopicComment && npm run prod",
+        "build-studentGradebook": "cd nova-components/StudentGradebook && npm run dev",
+        "build-studentGradebook-prod": "cd nova-components/StudentGradebook && npm run prod",
+        "build-student-gradebook": "cd nova-components/StudentGradebook && npm run dev",
+        "build-student-gradebook-prod": "cd nova-components/StudentGradebook && npm run prod",
+        "build-gradebook": "cd nova-components/Gradebook && npm run dev",
+        "build-gradebook-prod": "cd nova-components/Gradebook && npm run prod"
     },
     "devDependencies": {
         "@inertiajs/inertia": "^0.1.7",
