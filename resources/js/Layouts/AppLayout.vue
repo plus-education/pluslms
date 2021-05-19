@@ -8,7 +8,7 @@
                         <!-- Logo -->
                         <div class="flex-shrink-0 flex items-center">
                             <a href="/dashboard">
-                                <img src="/img/logo.png" alt="" with="50">
+                                <img :src="logo" alt="" class="w-36">
                             </a>
                         </div>
 
@@ -249,11 +249,14 @@
 
         data() {
             return {
+                logo: null,
                 showingNavigationDropdown: false
             }
         },
 
         mounted() {
+            this.getLogo()
+
             Echo.private('App.Models.User.' + this.$page.user.id)
                 .notification((notification) => {
                     console.log(notification)
@@ -266,6 +269,12 @@
         },
 
         methods: {
+            getLogo() {
+                axios.get('/logo').then(response => {
+                    this.logo = response.data.url
+                })
+            },
+
             switchToTeam(team) {
                 this.$inertia.put('/current-team', {
                     'team_id': team.id

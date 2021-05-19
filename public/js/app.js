@@ -2840,12 +2840,14 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
+      logo: null,
       showingNavigationDropdown: false
     };
   },
   mounted: function mounted() {
     var _this = this;
 
+    this.getLogo();
     Echo["private"]('App.Models.User.' + this.$page.user.id).notification(function (notification) {
       console.log(notification);
 
@@ -2857,6 +2859,13 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
+    getLogo: function getLogo() {
+      var _this2 = this;
+
+      axios.get('/logo').then(function (response) {
+        _this2.logo = response.data.url;
+      });
+    },
     switchToTeam: function switchToTeam(team) {
       this.$inertia.put('/current-team', {
         'team_id': team.id
@@ -80404,7 +80413,14 @@ var render = function() {
         _c("div", { staticClass: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" }, [
           _c("div", { staticClass: "flex justify-between h-16" }, [
             _c("div", { staticClass: "flex" }, [
-              _vm._m(0),
+              _c("div", { staticClass: "flex-shrink-0 flex items-center" }, [
+                _c("a", { attrs: { href: "/dashboard" } }, [
+                  _c("img", {
+                    staticClass: "w-36",
+                    attrs: { src: _vm.logo, alt: "" }
+                  })
+                ])
+              ]),
               _vm._v(" "),
               _c(
                 "div",
@@ -81071,18 +81087,7 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "flex-shrink-0 flex items-center" }, [
-      _c("a", { attrs: { href: "/dashboard" } }, [
-        _c("img", { attrs: { src: "/img/logo.png", alt: "", with: "50" } })
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

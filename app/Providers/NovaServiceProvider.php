@@ -28,6 +28,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
         \OptimistDigital\NovaSettings\NovaSettings::addSettingsFields([
             Image::make('Logo', 'logo'),
+            Image::make('Logo Frontend', 'logo_frontend'),
         ]);
     }
 
