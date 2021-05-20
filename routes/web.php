@@ -95,10 +95,10 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
 
         return $activities->map(function ($activity){
             return [
-                'title' => "{$activity->name} {$activity->score} pts",
+                'title' => "<a href='/courses/topic/{$activity->topic_id}' target='_blank'>{$activity->name} {$activity->score} pts </a>",
                 'start' => $activity->end,
                 'end' => $activity->end,
-                'content' => "<a href='/'>{$activity->course}</a>",
+                'content' => "<a href='/courses/topic/{$activity->topic_id}' target='_blank'>{$activity->course}</a>",
                 'class' => "event-" . rand(1,10)
             ];
         });
