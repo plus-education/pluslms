@@ -74,6 +74,35 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::get('/groupGradebook/{id}', [\App\Http\Controllers\GroupGradebookController::class, 'index']);
 
     Route::get('/groupGradebook/gradebook/{group}/{student}', [\App\Http\Controllers\GroupGradebookController::class, 'gradebook']);
+
+    Route::get('/student/myCalendar', function () {
+        return \Inertia\Inertia::render('MyCalendar');
+    });
+
+    Route::get('/student/myActivities', function () {
+        $user = auth()->user();
+        $myCourses = $user->courses->pluck('id')->toArray();
+
+        $activities = \Illuminate\Support\Facades\DB::table('activities')
+            ->select('activities.name', 'activities.name', 'activities.score', 'activities.start', 'activities.end', 'topics.id as topic_id', 'topics.name as topic', 'courses.id as course_id',  'courses.name as course')
+            ->leftJoin('topics', 'activities.topic_id', 'topics.id')
+            ->leftJoin('courses', 'topics.course_id', 'courses.id')
+            ->where('activities.score', '>', 0)
+            ->where('activities.start', '<>', 'null')
+            ->where('activities.end', '<>', 'null')
+            ->whereIn('courses.id', $myCourses)
+            ->get();
+
+        return $activities->map(function ($activity){
+            return [
+                'title' => "{$activity->name} {$activity->score} pts",
+                'start' => $activity->end,
+                'end' => $activity->end,
+                'content' => "<a href='/'>{$activity->course}</a>",
+                'class' => "event-" . rand(1,10)
+            ];
+        });
+    });
 });
 
 

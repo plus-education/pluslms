@@ -71,7 +71,7 @@
                                 </div>
                             </div>
 
-                            <div v-else class="flex w-full h-full py-4 px-2" >
+                            <div v-else class="flex w-full h-full py-4 px-2" :class="activity.activeClass">
                                 <div class="flex-shrink mr-2" v-html="icons[activity.type]">
 
                                 </div>
@@ -165,6 +165,7 @@
                     if(activity.type == 'DIVIDER'){
                         divider = activity.id
                         activity.show = true
+                        activity.activeClass = null
                         return
                     }
 
@@ -182,8 +183,13 @@
             },
 
             selectNewActivity: function(selectedActivity) {
-                this.activity = this.topic.activities.find( (activity) => {
-                    return activity.id == selectedActivity.id
+                this.topic.activities.forEach( (activity) => {
+                    if (activity.id == selectedActivity.id) {
+                        activity.activeClass = 'active-activity'
+                        return this.activity = activity
+                    }
+
+                    return activity.activeClass = null
                 })
             },
 
@@ -210,6 +216,18 @@
     }
 </script>
 
-<style scoped>
+<style>
+.active-activity {
+    background-color: #F4F5F7;
+    border-bottom: #0d826c solid 2px;
+}
 
+.active-activity{
+    color:#0d826c;
+    font-weight: bold;
+}
+
+.active-activity svg{
+    color: #0d826c;
+}
 </style>
