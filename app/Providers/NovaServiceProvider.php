@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Roles;
 use Illuminate\Support\Facades\Gate;
 use Joedixon\NovaTranslation\NovaTranslation;
 use Laravel\Nova\Cards\Help;
@@ -25,6 +26,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function boot()
     {
         parent::boot();
+
+
 
         \OptimistDigital\NovaSettings\NovaSettings::addSettingsFields([
             Image::make('Logo', 'logo'),
@@ -55,9 +58,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function gate()
     {
         Gate::define('viewNova', function ($user) {
-            return in_array($user->email, [
-                //
-            ]);
+            return !$user->hasRole(Roles::STUDENT);
         });
     }
 
