@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateContentReviewStatesTable extends Migration
+class CreateLibraryBooksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateContentReviewStatesTable extends Migration
      */
     public function up()
     {
-        Schema::create('content_review_states', function (Blueprint $table) {
+        Schema::create('library_books', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->text('description')->nullable();
-            $table->
+            $table->foreignId('author_id');
+            $table->text('tags')->nullable();
+            $table->string('file');
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ class CreateContentReviewStatesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('content_review_states');
+        Schema::dropIfExists('library_books');
     }
 }

@@ -29,6 +29,6 @@ class CreateLibraryAuthorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('');
+        Schema::dropIfExists('library_authors');
     }
 }

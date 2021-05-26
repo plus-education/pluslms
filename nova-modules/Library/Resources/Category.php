@@ -2,22 +2,23 @@
 
 namespace NovaModules\Library\Resources;
 
+use Advoor\NovaEditorJs\NovaEditorJs;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Fields\ID;
 use App\Nova\Resource;
 
-class Author extends Resource
+class Category extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = 'NovaModules\Library\Models\Author';
+    public static $model = 'NovaModules\Library\Models\Category';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -50,11 +51,11 @@ class Author extends Resource
     public function fields(Request $request)
     {
         return [
-            Text::make('name'),
+            Text::make('Nombre', 'name'),
 
-            Trix::make('about'),
+            NovaEditorJs::make('Descripcion', 'description'),
 
-            Image::make('avatar'),
+            Image::make('Portada', 'cover')
         ];
     }
 

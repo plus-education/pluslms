@@ -231,6 +231,9 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/deprecations" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/lms/gradebook" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/monaye/simple-link-button" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/superlatif/nova-tag-input" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/benjacho/belongs-to-many-field" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/whchi/nova-tags-input" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -99,13 +99,12 @@ class LibraryServiceProvider extends ServiceProvider
         $resources = [];
 
         foreach ((new Finder)->in($directory)->files() as $resource) {
+
             $resource = str_replace(
                 '.php',
                 '',
-                $namespace.Str::afterLast($resource, '\\')
+                $namespace . '\\Resources\\'. $resource->getRelativePathname()
             );
-
-            //dd(str_replace(__DIR__, '', $resource));
 
             if (is_subclass_of($resource, Resource::class) &&
                 ! (new ReflectionClass($resource))->isAbstract() &&

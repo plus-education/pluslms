@@ -2,22 +2,26 @@
 
 namespace NovaModules\Library\Resources;
 
+use Advoor\NovaEditorJs\NovaEditorJs;
+use Benjacho\BelongsToManyField\BelongsToManyField;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Image;
+use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\BelongsToMany;
+use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Fields\ID;
 use App\Nova\Resource;
+use Superlatif\NovaTagInput\Tags;
 
-class Author extends Resource
+class Book extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = 'NovaModules\Library\Models\Author';
+    public static $model = 'NovaModules\Library\Models\Book';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -50,11 +54,17 @@ class Author extends Resource
     public function fields(Request $request)
     {
         return [
-            Text::make('name'),
+            Text::make('Nombre', 'name')->required(),
 
-            Trix::make('about'),
+            NovaEditorJs::make('Acerca de', 'description'),
 
-            Image::make('avatar'),
+            BelongsTo::make('Author', 'author')->searchable(),
+
+            \Whchi\NovaTagsInput\Tags::make('Tags', 'tags'),
+
+            BelongsToManyField::make('Categorias', 'categories', Category::class),
+
+            File::make('Archivo', 'file')->required()
         ];
     }
 

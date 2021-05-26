@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLibraryCategoriesTable extends Migration
+class CreateLibraryBookCategoryTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateLibraryCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('library_category', function (Blueprint $table) {
+        Schema::create('library_book_category', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('description')->nullable();
-            $table->text('cover')->nullable();
+            $table->foreignId('book_id');
+            $table->foreignId('category_id');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateLibraryCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('library_category');
+        Schema::dropIfExists('library_book_category');
     }
 }

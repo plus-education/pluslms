@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "158e56bc2aacb32065e4644c6b787b79",
+    "content-hash": "613c3f008f1a13ef2fe416e37bcb6009",
     "packages": [
         {
             "name": "advoor/nova-editor-js",
@@ -508,6 +508,53 @@
                 }
             ],
             "time": "2020-09-07T11:50:18+00:00"
+        },
+        {
+            "name": "benjacho/belongs-to-many-field",
+            "version": "1.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Benjacho/belongs-to-many-field-nova.git",
+                "reference": "d50fb24b781f997ba53084e1180a4a7b623727cc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Benjacho/belongs-to-many-field-nova/zipball/d50fb24b781f997ba53084e1180a4a7b623727cc",
+                "reference": "d50fb24b781f997ba53084e1180a4a7b623727cc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Benjacho\\BelongsToManyField\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Benjacho\\BelongsToManyField\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "belongsToMany nova representation in field.",
+            "keywords": [
+                "Many to Many Field",
+                "belongsToMany",
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/Benjacho/belongs-to-many-field-nova/issues",
+                "source": "https://github.com/Benjacho/belongs-to-many-field-nova/tree/1.9"
+            },
+            "time": "2021-04-24T23:29:38+00:00"
         },
         {
             "name": "bref/bref",
@@ -9088,6 +9135,59 @@
             "time": "2020-11-09T15:54:21+00:00"
         },
         {
+            "name": "superlatif/nova-tag-input",
+            "version": "1.4.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/superlatif-io/nova-tag-input.git",
+                "reference": "f026852d050da84e679327266ceaa6e35915ae53"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/superlatif-io/nova-tag-input/zipball/f026852d050da84e679327266ceaa6e35915ae53",
+                "reference": "f026852d050da84e679327266ceaa6e35915ae53",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Superlatif\\NovaTagInput\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Superlatif\\NovaTagInput\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Simon Rapin",
+                    "email": "simon@superlatif.io",
+                    "homepage": "https://superlatif.io",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Tag input field for Laravel Nova.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/superlatif-io/nova-tag-input/issues",
+                "source": "https://github.com/superlatif-io/nova-tag-input/tree/1.4.3"
+            },
+            "time": "2020-10-21T13:16:05+00:00"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "v6.2.7",
             "source": {
@@ -12030,6 +12130,58 @@
                 "source": "https://github.com/webmozarts/assert/tree/1.10.0"
             },
             "time": "2021-03-09T10:59:23+00:00"
+        },
+        {
+            "name": "whchi/nova-tags-input",
+            "version": "0.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/whchi/NovaTagsInput.git",
+                "reference": "89726aa50eebffcf5036e9ffc63b3ec4a8730a99"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/whchi/NovaTagsInput/zipball/89726aa50eebffcf5036e9ffc63b3ec4a8730a99",
+                "reference": "89726aa50eebffcf5036e9ffc63b3ec4a8730a99",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Whchi\\NovaTagsInput\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Whchi\\NovaTagsInput\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dylan chi",
+                    "homepage": "https://whchi.github.io"
+                }
+            ],
+            "description": "Vue-tags-input field for Laravel Nova.",
+            "keywords": [
+                "laravel",
+                "nova",
+                "tags-input"
+            ],
+            "support": {
+                "issues": "https://github.com/whchi/NovaTagsInput/issues",
+                "source": "https://github.com/whchi/NovaTagsInput/tree/0.0.5"
+            },
+            "time": "2021-04-17T09:51:47+00:00"
         },
         {
             "name": "whitecube/nova-flexible-content",

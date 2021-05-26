@@ -92,6 +92,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         return [
             MyCourses::make(),
 
+
+
             new \Infinety\Filemanager\FilemanagerTool(),
 
             \Spatie\BackupTool\BackupTool::make()

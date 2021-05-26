@@ -11,6 +11,7 @@
         "php": "^7.3",
         "advoor/nova-editor-js": "^2.0.3",
         "barryvdh/laravel-dompdf": "^0.8.7",
+        "benjacho/belongs-to-many-field": "^1.9",
         "bref/bref": "^0.5.31",
         "bref/laravel-bridge": "^0.2.2",
         "coderello/laravel-nova-lang": "^1.6",
@@ -59,7 +60,9 @@
         "pusher/pusher-php-server": "^6.1",
         "spatie/nova-backup-tool": "^4.0",
         "spatie/nova-tags-field": "^3.0",
+        "superlatif/nova-tag-input": "^1.4",
         "vyuldashev/nova-permission": "^2.9",
+        "whchi/nova-tags-input": "^0.0.5",
         "whitecube/nova-flexible-content": "^0.2.5"
     },
     "repositories": [
