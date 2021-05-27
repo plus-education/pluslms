@@ -1,7 +1,7 @@
 <p align="center"> <h1>Plus School</h1</p>
 
 
-## About Laravel
+## About Plus Education
 
 
 Plus School is a  Learning Management System, I believe that course development should be fun and creative. Plus School eliminates the hassle of creating online courses, through an intuitive and consistent interface.
