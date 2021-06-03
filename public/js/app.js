@@ -3519,6 +3519,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['group', 'topic', 'students', 'activities'],
   mounted: function mounted() {},
@@ -93109,7 +93110,8 @@ var render = function() {
                                         alt: "Descargar Tarea",
                                         href:
                                           "/storage/" +
-                                          student.scores[activity.id].file
+                                          student.scores[activity.id].file,
+                                        download: ""
                                       }
                                     },
                                     [
