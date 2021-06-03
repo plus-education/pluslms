@@ -13,6 +13,7 @@ use Laravel\Nova\Http\Requests\NovaRequest;
 use Lms\TeacherTopicComment\TeacherTopicComment;
 use MichielKempen\NovaOrderField\Orderable;
 use MichielKempen\NovaOrderField\OrderField;
+use Monaye\SimpleLinkButton\SimpleLinkButton;
 
 class Topic extends Resource
 {
@@ -98,7 +99,13 @@ class Topic extends Resource
 
             Text::make('Punteo Asignado', 'totalActivities')
                 ->hideWhenCreating()
-                ->hideWhenUpdating()
+                ->hideWhenUpdating(),
+
+             SimpleLinkButton::make('Calificaciones', function () {
+                 return "/topicGradebook/{$this->id}" ;
+             })
+                 ->type('link')  // fill, outline, link
+                 ->attributes(['target' => '_blank']),
         ];
     }
 

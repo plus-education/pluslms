@@ -50,7 +50,9 @@ class UsersTypes extends Filter
         return [
            __('Admins') =>  Roles::ADMIN ,
            __('Teachers') => Roles::TEACHER,
-           __('Students') => Roles::STUDENT ,
+           __('Students') => Roles::STUDENT,
+            __('Encargado') => Roles::STUDENT_MANAGER,
+
         ];
     }
 }

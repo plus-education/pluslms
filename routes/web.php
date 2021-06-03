@@ -160,6 +160,72 @@ Route::get('/courseGradebook/{id}', function ($id) {
         ->with(compact('course', 'topic', 'gradebook', 'totalScore', 'totalResult'));
 });
 
+Route::get('/topicGradebook/{id}', function($id) {
+    $topic = App\Models\Topic::find($id);
+    return \Inertia\Inertia::render('Admin/TopicGradebook', [
+        'group' => $topic->course->group,
+        'topic' => $topic,
+        'students' => $topic->course->students->map(function ($student) use($topic) {
+            $student->scores =  DB::table('activity_user')
+                ->leftJoin('activities', 'activity_user.activity_id', 'activities.id')
+                ->where('activity_user.user_id', $student->id)
+                ->where('activities.topic_id', $topic->id)
+                ->select('activity_user.*')
+                ->get()
+                ->keyBy('activity_id');
+
+            $student->total = $student->scores->sum('score');
+            return $student;
+        }),
+        'activities' => $topic->activities->where('score', '>', 0)
+    ]);
+});
+
+Route::post('/topicGradebook/update/{topicId}/{userId}', function (\Illuminate\Http\Request $request, $topicId, $userId){
+    $student = \App\Models\User::find($userId);
+    $score = $student->activities()->updateExistingPivot($request->post('activity_id'),  [
+        'score' =>  $request->post('score'),
+    ]);
+
+    $scores =  DB::table('activity_user')
+        ->leftJoin('activities', 'activity_user.activity_id', 'activities.id')
+        ->where('activity_user.user_id', $student->id)
+        ->where('activities.topic_id', $topicId)
+        ->select('activity_user.*')
+        ->get();
+
+    $student->total = $scores->sum('score');
+    return $student;
+});
+
+Route::post('/topicGradebook/save/{userId}/{activityId}', function (\Illuminate\Http\Request $request, $userId, $activityId) {
+    $student = \App\Models\User::find($userId);
+    $score = $student->activities->where('id', $activityId)->first();
+
+    if ($score) {
+        $newScore = $student->activities()->updateExistingPivot($activityId,  [
+            'score' =>  $request->post('score'),
+        ]);
+    }else {
+        $newScore = $student->activities()->attach($activityId,  [
+            'comment' =>  '',
+            'score' => $request->post('score'),
+            'file' => null
+        ]);
+    }
+
+    $student->scores =  DB::table('activity_user')
+        ->leftJoin('activities', 'activity_user.activity_id', 'activities.id')
+        ->where('activity_user.user_id', $student->id)
+        ->where('activities.topic_id', $request->post('topicId'))
+        ->select('activity_user.*')
+        ->get();
+
+    $student->newScore = $newScore;
+    $student->total = $student->scores->sum('score');
+    return $student;
+});
+
 Route::get('/notifications', function () {
     return auth()->user()->notifications;
 });

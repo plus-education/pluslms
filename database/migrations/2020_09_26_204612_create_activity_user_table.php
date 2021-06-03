@@ -16,7 +16,7 @@ class CreateActivityUserTable extends Migration
         Schema::create('activity_user', function (Blueprint $table) {
             $table->foreignId('activity_id');
             $table->foreignId('user_id');
-            $table->string('comment')->nullable();
+            $table->text('comment')->nullable();
             $table->unsignedDecimal('score')->default(0);
             $table->timestamps();
         });

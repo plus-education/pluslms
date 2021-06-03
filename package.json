@@ -33,7 +33,11 @@
         "build-student-gradebook": "cd nova-components/StudentGradebook && npm run dev",
         "build-student-gradebook-prod": "cd nova-components/StudentGradebook && npm run prod",
         "build-gradebook": "cd nova-components/Gradebook && npm run dev",
-        "build-gradebook-prod": "cd nova-components/Gradebook && npm run prod"
+        "build-gradebook-prod": "cd nova-components/Gradebook && npm run prod",
+        "build-notices": "cd nova-components/Notices && npm run dev",
+        "build-notices-prod": "cd nova-components/Notices && npm run prod",
+        "build-course-gradebook": "cd nova-components/CourseGradebook && npm run dev",
+        "build-course-gradebook-prod": "cd nova-components/CourseGradebook && npm run prod"
     },
     "devDependencies": {
         "@inertiajs/inertia": "^0.1.7",

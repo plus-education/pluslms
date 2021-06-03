@@ -41,8 +41,6 @@ class UserFileds
 
             RoleSelect::make(__('Role'), 'roles'),
 
-            HasMany::make('Courses'),
-
             Boolean::make('Es solvente', 'is_solvent')
         ];
     }
