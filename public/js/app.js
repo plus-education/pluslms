@@ -93107,7 +93107,9 @@ var render = function() {
                                       staticClass: "mr-4",
                                       attrs: {
                                         alt: "Descargar Tarea",
-                                        href: student.scores[activity.id].file
+                                        href:
+                                          "/storage/" +
+                                          student.scores[activity.id].file
                                       }
                                     },
                                     [
