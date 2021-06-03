@@ -17,4 +17,6 @@ class Roles
     const TUTOR = 'tutor';
 
     const STUDENT = 'student';
+
+    const STUDENT_MANAGER = 'student Manager';
 }

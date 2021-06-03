@@ -1,30 +1,18 @@
 <?php
 
-namespace Lms\UsersTypes;
+namespace App\Nova\Filters;
 
-use App\Models\Roles;
 use Illuminate\Http\Request;
 use Laravel\Nova\Filters\Filter;
-use Laravel\Nova\Nova;
 
-class UsersTypes extends Filter
+class UserRole extends Filter
 {
     /**
      * The filter's component.
      *
      * @var string
      */
-    public $component = 'users-types';
-
-    /**
-     * Get the displayable name of the filter.
-     *
-     * @return string
-     */
-    public function name()
-    {
-        return __('Rol');
-    }
+    public $component = 'select-filter';
 
     /**
      * Apply the filter to the given query.
@@ -36,7 +24,7 @@ class UsersTypes extends Filter
      */
     public function apply(Request $request, $query, $value)
     {
-        return $query->role($value)->get();
+        return $query;
     }
 
     /**
@@ -47,12 +35,6 @@ class UsersTypes extends Filter
      */
     public function options(Request $request)
     {
-        return [
-           __('Admins') =>  Roles::ADMIN ,
-           __('Teachers') => Roles::TEACHER,
-           __('Students') => Roles::STUDENT,
-            __('Encargado') => Roles::STUDENT_MANAGER,
-
-        ];
+        return [];
     }
 }

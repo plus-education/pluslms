@@ -60,7 +60,9 @@
         "superlatif/nova-tag-input": "^1.4",
         "vyuldashev/nova-permission": "^2.9",
         "whchi/nova-tags-input": "^0.0.5",
-        "whitecube/nova-flexible-content": "^0.2.5"
+        "whitecube/nova-flexible-content": "^0.2.5",
+        "lms/notices": "*",
+        "lms/course-gradebook": "*"
     },
     "repositories": [
         {
@@ -106,6 +108,14 @@
         {
             "type": "path",
             "url": "./nova-components/Gradebook"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/Notices"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/CourseGradebook"
         }
     ],
     "require-dev": {

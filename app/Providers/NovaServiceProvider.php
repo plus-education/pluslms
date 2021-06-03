@@ -10,6 +10,7 @@ use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
+use Lms\CourseGradebook\CourseGradebook;
 use Lms\Gradebook\Gradebook;
 use Lms\MyCourses\MyCourses;
 use Lms\StudentGradebook\StudentGradebook;
@@ -93,7 +94,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         return [
             MyCourses::make(),
 
-
+            CourseGradebook::make(),
 
             new \Infinety\Filemanager\FilemanagerTool(),
 
@@ -110,10 +111,6 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 }),
             //\ChrisWare\NovaBreadcrumbs\NovaBreadcrumbs::make(),
 
-            NovaTranslation::make()
-                ->canSee(function (){
-                    return auth()->user()->can('manage translations');
-                }),
 
             \OptimistDigital\NovaSettings\NovaSettings::make(),
 

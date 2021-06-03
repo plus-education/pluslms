@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateActivityUserTable extends Migration
+class CreateStudentStudentManagerTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateActivityUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('activity_user', function (Blueprint $table) {
-            $table->foreignId('activity_id');
-            $table->foreignId('user_id');
-            $table->text('comment')->nullable();
-            $table->unsignedDecimal('score')->default(0);
+        Schema::create('student_student_manager', function (Blueprint $table) {
+            $table->foreignId('student_id');
+            $table->foreignId('student_manager_id');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class CreateActivityUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('activity_users');
+        Schema::dropIfExists('student_student_manager');
     }
 }
