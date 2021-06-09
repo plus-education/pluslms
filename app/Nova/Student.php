@@ -91,7 +91,7 @@ class Student extends Resource
      */
     public function fields(Request $request)
     {
-        return UserFileds::fields();
+        return UserFileds::fields($this);
     }
 
     /**
