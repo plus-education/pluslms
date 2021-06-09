@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Advoor\NovaEditorJs\NovaEditorJs;
 use App\Models\Roles;
 use Illuminate\Support\Facades\Gate;
 use Joedixon\NovaTranslation\NovaTranslation;
@@ -27,8 +28,6 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function boot()
     {
         parent::boot();
-
-
 
         \OptimistDigital\NovaSettings\NovaSettings::addSettingsFields([
             Image::make('Logo', 'logo'),
@@ -96,7 +95,6 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
             CourseGradebook::make(),
 
-            new \Infinety\Filemanager\FilemanagerTool(),
 
             \Spatie\BackupTool\BackupTool::make()
                 ->canSee(function (){

@@ -28,6 +28,7 @@
         "izi-dev/nova-key-value-suggestion-field": "^1.0",
         "joedixon/nova-translation": "^1.0",
         "jrodas4044/grid-multiselect-belogs-to-many": "*",
+        "kabbouchi/nova-impersonate": "^1.5",
         "khalin/nova-link-field": "^1.2",
         "kirschbaum-development/nova-inline-relationship": "^0.3.0",
         "kpolicar/nova-date-range": "9999999-dev",
@@ -39,10 +40,12 @@
         "league/flysystem-aws-s3-v3": "^1.0",
         "lms/activity-comments": "*",
         "lms/activity-scores": "*",
+        "lms/course-gradebook": "*",
         "lms/files": "*",
         "lms/gradebook": "*",
         "lms/link-file": "*",
         "lms/my-courses": "*",
+        "lms/notices": "*",
         "lms/teacher-topic-comment": "*",
         "lms/users-types": "*",
         "maatwebsite/excel": "^3.1",
@@ -60,9 +63,7 @@
         "superlatif/nova-tag-input": "^1.4",
         "vyuldashev/nova-permission": "^2.9",
         "whchi/nova-tags-input": "^0.0.5",
-        "whitecube/nova-flexible-content": "^0.2.5",
-        "lms/notices": "*",
-        "lms/course-gradebook": "*"
+        "whitecube/nova-flexible-content": "^0.2.5"
     },
     "repositories": [
         {

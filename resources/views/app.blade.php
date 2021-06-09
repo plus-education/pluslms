@@ -9,18 +9,54 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
         <style>
-            .editor-js{
-                width:100%;
-                background-color:#fff;
-                border-width:1px;
-                border-color:#bacad6;
-                padding-left:.75rem;
-                color:#7c858e;border-radius:.5rem;box-shadow:0 2px 4px 0 rgba(0,0,0,.05)}
+            .activity-header, .comment-title{
+                background: #193660;
+                padding: 22px;
+            }
+
+
+            .activity-header h1, .comment-title h1{
+                color: #fff;
+                font-weight: bold;
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            .editor-js-content p{
+                border-left: solid 20px #FCBC19;
+                padding: 0 17px;
+            }
+
+            .editor-js-content iframe{
+                margin: auto
+            }
+
+            .editor-js-content ul li::before {
+                content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+                color: #193660; /* Change the color */
+                font-weight: bold; /* If you want it to be bold */
+                display: inline-block; /* Needed to add space between the bullet and the text */
+                width: 2em; /* Also needed for space (tweak if needed) */
+                margin-left: -1em; /* Also needed for space (tweak if needed) */
+            }
+
+            .editor-js-content{
+                padding: 0px 6rem;
+                text-align: justify;
+            }
+
+            .editor-js-link{
+                border: solid 1px #6666;
+                padding: 13px;
+                background: white;
+                width: 7    5%;
+                margin: auto;
+            }
+
             .editor-js-content .editor-js-block{padding:.7em 0}.editor-js-content h2{padding:1em 0;margin:0 0 -.9em;line-height:1.5em}
             .editor-js-content p{line-height:1.6em}.editor-js-content li{padding:5.5px 0 5.5px 3px;line-height:1.6em}
             .editor-js-content .editor-js-code{min-height:200px;color:#41314e;line-height:1.6em;font-size:12px;background:#f8f7fa;border:1px solid #f1f1f4;box-shadow:none;white-space:pre;word-wrap:normal;overflow-x:auto;resize:vertical}.
@@ -29,12 +65,12 @@
 
 
 	    .editor-js-image{
-		text-align: center;
+		    text-align: center;
 	    }
 
 	    .editor-js-image img{
-		display: initial;
-	    }
+		    display: initial;
+        }
 
         </style>
 

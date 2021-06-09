@@ -14,6 +14,12 @@ return [
      * Configure tools
      */
     'toolSettings' => [
+        'warning' => [
+            'activated' => true,
+            'titlePlaceholder' => 'Title',
+            'messagePlaceholder' => 'Message',
+            'shortcut' => 'CMD+SHIFT+L'
+        ],
         'header' => [
             'activated' => true,
             'placeholder' => 'Heading',

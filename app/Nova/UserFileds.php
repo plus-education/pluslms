@@ -4,6 +4,7 @@
 namespace App\Nova;
 
 
+use KABBOUCHI\NovaImpersonate\Impersonate;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\HasMany;
@@ -14,7 +15,7 @@ use Vyuldashev\NovaPermission\RoleSelect;
 
 class UserFileds
 {
-    public static function fields()
+    public static function fields($model = null)
     {
         return [
             Gravatar::make()->maxWidth(50),
@@ -41,7 +42,11 @@ class UserFileds
 
             RoleSelect::make(__('Role'), 'roles'),
 
-            Boolean::make('Es solvente', 'is_solvent')
+            Boolean::make('Es solvente', 'is_solvent'),
+
+            Impersonate::make($model)->withMeta([
+                'redirect_to' => '/dashboard'
+            ]),
         ];
     }
 }

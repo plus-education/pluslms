@@ -4081,6 +4081,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -4177,6 +4185,8 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue2_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue2-editor */ "./node_modules/vue2-editor/dist/vue2-editor.esm.js");
+//
+//
 //
 //
 //
@@ -4513,17 +4523,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Activities_Youtube__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Activities/Youtube */ "./resources/js/Pages/Course/Activities/Youtube.vue");
 /* harmony import */ var _Activities_Video__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Activities/Video */ "./resources/js/Pages/Course/Activities/Video.vue");
 /* harmony import */ var _Comments__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Comments */ "./resources/js/Pages/Course/Comments.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -8058,7 +8057,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".editor-js{\n  width:100%;\n  background-color:#fff;\n  border-width:1px;\n  border-color:#bacad6;\n  padding-left:.75rem;\n  color:#7c858e;\n  border-radius:.5rem;\n  box-shadow:0 2px 4px 0 rgba(0,0,0,.05)\n}\n.editor-js-content .editor-js-block{\n  padding:.7em 0\n}\n.editor-js-content h2{\n  padding:1em 0;\n  margin:0 0 -.9em;\n  line-height:1.5em\n}\n.editor-js-content p{\n  line-height:1.6em\n}\n.editor-js-content li{\n  padding:5.5px 0 5.5px 3px;\n  line-height:1.6em\n}\n.editor-js-content .editor-js-code{\n  min-height:200px;\n  color:#41314e;\n  line-height:1.6em;\n  font-size:12px;\n  background:#f8f7fa;\n  border:1px solid #f1f1f4;\n  box-shadow:none;\n  white-space:pre;\n  word-wrap:normal;\n  overflow-x:auto;\n  resize:vertical\n}\n.\n                                                                                                                                                                                                                                editor-js-content .editor-js-link{\n  display:block;\n  background:#fff;\n  border:1px solid rgba(201,201,204,.48);\n  box-shadow:0 1px 3px rgba(0,0,0,.1);\n  border-radius:6px;\n  padding:25px\n}\n.editor-js-content .editor-js-link h4{\n  font-size:17px;\n  font-weight:600;\n  line-height:1.5em;\n  margin:0 0 10px\n}\n.editor-js-content .editor-js-link small{\n  margin-top:25px;\n  display:block;\n  font-size:15px;\n  line-height:1em;\n  color:#888\n}\n.editor-js-content .editor-js-link .editor-js-link-image{\n  background-position:50%;\n  background-repeat:no-repeat;\n  background-size:cover;\n  margin:0 0 0 30px;\n  width:65px;\n  height:65px;\n  border-radius:3px;\n  float:right\n}\n.editor-js-content .editor-js-checklist .checklist-item{\n  display:flex;\n  padding:0 10px;\n  box-sizing:content-box\n}\n.editor-js-content .editor-js-checklist .checklist-item .checkbox{\n  display:inline-block;\n  flex-shrink:0;\n  position:relative;\n  width:20px;\n  height:20px;\n  margin:10px 10px 10px 0;\n  border-radius:50%;\n  border:1px solid #d0d0d0;\n  background:#fff;\n  -webkit-user-select:none;\n  -moz-user-select:none;\n  -ms-user-select:none;\n  user-select:none\n}\n.editor-js-content .editor-js-checklist .checklist-item .checkbox:after{\n  position:absolute;\n  top:5px;\n  left:5px;\n  width:8px;\n  height:5px;\n  border:2px solid #fcfff4;\n  border-top:none;\n  border-right:none;\n  background:transparent;\n  content:\"\";\n  opacity:1;\n  transform:rotate(-45deg)\n}\n.editor-js-content .editor-js-checklist .checklist-item .checkbox-checked{\n  background:#388ae5;\n  border-color:#388ae5\n}\n.editor-js-content .editor-js-checklist .checklist-item .checkbox-text{\n  outline:none;\n  flex-grow:1;\n  padding:10px 0\n}\n.editor-js-content .editor-js-delimiter{\n  line-height:1.6em;\n  width:100%;\n  text-align:center\n}\n.editor-js-content .editor-js-delimiter:before{\n  display:inline-block;\n  content:\"***\";\n  font-size:30px;\n  line-height:65px;\n  height:30px;\n  letter-spacing:.2em\n}\n.editor-js-content .editor-js-table{\n  width:100%;\n  height:100%;\n  border-collapse:collapse;\n  table-layout:fixed\n}\n.editor-js-content .editor-js-table td{\n  border:1px solid #dbdbe2;\n  padding:10px;\n  vertical-align:top\n}\n", ""]);
+exports.push([module.i, ".editor-js{\n  width:100%;\n  background-color:#fff;\n  border-width:1px;\n  border-color:#bacad6;\n  padding-left:.75rem;\n  color:#7c858e;\n  border-radius:.5rem;\n  box-shadow:0 2px 4px 0 rgba(0,0,0,.05)\n}\n.editor-js-content .editor-js-block{\n  padding:.7em 0\n}\n.editor-js-content h2{\n  font-size: 1.5em;\n  padding:1em 0;\n  line-height:1.5em\n}\n.editor-js-content p{\n  line-height:1.6em\n}\n.editor-js-content li{\n  padding:5.5px 0 5.5px 3px;\n  line-height:1.6em\n}\n.editor-js-content .editor-js-code{\n  min-height:200px;\n  color:#41314e;\n  line-height:1.6em;\n  font-size:12px;\n  background:#f8f7fa;\n  border:1px solid #f1f1f4;\n  box-shadow:none;\n  white-space:pre;\n  word-wrap:normal;\n  overflow-x:auto;\n  resize:vertical\n}\n.\n                                                                                                                                                                                                                                editor-js-content .editor-js-link{\n  display:block;\n  background:#fff;\n  border:1px solid rgba(201,201,204,.48);\n  box-shadow:0 1px 3px rgba(0,0,0,.1);\n  border-radius:6px;\n  padding:25px\n}\n.editor-js-content .editor-js-link h4{\n  font-size:17px;\n  font-weight:600;\n  line-height:1.5em;\n  margin:0 0 10px\n}\n.editor-js-content .editor-js-link small{\n  margin-top:25px;\n  display:block;\n  font-size:15px;\n  line-height:1em;\n  color:#888\n}\n.editor-js-content .editor-js-link .editor-js-link-image{\n  background-position:50%;\n  background-repeat:no-repeat;\n  background-size:cover;\n  margin:0 0 0 30px;\n  width:65px;\n  height:65px;\n  border-radius:3px;\n  float:right\n}\n.editor-js-content .editor-js-checklist .checklist-item{\n  display:flex;\n  padding:0 10px;\n  box-sizing:content-box\n}\n.editor-js-content .editor-js-checklist .checklist-item .checkbox{\n  display:inline-block;\n  flex-shrink:0;\n  position:relative;\n  width:20px;\n  height:20px;\n  margin:10px 10px 10px 0;\n  border-radius:50%;\n  border:1px solid #d0d0d0;\n  background:#fff;\n  -webkit-user-select:none;\n  -moz-user-select:none;\n  -ms-user-select:none;\n  user-select:none\n}\n.editor-js-content .editor-js-checklist .checklist-item .checkbox:after{\n  position:absolute;\n  top:5px;\n  left:5px;\n  width:8px;\n  height:5px;\n  border:2px solid #fcfff4;\n  border-top:none;\n  border-right:none;\n  background:transparent;\n  content:\"\";\n  opacity:1;\n  transform:rotate(-45deg)\n}\n.editor-js-content .editor-js-checklist .checklist-item .checkbox-checked{\n  background:#388ae5;\n  border-color:#388ae5\n}\n.editor-js-content .editor-js-checklist .checklist-item .checkbox-text{\n  outline:none;\n  flex-grow:1;\n  padding:10px 0\n}\n.editor-js-content .editor-js-delimiter{\n  line-height:1.6em;\n  width:100%;\n  text-align:center\n}\n.editor-js-content .editor-js-delimiter:before{\n  display:inline-block;\n  content:\"***\";\n  font-size:30px;\n  line-height:65px;\n  height:30px;\n  letter-spacing:.2em\n}\n.editor-js-content .editor-js-table{\n  width:100%;\n  height:100%;\n  border-collapse:collapse;\n  table-layout:fixed\n}\n.editor-js-content .editor-js-table td{\n  border:1px solid #dbdbe2;\n  padding:10px;\n  vertical-align:top\n}\n", ""]);
 
 // exports
 
@@ -94043,6 +94042,18 @@ var render = function() {
   return _c(
     "div",
     [
+      _c("div", { staticClass: "activity-header flex items-center" }, [
+        _c("div", { staticClass: "flex-1" }, [
+          _c("h1", { staticClass: "text-2xl text-gray-800" }, [
+            _vm._v(
+              "\n                " +
+                _vm._s(_vm.activity.name) +
+                "\n            "
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
       _c("div", { staticClass: "mt-4" }, [
         _c("div", {
           staticClass: "px-8",
@@ -94050,7 +94061,10 @@ var render = function() {
         })
       ]),
       _vm._v(" "),
-      _c("comments", { attrs: { activity: _vm.activity, user: _vm.user } })
+      _c("comments", {
+        staticClass: "mt-4",
+        attrs: { activity: _vm.activity, user: _vm.user }
+      })
     ],
     1
   )
@@ -94164,9 +94178,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h1", { staticClass: "text-90 font-normal text-2xl mb-3" }, [
-      _vm._v("\n        Commentarios\n    ")
-    ]),
+    _vm._m(0),
     _vm._v(" "),
     !_vm.showAnswers
       ? _c(
@@ -94642,7 +94654,18 @@ var render = function() {
         )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "comment-title" }, [
+      _c("h1", { staticClass: "text-90 font-normal text-2xl mb-3" }, [
+        _vm._v("\n            Commentarios\n        ")
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -94778,30 +94801,9 @@ var render = function() {
                 "div",
                 {
                   staticClass:
-                    "h-full container m-auto bg-white shadow rounded-lg p-4 overflow-scroll"
+                    "h-full container m-auto bg-white shadow rounded-lg overflow-scroll"
                 },
                 [
-                  _c("div", { staticClass: "flex items-center" }, [
-                    _c("div", {
-                      staticClass: "flex-shrink mr-2",
-                      domProps: {
-                        innerHTML: _vm._s(_vm.icons[_vm.activity.type])
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "flex-1" }, [
-                      _c("h1", { staticClass: "text-2xl text-gray-800" }, [
-                        _vm._v(
-                          "\n                               " +
-                            _vm._s(_vm.activity.name) +
-                            "\n                           "
-                        )
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("hr"),
-                  _vm._v(" "),
                   _vm.activity.type == "DIVIDER"
                     ? _c("divider-activity", {
                         attrs: { activity: _vm.activity, user: _vm.user }
