@@ -1,5 +1,13 @@
 <template>
     <div class="h-full overflow-y-scroll">
+        <div class="activity-header flex items-center">
+            <div class="flex-1">
+                <h1 class="text-2xl text-gray-800">
+                    {{ activity.name }}
+                </h1>
+            </div>
+        </div>
+
         <div class="mt-4" >
             <div class="px-8" v-html="activity.activityable.html">
             </div>

@@ -1,5 +1,12 @@
 <template>
     <div class="h-full overflow-scroll">
+        <div class="activity-header flex items-center">
+            <div class="flex-1">
+                <h1 class="text-2xl text-gray-800">
+                    {{ activity.name }}
+                </h1>
+            </div>
+        </div>
         <div class="">
             <a :href="`/storage/${this.activity.activityable.path}`"   download target="_blank" class="btn btn-primary bg-green-500 text-white px-4 py-2 shadow-lg flex">
                 <div class="flex items-center align-middle w-auto m-auto">

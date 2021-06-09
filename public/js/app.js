@@ -3568,6 +3568,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -3590,6 +3598,14 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3727,6 +3743,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -3751,6 +3775,14 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Comments__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Comments */ "./resources/js/Pages/Course/Comments.vue");
 /* harmony import */ var _Jetstream_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../Jetstream/Button */ "./resources/js/Jetstream/Button.vue");
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3958,6 +3990,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -3982,6 +4022,13 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_pdf__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-pdf */ "./node_modules/vue-pdf/src/vuePdfNoSss.vue");
 /* harmony import */ var _Comments__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Comments */ "./resources/js/Pages/Course/Comments.vue");
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -4124,6 +4171,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -4147,6 +4202,14 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Comments__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Comments */ "./resources/js/Pages/Course/Comments.vue");
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -93309,6 +93372,18 @@ var render = function() {
     "div",
     { staticClass: "h-full overflow-y-scroll" },
     [
+      _c("div", { staticClass: "activity-header flex items-center" }, [
+        _c("div", { staticClass: "flex-1" }, [
+          _c("h1", { staticClass: "text-2xl text-gray-800" }, [
+            _vm._v(
+              "\n                " +
+                _vm._s(_vm.activity.name) +
+                "\n            "
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
       _c("div", { staticClass: "mt-4" }, [
         _c("div", {
           staticClass: "px-8",
@@ -93344,6 +93419,16 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
+    _c("div", { staticClass: "activity-header flex items-center" }, [
+      _c("div", { staticClass: "flex-1" }, [
+        _c("h1", { staticClass: "text-2xl text-gray-800" }, [
+          _vm._v(
+            "\n                " + _vm._s(_vm.activity.name) + "\n            "
+          )
+        ])
+      ])
+    ]),
+    _vm._v(" "),
     _c("div", { staticClass: "mt-4" }, [
       _c("div", {
         staticClass: "px-8",
@@ -93554,6 +93639,18 @@ var render = function() {
     "div",
     {},
     [
+      _c("div", { staticClass: "activity-header flex items-center" }, [
+        _c("div", { staticClass: "flex-1" }, [
+          _c("h1", { staticClass: "text-2xl text-gray-800" }, [
+            _vm._v(
+              "\n                " +
+                _vm._s(_vm.activity.name) +
+                "\n            "
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
       _c(
         "div",
         {
@@ -93605,6 +93702,18 @@ var render = function() {
   return _c(
     "div",
     [
+      _c("div", { staticClass: "activity-header flex items-center" }, [
+        _c("div", { staticClass: "flex-1" }, [
+          _c("h1", { staticClass: "text-2xl text-gray-800" }, [
+            _vm._v(
+              "\n                " +
+                _vm._s(_vm.activity.name) +
+                "\n            "
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
       _c("div", { staticClass: "bg-yellow-200 text-center p-2 shadow-lg" }, [
         _c("p", [
           _c("strong", [_vm._v("Último  día para entrega: ")]),
@@ -93908,6 +94017,18 @@ var render = function() {
     "div",
     { staticClass: "h-full overflow-hidden" },
     [
+      _c("div", { staticClass: "activity-header flex items-center" }, [
+        _c("div", { staticClass: "flex-1" }, [
+          _c("h1", { staticClass: "text-2xl text-gray-800" }, [
+            _vm._v(
+              "\n                " +
+                _vm._s(_vm.activity.name) +
+                "\n            "
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
       _c("iframe", {
         staticClass: "w-full h-full overflow-scroll",
         attrs: { src: _vm.activity.activityable.link, frameborder: "0" }
@@ -93944,6 +94065,18 @@ var render = function() {
     "div",
     { staticClass: "h-full overflow-scroll" },
     [
+      _c("div", { staticClass: "activity-header flex items-center" }, [
+        _c("div", { staticClass: "flex-1" }, [
+          _c("h1", { staticClass: "text-2xl text-gray-800" }, [
+            _vm._v(
+              "\n                " +
+                _vm._s(_vm.activity.name) +
+                "\n            "
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
       _c("div", {}, [
         _c(
           "a",
@@ -94094,6 +94227,18 @@ var render = function() {
   return _c(
     "div",
     [
+      _c("div", { staticClass: "activity-header flex items-center" }, [
+        _c("div", { staticClass: "flex-1" }, [
+          _c("h1", { staticClass: "text-2xl text-gray-800" }, [
+            _vm._v(
+              "\n                " +
+                _vm._s(_vm.activity.name) +
+                "\n            "
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
       _c("div", { staticClass: "mt-4" }, [
         _c("video", { attrs: { width: "640", height: "360", controls: "" } }, [
           _c("source", {
@@ -94135,6 +94280,18 @@ var render = function() {
   return _c(
     "div",
     [
+      _c("div", { staticClass: "activity-header flex items-center" }, [
+        _c("div", { staticClass: "flex-1" }, [
+          _c("h1", { staticClass: "text-2xl text-gray-800" }, [
+            _vm._v(
+              "\n                " +
+                _vm._s(_vm.activity.name) +
+                "\n            "
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
       _c("div", { staticClass: "mt-4" }, [
         _c("iframe", {
           staticClass: "m-auto",
