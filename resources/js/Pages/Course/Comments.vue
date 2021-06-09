@@ -1,8 +1,10 @@
 <template>
     <div>
-        <h1 class="text-90 font-normal text-2xl mb-3">
-            Commentarios
-        </h1>
+        <div class="comment-title">
+            <h1 class="text-90 font-normal text-2xl mb-3">
+                Commentarios
+            </h1>
+        </div>
 
         <div class="card mb-6 py-4 px-6" v-if="!showAnswers">
             <div class="text-center shadow-md rounded-lg  mb-4 p-4">

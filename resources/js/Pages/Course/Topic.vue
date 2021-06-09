@@ -10,18 +10,7 @@
                         <hr>
                     </div>
 
-                    <div v-else class="h-full container m-auto bg-white shadow rounded-lg p-4 overflow-scroll">
-                        <div class="flex items-center">
-                            <div class="flex-shrink mr-2" v-html="icons[activity.type]"></div>
-
-                           <div class="flex-1">
-                               <h1 class="text-2xl text-gray-800">
-                                   {{ activity.name }}
-                               </h1>
-                           </div>
-                        </div>
-
-                        <hr>
+                    <div v-else class="h-full container m-auto bg-white shadow rounded-lg overflow-scroll">
 
                         <divider-activity v-if="activity.type == 'DIVIDER'" :activity="activity" :user="user"></divider-activity>
 
