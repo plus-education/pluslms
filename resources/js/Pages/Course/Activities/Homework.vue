@@ -1,5 +1,13 @@
 <template>
     <div>
+        <div class="activity-header flex items-center">
+            <div class="flex-1">
+                <h1 class="text-2xl text-gray-800">
+                    {{ activity.name }}
+                </h1>
+            </div>
+        </div>
+
         <div class="bg-yellow-200 text-center p-2 shadow-lg">
             <p>
                 <strong>Último  día para entrega: </strong> {{ activity.end }}
