@@ -32,7 +32,15 @@
             </div>
         </div>
 
-        <div  v-show="studentSendFile == false" class="my-4 mx-auto bg-gray-200 p-6 flex flex-col align-middle">
+        <div  v-show="studentSendFile == false" class="mt-4 mx-auto bg-gray-100 p-6 flex flex-col align-middle">
+            <h1 class="text-2xl font-bold" style="color:#193660">
+                Entrega de tarea:
+            </h1>
+
+            <div class="bg-white border border-gray-400 shadow-lg mt-4">
+                <div id="editorjs"></div>
+            </div>
+
             <div class="text-center m-8">
                 <label><strong>Cargar Archivo: </strong>
                     <input type="file" id="file" ref="file" v-on:change="handleFileUpload()"/>
@@ -95,6 +103,15 @@
 <script>
     import Comments from "../Comments";
     import Button from "../../../Jetstream/Button";
+    import EditorJS from '@editorjs/editorjs';
+    import Underline from '@editorjs/underline';
+    import NestedList from '@editorjs/nested-list';
+
+
+    const Table = require('@editorjs/table');
+    const Header = require('@editorjs/header');
+    const SimpleImage = require('@editorjs/simple-image');
+    const AttachesTool = require('@editorjs/attaches');
 
     export default {
         components: {
@@ -114,11 +131,34 @@
                 studentScoreComment: '',
                 studentSendFile: false,
                 studentSendFilePath: '',
+                editor: Object,
+                tools: {
+                    table: {
+                        class: Table,
+                    },
+                    header: Header,
+                    underline: Underline,
+                    list: {
+                        class: NestedList,
+                        inlineToolbar: true,
+                    },
+                    image: SimpleImage,
+                    attaches: {
+                        class: AttachesTool,
+                        config: {
+                            endpoint: '/editorjs/uploadFile'
+                        }
+                    }
+                }
             }
         },
 
         mounted() {
-           this.getHomework()
+            this.getHomework()
+            /*this.editor = new EditorJS({
+                holder: 'editorjs',
+                tools: this.tools,
+            })*/
         },
 
         updated() {
