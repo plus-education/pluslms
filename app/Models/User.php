@@ -60,11 +60,17 @@ class User extends Authenticatable
      */
     protected $appends = [
         'profile_photo_url',
+        'group'
     ];
 
     public function groups()
     {
         return $this->belongsToMany(Group::class)->using(GroupUser::class);
+    }
+
+    public function getGroupAttribute()
+    {
+        return $this->groups->first();
     }
 
     public function courses()

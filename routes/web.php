@@ -103,6 +103,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
             ];
         });
     });
+
+    // Editor Js
+    Route::post('/editorjs/uploadFile', [App\Http\Controllers\EditorJsController::class, 'uploadFile']);
 });
 
 
