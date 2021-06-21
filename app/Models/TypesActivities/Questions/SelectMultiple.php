@@ -15,7 +15,7 @@ class SelectMultiple extends Model
 
     public function question()
     {
-        return $this->morphOne(QuestionOption::class, 'questionable');
+        return $this->morphOne( Question::class, 'questionable');
     }
 
 

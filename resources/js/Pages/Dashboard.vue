@@ -62,7 +62,7 @@
         },
 
         props: {
-            courses: Object,
+            courses: Array,
             group: Object,
         },
     }
