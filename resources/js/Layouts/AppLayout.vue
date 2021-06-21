@@ -36,6 +36,7 @@
                             </jet-nav-link>
 
                             <a
+                                v-if="$page.user.group != null"
                                 :href="`/groupGradebook/gradebook/`+ $page.user.group.id +`/` + $page.user.id"
                                 target="_blank"
                                 class="mt-5"

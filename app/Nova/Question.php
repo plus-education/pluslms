@@ -7,6 +7,7 @@ use DigitalCreative\InlineMorphTo\InlineMorphTo;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\MorphOne;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -73,7 +74,7 @@ class Question extends Resource
         return [
             \Laravel\Nova\Fields\Text::make(__('Name'), 'name')
                 ->required()
-                
+
             ,
 
             NovaEditorJs::make(__('Description'), 'description')->hideFromIndex(),
@@ -82,7 +83,9 @@ class Question extends Resource
                 SelectMultiple::class,
             ]),
 
-            Number::make(__('Score'), 'score')->default(0)
+            Number::make(__('Score'), 'score')->default(0),
+
+            BelongsTo::make('Examen Id', 'Exercise', Exercises::class)
         ];
     }
 
