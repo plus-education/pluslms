@@ -11,6 +11,7 @@ use App\Models\TypesActivities\Text;
 use App\Models\TypesActivities\Homework;
 use App\Models\TypesActivities\Video;
 use App\Models\TypesActivities\Youtube;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\EloquentSortable\Sortable;
@@ -29,7 +30,12 @@ class Activity extends Model implements Sortable
 
     protected $with = ['activityable'];
 
-    protected $appends = ['type', 'divider', 'course'];
+    protected $appends = [
+        'type', 
+        'divider', 
+        'course', 
+        'isActiveToDo'
+    ];
 
     protected $attributes = [
         'isShow' => true,
@@ -98,6 +104,12 @@ class Activity extends Model implements Sortable
     public function getCourseAttribute()
     {
         return $this->topic->course;
+    }
+
+    public function getIsActiveToDoAttribute()
+    {
+        $today = Carbon::now();
+        return $today->between($this->start, $this->end);
     }
 
     public function studentScore($user)

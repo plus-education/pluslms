@@ -72,7 +72,7 @@ class Exercise extends Resource
     public function fields(Request $request)
     {
         return [
-            //MorphOne::make('Activity'),
+            MorphOne::make('Activity'),
 
             NovaEditorJs::make(__('Description'), 'description')
                 ->rules(['required']),
