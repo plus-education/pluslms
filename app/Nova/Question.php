@@ -81,11 +81,14 @@ class Question extends Resource
 
             InlineMorphTo::make(__('Questionable'), 'questionable')->types([
                 SelectMultiple::class,
+
+                OpenQuestion::class,
+                
             ]),
 
             Number::make(__('Score'), 'score')->default(0),
 
-            BelongsTo::make('Examen Id', 'Exercise', Exercises::class)
+            BelongsTo::make('Examen Id', 'Exercise', Exercise::class)
         ];
     }
 

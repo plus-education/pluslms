@@ -13,7 +13,9 @@
             </div>
         </div>
 
-        <div id="questions">
+        <div id="questions"
+            v-if="activity.isActiveToDo"
+        >
             <div class="mt-4 px-8" v-for="(question, index) in exercise.questions">
                 <div class="card shadow-lg border border-gray-300 px-8 py-2">
                     <div class="flex items-center">
@@ -41,9 +43,8 @@
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="mt-8 text-center">
+                    <div class="mt-8 text-center">
             <button
                 @click="save()"
                 v-if="!isSended"
@@ -61,6 +62,20 @@
                     {{ totalScore }} / {{ activity.score }}
                 </div>
             </div>
+        </div>
+        </div>
+
+        <div
+            class="w-full"
+            v-else
+        >
+           <div class="flex justify-center align-middle">
+                <div class="text-center">
+                    <h2 class="text-2xl">Examen no disponible</h2>
+                    <strong>Activo del:</strong> {{ activity.start }}
+                    <strong>al:</strong> {{ activity.end }}
+                </div>
+           </div>
         </div>
     </div>
 </template>

@@ -24,11 +24,15 @@ class Exercise extends Model
         return NovaEditorJs::generateHtmlOutput($this->description);
     }
 
-/*    public function activity()
+    public function getTotalScoreAttribute()
+    {
+        
+    }
+   public function activity()
     {
         return $this->morphOne(Activity::class, 'activityable');
     }
-*/
+
     public function questions()
     {
         return $this->hasMany(Question::class);

@@ -35,7 +35,7 @@ class CoursesController extends Controller
 
     public function topicActivities($id)
     {
-        return Topic::find($id)->activities;
+        return Topic::find($id)->activities->where('isShow', true);
     }
 
     public function usersByActivity($id)
