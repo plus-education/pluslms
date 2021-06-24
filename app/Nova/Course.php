@@ -17,6 +17,7 @@ use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use NovaAttachMany\AttachMany;
 use Spatie\Tags\Tag;
 
 class Course extends Resource
@@ -110,6 +111,8 @@ class Course extends Resource
                 BelongsToMany::make(__('Teachers'), 'teachers', Teacher::class)->searchable(),
                 BelongsToMany::make(__('Supervisores'), 'supervisors', Supervisor::class)->searchable(),
             ]),
+
+            AttachMany::make(__('Students'), 'students', Student::class),
 
             BelongsTo::make(__('Group'), 'Group', Group::class)->sortable()
                 ->hideWhenCreating(),

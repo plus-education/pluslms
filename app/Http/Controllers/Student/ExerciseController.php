@@ -12,6 +12,7 @@ class ExerciseController extends Controller
     {
          return  Exercise::select()
          ->with(['questions' => function ($query)  use ($id) {
+                return $query;
                 return $query->with(['questionable' => function ($query) {
                     return $query->with('questionOptions');
                 }]);
