@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4027e0e24522e438e4aa9ae1a83b7479",
+    "content-hash": "8265edf7f27378df8a8acb536e1c536e",
     "packages": [
         {
             "name": "advoor/nova-editor-js",
@@ -1180,6 +1180,51 @@
                 "source": "https://github.com/dcasia/nova-inline-morph-to/tree/v0.2.1"
             },
             "time": "2020-06-24T07:35:23+00:00"
+        },
+        {
+            "name": "dillingham/nova-attach-many",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dillingham/nova-attach-many.git",
+                "reference": "3a34356c9ad071b4fd7797b41e3942ac8d1f77e9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dillingham/nova-attach-many/zipball/3a34356c9ad071b4fd7797b41e3942ac8d1f77e9",
+                "reference": "3a34356c9ad071b4fd7797b41e3942ac8d1f77e9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "NovaAttachMany\\Providers\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "NovaAttachMany\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Attach Many Nova field",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/dillingham/nova-attach-many/issues",
+                "source": "https://github.com/dillingham/nova-attach-many/tree/1.3.0"
+            },
+            "time": "2021-03-26T05:44:06+00:00"
         },
         {
             "name": "doctrine/cache",
@@ -3406,6 +3451,69 @@
                 "source": "https://github.com/KABBOUCHI/nova-impersonate/tree/v1.5.0"
             },
             "time": "2021-01-12T12:38:46+00:00"
+        },
+        {
+            "name": "kalnoy/nestedset",
+            "version": "v6.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lazychaser/laravel-nestedset.git",
+                "reference": "f5351234588a20b14134980552b1bf6dccb3e733"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lazychaser/laravel-nestedset/zipball/f5351234588a20b14134980552b1bf6dccb3e733",
+                "reference": "f5351234588a20b14134980552b1bf6dccb3e733",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "^7.0|^8.0",
+                "illuminate/events": "^7.0|^8.0",
+                "illuminate/support": "^7.0|^8.0",
+                "php": ">=7.1.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "7.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "v5.0.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Kalnoy\\Nestedset\\NestedSetServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Kalnoy\\Nestedset\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alexander Kalnoy",
+                    "email": "lazychaser@gmail.com"
+                }
+            ],
+            "description": "Nested Set Model for Laravel 5.7 and up",
+            "keywords": [
+                "database",
+                "hierarchy",
+                "laravel",
+                "nested sets",
+                "nsm"
+            ],
+            "support": {
+                "issues": "https://github.com/lazychaser/laravel-nestedset/issues",
+                "source": "https://github.com/lazychaser/laravel-nestedset/tree/v6.0.0"
+            },
+            "time": "2021-05-28T07:08:55+00:00"
         },
         {
             "name": "khalin/nova-link-field",
@@ -6689,6 +6797,54 @@
                 "source": "https://github.com/PhenX/php-svg-lib/tree/master"
             },
             "time": "2019-09-11T20:02:13+00:00"
+        },
+        {
+            "name": "phoenix-lib/nova-nested-tree-attach-many",
+            "version": "1.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phoenix-lib/nova-nested-tree-attach-many.git",
+                "reference": "a1a05218c1eb9c254ae1a320e66613a0ce4df0b8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phoenix-lib/nova-nested-tree-attach-many/zipball/a1a05218c1eb9c254ae1a320e66613a0ce4df0b8",
+                "reference": "a1a05218c1eb9c254ae1a320e66613a0ce4df0b8",
+                "shasum": ""
+            },
+            "require": {
+                "kalnoy/nestedset": "^6.0",
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "PhoenixLib\\NovaNestedTreeAttachMany\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PhoenixLib\\NovaNestedTreeAttachMany\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Nova vue-tree-select field for management nested category relations.",
+            "keywords": [
+                "belongs-to-many",
+                "laravel",
+                "nested-sets",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/phoenix-lib/nova-nested-tree-attach-many/issues",
+                "source": "https://github.com/phoenix-lib/nova-nested-tree-attach-many/tree/1.7.0"
+            },
+            "time": "2021-06-23T13:43:28+00:00"
         },
         {
             "name": "php-di/invoker",

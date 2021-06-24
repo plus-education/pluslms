@@ -13,6 +13,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Monaye\SimpleLinkButton\SimpleLinkButton;
+use NovaAttachMany\AttachMany;
 
 class Group extends Resource
 {
@@ -115,6 +116,8 @@ class Group extends Resource
 
                 BelongsToMany::make(__('Supervisors'), 'supervisors', Supervisor::class)->searchable(),
             ]),
+
+            AttachMany::make(__('Students'), 'students', Student::class),
 
             SimpleLinkButton::make('Notas', function () {
                 return "/groupGradebook/{$this->id}" ;
