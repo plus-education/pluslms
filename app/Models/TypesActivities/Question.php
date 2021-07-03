@@ -31,9 +31,14 @@ class Question extends Model
     public function getOptionsAttribute()
     {
         if ($this->questionable_type == SelectMultiple::class) {
-            return true;
+            return $this->getOptions();
         }
 
         return null;
+    }
+
+    private function getOptions()
+    {
+        return $this->questionable->questionOptions;
     }
 }

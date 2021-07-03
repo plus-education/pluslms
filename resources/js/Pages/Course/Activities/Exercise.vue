@@ -17,7 +17,7 @@
             v-if="activity.isActiveToDo"
         >
             <div class="mt-4 px-8" v-for="(question, index) in exercise.questions">
-                <div class="card shadow-lg border border-gray-300 px-8 py-2">
+                <div class="border-b border-gray-200 px-8 py-2">
                     <div class="flex items-center">
                         <div class="flex-shrink">
                             <svg class="w-8 text-green-400 mr-2"  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -33,13 +33,16 @@
 
                     </div>
 
-                    <hr>
 
-                    <div class="w-full mt-2 ml-10">
-                        <div v-for="(option, indexOption) in question.questionable.question_options">
-                            <input type="checkbox"  v-model="exercise.questions[index].questionable.question_options[indexOption].isChecked">
+                    <div class="w-full mt-2 ml-10" v-if="question.options != null">
+                        <div v-for="(option, indexOption) in question.options">
+                            <input type="checkbox"  v-model="exercise.questions[index].options[indexOption].isChecked">
                             <label for="">{{ option.label }}</label>
                         </div>
+                    </div>
+
+                    <div class="w-auto mt-2 mx-10 p-4" v-else>
+                        <textarea  class="w-full h-32 border" cols="50"></textarea>
                     </div>
                 </div>
             </div>
@@ -117,20 +120,22 @@
                 this.isSended = true
 
                 this.exercise.questions.map(question => {
-                    question.questionable.question_options.map(option => {
+                    question.options.map(option => {
                         option.isCorrect = option.isChecked == option.isTrue ? true : false
                     })
                 })
+
+                console.log(console.log)
 
                 let data = {
                     'activityId': this.activity.id,
                     'exercice': this.exercise
                 }
 
-                axios.post('/student/exercise/', data).then(response => {
+                /*axios.post('/student/exercise/', data).then(response => {
                     this.totalScore = response.data.totalScore
                     console.log(response.data)
-                })
+                })*/
             }
         }
     }
