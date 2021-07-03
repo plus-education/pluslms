@@ -9,6 +9,8 @@ class SelectMultiple extends Model
 {
     use HasFactory;
 
+    protected $with = ['questionOptions'];
+
     protected $casts = [
         'options' => 'array'
     ];

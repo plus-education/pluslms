@@ -1,17 +1,12 @@
-<p align="center"> <h1>Plus School</h1</p>
+# Plus Education LMS
+<hr/>
 
 
 ## About Plus Education
 
 
-Plus School is a  Learning Management System, I believe that course development should be fun and creative. Plus School eliminates the hassle of creating online courses, through an intuitive and consistent interface.
-
-Being based on <a href='https://nova.laravel.com'>Laravel Nova<a>, it is ideal to be used by other developers as a base project for other custom solutions.
-
-
-
-## Contributing
+Plus Education is a  Learning Management System, I believe that course development should be fun and creative. Plus Education eliminates the hassle of creating online courses, through an intuitive and consistent interface.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The Plus Education is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
