@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\EloquentSortable\Sortable;
@@ -15,6 +16,13 @@ class Topic extends Model implements Sortable
         'order_column_name' => 'order',
         'sort_when_creating' => true,
     ];
+
+    protected $casts = [
+        'startDate' => 'datetime:d-m-Y',
+        'endDate' => 'datetime:d-m-Y',
+    ];
+
+    protected $appends = ['isShow'];
 
     public function course()
     {
@@ -41,5 +49,24 @@ class Topic extends Model implements Sortable
     public function getTotalActivitiesAttribute()
     {
         return $this->activities()->sum('score');
+    }
+
+    public function getIsShowAttribute()
+    {
+        $today = Carbon::now();
+
+        if ($this->startDate == null && $this->endDate == null) {
+            return true;
+        }
+
+        if ($this->startDate != null && $this->endDate == null) {
+            return $today->greaterThan($this->startDate);
+        }
+
+        if ($this->startDate == null && $this->endDate != null) {
+            return $today->lessThanOrEqualTo($this->endDate);
+        }
+
+        return $today->between($this->startDate, $this->endDate);
     }
 }

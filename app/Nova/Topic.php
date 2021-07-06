@@ -6,6 +6,8 @@ use App\Nova\Actions\TopicGradebook;
 use Eminiarts\Tabs\Tabs;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Boolean;
+use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
@@ -97,6 +99,16 @@ class Topic extends Resource
 
             OrderField::make(__('Order'), 'order'),
 
+            DateTime::make(__('Start Date'), 'startDate')
+                ->pickerDisplayFormat('d-m-Y H:i'),
+
+            DateTime::make(__('End Date'), 'endDate')
+                ->pickerDisplayFormat('d-m-Y H:i'),
+
+            Boolean::make(__('Is show'), 'isShow')
+                ->hideWhenCreating()
+                ->hideWhenUpdating(),
+
             Text::make('Punteo Asignado', 'totalActivities')
                 ->hideWhenCreating()
                 ->hideWhenUpdating(),
@@ -107,7 +119,6 @@ class Topic extends Resource
                  ->type('link')
                  ->style('grey')
                  ->attributes(['target' => '_blank']),
-
 
             SimpleLinkButton::make('Vista previa', function () {
                 return "/courses/topic/{$this->id}" ;

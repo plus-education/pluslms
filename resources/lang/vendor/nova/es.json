@@ -458,5 +458,6 @@
     "Admins": "Administradores",
     "Supervisors": "Supervisores",
     "Supervisor": "Supervisor",
-    "Code": "Código"
+    "Code": "Código",
+    "Is show": "Visible"
 }
