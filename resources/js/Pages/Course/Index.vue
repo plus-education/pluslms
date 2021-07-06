@@ -23,7 +23,12 @@
             </div>
 
             <div class="mt-6">
-                <inertia-link v-for="topic in course.topics"  :key="topic.id"  :href="`/courses/topic/${topic.id}`">
+                <inertia-link
+                    v-for="topic in course.topics"
+                    :key="topic.id"
+                    :href="`/courses/topic/${topic.id}`"
+                    v-if="topic.isShow"
+                >
                     <div class="bg-white p-4 shadow rounded-lg mb-4">
                             {{ topic.name}}
                     </div>
