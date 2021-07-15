@@ -116,6 +116,8 @@ class Course extends Resource
 
             BelongsTo::make(__('Group'), 'Group', Group::class)->sortable()
                 ->hideWhenCreating(),
+
+            Text::make(__('Class link'), 'classLink'),
         ];
     }
 
