@@ -61,12 +61,15 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "@ashwamegh/vue-link-preview": "^0.2.5",
         "@editorjs/editorjs": "^2.22.0",
         "@editorjs/header": "^2.6.1",
         "@editorjs/nested-list": "^1.0.1",
         "@editorjs/underline": "^1.0.0",
         "@inertiajs/inertia": "^0.2.3",
         "@inertiajs/inertia-vue": "^0.2.3",
+        "link-preview-js": "^2.1.6",
+        "link-preview-node": "^1.0.7",
         "pdfvuer": "^1.7.1",
         "serverless": "^2.10.0",
         "tailwindcss": "^1.8.8",
