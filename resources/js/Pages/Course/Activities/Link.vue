@@ -8,11 +8,10 @@
           </div>
       </div>
 
-      <iframe
-          class="w-full h-full overflow-scroll"
-          :src="activity.activityable.link"
-          frameborder="0"
-      ></iframe>
+      <link-preview :url="activity.activityable.link">
+
+      </link-preview>
+
 
       <comments :activity="activity" :user="user"></comments>
   </div>
@@ -20,15 +19,28 @@
 
 <script>
     import Comments from "../Comments";
+    import LinkPreview from '@ashwamegh/vue-link-preview'
+
 
     export default {
         components: {
             Comments,
+            LinkPreview,
         },
 
         props: {
             activity: Object,
             user: Object,
+        },
+
+        mounted: {
+
+        },
+
+        methods: {
+            handleClick(preview) {
+                console.log('click', preview.domain, preview.title, preview.description, preview.img)
+            }
         }
     }
 </script>
