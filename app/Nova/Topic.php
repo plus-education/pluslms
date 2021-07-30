@@ -116,6 +116,7 @@ class Topic extends Resource
              SimpleLinkButton::make('Calificaciones', function () {
                  return "/topicGradebook/{$this->id}" ;
              })
+                 ->hideWhenUpdating()
                  ->type('link')
                  ->style('grey')
                  ->attributes(['target' => '_blank']),
@@ -123,6 +124,7 @@ class Topic extends Resource
             SimpleLinkButton::make('Vista previa', function () {
                 return "/courses/topic/{$this->id}" ;
             })
+                ->hideWhenUpdating()
                 ->type('link')  // fill, outline, link
                 ->style('grey')
                 ->attributes(['target' => '_blank']),

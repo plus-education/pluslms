@@ -117,7 +117,7 @@
             },
 
             save: function () {
-                this.isSended = true
+                //this.isSended = true
 
                 this.exercise.questions.map(question => {
                     question.options.map(option => {
@@ -132,10 +132,11 @@
                     'exercice': this.exercise
                 }
 
-                /*axios.post('/student/exercise/', data).then(response => {
+                console.log(this.exercise)
+                axios.post('/student/exercise/', data).then(response => {
                     this.totalScore = response.data.totalScore
                     console.log(response.data)
-                })*/
+                })
             }
         }
     }

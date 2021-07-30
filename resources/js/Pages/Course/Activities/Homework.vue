@@ -32,7 +32,7 @@
             </div>
         </div>
 
-        <div  v-show="studentSendFile == false" class="mt-4 mx-auto bg-gray-100 p-6 flex flex-col align-middle">
+        <div  v-if="studentSendFile == false" class="mt-4 mx-auto bg-gray-100 p-6 flex flex-col align-middle">
             <h1 class="text-2xl font-bold" style="color:#193660">
                 Entrega de tarea:
             </h1>
@@ -97,6 +97,19 @@
         </div>
 
         <comments :activity="activity" :user="user"></comments>
+
+        <div
+            v-if="isLoaded"
+            class="absolute top-0 left-0 w-screen h-screen bg-white flex items-center justify-center">
+                <div class="flex-shrink h-64 inline-block align-middle">
+                    <div class=" flex justify-center items-center">
+                        <div class="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-900"></div>
+                    </div>
+                    <div class="mt-4">
+                        Cargando archivo, por favor espere
+                    </div>
+                </div>
+        </div>
     </div>
 </template>
 
@@ -126,6 +139,7 @@
 
         data: function() {
             return {
+                isLoaded: false,
                 file: '',
                 studentScore: 0,
                 studentScoreComment: '',
@@ -220,6 +234,7 @@
                     }
                 ).then(response => {
                     console.log('SUCCESS!!');
+                    //this.isLoaded = false
                     this.getHomework()
                 })
             },
