@@ -1,39 +1,36 @@
 <template>
     <div>
+        <nav
+            class="flex fixed w-full items-center  px-6 h-16 bg-white text-gray-700 border-b border-gray-200 z-10"
+        >
+            <div class="flex items-center">
+                <button class="lg:hidden  block mr-2" aria-label="Open Menu" @click="drawer">
+                    <svg
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                        class="w-8 h-8"
+                    >
+                        <path d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="flex items-center">
+                <inertia-link  :href="`/courses/${ topic.course.id}`">
+                    <h1 class="text-xl text-gray text-center font-bold">{{ topic.course.name }}</h1>
+                </inertia-link>
+            </div>
+        </nav>
         <div class="" >
             <div class="flex h-screen">
-                <div class=" bg-gray-100 flex-1 p-8 max-h-full">
-                    <div v-if="!activity">
-                        <h1 class="text-2xl text-gray-800">
-                            Aun no cuentas con actividades
-                        </h1>
-                        <hr>
-                    </div>
-
-                    <div v-else class="h-full container m-auto bg-white shadow rounded-lg overflow-scroll">
-
-                        <divider-activity v-if="activity.type == 'DIVIDER'" :activity="activity" :user="user"></divider-activity>
-
-                        <exercise-activity v-if="activity.type == 'EXERCISE'" :activity="activity" :user="user"></exercise-activity>
-
-                        <file-activity v-if="activity.type == 'FILE'" :activity="activity" :user="user"></file-activity>
-
-                        <link-activity v-if="activity.type == 'LINK'" :activity="activity" :user="user"></link-activity>
-
-                        <text-activity v-if="activity.type == 'TEXT'" :activity="activity" :user="user"></text-activity>
-
-                        <pdf-activity v-if="activity.type == 'PDF'" :activity="activity" :user="user"></pdf-activity>
-
-                        <homework-activity v-if="activity.type == 'HOMEWORK'" :activity="activity" :user="user"></homework-activity>
-
-                        <youtube-activity v-if="activity.type == 'YOUTUBE'" :activity="activity" :user="user"></youtube-activity>
-
-                        <video-activity v-if="activity.type == 'VIDEO'" :activity="activity" :user="user"></video-activity>
-
-                    </div>
-                </div>
-
-                <div class="flex-shrink w-2/12 bg-white shadow-lg border border-gray-200 h-screen overflow-y-scroll">
+                <div class="flex-shrink
+                 w-3/12
+                 mt-16
+                 bg-white shadow-lg border border-gray-200 h-screen overflow-y-scroll">
                     <header class="bg-cover text-white py-2"  :style="`background-image: url('${topic.course.coverPath}')`">
                         <inertia-link  :href="`/courses/${ topic.course.id}`">
                             <h1 class="text-xl text-white text-center font-bold">{{ topic.course.name }}</h1>
@@ -84,6 +81,37 @@
                             </div>
                         </a>
                     </section>
+                </div>
+
+                <div class="mt-16 bg-gray-100 flex-1 p-8 max-h-full">
+                    <div v-if="!activity">
+                        <h1 class="text-2xl text-gray-800">
+                            Aun no cuentas con actividades
+                        </h1>
+                        <hr>
+                    </div>
+
+                    <div v-else class="h-full container m-auto bg-white shadow rounded-lg overflow-scroll">
+
+                        <divider-activity v-if="activity.type == 'DIVIDER'" :activity="activity" :user="user"></divider-activity>
+
+                        <exercise-activity v-if="activity.type == 'EXERCISE'" :activity="activity" :user="user"></exercise-activity>
+
+                        <file-activity v-if="activity.type == 'FILE'" :activity="activity" :user="user"></file-activity>
+
+                        <link-activity v-if="activity.type == 'LINK'" :activity="activity" :user="user"></link-activity>
+
+                        <text-activity v-if="activity.type == 'TEXT'" :activity="activity" :user="user"></text-activity>
+
+                        <pdf-activity v-if="activity.type == 'PDF'" :activity="activity" :user="user"></pdf-activity>
+
+                        <homework-activity v-if="activity.type == 'HOMEWORK'" :activity="activity" :user="user"></homework-activity>
+
+                        <youtube-activity v-if="activity.type == 'YOUTUBE'" :activity="activity" :user="user"></youtube-activity>
+
+                        <video-activity v-if="activity.type == 'VIDEO'" :activity="activity" :user="user"></video-activity>
+
+                    </div>
                 </div>
             </div>
         </div>
