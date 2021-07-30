@@ -140,14 +140,14 @@
             saveScore(student, activity) {
                 let scoreId = 'score-' + student.id + '-' + activity.id
 
-                /*axios.post(`/topicGradebook/save/${student.id}/${activity.id}`, {
+                axios.post(`/topicGradebook/save/${student.id}/${activity.id}`, {
                     'score': document.getElementById(scoreId).value,
                     'topicId': this.topic.id
                 })
                     .then(response => {
                         student.total = response.data.total
                         student.scores.push(response.data.newScore)
-                    })*/
+                    })
             }
         }
     }

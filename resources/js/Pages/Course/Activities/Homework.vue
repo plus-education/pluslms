@@ -212,6 +212,7 @@
                Submits the file to the server
              */
             submitFile(){
+                this.isLoaded = true
                 /*
                         Initialize the form data
                     */
@@ -234,7 +235,7 @@
                     }
                 ).then(response => {
                     console.log('SUCCESS!!');
-                    //this.isLoaded = false
+                    this.isLoaded = false
                     this.getHomework()
                 })
             },
