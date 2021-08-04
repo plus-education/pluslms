@@ -45,7 +45,6 @@
             }
 
             .editor-js-content{
-                padding: 0px 6rem;
                 text-align: justify;
             }
 
@@ -53,7 +52,7 @@
                 border: solid 1px #6666;
                 padding: 13px;
                 background: white;
-                width: 7    5%;
+                width: 75%;
                 margin: auto;
             }
 

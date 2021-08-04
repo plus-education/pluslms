@@ -9,7 +9,7 @@
       </div>
 
       <div class="mt-4">
-          <div class="px-8" v-html="activity.activityable.html">
+          <div class="px-2 lg:px-24  md:px-8" v-html="activity.activityable.html">
           </div>
       </div>
 
