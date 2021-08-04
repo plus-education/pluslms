@@ -1,47 +1,34 @@
 <template>
     <div>
-        <nav
-            class="flex fixed w-full items-center  px-6 h-16 bg-white text-gray-700 border-b border-gray-200 z-10"
+        <!--Sidebar with Dimmer -->
+        <div class="fixed inset-0 flex z-40"
+            :class="[open ? 'w-full' : 'w-12']"
         >
-            <div class="flex items-center">
-                <button class="lg:hidden  block mr-2" aria-label="Open Menu" >
-                    <svg
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        viewBox="0 0 24 24"
-                        class="w-8 h-8"
-                    >
-                        <path d="M4 6h16M4 12h16M4 18h16"></path>
+            <!-- Sidebar -->
+            <div
+                class="absolute flex top-0 h-screen z-20"
+                :class="[right ? 'right-0 flex-row' : 'left-0 flex-row-reverse']"
+            >
+                <!--Drawer -->
+                <button
+                    @click.prevent="toggle()"
+                    class="pulse p-1 my-auto rounded text-white bg-green-600 text-center focus:outline-none hover:bg-gray-500 transition-color duration-300"
+                >
+                    <svg v-if="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+
+                    <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z" />
                     </svg>
                 </button>
-            </div>
 
-            <div class="flex items-center">
-                <inertia-link  :href="`/courses/${ topic.course.id}`">
-                    <h1 class="text-xl text-gray text-center font-bold">{{ topic.course.name }}</h1>
-                </inertia-link>
-            </div>
-        </nav>
-        <div class="" >
-            <div class="flex h-screen">
-                <div class="flex-shrink
-                 w-3/12
-                 mt-16
-                 bg-white shadow-lg border border-gray-200 h-screen overflow-y-scroll">
-                    <header class="bg-cover text-white py-2"  :style="`background-image: url('${topic.course.coverPath}')`">
-                        <inertia-link  :href="`/courses/${ topic.course.id}`">
-                            <h1 class="text-xl text-white text-center font-bold">{{ topic.course.name }}</h1>
-                        </inertia-link>
-                    </header>
-
-                    <section class="bg-gray-100 py-2 border-t">
-                        <h1 class="text-lg  text-gray-800 text-center">
-                            {{ topic.name }}
-                        </h1>
-                    </section>
+                <!-- Sidebar Content -->
+                <div
+                    ref="content"
+                    class="transition-all duration-700 bg-white overflow-hidden flex items-top"
+                    :class="[open ? 'block' : 'hidden']"
+                >
 
                     <section class="">
                         <div v-for="activity in topic.activities"
@@ -68,7 +55,7 @@
                         </div>
 
 
-                        <a class="flex w-full h-full py-4 px-2 bg-green-500" :href="`/courseGradebook/${topic.id}`" >
+                        <a class="flex w-full py-4 px-2 bg-green-500" :href="`/courseGradebook/${topic.id}`" >
                             <div class="flex-shrink mr-2">
                                 <svg  xmlns="http://www.w3.org/2000/svg" class="h-6 w-6  text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path d="M12 14l9-5-9-5-9 5 9 5z" />
@@ -81,41 +68,78 @@
                             </div>
                         </a>
                     </section>
-                </div>
 
-                <div class="mt-16 bg-gray-100 flex-1 p-8 max-h-full">
-                    <div v-if="!activity">
-                        <h1 class="text-2xl text-gray-800">
-                            Aun no cuentas con actividades
-                        </h1>
-                        <hr>
-                    </div>
 
-                    <div v-else class="h-full container m-auto bg-white shadow rounded-lg overflow-scroll">
-
-                        <divider-activity v-if="activity.type == 'DIVIDER'" :activity="activity" :user="user"></divider-activity>
-
-                        <exercise-activity v-if="activity.type == 'EXERCISE'" :activity="activity" :user="user"></exercise-activity>
-
-                        <file-activity v-if="activity.type == 'FILE'" :activity="activity" :user="user"></file-activity>
-
-                        <link-activity v-if="activity.type == 'LINK'" :activity="activity" :user="user"></link-activity>
-
-                        <text-activity v-if="activity.type == 'TEXT'" :activity="activity" :user="user"></text-activity>
-
-                        <pdf-activity v-if="activity.type == 'PDF'" :activity="activity" :user="user"></pdf-activity>
-
-                        <homework-activity v-if="activity.type == 'HOMEWORK'" :activity="activity" :user="user"></homework-activity>
-
-                        <youtube-activity v-if="activity.type == 'YOUTUBE'" :activity="activity" :user="user"></youtube-activity>
-
-                        <video-activity v-if="activity.type == 'VIDEO'" :activity="activity" :user="user"></video-activity>
-
-                    </div>
                 </div>
             </div>
+
+            <transition name="fade">
+                <!-- Dimmer -->
+                <div
+                    v-if="dimmer && open"
+                    @click="toggle()"
+                    class="flex-1 bg-gray-400 bg-opacity-75 active:outline-none z-10"
+                />
+            </transition>
         </div>
 
+        <!-- Page Content -->
+        <div
+            class="absolute inset-1/2 rounded w-screen h-screen transform -translate-x-1/2 -translate-y-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center"
+        >
+
+            <div class="p-8 flex-1  max-h-full">
+                <nav
+                    class="block text-sm text-left text-gray-600 bg-gray-100 shadow  bg-opacity-10 h-12 flex items-center p-4 rounded-md container m-auto  mb-6 "
+                    role="alert"
+                >
+                    <ol class="list-reset flex text-grey-dark">
+                        <li>
+                            <inertia-link href="/dashboard" class="font-bold">Inicio</inertia-link>
+                        </li>
+                        <li><span class="mx-2">/</span></li>
+                        <li>
+                            <inertia-link :href="`/courses/${topic.course.id}`" class="font-bold">{{ topic.course.name }}</inertia-link>
+                        </li>
+                        <li><span class="mx-2">/</span></li>
+                        <li>
+                            {{ topic.name }}
+                        </li>
+                    </ol>
+                </nav>
+
+                <div v-if="!activity">
+                    <h1 class="text-2xl text-gray-800">
+                        Aun no cuentas con actividades
+                    </h1>
+                    <hr>
+                </div>
+
+                <div v-else class=" pb-4 mb-8 container m-auto  bg-white shadow rounded-lg overflow-scroll">
+
+                    <divider-activity v-if="activity.type == 'DIVIDER'" :activity="activity" :user="user"></divider-activity>
+
+                    <exercise-activity v-if="activity.type == 'EXERCISE'" :activity="activity" :user="user"></exercise-activity>
+
+                    <file-activity v-if="activity.type == 'FILE'" :activity="activity" :user="user"></file-activity>
+
+                    <link-activity v-if="activity.type == 'LINK'" :activity="activity" :user="user"></link-activity>
+
+                    <text-activity v-if="activity.type == 'TEXT'" :activity="activity" :user="user"></text-activity>
+
+                    <pdf-activity v-if="activity.type == 'PDF'" :activity="activity" :user="user"></pdf-activity>
+
+                    <homework-activity v-if="activity.type == 'HOMEWORK'" :activity="activity" :user="user"></homework-activity>
+
+                    <youtube-activity v-if="activity.type == 'YOUTUBE'" :activity="activity" :user="user"></youtube-activity>
+
+                    <video-activity v-if="activity.type == 'VIDEO'" :activity="activity" :user="user"></video-activity>
+
+                </div>
+
+            </div>
+
+        </div>
     </div>
 </template>
 
@@ -156,6 +180,9 @@
 
         data: () => {
           return {
+              open: false,
+              dimmer: true,
+              right: false,
               activity: Object,
               icons: Object
           }
@@ -171,6 +198,10 @@
         },
 
         methods: {
+            toggle() {
+                this.open = !this.open;
+            },
+
             initializeActivity: function() {
                 return (this.topic.activities.length > 0) ? this.activity = this.topic.activities[0] : false
             },
@@ -234,6 +265,43 @@
 </script>
 
 <style>
+
+html {
+    background: #efefef;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 1s ease-out;
+}
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}
+.pulse {
+    background: rgba(51, 217, 178, 1);
+    box-shadow: 0 0 0 0 rgba(51, 217, 178, 1);
+    animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(51, 217, 178, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(51, 217, 178, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(51, 217, 178, 0);
+    }
+}
+
 .active-activity {
     background-color: #F4F5F7;
     border-bottom: #0d826c solid 2px;
