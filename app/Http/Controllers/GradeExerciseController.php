@@ -12,23 +12,24 @@ class GradeExerciseController extends Controller
 
         $totalScore = 0;
         foreach ($exercise['questions'] as $question) {
-            if ($this->checkAnswer($question['questionable']) ) {
-                $totalScore = $totalScore + $question['score'];
+            if (!is_null($question['options'])){
+                $totalScore += $this->checkAnswer($question);
             }
         }
-        auth()->user()->gradeExercise($request->get('activityId'), $totalScore);
+
+        auth()->user()->gradeExercise($request->get('activityId'), $totalScore, '', json_encode($exercise));
         return ['totalScore' => $totalScore];
     }
 
-    private function checkAnswer($answer)
+    private function checkAnswer($question)
     {
         $corectAnswer = 0;
-        foreach ($answer['question_options'] as $option) {
-
-            if($this->checkOptions($option)){
+        $incorrectAnswer = 0;
+        foreach ($question['options'] as $option) {
+            if($option['isCorrect']){
                 $corectAnswer++;
             }else{
-                $corectAnswer--;
+                $incorrectAnswer++;
             }
         }
 
@@ -37,7 +38,8 @@ class GradeExerciseController extends Controller
             return  0;
         }
 
-        return (sizeof($answer['question_options']) / $corectAnswer == 1) ? true : false;
+        $scorebyOption = $question['score'] / sizeof($question['options']);
+        return ($corectAnswer * $scorebyOption) - ($incorrectAnswer * $scorebyOption);
     }
 
     private function checkOptions($option) {

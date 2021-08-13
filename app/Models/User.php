@@ -84,7 +84,7 @@ class User extends Authenticatable
             ->withPivot('score', 'comment', 'file', 'created_at', 'updated_at');
     }
 
-    public function gradeExercise($id, $score = 0, $comment = '')
+    public function gradeExercise($id, $score = 0, $comment = '', $exercise = '')
     {
         $activity = Activity::find($id);
         $userActivity = $this->activities->where('id', $activity->id)->first();
@@ -92,13 +92,16 @@ class User extends Authenticatable
         if ($userActivity) {
             return $this->activities()->updateExistingPivot($activity->id,  [
                 'comment' => $comment,
-                'score' => $score
+                'score' => $score,
+                'text' => $exercise
+
             ]);
         }
 
         return $this->activities()->attach($activity->id,  [
             'comment' => $comment,
-            'score' => $score
+            'score' => $score,
+            'text' => $exercise
         ]);
     }
 
