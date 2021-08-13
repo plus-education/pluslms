@@ -173,7 +173,7 @@
                 }
 
                 console.log(this.exercise)
-                axios.post('/student/exercise/', data).then(response => {
+                axios.post('/student/exercise', data).then(response => {
                     this.totalScore = response.data.totalScore
                     this.hasScore = true
                     this.isSended = true
