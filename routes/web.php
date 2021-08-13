@@ -61,7 +61,21 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::get('/student/exercise/questions/{id}', [ExerciseController::class, 'getQuestion']);
 
     Route::post('/student/exercise', \App\Http\Controllers\GradeExerciseController::class);
+    Route::get('/student/exercise/score/{activityId}', function($id){
+        $activityScore = \App\Models\ActivityUser::where('activity_id', $id)
+            ->where('user_id', auth()->user()->id)
+            ->get()
+            ->first();
 
+        if ($activityScore) {
+            return response()->json([
+                'hasScore' => true,
+                'activityScore' => $activityScore
+            ]);
+        }
+
+        return response()->json(['hasScore' => false]);
+    });
     // System Comments
     Route::get('/commnets/activity/{id}/{type}', [\App\Http\Controllers\CommentController::class, 'list']);
     Route::get('/commnets/answers/{id}', [\App\Http\Controllers\CommentController::class, 'answers']);
@@ -78,6 +92,10 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::get('/student/myCalendar', function () {
         return \Inertia\Inertia::render('MyCalendar');
     });
+
+    // Gradebooks report
+    Route::get('/gradebook/courseByAllActivities/{course}', \App\Http\Controllers\Gradebook\CourseGradebookByAllActivitiesController::class);
+
 
     Route::get('/student/myActivities', function () {
         $user = auth()->user();

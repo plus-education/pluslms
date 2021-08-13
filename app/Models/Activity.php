@@ -31,9 +31,9 @@ class Activity extends Model implements Sortable
     protected $with = ['activityable'];
 
     protected $appends = [
-        'type', 
-        'divider', 
-        'course', 
+        'type',
+        'divider',
+        'course',
         'isActiveToDo'
     ];
 
@@ -116,6 +116,7 @@ class Activity extends Model implements Sortable
     {
         return $this->users()
             ->where('user_id', $user->id)
+            ->orderBy('id', 'desc')
             ->first();
     }
 }

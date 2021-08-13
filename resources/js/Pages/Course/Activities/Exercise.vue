@@ -34,37 +34,54 @@
                     </div>
 
 
-                    <div class="w-full mt-2 ml-10" v-if="question.options != null">
-                        <div v-for="(option, indexOption) in question.options">
-                            <input type="checkbox"  v-model="exercise.questions[index].options[indexOption].isChecked">
+                    <div class="w-full mt-2 ml-10"   v-if="question.options != null">
+                        <div v-for="(option, indexOption) in question.options"
+                             :key="option.id"
+                         :class="{'bg-green-200' : option.isCorrect && option.isTrue , 'bg-red-500': !option.isCorrect && option.isChecked && isSended}"
+                        >
+                            <input type="checkbox"
+                                   v-model="exercise.questions[index].options[indexOption].isChecked"
+                                   :disabled="isSended ? '' : disabled"
+                            >
                             <label for="">{{ option.label }}</label>
                         </div>
                     </div>
 
                     <div class="w-auto mt-2 mx-10 p-4" v-else>
-                        <textarea  class="w-full h-32 border" cols="50"></textarea>
+                        <textarea
+                            v-model="exercise.questions[index].openAnswer"
+                            class="w-full h-32 border"
+                            cols="50"
+                            :disabled="isSended ? '' : disabled"
+                        ></textarea>
                     </div>
                 </div>
             </div>
 
-                    <div class="mt-8 text-center">
-            <button
-                @click="save()"
-                v-if="!isSended"
-                class="btn bg-green-500 py-2 px-4  text-white shadow-lg"
-            >Enviar</button>
+            <div class="mt-8 text-center">
 
+               <div v-if="!hasScore">
+                   <button
+                       @click="save()"
+                       v-if="!isSended"
+                       class="btn bg-green-500 py-2 px-4  text-white shadow-lg"
+                   >Enviar</button>
 
-            <div class="mt-4 px-8">
-                <div>
-                    <h1 class="text-2xl text-gray-800">
-                        Resultado
-                    </h1>
+               </div>
+
+                <div class="mt-4 px-8" v-if="hasScore">
+                    <div>
+                        <h1 class="text-2xl text-gray-800">
+                            Resultado
+                        </h1>
+                    </div>
+                    <div class="my-4">
+                        {{ totalScore }} / {{ activity.score }}
+                    </div>
+                    <span class="bg-blue-500 text-white shadow px-4 py-2 w-1/3 mt-4">
+                        Resultando pendiente de validar por catedratico
+                    </span>
                 </div>
-                <div>
-                    {{ totalScore }} / {{ activity.score }}
-                </div>
-            </div>
         </div>
         </div>
 
@@ -95,23 +112,46 @@
            return {
                exercise: Object,
                isLoad: true,
+               hasScore: false,
                totalScore: 0,
                isSended: false
            }
         },
 
         mounted() {
-            this.getQuestion()
+            this.getStatus()
+        },
+
+        computed: {
         },
 
         methods: {
+            getStatus: function () {
+                axios.get(`/student/exercise/score/${this.activity.id}`).then(response => {
+                    if (response.data.hasScore) {
+                        this.hasScore = true
+                        this.totalScore = response.data.activityScore.score
+                        return;
+                    }
+                    this.getQuestion()
+                })
+            },
+
             getQuestion: function () {
+
                 axios.get(`/student/exercise/questions/${this.activity.activityable.id}`).then(response => {
                     this.exercise = response.data
                     this.exercise.questions.map(question => {
-                        question.questionable.question_options.map(option => {
-                            option.isChecked = false
-                        })
+                        if(question.options != null) {
+                            question.questionable.question_options.map(option => {
+                                option.isChecked = false
+                                option.isCorrect = false
+                                question.openAnswer = false;
+
+                            })
+                        }else{
+                            question.openAnswer = '';
+                        }
                     })
                 })
             },
@@ -120,12 +160,12 @@
                 //this.isSended = true
 
                 this.exercise.questions.map(question => {
-                    question.options.map(option => {
-                        option.isCorrect = option.isChecked == option.isTrue ? true : false
-                    })
+                    if(question.options != null) {
+                        question.options.map(option => {
+                            option.isCorrect = option.isChecked == option.isTrue ? true : false
+                        })
+                    }
                 })
-
-                console.log(console.log)
 
                 let data = {
                     'activityId': this.activity.id,
@@ -135,6 +175,8 @@
                 console.log(this.exercise)
                 axios.post('/student/exercise/', data).then(response => {
                     this.totalScore = response.data.totalScore
+                    this.hasScore = true
+                    this.isSended = true
                     console.log(response.data)
                 })
             }
