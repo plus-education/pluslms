@@ -109,7 +109,8 @@ class Activity extends Model implements Sortable
     public function getIsActiveToDoAttribute()
     {
         $today = Carbon::now();
-        return $today->between($this->start, $this->end->addDay(1));
+        $end =  $this->end->addDay(1);
+        return $today->between($this->start,$end);
     }
 
     public function studentScore($user)
