@@ -14,7 +14,7 @@
         </div>
 
         <div id="questions"
-            v-if="activity.isActiveToDo"
+            v-if="activity.isActiveToDo || activity.start == activity.end"
         >
             <div class="mt-4 px-8" v-for="(question, index) in exercise.questions">
                 <div class="border-b border-gray-200 px-8 py-2">
