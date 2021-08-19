@@ -77,7 +77,7 @@ class Activity extends Model implements Sortable
     public function users()
     {
         return $this->belongsToMany(User::class)
-            ->withPivot('score', 'comment', 'file', 'created_at', 'updated_at');
+            ->withPivot('score', 'comment', 'file', 'created_at', 'updated_at', 'text');
     }
 
     public function getTypeAttribute()

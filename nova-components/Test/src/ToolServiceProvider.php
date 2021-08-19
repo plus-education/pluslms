@@ -1,6 +1,6 @@
 <?php
 
-namespace Lms\ActivityScores;
+namespace Test\Test;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
@@ -21,7 +21,8 @@ class ToolServiceProvider extends ServiceProvider
         });
 
         Nova::serving(function (ServingNova $event) {
-            Nova::script('activity-scores', __DIR__.'/../dist/js/tool.js');
+            Nova::script('test', __DIR__.'/../dist/js/tool.js');
+            Nova::style('test', __DIR__.'/../dist/css/tool.css');
         });
     }
 
@@ -37,7 +38,7 @@ class ToolServiceProvider extends ServiceProvider
         }
 
         Route::middleware(['nova'])
-                ->prefix('nova-vendor/activity-scores')
+                ->prefix('nova-vendor/test')
                 ->group(__DIR__.'/../routes/api.php');
     }
 
