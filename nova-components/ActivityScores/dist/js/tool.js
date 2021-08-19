@@ -205,6 +205,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['activity', 'students'],
   data: function data() {
@@ -224,7 +244,20 @@ __webpack_require__.r(__webpack_exports__);
     },
     backToListOfStudents: function backToListOfStudents() {
       this.student = Object;
+      this.studentExercise = Object;
       this.isShowExercise = false;
+    },
+    save: function save() {
+      var data = {
+        'activityId': this.activity.id,
+        'exercice': {
+          questions: this.studentExercise
+        }
+      };
+      console.log(data);
+      axios.post('/student/exercise', data).then(function (response) {
+        location.reload();
+      });
     }
   }
 });
@@ -583,34 +616,98 @@ var render = function() {
                                   "\n                    "
                               )
                             ]
-                          )
+                          ),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "mt-4" }, [
+                            _c("strong", [_vm._v("Calificar: ")]),
+                            _vm._v(" "),
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.studentExercise[index].result,
+                                  expression: "studentExercise[index].result"
+                                }
+                              ],
+                              staticClass: "w-32 border px-4 py-2 text-right",
+                              attrs: {
+                                type: "number",
+                                min: "0",
+                                max: question.score
+                              },
+                              domProps: {
+                                value: _vm.studentExercise[index].result
+                              },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.studentExercise[index],
+                                    "result",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            }),
+                            _vm._v(
+                              "\n                        / " +
+                                _vm._s(question.score) +
+                                "\n                    "
+                            )
+                          ])
                         ])
                   ]
                 )
               ])
-            })
+            }),
+            _vm._v(" "),
+            _vm.isShowExercise
+              ? _c("div", { staticClass: "flex justify-center my-6" }, [
+                  _c("div", [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "bg-gray-100 shadow px-6 py-2",
+                        on: {
+                          click: function($event) {
+                            return _vm.backToListOfStudents()
+                          }
+                        }
+                      },
+                      [
+                        _vm._v(
+                          "\n                    Regresar\n                "
+                        )
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "ml-6" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "bg-green-500 text-white shadow px-6 py-2",
+                        on: {
+                          click: function($event) {
+                            return _vm.save()
+                          }
+                        }
+                      },
+                      [
+                        _vm._v(
+                          "\n                    Calificar\n                "
+                        )
+                      ]
+                    )
+                  ])
+                ])
+              : _vm._e()
           ],
           2
-        ),
-    _vm._v(" "),
-    _vm.isShowExercise
-      ? _c("div", { staticClass: "flex justify-center my-6" }, [
-          _c("div", [
-            _c(
-              "button",
-              {
-                staticClass: "bg-gray-100 shadow px-6 py-2",
-                on: {
-                  click: function($event) {
-                    return _vm.backToListOfStudents()
-                  }
-                }
-              },
-              [_vm._v("Regresar")]
-            )
-          ])
-        ])
-      : _vm._e()
+        )
   ])
 }
 var staticRenderFns = [

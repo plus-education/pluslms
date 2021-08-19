@@ -11,9 +11,16 @@ class GradeExerciseController extends Controller
         $exercise = $request->get('exercice');
 
         $totalScore = 0;
+
+
+
         foreach ($exercise['questions'] as $question) {
             if (!is_null($question['options'])){
                 $totalScore += $this->checkAnswer($question);
+            }else{
+                if(array_key_exists('result', $question)) {
+                    $totalScore += $question['result'];
+                }
             }
         }
 
@@ -48,5 +55,9 @@ class GradeExerciseController extends Controller
         }
 
         return false;
+    }
+
+    private function rateOpenAnswer() {
+
     }
 }

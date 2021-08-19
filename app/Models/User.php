@@ -87,14 +87,14 @@ class User extends Authenticatable
     public function gradeExercise($id, $score = 0, $comment = '', $exercise = '')
     {
         $activity = Activity::find($id);
-        $userActivity = $this->activities->where('id', $activity->id)->first();
+        $userActivity = $this->activities->where('id', $activity->id)->last();
+
 
         if ($userActivity) {
             return $this->activities()->updateExistingPivot($activity->id,  [
                 'comment' => $comment,
                 'score' => $score,
                 'text' => $exercise
-
             ]);
         }
 

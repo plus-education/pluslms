@@ -177,7 +177,6 @@
                     this.totalScore = response.data.totalScore
                     this.hasScore = true
                     this.isSended = true
-                    console.log(response.data)
                 })
             }
         }

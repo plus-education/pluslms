@@ -91,8 +91,19 @@
                         >
                             {{ question.openAnswer }}
                         </textarea>
+
+
+                        <div class="mt-4">
+                            <strong>Calificar: </strong>
+                            <input type="number"
+                                   min="0"
+                                   :max="question.score"
+                                   class="w-32 border px-4 py-2 text-right"
+                                   v-model="studentExercise[index].result"
+                            >
+                            / {{ question.score }}
+                        </div>
                     </div>
-                </div>
                 </div>
             </div>
 
@@ -101,7 +112,16 @@
                 <div>
                     <button class="bg-gray-100 shadow px-6 py-2"
                         @click="backToListOfStudents()"
-                    >Regresar</button>
+                    >
+                        Regresar
+                    </button>
+                </div>
+                <div class="ml-6">
+                    <button class="bg-green-500 text-white shadow px-6 py-2"
+                            @click="save()"
+                    >
+                        Calificar
+                    </button>
                 </div>
             </div>
         </div>
@@ -133,7 +153,24 @@
 
             backToListOfStudents() {
                 this.student = Object
+                this.studentExercise = Object
                 this.isShowExercise = false
+            },
+
+            save() {
+                let data = {
+                    'activityId': this.activity.id,
+                    'exercice': {
+                            questions: this.studentExercise
+                    }
+                }
+
+                console.log(data)
+
+                axios.post('/student/exercise', data).then(response => {
+                    location.reload();
+                })
+
             }
         }
     }
