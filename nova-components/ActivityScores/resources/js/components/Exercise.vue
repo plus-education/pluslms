@@ -160,6 +160,7 @@
 
             save() {
                 let data = {
+                    'studentId': this.student.id,
                     'activityId': this.activity.id,
                     'exercice': {
                             questions: this.studentExercise
@@ -169,7 +170,7 @@
                 console.log(data)
 
                 axios.post('/student/exercise', data).then(response => {
-                    location.reload();
+                    //location.reload();
                 })
 
             }

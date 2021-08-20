@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class GradeExerciseController extends Controller
 {
@@ -24,7 +25,10 @@ class GradeExerciseController extends Controller
             }
         }
 
-        auth()->user()->gradeExercise($request->get('activityId'), $totalScore, '', json_encode($exercise));
+        $student = User::find($request->get('studentId'));
+
+        $student->gradeExercise($request->get('activityId'), $totalScore, '', json_encode($exercise));
+
         return ['totalScore' => $totalScore];
     }
 

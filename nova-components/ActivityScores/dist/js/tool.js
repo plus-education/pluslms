@@ -250,14 +250,14 @@ __webpack_require__.r(__webpack_exports__);
     },
     save: function save() {
       var data = {
+        'studentId': this.student.id,
         'activityId': this.activity.id,
         'exercice': {
           questions: this.studentExercise
         }
       };
       console.log(data);
-      axios.post('/student/exercise', data).then(function (response) {
-        location.reload();
+      axios.post('/student/exercise', data).then(function (response) {//location.reload();
       });
     }
   }
