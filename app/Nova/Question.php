@@ -83,10 +83,12 @@ class Question extends Resource
                 SelectMultiple::class,
 
                 OpenQuestion::class,
-                
+
             ]),
 
-            Number::make(__('Score'), 'score')->default(0),
+            Number::make(__('Score'), 'score')
+                ->default(0)
+                ->step(0.01),
 
             BelongsTo::make('Examen Id', 'Exercise', Exercise::class)
         ];

@@ -78,6 +78,7 @@
                         >
                             <input type="checkbox"
                                    :checked="option.isChecked"
+                                   disabled
                             >
                             <label for="">{{ option.label }}</label>
                         </div>

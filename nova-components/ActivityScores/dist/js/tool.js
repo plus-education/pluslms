@@ -225,6 +225,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['activity', 'students'],
   data: function data() {
@@ -590,7 +591,7 @@ var render = function() {
                               },
                               [
                                 _c("input", {
-                                  attrs: { type: "checkbox" },
+                                  attrs: { type: "checkbox", disabled: "" },
                                   domProps: { checked: option.isChecked }
                                 }),
                                 _vm._v(" "),
