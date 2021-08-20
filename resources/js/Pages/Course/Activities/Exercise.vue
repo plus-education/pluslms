@@ -168,6 +168,7 @@
                 })
 
                 let data = {
+                    'studentId': this.user.id,
                     'activityId': this.activity.id,
                     'exercice': this.exercise
                 }

@@ -25,9 +25,13 @@ class GradeExerciseController extends Controller
             }
         }
 
-        $student = User::find($request->get('studentId'));
+        $user = auth()->user();
 
-        $student->gradeExercise($request->get('activityId'), $totalScore, '', json_encode($exercise));
+        if(!$student->hasRole(Roles::STUDENT)){
+            $user = User::findOrFail($request->get('studentId'));
+        }
+
+        $user->gradeExercise($request->get('activityId'), $totalScore, '', json_encode($exercise));
 
         return ['totalScore' => $totalScore];
     }
