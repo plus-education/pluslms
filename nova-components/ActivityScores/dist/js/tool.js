@@ -257,7 +257,8 @@ __webpack_require__.r(__webpack_exports__);
         }
       };
       console.log(data);
-      axios.post('/student/exercise', data).then(function (response) {//location.reload();
+      axios.post('/student/exercise', data).then(function (response) {
+        location.reload();
       });
     }
   }
