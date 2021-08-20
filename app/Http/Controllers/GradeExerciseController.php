@@ -27,7 +27,7 @@ class GradeExerciseController extends Controller
 
         $user = auth()->user();
 
-        if(!$student->hasRole(Roles::STUDENT)){
+        if(!$user->hasRole(Roles::STUDENT)){
             $user = User::findOrFail($request->get('studentId'));
         }
 
