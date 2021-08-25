@@ -170,7 +170,7 @@
                 console.log(data)
 
                 axios.post('/student/exercise', data).then(response => {
-                    location.reload();
+                    //location.reload();
                 })
 
             }

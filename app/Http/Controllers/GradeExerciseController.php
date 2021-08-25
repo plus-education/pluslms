@@ -16,7 +16,7 @@ class GradeExerciseController extends Controller
 
 
 
-        foreach ($exercise['questions'] as $question) {
+        foreach ($exercise['questions'] as $key=>$question) {
             if (!is_null($question['options'])){
                 $totalScore += $this->checkAnswer($question);
             }else{
@@ -42,7 +42,8 @@ class GradeExerciseController extends Controller
         $corectAnswer = 0;
         $incorrectAnswer = 0;
         foreach ($question['options'] as $option) {
-            if($option['isCorrect']){
+            $option['isChecked'] = array_key_exists('isChecked', $option) ? $option['isChecked'] : false;
+            if( ($option['isCorrect'] == $option['isChecked'])  ){
                 $corectAnswer++;
             }else{
                 $incorrectAnswer++;
@@ -53,9 +54,10 @@ class GradeExerciseController extends Controller
         if($corectAnswer == 0 || $corectAnswer < 0) {
             return  0;
         }
-
         $scorebyOption = $question['score'] / sizeof($question['options']);
-        return ($corectAnswer * $scorebyOption) - ($incorrectAnswer * $scorebyOption);
+        $result = ($corectAnswer * $scorebyOption) - ($incorrectAnswer * $scorebyOption);
+        dd($scorebyOption, $corectAnswer, $incorrectAnswer, $result, $question);
+        return $result;
     }
 
     private function checkOptions($option) {
