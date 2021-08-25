@@ -168,16 +168,16 @@
                 })
 
                 let data = {
+                    'studentId': this.user.id,
                     'activityId': this.activity.id,
                     'exercice': this.exercise
                 }
 
                 console.log(this.exercise)
-                axios.post('/student/exercise/', data).then(response => {
+                axios.post('/student/exercise', data).then(response => {
                     this.totalScore = response.data.totalScore
                     this.hasScore = true
                     this.isSended = true
-                    console.log(response.data)
                 })
             }
         }

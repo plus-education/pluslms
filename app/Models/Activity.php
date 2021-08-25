@@ -77,7 +77,7 @@ class Activity extends Model implements Sortable
     public function users()
     {
         return $this->belongsToMany(User::class)
-            ->withPivot('score', 'comment', 'file', 'created_at', 'updated_at');
+            ->withPivot('score', 'comment', 'file', 'created_at', 'updated_at', 'text');
     }
 
     public function getTypeAttribute()
@@ -108,7 +108,11 @@ class Activity extends Model implements Sortable
 
     public function getIsActiveToDoAttribute()
     {
-        $today = Carbon::now();
+        if ($this->start == $this->end){
+            return true;
+        }
+
+        $today = Carbon::now();;
         return $today->between($this->start, $this->end);
     }
 

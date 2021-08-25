@@ -1,8 +1,14 @@
 <template>
   <div>
-      <h1 class="text-90 font-normal text-2xl mb-3">Calificar</h1>
+      <h1 class="text-90 font-normal text-2xl mb-3">Calificar: </h1>
 
-      <div class="card mb-6">
+      <exercise
+          v-if="activity.type == `EXERCISE`"
+          :activity="activity"
+          :students="students"
+      ></exercise>
+
+      <div v-else class="card mb-6">
             <table class="table w-full rounded-lg">
                 <thead>
                     <tr>
@@ -91,7 +97,13 @@
 </template>
 
 <script>
+import Exercise from "./Exercise"
+
     export default {
+        components: {
+            Exercise
+        },
+
         props: ['resourceName', 'resourceId', 'panel'],
 
         data: () => {

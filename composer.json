@@ -70,7 +70,8 @@
         "superlatif/nova-tag-input": "^1.4",
         "vyuldashev/nova-permission": "^2.9",
         "whchi/nova-tags-input": "^0.0.5",
-        "whitecube/nova-flexible-content": "^0.2.5"
+        "whitecube/nova-flexible-content": "^0.2.5",
+        "test/test": "*"
     },
     "repositories": [
         {
@@ -124,6 +125,10 @@
         {
             "type": "path",
             "url": "./nova-components/CourseGradebook"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/Test"
         }
     ],
     "require-dev": {

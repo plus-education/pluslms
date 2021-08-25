@@ -22,7 +22,6 @@ class ToolServiceProvider extends ServiceProvider
 
         Nova::serving(function (ServingNova $event) {
             Nova::script('activity-scores', __DIR__.'/../dist/js/tool.js');
-            Nova::style('activity-scores', __DIR__.'/../dist/css/tool.css');
         });
     }
 
