@@ -37,17 +37,33 @@
             <tr>
                 <th>Alumno</th>
                 @foreach($activities as $activity)
-                    <th>{{ $activity->name }}</th>
+                    <th>
+                        {{ $activity->name }}
+                        <br> {{ $activity->score }}
+                    </th>
                 @endforeach
+                <th>Total</th>
             </tr>
         </thead>
         <tbody>
             @foreach($course->students as $student)
                 <tr>
+                    @php
+                        $totalScore = 0;
+                    @endphp
                     <td>{{ $student->name }}</td>
                     @foreach($activities as $activity)
-                        <td>{{ $student->activityScore($activity->id) }}</td>
+                        @php
+                            $score = $student->activityScore($activity->id);
+                            $totalScore += $score;
+                        @endphp
+                        <td>{{ $score }}</td>
                     @endforeach
+                    <td>
+                        <strong>
+                            {{ $totalScore }}
+                        </strong>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
