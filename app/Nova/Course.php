@@ -17,6 +17,7 @@ use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Monaye\SimpleLinkButton\SimpleLinkButton;
 use NovaAttachMany\AttachMany;
 use Spatie\Tags\Tag;
 
@@ -118,6 +119,14 @@ class Course extends Resource
                 ->hideWhenCreating(),
 
             Text::make(__('Class link'), 'classLink'),
+
+            SimpleLinkButton::make('Calificaciones', function () {
+                return "/gradebook/courseByAllActivities/{$this->id}" ;
+            })
+                ->hideWhenUpdating()
+                ->hideWhenCreating()
+                ->type('link')
+                ->style('grey')
         ];
     }
 

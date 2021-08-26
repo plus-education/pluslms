@@ -123,4 +123,5 @@ class Activity extends Model implements Sortable
             ->orderBy('id', 'desc')
             ->first();
     }
+
 }

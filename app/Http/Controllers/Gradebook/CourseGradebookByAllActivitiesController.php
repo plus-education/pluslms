@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Gradebook;
 
 use App\Http\Controllers\Controller;
+use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 use App\Models\Course;
 use App\Models\ActivityUser;
@@ -32,9 +33,14 @@ class CourseGradebookByAllActivitiesController extends Controller
         })
             ->get();
 
-        $students = $this->getStudentWithActivityScore($course->students, $activities);
 
-        return ($students);
+
+        //return view('gradebook.all_activities_by_course')->with(compact('course', 'activities'));
+
+        $pdf = \PDF::loadView('gradebook.all_activities_by_course', compact('course', 'activities'));
+        $pdf->setPaper('legal', 'landscape');
+
+        return $pdf->download('gradebook.pdf');
     }
 
     private function getStudentWithActivityScore($students, $activities)
@@ -45,6 +51,7 @@ class CourseGradebookByAllActivitiesController extends Controller
                     $score = $activity->studentScore($student)->pivot;
                     $activity->studentScore = $score;
                 }
+
 
                 return $activity;
             });
