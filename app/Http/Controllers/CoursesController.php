@@ -31,6 +31,7 @@ class CoursesController extends Controller
         $activities = $topic->activities->where('isShow', true);
         $topic->course;
 
+        dd($activities->last()->isActiveToDo);
         return Inertia::render('Course/Topic')
             ->with(compact('topic', 'activities'));
     }
