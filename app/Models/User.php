@@ -106,8 +106,12 @@ class User extends Authenticatable
 
     public function activityScore($id)
     {
-        $activityScore = $this->activities->where('id', $id)->first();
-        return   ($activityScore) ?  $activityScore->pivot->score : false;
+        $score = DB::table('activity_user')
+            ->select('activity_user.score')
+            ->where('activity_id', $id)
+            ->where('user_id', $this->id)
+            ->value('score');
+        return empty($score) ? 0.00 : $score;
     }
 
     public function scoreTopic($id)
@@ -125,5 +129,12 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Topic::class)
             ->withPivot('comment');
+    }
+
+    /*
+     * @param Activty id $id
+     */
+    public function activityResult($id)
+    {
     }
 }

@@ -157,7 +157,7 @@ class CoursesController extends Controller
         $pdf->setPaper('legal', 'landscape');
 
         return $pdf->download('gradebook.pdf');
-        //return view('exports.topicGradebook')->with(compact('topic', 'students', 'activities'));
+        return view('exports.topicGradebook')->with(compact('topic', 'students', 'activities'));
     }
 
     public function topicGradebookExcel($id)
