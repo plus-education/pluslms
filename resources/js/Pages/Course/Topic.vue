@@ -26,7 +26,7 @@
                 <!-- Sidebar Content -->
                 <div
                     ref="content"
-                    class="transition-all duration-700 bg-white overflow-hidden flex items-top"
+                    class="transition-all duration-700 overflow-y-scroll bg-white overflow-hidden flex items-top"
                     :class="[open ? 'block' : 'hidden']"
                 >
 
