@@ -26,6 +26,10 @@ Route::get('/logo', function () {
     ]);
 });
 
+Route::get('/studentIsNotSolvent', function() {
+    return view('student_is_not_solvent');
+})->name('studentIsNotSolvent');
+
 Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::get('/dashboard', Dashboard::class)
         ->name('dashboard');
@@ -87,7 +91,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
 
     Route::get('/groupGradebook/{id}', [\App\Http\Controllers\GroupGradebookController::class, 'index']);
 
-    Route::get('/groupGradebook/gradebook/{group}/{student}', [\App\Http\Controllers\GroupGradebookController::class, 'gradebook']);
+    Route::get('/groupGradebook/gradebook/{group}/{student}', [\App\Http\Controllers\GroupGradebookController::class, 'gradebook'])
+        ->middleware('studentIsSolvent');
 
     Route::get('/student/myCalendar', function () {
         return \Inertia\Inertia::render('MyCalendar');
@@ -179,7 +184,7 @@ Route::get('/courseGradebook/{id}', function ($id) {
     ##return ($gradebook);
     return \Inertia\Inertia::render('CourseGradebook')
         ->with(compact('course', 'topic', 'gradebook', 'totalScore', 'totalResult'));
-});
+})->middleware('studentIsSolvent');
 
 Route::get('/topicGradebook/{id}', function($id) {
     $topic = App\Models\Topic::find($id);
