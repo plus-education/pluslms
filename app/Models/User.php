@@ -86,6 +86,7 @@ class User extends Authenticatable
 
     public function gradeExercise($id, $score = 0, $comment = '', $exercise = '')
     {
+        $score = $score < 0 ? 0 : $score;
         $activity = Activity::find($id);
         $userActivity = $this->activities->where('id', $activity->id)->first();
 
