@@ -56,7 +56,7 @@ class GradeExerciseController extends Controller
         }
         $scorebyOption = $question['score'] / sizeof($question['options']);
         $result = ($corectAnswer * $scorebyOption) - ($incorrectAnswer * $scorebyOption);
-        dd($scorebyOption, $corectAnswer, $incorrectAnswer, $result, $question);
+        //dd($scorebyOption, $corectAnswer, $incorrectAnswer, $result, $question);
         return $result;
     }
 
