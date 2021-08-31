@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Date;
+use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Heading;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\MorphMany;
@@ -106,9 +107,9 @@ class Activity extends Resource
 
             Date::make('Created At', 'created_at')->onlyOnDetail(),
 
-            Date::make(__('Start Date'), 'start'),
+            DateTime::make(__('Start Date'), 'start'),
 
-            Date::make(__('End Date'), 'end'),
+            DateTime::make(__('End Date'), 'end'),
 
             Boolean::make(__('Show'), 'isShow')
                 ->required(),

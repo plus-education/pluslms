@@ -113,7 +113,7 @@ class Activity extends Model implements Sortable
         }
 
         $today = Carbon::now();
-        return $today->between($this->start, $this->end->addHours(24));
+        return $today->between($this->start, $this->end);
     }
 
     public function studentScore($user)
