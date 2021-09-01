@@ -32,7 +32,7 @@ class GradeExerciseController extends Controller
             $user = User::findOrFail($request->get('studentId'));
         }
 
-        $totalScore = $score < 0 ? 0 : $totalScore;
+        $totalScore = $totalScore < 0 ? 0 : $totalScore;
         $user->gradeExercise($request->get('activityId'), $totalScore, '', json_encode($exercise));
 
         return ['totalScore' => $totalScore];
