@@ -43,11 +43,15 @@ class GradeExerciseController extends Controller
         $incorrectAnswer = 0;
         foreach ($question['options'] as $option) {
             $option['isChecked'] = array_key_exists('isChecked', $option) ? $option['isChecked'] : false;
-            if( ($option['isCorrect'] == $option['isChecked'])  ){
+
+            if( ($option['isTrue'] == $option['isChecked']) ){
                 $corectAnswer++;
-            }else{
+            }
+
+            if($option['isTrue'] != $option['isChecked']){
                 $incorrectAnswer++;
             }
+
         }
 
 
