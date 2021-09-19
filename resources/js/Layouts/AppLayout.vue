@@ -69,8 +69,8 @@
                                         </svg>
                                     </div>
 
-                                    <div class="flex-1 ml-2">
-                                        Re inscripciones 2022
+                                    <div class="flex-1 ml-2 ">
+                                        Reinscripciones 2022
                                     </div>
                                 </div>
                             </a>
