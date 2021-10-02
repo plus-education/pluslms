@@ -10,6 +10,7 @@ use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Lms\TeacherTopicComment\TeacherTopicComment;
@@ -113,7 +114,13 @@ class Topic extends Resource
                 ->hideWhenCreating()
                 ->hideWhenUpdating(),
 
-             SimpleLinkButton::make('Calificaciones', function () {
+            Number::make(__('Porcentage'), 'porcentage_grate')
+                ->max(function () {
+                    return 25;
+                })
+                ->nullable(),
+
+            SimpleLinkButton::make('Calificaciones', function () {
                  return "/topicGradebook/{$this->id}" ;
              })
                  ->hideWhenUpdating()

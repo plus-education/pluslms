@@ -22,7 +22,7 @@ class Topic extends Model implements Sortable
         'endDate' => 'datetime:d-m-Y',
     ];
 
-    protected $appends = ['isShow'];
+    protected $appends = ['isShow', 'totalActivities'];
 
     public function course()
     {
@@ -32,7 +32,8 @@ class Topic extends Model implements Sortable
     public function activities()
     {
         return $this->hasMany(Activity::class)
-            ->orderBy('order');
+            ->orderBy('order')
+            ->where('isShow', true);
     }
 
     public function users()

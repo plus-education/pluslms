@@ -29,6 +29,11 @@ class CoursesController extends Controller
     {
         $topic = Topic::find($id);
         $activities = $topic->activities->where('isShow', true);
+        $activities = $activities->filter(function ($activity){
+            if($activity->isActiveToDo) {
+                return $activity;
+            }
+        });
         $topic->course;
 
         return Inertia::render('Course/Topic')

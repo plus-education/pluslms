@@ -14,7 +14,7 @@
                     {{ module.name }}
                 </h3>
                 <div class="text-center">
-                    {{ module.totalStudentScore }} / {{ module.totalScore }}
+                    {{ module.totalStudentScore }} / {{ module.totalActivities > 100 ? 100 :  module.totalActivities  }}
                 </div>
             </div>
         </div>
