@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Gradebook;
 
+use App\Exports\CourseGradebookWhithAllActivitiesExport;
 use App\Http\Controllers\Controller;
 use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
@@ -9,6 +10,7 @@ use App\Models\Course;
 use App\Models\ActivityUser;
 use App\Models\Activity;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
 
 class CourseGradebookByAllActivitiesController extends Controller
 {
@@ -34,6 +36,10 @@ class CourseGradebookByAllActivitiesController extends Controller
             ->get();
 
 
+        return Excel::download(
+            new CourseGradebookWhithAllActivitiesExport($course, $activities),
+            'gradebook.xls'
+        );
 
         //return view('gradebook.all_activities_by_course')->with(compact('course', 'activities'));
 

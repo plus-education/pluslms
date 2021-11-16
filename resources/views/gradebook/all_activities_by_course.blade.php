@@ -27,7 +27,6 @@
 
 
 <div>
-    <img src="https://i2.wp.com/www.udeoberistain.edu.gt/wp-content/uploads/2020/11/1.png" alt="">
     <h3>{{ $course->name }} - {{ $course->group->name }}</h3>
 </div>
 
