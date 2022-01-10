@@ -29,10 +29,18 @@
                 </div>
 
                 <div class="flex-1  card  p-6   ml-4  md:border-l">
-                    <div v-if="group != null" class="text-center">
-                        <a :href="group.zoom" class="btn bg-green-500 p-4 text-white m-4 rounded-lg">
-                            Ingresar a mi aula virtual
-                        </a>
+                    <div v-if="group != null" class="text-center flex justify-center">
+                        <div>
+                            <a :href="group.zoom" class="btn bg-green-500 p-4 text-white m-4 rounded-lg">
+                                Ingresar a mi aula virtual
+                            </a>
+                        </div>
+
+                        <div>
+                            <a :href="group.activity_url" class="btn bg-orange-500 p-4 text-white m-4 rounded-lg">
+                                Actividad Especial
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
