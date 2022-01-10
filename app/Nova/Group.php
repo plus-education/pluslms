@@ -106,6 +106,9 @@ class Group extends Resource
             \Laravel\Nova\Fields\Text::make('Zoom Link', 'zoom')
                 ->hideFromIndex(),
 
+            \Laravel\Nova\Fields\Text::make('Link de Actividad Especial', 'activity_url')
+                ->hideFromIndex(),
+
             new Tabs('Relations', [
                 HasMany::make(__('Courses'), 'Courses', Course::class),
 
