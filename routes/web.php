@@ -17,7 +17,7 @@ use \App\Http\Controllers\Dashboard,
     \App\Http\Controllers\Student\ExerciseController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/dashboard');
 });
 
 Route::get('/logo', function () {
@@ -38,6 +38,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
 
     Route::get('/courses/{id}', [CoursesController::class, 'index'])
         ->name('courses.index');
+
+    Route::get('/courses/topicHome/{id}', [CoursesController::class, 'topicHome'])
+        ->name('courses.topicHome');
 
     Route::get('/courses/topic/{id}', [CoursesController::class, 'topic'])
         ->name('courses.topic');

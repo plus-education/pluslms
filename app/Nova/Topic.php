@@ -93,10 +93,13 @@ class Topic extends Resource
             new Tabs(__('Tools'), [
                 HasMany::make(__('Activities'), 'Activities', Activity::class),
 
+                HasMany::make("Tareas", 'gradebookRows', GradebookRow::class),
+
                 TeacherTopicComment::make(),
 
                 HasMany::make('Planificaciones semanales', 'weeklyPlannings', WeeklyPlanning::class),
-            ]),
+
+                ]),
 
             OrderField::make(__('Order'), 'order'),
 

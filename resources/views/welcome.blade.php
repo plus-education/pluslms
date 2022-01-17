@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PLUH SCHOOL - LMS</title>
+    <title>EDU PLUS - LMS</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">
@@ -13,7 +13,7 @@
     <!-- Font Awesome if you need it
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     -->
-    <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <!--Replace with your tailwind.css once created-->
 
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
@@ -36,7 +36,7 @@
 
         <div class="pl-4 flex items-center">
             <a class="toggleColour text-orange-600 no-underline hover:no-underline font-bold text-2xl lg:text-4xl"  href="/">
-                PLUS SCHOOL
+                EDU PLUS
             </a>
         </div>
 
@@ -70,7 +70,6 @@
         </div>
         <!--Right Col-->
         <div class="w-full md:w-3/5 py-6 text-center">
-            <img class="w-full md:w-4/5 z-50" src="https://plus-school.s3.amazonaws.com/web/hero.png">
         </div>
 
     </div>

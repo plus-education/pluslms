@@ -25,6 +25,15 @@ class CoursesController extends Controller
             ->with(compact('course'));
     }
 
+
+    public function topicHome($id)
+    {
+        $topic = Topic::with('course')->where('id', $id)->first();
+
+        return Inertia::render('Course/TopicHome')
+            ->with(compact('topic'));
+    }
+
     public function topic($id)
     {
         $topic = Topic::find($id);

@@ -29,10 +29,16 @@ class Topic extends Model implements Sortable
         return $this->belongsTo(Course::class);
     }
 
+    public function gradebookRows()
+    {
+        return $this->hasMany(GradebookRow::class)
+            ->orderBy('start');
+    }
+
     public function activities()
     {
         return $this->hasMany(Activity::class)
-            ->orderBy('orders')
+            ->orderBy('order')
             ->where('isShow', true);
     }
 
