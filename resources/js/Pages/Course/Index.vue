@@ -35,7 +35,7 @@
                 <inertia-link
                     v-for="topic in course.topics"
                     :key="topic.id"
-                    :href="`/courses/topic/${topic.id}`"
+                    :href="`/courses/topicHome/${topic.id}`"
                     v-if="topic.isShow"
                 >
                     <div class="bg-white p-4 shadow rounded-lg mb-4">

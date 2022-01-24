@@ -13,7 +13,7 @@
                 <strong>Último  día para entrega: </strong> {{ activity.end }}
             </p>
         </div>
-        <div class="mt-4" v-html="activity.activityable.html">
+        <div class="p-6" v-html="activity.activityable.html">
         </div>
 
         <div class="flex items-center justify-center mt-8 w-full">
@@ -51,52 +51,53 @@
             </div>
         </div>
 
-        <div  v-show="studentSendFile == true"  class="mb-4 mt-4">
-            <div class="iten">
-                <svg class="text-center mx-auto text-green-400 font-bold text-lg w-24" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-            </div>
-
-            <div>
-                <h4 class="text-center text-green-400 font-bold text-lg">Tarea Entregada</h4>
-            </div>
-
-            <div class="text-center text-gray-400 font-bold text-sm mt-4">
-                <a :href="`/storage/${studentSendFilePath}`"  target="_blank"  download>
-                    <div class="flex m-auto justify-center items-center">
-                       <div class="flex-shrink">
-                           <svg class="w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
-                           </svg>
-                       </div>
-
-                        <div class="ml-2">
-                            Descargar mi archivo
-                        </div>
+        <div  v-show="studentSendFile == true"  class="p-6">
+            <div class="flex  justify-center items-center">
+                <div class="flex justify-center items-center mr-4">
+                    <div class="iten">
+                        <svg class="text-center mx-auto text-green-400 font-bold text-lg w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
                     </div>
-                </a>
 
+                    <div class="ml-2">
+                        <h4 class="text-center text-green-400 font-bold text-xs">Tarea Entregada</h4>
+                    </div>
+                </div>
 
-                <div class="flex justify-end text-red-400 font-bold text-xs mt-4">
-                    <button @click="deleteHomework()">
-                        <div class="flex m-auto justify-end item-center">
+                <div class="text-center text-blue-500 font-bold text-xs mr-4" >
+                    <a :href="`/storage/${studentSendFilePath}`"  target="_blank"  download>
+                        <div class="flex  justify-center items-center">
                             <div class="flex-shrink">
-                                <svg class="w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <svg class="w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
+                                </svg>
+                            </div>
+
+                            <div class="ml-2">
+                                Descargar mi archivo
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="text-center text-red-500 font-bold text-xs mr-4" >
+                    <button v-on:click="deleteHomework()">
+                        <div class="flex  justify-center items-center">
+                            <div class="flex-shrink">
+                                <svg class="w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                                 </svg>
                             </div>
 
                             <div class="ml-2">
-                                Eliminar entrega de tarea
+                                Eliminar mi entrega
                             </div>
                         </div>
                     </button>
                 </div>
             </div>
         </div>
-
-        <comments :activity="activity" :user="user"></comments>
 
         <div
             v-if="isLoaded"

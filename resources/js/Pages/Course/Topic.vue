@@ -103,8 +103,10 @@
                         </li>
                         <li><span class="mx-2">/</span></li>
                         <li>
-                            {{ topic.name }}
+                            <inertia-link :href="`/courses/topicHome/${topic.id}`" class="font-bold">{{ topic.name }}</inertia-link>
                         </li>
+                        <li><span class="mx-2">/</span></li>
+                        <li>Contenido académico</li>
                     </ol>
                 </nav>
 

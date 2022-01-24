@@ -84,6 +84,12 @@ class User extends Authenticatable
             ->withPivot('score', 'comment', 'file', 'created_at', 'updated_at', 'text');
     }
 
+    public function gradebookRow()
+    {
+        return $this->belongsToMany(GradebookRow::class, 'gradebook_row_user', 'user_id', 'gradebook_row_id')
+            ->withPivot('score', 'comment', 'file', 'created_at', 'updated_at');
+    }
+
     public function gradeExercise($id, $score = 0, $comment = '', $exercise = '')
     {
         $score = $score < 0 ? 0 : $score;

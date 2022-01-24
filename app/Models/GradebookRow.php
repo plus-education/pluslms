@@ -9,6 +9,8 @@ class GradebookRow extends Model
 {
     use HasFactory;
 
+    protected $with = ['activityable'];
+
     /**
      * The attributes that should be cast.
      *
@@ -18,6 +20,12 @@ class GradebookRow extends Model
         'start' => 'date:d-m-Y',
         'end' => 'date:d-m-Y',
     ];
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class)
+            ->withPivot('score', 'comment', 'file', 'created_at', 'updated_at');
+    }
 
     public function topic()
     {

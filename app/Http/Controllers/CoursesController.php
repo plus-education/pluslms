@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Exports\CourseGradebookExport;
 use App\Models\Activity;
 use App\Models\Course;
+use App\Models\GradebookRow;
 use App\Models\Topic;
 use App\Models\TypesActivities\Divider;
 use App\Models\User;
@@ -107,40 +108,37 @@ class CoursesController extends Controller
             return false;
         }
 
-        $activity = Activity::find($activity_id);
+        $activity = GradebookRow::find($activity_id);
 
         $path = $request->file('file')->store('homework');
 
-        $score = auth()->user()->activities->where('id', $activity->id)->first();
+        $score = auth()->user()->gradebookRow->where('id', $activity->id)->first();
 
         if ($score) {
-            auth()->user()->activities()->updateExistingPivot($activity->id,  [
+            auth()->user()->gradebookRow()->updateExistingPivot($activity->id,  [
                 'file' =>  $path,
             ]);
 
             return json_encode(['status'=> true, 'file' => $path]);
         }
 
-        auth()->user()->activities()->attach($activity->id,  [
+        $return = auth()->user()->gradebookRow()->attach($activity->id,  [
             'comment' =>  '',
             'score' => 0,
             'file' => $path
         ]);
-
-        return json_encode(['status'=> true, 'file' => $path]);
-
     }
 
 
     public function studentHomework($activityId)
     {
-        if(!auth()->user()->activities->where('id', $activityId)->first()) {
+        if(!auth()->user()->gradebookRow->where('id', $activityId)->first()) {
             return json_encode(['status'=> false]);
 
         }
 
-        $activity = auth()->user()->activities->where('id', $activityId)->first();
-        $file = $activity->pivot->file;
+        $gradebookRow = auth()->user()->gradebookRow->where('id', $activityId)->first();
+        $file = $gradebookRow->pivot->file;
 
         if ($file == ''){
             return json_encode(['status'=> false]);
@@ -149,14 +147,14 @@ class CoursesController extends Controller
         return json_encode([
             'status'=> true,
             'file' => $file,
-            'score' => $activity->pivot->score,
-            'comment' => $activity->pivot->comment
+            'score' => $gradebookRow->pivot->score,
+            'comment' => $gradebookRow->pivot->comment
         ]);
     }
 
     public function studentDeleteHomework($activityId)
     {
-        return auth()->user()->activities()->updateExistingPivot($activityId,  [
+        return auth()->user()->gradebookRow()->updateExistingPivot($activityId,  [
             'file' =>  '',
         ]);
     }

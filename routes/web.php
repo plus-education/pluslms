@@ -45,6 +45,10 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::get('/courses/topic/{id}', [CoursesController::class, 'topic'])
         ->name('courses.topic');
 
+    Route::get('/courses/homeworks/{id}', \App\Http\Controllers\StudentHomeworksController::class);
+
+    Route::get('/courses/homeworks/show/{id}', \App\Http\Controllers\StudentHomeworkController::class);
+
     Route::get('/courses/topic/activities/{id}', [CoursesController::class, 'topicActivities'])
         ->name('courses.topic.activities');
 
