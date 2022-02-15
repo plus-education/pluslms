@@ -109,9 +109,6 @@ class Course extends Resource
                 HasMany::make(__('Topics'), 'topics', Topic::class),
 
                 BelongsToMany::make(__('Students'), 'students', Student::class)
-                    ->fields(function () {
-                        return Text::make(__('Name'), 'name');
-                    })
                     ->searchable(),
 
                 BelongsToMany::make(__('Teachers'), 'teachers', Teacher::class)->searchable(),
