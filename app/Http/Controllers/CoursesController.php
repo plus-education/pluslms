@@ -57,9 +57,8 @@ class CoursesController extends Controller
 
     public function usersByActivity($id)
     {
-        return Activity::findOrFail($id)->topic->course->students->map(function ($student) use($id) {
-            $activity =   ($student->activities->where('id', $id)->first()) ? $student->activities->where('id', $id)->first()->pivot : [ 'comment' => '' ,'score' => 0 ];
-
+        return GradebookRow::findOrFail($id)->topic->course->students->map(function ($student) use($id) {
+            $activity =   ($student->gradebookRow->where('id', $id)->first()) ? $student->gradebookRow->where('id', $id)->first()->pivot : [ 'comment' => '' ,'score' => 0 ];
 
             return [
                 'id' => $student->id,
@@ -74,7 +73,7 @@ class CoursesController extends Controller
 
     private function getStudentHomework(User $student, $activityId)
     {
-        $studentActivities = $student->activities->where('id', $activityId)->first();
+        $studentActivities = $student->gradebookRow->where('id', $activityId)->first();
 
         if ($studentActivities) {
            return $studentActivities->pivot->file;
@@ -88,17 +87,18 @@ class CoursesController extends Controller
         $student = User::find($request->post('student_id'));
         $activity = Activity::find($request->post('activity_id'));
 
-        $score = $student->activities->where('id', $activity->id)->first();
+        $score = $student->gradebookRow->where('id', $activity->id)->first();
         if ($score) {
-            return $student->activities()->updateExistingPivot($activity->id,  [
+            return $student->gradebookRow()->updateExistingPivot($activity->id,  [
                 'comment' =>  $request->post('comment'),
                 'score' => $request->post('score')
             ]);
         }
 
-        return $student->activities()->attach($activity->id,  [
+        return $student->gradebookRow()->attach($activity->id,  [
             'comment' =>  $request->post('comment'),
-            'score' => $request->post('score')
+            'score' => $request->post('score'),
+            'created_at' => null
         ]);
     }
 
@@ -141,7 +141,11 @@ class CoursesController extends Controller
         $file = $gradebookRow->pivot->file;
 
         if ($file == ''){
-            return json_encode(['status'=> false]);
+            return json_encode([
+                'status' => false,
+                'score'=> $gradebookRow->pivot->score,
+                'comment' => $gradebookRow->pivot->comment
+            ]);
         }
 
         return json_encode([

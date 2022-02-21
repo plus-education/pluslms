@@ -23,8 +23,9 @@
         "czemu/nova-calendar-tool": "^1.3",
         "digital-creative/nova-filepond": "^0.2.13",
         "digital-creative/nova-inline-morph-to": "^0.2.1",
+        "digital-creative/resource-navigation-tab": "^1.1",
         "dillingham/nova-attach-many": "^1.3",
-        "eminiarts/nova-tabs": "^1.2",
+        "eminiarts/nova-tabs": "^1.5",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
         "genealabs/nova-file-upload-field": "^0.4.0",
@@ -40,7 +41,7 @@
         "kpolicar/nova-date-range": "9999999-dev",
         "laravel/framework": "^8.16.1",
         "laravel/jetstream": "^1.1",
-        "laravel/nova": "~3.29.0",
+        "laravel/nova": "~3.31.0",
         "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.0",
         "league/flysystem-aws-s3-v3": "^1.0",
@@ -68,10 +69,10 @@
         "spatie/nova-backup-tool": "^4.0",
         "spatie/nova-tags-field": "^3.0",
         "superlatif/nova-tag-input": "^1.4",
+        "test/test": "*",
         "vyuldashev/nova-permission": "^2.9",
         "whchi/nova-tags-input": "^0.0.5",
-        "whitecube/nova-flexible-content": "^0.2.5",
-        "test/test": "*"
+        "whitecube/nova-flexible-content": "^0.2.5"
     },
     "repositories": [
         {

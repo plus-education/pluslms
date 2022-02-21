@@ -137,11 +137,7 @@ class Activity extends Resource
                ->max(100)
                ->default(0),
 
-            ActivityScores::make()
-                ->withMeta(['model' => $this->model()])
-                ->canSee(function() {
-                    return ($this->score > 0) ? true : false;
-                }),
+
 
             OrderField::make(__("Order"), 'order'),
 

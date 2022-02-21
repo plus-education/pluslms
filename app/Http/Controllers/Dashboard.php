@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\DB;
 
 class Dashboard extends Controller
 {
@@ -25,6 +26,7 @@ class Dashboard extends Controller
                 'coverPath' => $course->coverPath
             ];
         });
+
 
         $group = auth()->user()->groups()->first();
 

@@ -5,6 +5,7 @@ namespace App\Nova;
 use Advoor\NovaEditorJs\NovaEditorJs;
 use App\Models\Roles;
 use DigitalCreative\Filepond\Filepond;
+use DigitalCreative\ResourceNavigationTab\ResourceNavigationTab;
 use Eminiarts\Tabs\Tabs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
@@ -105,7 +106,13 @@ class Course extends Resource
             Filepond::make(__('Cover'), 'cover')
             ->mimesTypes('image/jpeg,image/png'),
 
-            new Tabs(__('Tools'), [
+            ResourceNavigationTab::make([
+                'label' => __('Topics'),
+                'cards' => [
+                    HasMany::make(__('Topics'), 'topics', Topic::class),
+                ]
+            ]),
+
                 HasMany::make(__('Topics'), 'topics', Topic::class),
 
                 BelongsToMany::make(__('Students'), 'students', Student::class)
@@ -114,7 +121,6 @@ class Course extends Resource
                 BelongsToMany::make(__('Teachers'), 'teachers', Teacher::class)->searchable(),
 
                 BelongsToMany::make(__('Supervisores'), 'supervisors', Supervisor::class)->searchable(),
-            ]),
 
             AttachMany::make(__('Students'), 'students', Student::class),
 

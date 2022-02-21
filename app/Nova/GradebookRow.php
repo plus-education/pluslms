@@ -11,6 +11,7 @@ use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Lms\ActivityScores\ActivityScores;
 
 class GradebookRow extends Resource
 {
@@ -92,6 +93,12 @@ class GradebookRow extends Resource
                 ->min(0)
                 ->max(100)
                 ->default(0),
+
+            ActivityScores::make()
+                ->withMeta(['model' => $this->model()])
+                ->canSee(function() {
+                    return ($this->score > 0) ? true : false;
+                }),
         ];
     }
 

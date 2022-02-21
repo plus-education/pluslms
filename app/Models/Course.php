@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Tags\HasTags;
 
-class Course extends Model
+class   Course extends Model
 {
     use HasFactory;
     use HasUsers;

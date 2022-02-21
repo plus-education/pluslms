@@ -90,16 +90,9 @@ class Topic extends Resource
 
             BelongsTo::make(__('Course'), 'Course', Course::class),
 
-            new Tabs(__('Tools'), [
-                HasMany::make(__('Activities'), 'Activities', Activity::class),
+            HasMany::make(__('Contenido'), 'Activities', Activity::class),
 
-                HasMany::make("Tareas", 'gradebookRows', GradebookRow::class),
-
-                TeacherTopicComment::make(),
-
-                HasMany::make('Planificaciones semanales', 'weeklyPlannings', WeeklyPlanning::class),
-
-                ]),
+            HasMany::make("Tareas", 'gradebookRows', GradebookRow::class),
 
             OrderField::make(__('Order'), 'order'),
 
