@@ -109,7 +109,6 @@ class Group extends Resource
             \Laravel\Nova\Fields\Text::make('Link de Actividad Especial', 'activity_url')
                 ->hideFromIndex(),
 
-            new Tabs('Relations', [
                 HasMany::make(__('Courses'), 'Courses', Course::class),
 
                 BelongsToMany::make(__('Students'), 'students', Student::class)
@@ -118,7 +117,7 @@ class Group extends Resource
                 BelongsToMany::make(__('Teachers'), 'teachers', Teacher::class)->searchable(),
 
                 BelongsToMany::make(__('Supervisors'), 'supervisors', Supervisor::class)->searchable(),
-            ]),
+
 
             AttachMany::make(__('Students'), 'students', Student::class),
 
