@@ -85,17 +85,17 @@ class CoursesController extends Controller
     public function saveActivity(Request $request)
     {
         $student = User::find($request->post('student_id'));
-        $activity = Activity::find($request->post('activity_id'));
-        dd($activity);
-        $score = $student->gradebookRow->where('id', $activity->id)->first();
+        $gradebookRow = GradebookRow::find($request->post('activity_id'));
+        $score = $student->gradebookRow->where('id', $gradebookRow->id)->first();
+
         if ($score) {
-            return $student->gradebookRow()->updateExistingPivot($activity->id,  [
+            return $student->gradebookRow()->updateExistingPivot($gradebookRow->id,  [
                 'comment' =>  $request->post('comment'),
                 'score' => $request->post('score')
             ]);
         }
 
-        return $student->gradebookRow()->attach($activity->id,  [
+        return $student->gradebookRow()->attach($gradebookRow->id,  [
             'comment' =>  $request->post('comment'),
             'score' => $request->post('score'),
             'created_at' => null

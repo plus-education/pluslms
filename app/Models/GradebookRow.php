@@ -9,6 +9,19 @@ class GradebookRow extends Model
 {
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'activity_id',
+        'user_id',
+        'comment',
+        'score',
+        'created_at'
+    ];
+
     protected $with = ['activityable'];
 
     /**
