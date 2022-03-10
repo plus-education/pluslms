@@ -86,7 +86,7 @@ class CoursesController extends Controller
     {
         $student = User::find($request->post('student_id'));
         $activity = Activity::find($request->post('activity_id'));
-
+        dd($activity);
         $score = $student->gradebookRow->where('id', $activity->id)->first();
         if ($score) {
             return $student->gradebookRow()->updateExistingPivot($activity->id,  [
