@@ -62,6 +62,7 @@ class Activity extends Model implements Sortable
         PDF::class,
         Youtube::class,
         Video::class,
+        Audio::class,
     ];
 
     public function topic()

@@ -137,6 +137,7 @@
 
                     <video-activity v-if="activity.type == 'VIDEO'" :activity="activity" :user="user"></video-activity>
 
+                    <audio-activity v-if="activity.type == 'AUDIO'" :activity="activity" :user="user"></audio-activity>
                 </div>
 
             </div>
@@ -158,6 +159,7 @@
     import HomeworkActivity from "./Activities/Homework";
     import YoutubeActivity from "./Activities/Youtube";
     import VideoActivity from "./Activities/Video";
+    import AudioActivity from "./Activities/Audio";
     import Comments from "./Comments";
 
     export default {
@@ -172,6 +174,7 @@
             PdfActivity,
             YoutubeActivity,
             VideoActivity,
+            AudioActivity,
             Comments,
         },
 

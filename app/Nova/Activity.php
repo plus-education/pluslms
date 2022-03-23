@@ -123,6 +123,7 @@ class Activity extends Resource
                 PDF::class,
                 Youtube::class,
                 Video::class,
+                Audio::class,
                 Exercise::class,
             ])
                 ->required()

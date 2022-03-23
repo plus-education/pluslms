@@ -74,6 +74,7 @@
         "serverless": "^2.10.0",
         "tailwindcss": "^1.8.8",
         "vue": "^2.6.12",
+        "vue-audio-visual": "^2.4.1",
         "vue-cal": "^3.10.1",
         "vue-confirm-dialog": "^1.0.2",
         "vue-file-agent": "^1.7.3",
