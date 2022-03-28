@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Group;
+use App\Models\Topic;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -29,7 +30,7 @@ class GroupGradebookController extends Controller
 
             $group = Group::find($group);
 
-            $group->courses->each(function ($course) {
+            $this->student->courses->each(function ($course) {
                 $this->courseGradebook($course);
             });
 
@@ -46,7 +47,11 @@ class GroupGradebookController extends Controller
     {
         $this->gradebook['courses'][$course->id]['id'] = $course->id;
         $this->gradebook['courses'][$course->id]['name'] = $course->name;
-        $this->gradebook['courses'][$course->id]['modules'] = $course->topics;
+        $this->gradebook['courses'][$course->id]['modules'] = $course->topics->take(1)
+            ->map(function($topic){
+            $topic->totalStudentScore =  Topic::getTotalStudent($topic, $this->student);
+            return $topic;
+        });
 
     }
 

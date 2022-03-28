@@ -5,6 +5,7 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableTrait;
 
@@ -55,7 +56,17 @@ class Topic extends Model implements Sortable
 
     public function getTotalActivitiesAttribute()
     {
-        return $this->activities()->sum('score');
+        return $this->gradebookRows()->sum('score');
+    }
+
+    public static function getTotalStudent($topic, $student)
+    {
+        return DB::table('gradebook_row_user')
+            ->select(DB::raw('sum(gradebook_row_user.score) as total'))
+            ->leftJoin('gradebook_rows','gradebook_row_user.gradebook_row_id', '=', 'gradebook_rows.id')
+            ->where('gradebook_row_user.user_id', $student->id)
+            ->where('gradebook_rows.topic_id', $topic->id)
+            ->first()->total;
     }
 
     public function getIsShowAttribute()
