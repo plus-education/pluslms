@@ -61,12 +61,18 @@ class Topic extends Model implements Sortable
 
     public static function getTotalStudent($topic, $student)
     {
-        return DB::table('gradebook_row_user')
+        $total = DB::table('gradebook_row_user')
             ->select(DB::raw('sum(gradebook_row_user.score) as total'))
             ->leftJoin('gradebook_rows','gradebook_row_user.gradebook_row_id', '=', 'gradebook_rows.id')
             ->where('gradebook_row_user.user_id', $student->id)
             ->where('gradebook_rows.topic_id', $topic->id)
             ->first()->total;
+
+        if ($total > 100) {
+           return 100;
+        }
+
+        return  $total;
     }
 
     public function getIsShowAttribute()
