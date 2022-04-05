@@ -123,13 +123,18 @@ class User extends Authenticatable
 
     public function scoreTopic($id)
     {
-        return DB::table('activity_user')
+        $total = DB::table('activity_user')
             ->select(DB::raw('sum(activity_user.score) as total'))
             ->leftJoin('activities', 'activity_user.activity_id', '=', 'activities.id')
             ->leftJoin('topics', 'activities.topic_id', '=', 'topics.id')
             ->where('topics.id', $this->id)
             ->where('activity_user.user_id', $this->id)
             ->first()->total;
+        if($total > 100) {
+            return 100;
+        }
+
+        return $total;
     }
 
     public function topics()
