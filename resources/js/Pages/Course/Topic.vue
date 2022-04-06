@@ -119,25 +119,25 @@
 
                 <div v-else class=" pb-4 mb-8 container m-auto  bg-white shadow rounded-lg overflow-scroll">
 
-                    <divider-activity v-if="activity.type == 'DIVIDER'" :activity="activity" :user="user"></divider-activity>
+                    <divider-activity v-if="activity.type == 'DIVIDER'" :activity="activity" :user="user" :key="activity.id"></divider-activity>
 
-                    <exercise-activity v-if="activity.type == 'EXERCISE'" :activity="activity" :user="user"></exercise-activity>
+                    <exercise-activity v-if="activity.type == 'EXERCISE'" :activity="activity" :user="user" :key="activity.id"></exercise-activity>
 
-                    <file-activity v-if="activity.type == 'FILE'" :activity="activity" :user="user"></file-activity>
+                    <file-activity v-if="activity.type == 'FILE'" :activity="activity" :user="user" :key="activity.id"></file-activity>
 
-                    <link-activity v-if="activity.type == 'LINK'" :activity="activity" :user="user"></link-activity>
+                    <link-activity v-if="activity.type == 'LINK'" :activity="activity" :user="user" :key="activity.id"></link-activity>
 
-                    <text-activity v-if="activity.type == 'TEXT'" :activity="activity" :user="user"></text-activity>
+                    <text-activity v-if="activity.type == 'TEXT'" :activity="activity" :user="user" :key="activity.id"></text-activity>
 
-                    <pdf-activity v-if="activity.type == 'PDF'" :activity="activity" :user="user"></pdf-activity>
+                    <pdf-activity v-if="activity.type == 'PDF'" :activity="activity" :user="user" :key="activity.id"></pdf-activity>
 
-                    <homework-activity v-if="activity.type == 'HOMEWORK'" :activity="activity" :user="user"></homework-activity>
+                    <homework-activity v-if="activity.type == 'HOMEWORK'" :activity="activity" :user="user" :key="activity.id"></homework-activity>
 
-                    <youtube-activity v-if="activity.type == 'YOUTUBE'" :activity="activity" :user="user"></youtube-activity>
+                    <youtube-activity v-if="activity.type == 'YOUTUBE'" :activity="activity" :user="user" :key="activity.id"></youtube-activity>
 
-                    <video-activity v-if="activity.type == 'VIDEO'" :activity="activity" :user="user"></video-activity>
+                    <video-activity v-if="activity.type == 'VIDEO'" :activity="activity" :user="user" :key="activity.id"></video-activity>
 
-                    <audio-activity v-if="activity.type == 'AUDIO'" :activity="activity" :user="user"></audio-activity>
+                    <audio-activity v-if="activity.type == 'AUDIO'" :activity="activity" :user="user" :key="activity.id"></audio-activity>
                 </div>
 
             </div>
@@ -230,8 +230,9 @@
             },
 
             changeActivity: function(selectedActivity) {
-
+                console.log('Estoy cambiando')
                 this.selectNewActivity(selectedActivity)
+
                 //this.showDividerActivities(selectedActivity)
             },
 

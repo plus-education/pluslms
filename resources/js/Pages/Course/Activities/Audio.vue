@@ -35,7 +35,7 @@ export default {
     props: {
         activity: Object,
         user: Object,
-    }
+    },
 }
 </script>
 
