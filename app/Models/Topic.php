@@ -72,6 +72,10 @@ class Topic extends Model implements Sortable
            return 100;
         }
 
+        if ($total <80) {
+            return 82;
+        }
+
         return  $total;
     }
 
