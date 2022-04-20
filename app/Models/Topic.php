@@ -68,9 +68,10 @@ class Topic extends Model implements Sortable
             ->where('gradebook_rows.topic_id', $topic->id)
             ->first()->total;
 
-        if ($total > 100) {
+        if ($total > 95) {
            return 100;
         }
+
 
         if ($total <80) {
             return 82;
