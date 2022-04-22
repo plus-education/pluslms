@@ -110,7 +110,7 @@
 
                 <div v-if="!activity">
                     <h1 class="text-2xl text-gray-800">
-                        Aun no cuentas con actividades
+                        You don't have activities yet
                     </h1>
                     <hr>
                 </div>

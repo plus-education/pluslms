@@ -14,7 +14,7 @@
                     <h1 class="text-2xl text-white font-bold">
                         {{ course.name }} <span class="text-sm text-white">{{ course.code }}</span>
                     </h1>
-                    <span class="text-sm text-white">Grupo: {{ course.group.name}}</span>
+                    <span class="text-sm text-white">Group: {{ course.group.name }}</span>
                 </div>
 
                 <div class="mt-4" v-if="course.classLink != null  || course.classLink != ''">

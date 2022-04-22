@@ -15,7 +15,7 @@
 <div class="flex w-screen h-screen items-center justify-center">
   <div class="text-center">
       <img src="{{ asset('img/onlineStudents.jpg') }}" alt="Online Students">
-      <h1 class="text-xl">Sección no disponible, comuníquese a dirección académica.</h1>
+      <h1 class="text-xl">Section not available, please contact your teacher.</h1>
   </div>
 </div>
 </body>

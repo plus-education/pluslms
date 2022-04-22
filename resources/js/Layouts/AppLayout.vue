@@ -30,7 +30,7 @@
                                     </div>
 
                                     <div class="flex-1 ml-2">
-                                        Mis Actividades
+                                        My Activities
                                     </div>
                                 </div>
                             </jet-nav-link>
@@ -51,7 +51,7 @@
                                     </div>
 
                                     <div class="flex-1 ml-2">
-                                        Notas
+                                        Notes
                                     </div>
                                 </div>
                             </a>

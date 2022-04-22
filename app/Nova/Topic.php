@@ -4,6 +4,8 @@ namespace App\Nova;
 
 use App\Nova\Actions\TopicGradebook;
 use Eminiarts\Tabs\Tabs;
+use Eminiarts\Tabs\Tab;
+use Yassi\NestedForm\NestedForm;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
@@ -28,7 +30,7 @@ class Topic extends Resource
      *
      * @var bool
      */
-    public static $displayInNavigation = false;
+    public static $displayInNavigation = true;//false;
 
     /**
      * The model the resource corresponds to.
@@ -89,13 +91,17 @@ class Topic extends Resource
 
             BelongsTo::make(__('Course'), 'Course', Course::class),
 
-            new Tabs(__('Tools'), [
+            NestedForm::make(__('Activities'), 'activities'),
+
+            NestedForm::make(__('Weekly Plannings'), 'weeklyPlannings'),
+
+            /*Tabs::make(__('Tools'), [
                 HasMany::make(__('Activities'), 'Activities', Activity::class),
 
                 TeacherTopicComment::make(),
 
                 HasMany::make('Planificaciones semanales', 'weeklyPlannings', WeeklyPlanning::class),
-            ]),
+            ]),*/
 
             OrderField::make(__('Order'), 'order'),
 
@@ -105,7 +111,7 @@ class Topic extends Resource
             DateTime::make(__('End Date'), 'endDate')
                 ->pickerDisplayFormat('d-m-Y H:i'),
 
-            Boolean::make(__('Is show'), 'isShow')
+            Boolean::make(__('Is Show'), 'isShow')
                 ->hideWhenCreating()
                 ->hideWhenUpdating(),
 

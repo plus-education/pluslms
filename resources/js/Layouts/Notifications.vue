@@ -14,11 +14,11 @@
             <div class="shadow-lg border-gray-900 bg-white mt-2 rounded-lg" style="width: 600px">
                 <div class="flex justify-between bg-gray-200 py-2 px-2">
                     <div>
-                        <h1 class="text-lg font-bold">Notificaciones</h1>
+                        <h1 class="text-lg font-bold">Notifications</h1>
                     </div>
                     <div>
-                        <button class="text-lg font-bold">
-                            Marcar todo como leído
+                        <button class="text-md font-bold">
+                            Mark all as read
                         </button>
                     </div>
                 </div>

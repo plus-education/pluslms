@@ -1,13 +1,13 @@
 <template>
        <div>
-           <h1 class="text-lg mt-6 mb-4 text-gray-800">Mis cursos</h1>
+           <h1 class="text-lg mt-6 mb-4 text-gray-800">My Courses</h1>
 
            <section class="mb-4">
                <input
                    v-model="search"
                    type="text"
                    class="w-full focus:no-underline py-2 px-4 shadow rounded-lg"
-                   placeholder="Buscar"
+                   placeholder="Search"
                >
            </section>
 

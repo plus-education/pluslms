@@ -6,6 +6,9 @@ use Advoor\NovaEditorJs\NovaEditorJs;
 use App\Models\Roles;
 use DigitalCreative\Filepond\Filepond;
 use Eminiarts\Tabs\Tabs;
+use Eminiarts\Tabs\Tab;
+use Eminiarts\Tabs\TabsOnEdit;
+use Yassi\NestedForm\NestedForm;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Gate;
@@ -23,6 +26,8 @@ use Spatie\Tags\Tag;
 
 class Course extends Resource
 {
+    use TabsOnEdit;
+
     /**
      * The model the resource corresponds to.
      *
@@ -102,16 +107,47 @@ class Course extends Resource
 
             Text::make(__('Code'), 'code')->sortable(),
 
-            Filepond::make(__('Cover'), 'cover')
+            /*Filepond::make(__('Cover'), 'cover')
             ->mimesTypes('image/jpeg,image/png'),
 
-            new Tabs(__('Tools'), [
+            new Tabs('Tabs', [
+                'Balance'    => [
+                    Text::make('Balance'),
+                    Text::make('Total'),
+                ],
+                'Other Info' => [
+                    Text::make('Paid To Date'),
+                ],
+            ]),*/
+
+            /*Tabs::make('Tabs', [
+                Tab::make('Balance', [
+                    Text::make('Balance'),
+                    Text::make('Total'),
+                ]),
+                Tab::make('Relations', [
+                    Text::make('Paid To Date'),
+                ]),
+                Tab::make('Test', [
+                    Text::make('Testtt'),
+
+                    HasMany::make(__('Topics'), 'topics', Topic::class),
+
+                    BelongsToMany::make(__('Students'), 'students', Student::class)->searchable(),
+                    BelongsToMany::make(__('Teachers'), 'teachers', Teacher::class)->searchable(),
+                    BelongsToMany::make(__('Supervisores'), 'supervisors', Supervisor::class)->searchable(),
+                ]),
+            ]),*/
+
+            NestedForm::make(__('Topics'), 'topics'),
+
+            /*new Tabs(__('Tools'), [
                 HasMany::make(__('Topics'), 'topics', Topic::class),
 
                 BelongsToMany::make(__('Students'), 'students', Student::class)->searchable(),
                 BelongsToMany::make(__('Teachers'), 'teachers', Teacher::class)->searchable(),
                 BelongsToMany::make(__('Supervisores'), 'supervisors', Supervisor::class)->searchable(),
-            ]),
+            ]),*/
 
             AttachMany::make(__('Students'), 'students', Student::class),
 
@@ -120,7 +156,7 @@ class Course extends Resource
 
             Text::make(__('Class link'), 'classLink'),
 
-            SimpleLinkButton::make('Calificaciones', function () {
+            SimpleLinkButton::make('Grades', function () {
                 return "/gradebook/courseByAllActivities/{$this->id}" ;
             })
                 ->hideWhenUpdating()

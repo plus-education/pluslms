@@ -7,7 +7,7 @@
         </template>
 
         <section>
-            <div class="container m-auto mt-6 mb-6 flex flex-col  md:flex-row   items-center justify-between bg-white shadow-lg">
+            <div class="container m-auto mt-6 mb-6 flex flex-col md:flex-row items-center justify-between bg-white shadow-lg">
                 <div class="flex-1 card  p-6   mr-4">
                     <div class="w-full">
                        <div class="w-24 m-auto">
@@ -23,7 +23,7 @@
                             {{ $page.user.name}}
                         </h3>
                         <div class="text-center  text-gray-500">
-                            <strong>Código: </strong> {{ $page.user.code}}
+                            <strong>Code: </strong> {{ $page.user.code}}
                         </div>
                     </div>
                 </div>
