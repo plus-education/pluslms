@@ -53,9 +53,11 @@ class WeeklyPlanning extends Resource
         return [
             BelongsTo::make( 'topic'),
 
-            \Laravel\Nova\Fields\Text::make(__('Titulo'), 'title'),
+            \Laravel\Nova\Fields\Text::make(__('Title'), 'title')
+                ->required(),
 
-            DateRange::make('Between', ['from', 'to']),
+            DateRange::make('Between', ['from', 'to'])
+                ->required(),
 
             HasMany::make('Planificaciónes diarias', 'dayPlannings', DayPlanning::class),
 

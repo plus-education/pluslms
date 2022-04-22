@@ -86,14 +86,13 @@ class Topic extends Resource
         return [
             Text::make(__('Name'), 'name')
                 ->required()
-                ->rules('required', 'max:255')
-            ,
+                ->rules('required', 'max:255'),
 
             BelongsTo::make(__('Course'), 'Course', Course::class),
 
-            NestedForm::make(__('Activities'), 'activities'),
+            NestedForm::make(__('Activities'), 'activities', Activity::class),
 
-            NestedForm::make(__('Weekly Plannings'), 'weeklyPlannings'),
+            NestedForm::make(__('Weekly Plannings'), 'weeklyPlannings', WeeklyPlanning::class),
 
             /*Tabs::make(__('Tools'), [
                 HasMany::make(__('Activities'), 'Activities', Activity::class),
@@ -119,7 +118,7 @@ class Topic extends Resource
                 ->hideWhenCreating()
                 ->hideWhenUpdating(),
 
-             SimpleLinkButton::make('Calificaciones', function () {
+             SimpleLinkButton::make('Grades', function () {
                  return "/topicGradebook/{$this->id}" ;
              })
                  ->hideWhenUpdating()
@@ -127,7 +126,7 @@ class Topic extends Resource
                  ->style('grey')
                  ->attributes(['target' => '_blank']),
 
-            SimpleLinkButton::make('Vista previa', function () {
+            SimpleLinkButton::make('Preview', function () {
                 return "/courses/topic/{$this->id}" ;
             })
                 ->hideWhenUpdating()

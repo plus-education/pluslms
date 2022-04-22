@@ -46,7 +46,7 @@ class Activity extends Resource
      * @var bool
      */
 
-    public static $displayInNavigation = false;
+    public static $displayInNavigation = true;//false;
     /**
      * The model the resource corresponds to.
      *
@@ -113,7 +113,7 @@ class Activity extends Resource
             Boolean::make(__('Show'), 'isShow')
                 ->required(),
 
-            InlineMorphTo::make(__("Activityable"), 'Activityable')->types([
+            InlineMorphTo::make(__("Activity Type"), 'Activityable')->types([
                 Divider::class,
                 \App\Nova\Text::class,
                 File::class,
@@ -128,8 +128,8 @@ class Activity extends Resource
                 ->rules('required')
             ,
 
-            \Laravel\Nova\Fields\File::make('Archivo de respaldo', 'original_file')
-                ->required(),
+            \Laravel\Nova\Fields\File::make('Original File', 'original_file'),
+                //->required(),
 
            \Laravel\Nova\Fields\Number::make(__('Score'), 'score')
                ->min(0)

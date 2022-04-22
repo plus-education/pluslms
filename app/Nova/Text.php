@@ -58,7 +58,7 @@ class Text extends Resource
      */
     public static function singularLabel()
     {
-        return __('Test');
+        return __('Text');
     }
 
     /**
@@ -70,7 +70,7 @@ class Text extends Resource
     public function fields(Request $request)
     {
         return [
-            NovaEditorJs::make(__('Divider'), 'body')
+            Trix::make(__('Text'), 'body')
                 ->required()
                 ->rules('required'),
         ];

@@ -2,20 +2,20 @@
     <div>
         <div class="comment-title">
             <h1 class="text-90 font-normal text-2xl mb-3">
-                Commentarios
+                Comments
             </h1>
         </div>
 
         <div class="card mb-6 py-4 px-6" v-if="!showAnswers">
             <div class="text-center shadow-md rounded-lg  mb-4 p-4">
-                <h2 class="text-90 text-sm mb-4 text-left">Comentar:</h2>
+                <h2 class="text-90 text-sm mb-4 text-left">Comment:</h2>
                 <vue-editor v-model="comment" :editor-toolbar="customToolbar"  />
 
                 <button
                     class="my-4 btn-default btn-primary"
                     v-if="comment != null  && comment != '' "
                     @click="saveComment()"
-                >Commentar</button>
+                >Comment</button>
             </div>
 
             <div v-for="comment in comments" class="mb-4 p-4  shadow-md rounded-lg">
@@ -49,7 +49,7 @@
                                     </div>
 
                                     <div class="flex-1 ml-2  text-blue-600">
-                                        Respuestas
+                                        Replies
                                     </div>
                                 </div>
                             </button>
@@ -99,7 +99,7 @@
                                     </div>
 
                                     <div class="flex-1 ml-2  text-green-600">
-                                        Regresar
+                                        Back
                                     </div>
                                 </div>
                             </button>
@@ -151,14 +151,14 @@
 
 
             <div class="text-center shadow-md rounded-lg  mb-4 p-4 bg-white">
-                <h2 class="text-90 text-sm mb-4 text-left">Responder:</h2>
+                <h2 class="text-90 text-sm mb-4 text-left">Respond:</h2>
                 <vue-editor v-model="answer" :editor-toolbar="customToolbar"  />
 
                 <button
                     class="my-4 btn-default btn-primary"
                     v-if="answer != null  && answer != '' "
                     @click="saveAnswer()"
-                >Responder</button>
+                >Respond</button>
             </div>
         </div>
 

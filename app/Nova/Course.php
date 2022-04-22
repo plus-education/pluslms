@@ -107,49 +107,21 @@ class Course extends Resource
 
             Text::make(__('Code'), 'code')->sortable(),
 
-            /*Filepond::make(__('Cover'), 'cover')
+            Filepond::make(__('Cover'), 'cover')
             ->mimesTypes('image/jpeg,image/png'),
 
-            new Tabs('Tabs', [
-                'Balance'    => [
-                    Text::make('Balance'),
-                    Text::make('Total'),
-                ],
-                'Other Info' => [
-                    Text::make('Paid To Date'),
-                ],
-            ]),*/
+            //NestedForm::make(__('Topics'), 'topics'),
 
-            /*Tabs::make('Tabs', [
-                Tab::make('Balance', [
-                    Text::make('Balance'),
-                    Text::make('Total'),
-                ]),
-                Tab::make('Relations', [
-                    Text::make('Paid To Date'),
-                ]),
-                Tab::make('Test', [
-                    Text::make('Testtt'),
+            Tabs::make(__('People'), [
+                AttachMany::make(__('Users'), 'users', User::class),
+                //AttachMany::make(__('Students'), 'students', Student::class),
+                //AttachMany::make(__('Teachers'), 'teachers', Teacher::class),
+                //AttachMany::make(__('Supervisors'), 'supervisors', Supervisor::class),
+            ]),
 
-                    HasMany::make(__('Topics'), 'topics', Topic::class),
-
-                    BelongsToMany::make(__('Students'), 'students', Student::class)->searchable(),
-                    BelongsToMany::make(__('Teachers'), 'teachers', Teacher::class)->searchable(),
-                    BelongsToMany::make(__('Supervisores'), 'supervisors', Supervisor::class)->searchable(),
-                ]),
-            ]),*/
-
-            NestedForm::make(__('Topics'), 'topics'),
-
-            /*new Tabs(__('Tools'), [
-                HasMany::make(__('Topics'), 'topics', Topic::class),
-
-                BelongsToMany::make(__('Students'), 'students', Student::class)->searchable(),
-                BelongsToMany::make(__('Teachers'), 'teachers', Teacher::class)->searchable(),
-                BelongsToMany::make(__('Supervisores'), 'supervisors', Supervisor::class)->searchable(),
-            ]),*/
-
-            AttachMany::make(__('Students'), 'students', Student::class),
+            //BelongsToMany::make(__('Students'), 'students', Student::class)->searchable(),
+            //BelongsToMany::make(__('Teachers'), 'teachers', Teacher::class)->searchable(),
+            //BelongsToMany::make(__('Supervisors'), 'supervisors', Supervisor::class)->searchable(),
 
             BelongsTo::make(__('Group'), 'Group', Group::class)->sortable()
                 ->hideWhenCreating(),
