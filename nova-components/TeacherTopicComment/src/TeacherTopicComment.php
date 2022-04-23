@@ -14,7 +14,7 @@ class TeacherTopicComment extends ResourceTool
      */
     public function name()
     {
-        return 'Observaciones';
+        return 'Comments';
     }
 
     /**

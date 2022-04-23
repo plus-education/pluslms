@@ -2,7 +2,7 @@
     <app-layout>
         <template #header>
            <ul>
-               <li>Inicio</li>
+               <li>Home</li>
            </ul>
         </template>
 
@@ -29,9 +29,9 @@
                 </div>
 
                 <div class="flex-1  card  p-6   ml-4  md:border-l">
-                    <div v-if="group != null" class="text-center">
+                    <div v-if="group !== null && group.zoom !== null" class="text-center">
                         <a :href="group.zoom" class="btn bg-green-500 p-4 text-white m-4 rounded-lg">
-                            Ingresar a mi aula virtual
+                            Join Group Zoom
                         </a>
                     </div>
                 </div>

@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\TypesActivities\Divider;
 use App\Models\TypesActivities\Exercise;
 use App\Models\TypesActivities\File;
+use App\Models\TypesActivities\H5P;
 use App\Models\TypesActivities\Link;
 use App\Models\TypesActivities\PDF;
 use App\Models\TypesActivities\Text;
@@ -56,6 +57,7 @@ class Activity extends Model implements Sortable
         Divider::class,
         Exercise::class,
         Text::class,
+        H5P::class,
         File::class,
         Link::class,
         Homework::class,

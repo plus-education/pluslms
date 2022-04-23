@@ -2,7 +2,7 @@
     <app-layout>
         <template #header>
             <ul>
-                <li>Inicio</li>
+                <li>Home</li>
             </ul>
         </template>
 
@@ -17,13 +17,13 @@
                     <span class="text-sm text-white">Group: {{ course.group.name }}</span>
                 </div>
 
-                <div class="mt-4" v-if="course.classLink != null  || course.classLink != ''">
+                <div class="mt-4" v-if="course.classLink !== null  || course.classLink !== ''">
                     <a
                         :href="course.classLink"
                         target="_blank"
                         class="bg-white py-2 px-4 rounded-lg shadow"
                     >
-                        Ingresar a Clase virtual
+                        Join Online Class
                     </a>
                 </div>
             </header>

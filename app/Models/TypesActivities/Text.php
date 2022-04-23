@@ -18,6 +18,7 @@ class Text extends Model
 
     public function getHtmlAttribute()
     {
-        return NovaEditorJs::generateHtmlOutput($this->body);
+        return $this->body;
+        //return NovaEditorJs::generateHtmlOutput($this->body);
     }
 }

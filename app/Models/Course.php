@@ -16,7 +16,8 @@ class Course extends Model
 
     public function getHtmlAttribute()
     {
-        return NovaEditorJs::generateHtmlOutput($this->description);
+        return $this->description;
+        //return NovaEditorJs::generateHtmlOutput($this->description);
     }
 
     public function users()

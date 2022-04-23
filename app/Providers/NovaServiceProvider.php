@@ -94,8 +94,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             MyCourses::make(),
 
             CourseGradebook::make(),
-
-
+            
             \Spatie\BackupTool\BackupTool::make()
                 ->canSee(function (){
                     return auth()->user()->can('manage backup');
@@ -107,8 +106,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 ->canSee(function (){
                     return auth()->user()->can('manage roles');
                 }),
-            //\ChrisWare\NovaBreadcrumbs\NovaBreadcrumbs::make(),
 
+            \Addgod\NestedBreadcrumbs\NestedBreadcrumbs::make(),
 
             \OptimistDigital\NovaSettings\NovaSettings::make(),
 

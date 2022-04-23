@@ -10,3 +10,6 @@ Plus Education is a  Learning Management System, I believe that course developme
 ## License
 
 The Plus Education is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Install
+Install node-gyp: `npm install -g node-gyp`

@@ -11,6 +11,7 @@ use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\Heading;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -30,7 +31,7 @@ class Topic extends Resource
      *
      * @var bool
      */
-    public static $displayInNavigation = true;//false;
+    public static $displayInNavigation = false;
 
     /**
      * The model the resource corresponds to.
@@ -90,17 +91,17 @@ class Topic extends Resource
 
             BelongsTo::make(__('Course'), 'Course', Course::class),
 
-            NestedForm::make(__('Activities'), 'activities', Activity::class),
+            //NestedForm::make(__('Activities'), 'activities', Activity::class),
 
-            NestedForm::make(__('Weekly Plannings'), 'weeklyPlannings', WeeklyPlanning::class),
+            //NestedForm::make(__('Weekly Plannings'), 'weeklyPlannings', WeeklyPlanning::class),
 
-            /*Tabs::make(__('Tools'), [
-                HasMany::make(__('Activities'), 'Activities', Activity::class),
+            //Heading::make('Tools'),
 
-                TeacherTopicComment::make(),
+            TeacherTopicComment::make(),
 
-                HasMany::make('Planificaciones semanales', 'weeklyPlannings', WeeklyPlanning::class),
-            ]),*/
+            HasMany::make(__('Activities'), 'Activities', Activity::class),
+
+            HasMany::make(__('Weekly Plans'), 'weeklyPlannings', WeeklyPlanning::class),
 
             OrderField::make(__('Order'), 'order'),
 
@@ -110,11 +111,11 @@ class Topic extends Resource
             DateTime::make(__('End Date'), 'endDate')
                 ->pickerDisplayFormat('d-m-Y H:i'),
 
-            Boolean::make(__('Is Show'), 'isShow')
+            Boolean::make(__('Visible'), 'isShow')
                 ->hideWhenCreating()
                 ->hideWhenUpdating(),
 
-            Text::make('Punteo Asignado', 'totalActivities')
+            Text::make('Total Points', 'totalActivities')
                 ->hideWhenCreating()
                 ->hideWhenUpdating(),
 
@@ -181,5 +182,15 @@ class Topic extends Resource
         return [
             new TopicGradebook
         ];
+    }
+
+    /**
+     * Get the parent to be displayed in the breadcrumbs.
+     *
+     * @return \Illuminate\Database\Eloquent\Model|null
+     */
+    public function breadcrumbParent()
+    {
+        return $this->model()->course;
     }
 }

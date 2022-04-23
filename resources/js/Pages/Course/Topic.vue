@@ -95,7 +95,7 @@
                 >
                     <ol class="list-reset flex text-grey-dark">
                         <li>
-                            <inertia-link href="/dashboard" class="font-bold">Inicio</inertia-link>
+                            <inertia-link href="/dashboard" class="font-bold">Home</inertia-link>
                         </li>
                         <li><span class="mx-2">/</span></li>
                         <li>
@@ -122,6 +122,8 @@
                     <exercise-activity v-if="activity.type == 'EXERCISE'" :activity="activity" :user="user"></exercise-activity>
 
                     <file-activity v-if="activity.type == 'FILE'" :activity="activity" :user="user"></file-activity>
+
+                    <h5p-activity v-if="activity.type == 'H5P'" :activity="activity" :user="user" />
 
                     <link-activity v-if="activity.type == 'LINK'" :activity="activity" :user="user"></link-activity>
 
@@ -150,6 +152,7 @@
     import DividerActivity from "./Activities/Divider"
     import ExerciseActivity from "./Activities/Exercise"
     import FileActivity from './Activities/File'
+    import H5pActivity from './Activities/H5p';
     import LinkActivity from './Activities/Link'
     import TextActivity from './Activities/Text'
     import PdfActivity from "./Activities/Pdf"
@@ -162,6 +165,7 @@
         components: {
             AppLayout,
             FileActivity,
+            H5pActivity,
             DividerActivity,
             ExerciseActivity,
             HomeworkActivity,

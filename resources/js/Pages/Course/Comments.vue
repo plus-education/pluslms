@@ -1,14 +1,22 @@
 <template>
     <div>
-        <div class="comment-title">
+        <hr />
+        <div class="py-2">
             <h1 class="text-90 font-normal text-2xl mb-3">
                 Comments
             </h1>
         </div>
 
         <div class="card mb-6 py-4 px-6" v-if="!showAnswers">
-            <div class="text-center shadow-md rounded-lg  mb-4 p-4">
-                <h2 class="text-90 text-sm mb-4 text-left">Comment:</h2>
+            <div>
+                <button 
+                    v-if="!addNew"
+                    @click="addNew = true">Add New Comment</button>
+                <button 
+                    v-else
+                    @click="addNew = false">Hide New Comment</button>
+            </div>
+            <div class="text-center shadow-md rounded-lg mb-4 p-4" v-if="addNew">
                 <vue-editor v-model="comment" :editor-toolbar="customToolbar"  />
 
                 <button
@@ -18,7 +26,7 @@
                 >Comment</button>
             </div>
 
-            <div v-for="comment in comments" class="mb-4 p-4  shadow-md rounded-lg">
+            <div v-for="comment in comments" class="mb-4 p-4 shadow-md rounded-lg">
                 <div
                     class="flex items-center"
                 >
@@ -178,6 +186,7 @@
 
         data: function () {
             return {
+                addNew: false,
                 comment: null,
                 comments: Object,
                 showAnswers: false,

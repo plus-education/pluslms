@@ -19,6 +19,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Monaye\SimpleLinkButton\SimpleLinkButton;
 use NovaAttachMany\AttachMany;
@@ -103,7 +104,7 @@ class Course extends Resource
                 ->required()
                 ->rules('required', 'max:255'),
 
-            NovaEditorJs::make(__('Description'), 'description'),
+            Trix::make(__('Description'), 'description'),
 
             Text::make(__('Code'), 'code')->sortable(),
 
@@ -111,6 +112,7 @@ class Course extends Resource
             ->mimesTypes('image/jpeg,image/png'),
 
             //NestedForm::make(__('Topics'), 'topics'),
+            HasMany::make(__('Topics'), 'topics', Topic::class),
 
             Tabs::make(__('People'), [
                 AttachMany::make(__('Users'), 'users', User::class),
@@ -126,7 +128,7 @@ class Course extends Resource
             BelongsTo::make(__('Group'), 'Group', Group::class)->sortable()
                 ->hideWhenCreating(),
 
-            Text::make(__('Class link'), 'classLink'),
+            Text::make(__('Class Zoom Link'), 'classLink'),
 
             SimpleLinkButton::make('Grades', function () {
                 return "/gradebook/courseByAllActivities/{$this->id}" ;

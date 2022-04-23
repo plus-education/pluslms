@@ -3,8 +3,8 @@
       <table class="table w-full table-default">
           <thead>
             <tr>
-                <th>Alumno</th>
-                <th>Comentario</th>
+                <th>Student</th>
+                <th>Comment</th>
             </tr>
           </thead>
           <tbody>

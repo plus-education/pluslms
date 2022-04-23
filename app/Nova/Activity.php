@@ -46,7 +46,7 @@ class Activity extends Resource
      * @var bool
      */
 
-    public static $displayInNavigation = true;//false;
+    public static $displayInNavigation = false;
     /**
      * The model the resource corresponds to.
      *
@@ -113,9 +113,28 @@ class Activity extends Resource
             Boolean::make(__('Show'), 'isShow')
                 ->required(),
 
+                \Laravel\Nova\Fields\Number::make(__('Score'), 'score')
+                ->min(0)
+                ->max(100)
+                ->default(0),
+ 
+             ActivityScores::make()
+                 ->withMeta(['model' => $this->model()])
+                 ->canSee(function() {
+                     return ($this->score > 0) ? true : false;
+                 }),
+ 
+             OrderField::make(__("Order"), 'order'),
+ 
+             \Laravel\Nova\Fields\Number::make(__("Order"), 'order')
+                 ->hideWhenCreating(),
+
+            Heading::make('Content'),
+
             InlineMorphTo::make(__("Activity Type"), 'Activityable')->types([
                 Divider::class,
                 \App\Nova\Text::class,
+                H5P::class,
                 File::class,
                 Link::class,
                 Homework::class,
@@ -130,24 +149,6 @@ class Activity extends Resource
 
             \Laravel\Nova\Fields\File::make('Original File', 'original_file'),
                 //->required(),
-
-           \Laravel\Nova\Fields\Number::make(__('Score'), 'score')
-               ->min(0)
-               ->max(100)
-               ->default(0),
-
-            ActivityScores::make()
-                ->withMeta(['model' => $this->model()])
-                ->canSee(function() {
-                    return ($this->score > 0) ? true : false;
-                }),
-
-            OrderField::make(__("Order"), 'order'),
-
-            \Laravel\Nova\Fields\Number::make(__("Order"), 'order')
-                ->hideWhenCreating(),
-
-
 
             Heading::make('Meta'),
 
@@ -200,5 +201,15 @@ class Activity extends Resource
     public function actions(Request $request)
     {
         return [];
+    }
+
+    /**
+     * Get the parent to be displayed in the breadcrumbs.
+     *
+     * @return \Illuminate\Database\Eloquent\Model|null
+     */
+    public function breadcrumbParent()
+    {
+        return $this->model()->topic;
     }
 }
