@@ -48,7 +48,7 @@ class Text extends Resource
      */
     public static function label()
     {
-        return __('Texts');
+        return __('Text');
     }
 
     /**

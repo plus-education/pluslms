@@ -91,17 +91,11 @@ class Topic extends Resource
 
             BelongsTo::make(__('Course'), 'Course', Course::class),
 
-            //NestedForm::make(__('Activities'), 'activities', Activity::class),
-
-            //NestedForm::make(__('Weekly Plannings'), 'weeklyPlannings', WeeklyPlanning::class),
-
-            //Heading::make('Tools'),
-
             TeacherTopicComment::make(),
 
             HasMany::make(__('Activities'), 'Activities', Activity::class),
 
-            HasMany::make(__('Weekly Plans'), 'weeklyPlannings', WeeklyPlanning::class),
+            //HasMany::make(__('Weekly Plans'), 'weeklyPlannings', WeeklyPlanning::class),
 
             OrderField::make(__('Order'), 'order'),
 
@@ -123,6 +117,7 @@ class Topic extends Resource
                  return "/topicGradebook/{$this->id}" ;
              })
                  ->hideWhenUpdating()
+                 ->hideFromDetail()
                  ->type('link')
                  ->style('grey')
                  ->attributes(['target' => '_blank']),
@@ -131,6 +126,7 @@ class Topic extends Resource
                 return "/courses/topic/{$this->id}" ;
             })
                 ->hideWhenUpdating()
+                ->hideFromDetail()
                 ->type('link')  // fill, outline, link
                 ->style('grey')
                 ->attributes(['target' => '_blank']),

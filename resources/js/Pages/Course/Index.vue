@@ -1,3 +1,7 @@
+<script setup>
+    import { Link } from "@inertiajs/inertia-vue3";
+</script>
+
 <template>
     <app-layout>
         <template #header>
@@ -17,7 +21,7 @@
                     <span class="text-sm text-white">Group: {{ course.group.name }}</span>
                 </div>
 
-                <div class="mt-4" v-if="course.classLink !== null  || course.classLink !== ''">
+                <div class="mt-4" v-if="course.classLink !== null && course.classLink !== ''">
                     <a
                         :href="course.classLink"
                         target="_blank"
@@ -32,16 +36,16 @@
             </div>
 
             <div class="mt-6">
-                <inertia-link
-                    v-for="topic in course.topics"
-                    :key="topic.id"
-                    :href="`/courses/topic/${topic.id}`"
-                    v-if="topic.isShow"
-                >
-                    <div class="bg-white p-4 shadow rounded-lg mb-4">
-                            {{ topic.name}}
-                    </div>
-                </inertia-link>
+                <template :key="topic.id" v-for="topic in course.topics">
+                    <Link
+                        :href="`/courses/topic/${topic.id}`"
+                        v-if="topic.isShow"
+                    >
+                        <div class="bg-white p-4 shadow rounded-lg mb-4">
+                                {{ topic.name}}
+                        </div>
+                    </Link>
+                </template>
             </div>
         </section>
     </app-layout>

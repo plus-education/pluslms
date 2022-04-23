@@ -19,7 +19,7 @@
                             </jet-nav-link>
 
 
-                            <jet-nav-link
+                            <!--<jet-nav-link
                                 href="/student/myCalendar"
                                 :active="$page.props.currentRouteName == 'activities'">
                                 <div class="flex items-center">
@@ -33,9 +33,17 @@
                                         My Activities
                                     </div>
                                 </div>
+                            </jet-nav-link>-->
+
+                            <jet-nav-link
+                                v-if="$page.props.user.group != null"
+                                :href="`/groupGradebook/gradebook/`+ $page.props.user.group.id +`/` + $page.props.user.id"
+                                target="_blank"
+                            >
+                                Progress
                             </jet-nav-link>
 
-                            <a
+                            <!--<a
                                 v-if="$page.props.user.group != null"
                                 :href="`/groupGradebook/gradebook/`+ $page.props.user.group.id +`/` + $page.props.user.id"
                                 target="_blank"
@@ -54,7 +62,7 @@
                                         Grades
                                     </div>
                                 </div>
-                            </a>
+                            </a>-->
 
                         </div>
                     </div>
@@ -85,42 +93,6 @@
                                         </jet-dropdown-link>
 
                                         <div class="border-t border-gray-100"></div>
-
-                                        <!-- Team Management -->
-                                        <template v-if="$page.props.jetstream.hasTeamFeatures">
-                                            <div class="block px-4 py-2 text-xs text-gray-400">
-                                                Manage Team
-                                            </div>
-
-                                            <!-- Team Settings -->
-                                            <jet-dropdown-link :href="'/teams/' + $page.props.user.current_team.id">
-                                                Team Settings
-                                            </jet-dropdown-link>
-
-                                            <jet-dropdown-link href="/teams/create" v-if="$page.props.jetstream.canCreateTeams">
-                                                Create New Team
-                                            </jet-dropdown-link>
-
-                                            <div class="border-t border-gray-100"></div>
-
-                                            <!-- Team Switcher -->
-                                            <div class="block px-4 py-2 text-xs text-gray-400">
-                                                Switch Teams
-                                            </div>
-
-                                            <template v-for="team in $page.props.user.all_teams">
-                                                <form @submit.prevent="switchToTeam(team)">
-                                                    <jet-dropdown-link as="button">
-                                                        <div class="flex items-center">
-                                                            <svg v-if="team.id == $page.props.user.current_team_id" class="mr-2 h-5 w-5 text-green-400" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                                            <div>{{ team.name }}</div>
-                                                        </div>
-                                                    </jet-dropdown-link>
-                                                </form>
-                                            </template>
-
-                                            <div class="border-t border-gray-100"></div>
-                                        </template>
 
                                         <!-- Authentication -->
                                         <form @submit.prevent="logout">
@@ -186,42 +158,6 @@
                                 Logout
                             </jet-responsive-nav-link>
                         </form>
-
-                        <!-- Team Management -->
-                        <template v-if="$page.props.jetstream.hasTeamFeatures">
-                            <div class="border-t border-gray-200"></div>
-
-                            <div class="block px-4 py-2 text-xs text-gray-400">
-                                Manage Team
-                            </div>
-
-                            <!-- Team Settings -->
-                            <jet-responsive-nav-link :href="'/teams/' + $page.props.user.current_team.id" :active="$page.props.currentRouteName == 'teams.show'">
-                                Team Settings
-                            </jet-responsive-nav-link>
-
-                            <jet-responsive-nav-link href="/teams/create" :active="$page.props.currentRouteName == 'teams.create'">
-                                Create New Team
-                            </jet-responsive-nav-link>
-
-                            <div class="border-t border-gray-200"></div>
-
-                            <!-- Team Switcher -->
-                            <div class="block px-4 py-2 text-xs text-gray-400">
-                                Switch Teams
-                            </div>
-
-                            <template v-for="team in $page.props.user.all_teams">
-                                <form @submit.prevent="switchToTeam(team)">
-                                    <jet-responsive-nav-link as="button">
-                                        <div class="flex items-center">
-                                            <svg v-if="team.id == $page.props.user.current_team_id" class="mr-2 h-5 w-5 text-green-400" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                            <div>{{ team.name }}</div>
-                                        </div>
-                                    </jet-responsive-nav-link>
-                                </form>
-                            </template>
-                        </template>
                     </div>
                 </div>
             </div>

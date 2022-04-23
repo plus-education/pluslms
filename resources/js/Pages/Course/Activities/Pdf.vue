@@ -37,7 +37,7 @@
 </template>
 
 <script>
-    import pdf from 'vue-pdf'
+    import pdf from '@jbtje/vue3pdf'
     import Comments from "../Comments";
 
 

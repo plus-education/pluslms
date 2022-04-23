@@ -17,7 +17,8 @@ use \App\Http\Controllers\Dashboard,
     \App\Http\Controllers\Student\ExerciseController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('dashboard');
+    //return view('welcome');
 });
 
 Route::get('/logo', function () {

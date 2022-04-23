@@ -1,3 +1,7 @@
+<script setup>
+    import { Link } from "@inertiajs/inertia-vue3";
+</script>
+
 <template>
     <div>
         <!--Sidebar with Dimmer -->
@@ -95,11 +99,11 @@
                 >
                     <ol class="list-reset flex text-grey-dark">
                         <li>
-                            <inertia-link href="/dashboard" class="font-bold">Home</inertia-link>
+                            <Link href="/dashboard" class="font-bold">Home</Link>
                         </li>
                         <li><span class="mx-2">/</span></li>
                         <li>
-                            <inertia-link :href="`/courses/${topic.course.id}`" class="font-bold">{{ topic.course.name }}</inertia-link>
+                            <Link :href="`/courses/${topic.course.id}`" class="font-bold">{{ topic.course.name }}</Link>
                         </li>
                         <li><span class="mx-2">/</span></li>
                         <li>

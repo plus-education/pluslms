@@ -1,3 +1,7 @@
+<script setup>
+    import { Link } from "@inertiajs/inertia-vue3";
+</script>
+
 <template>
        <div>
            <h1 class="text-lg mt-6 mb-4 text-gray-800">My Courses</h1>
@@ -12,7 +16,7 @@
            </section>
 
            <section class="grid  lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
-               <inertia-link v-for="course in filteredList"  :key="course.id"  :href="`/courses/${course.id}`">
+               <Link v-for="course in filteredList"  :key="course.id"  :href="`/courses/${course.id}`">
                    <div class="p-2  w-full lg:max-w-full lg:flex">
                        <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" :style="`background-image: url('${course.coverPath}')`" title="Woman holding a mug">
                        </div>
@@ -35,7 +39,7 @@
                            </div>
                        </div>
                    </div>
-               </inertia-link>
+               </Link>
            </section>
        </div>
 </template>

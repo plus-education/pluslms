@@ -1,6 +1,6 @@
-let mix = require('laravel-mix')
+let mix = require('laravel-mix');
 
 mix
   .setPublicPath('dist')
-  .js('resources/js/tool.js', 'js')
+  .js('resources/js/tool.js', 'js').vue()
   .sass('resources/sass/tool.scss', 'css')
