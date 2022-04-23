@@ -14,14 +14,14 @@
 
                         <!-- Navigation Links -->
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                            <jet-nav-link href="/dashboard" :active="$page.currentRouteName == 'dashboard'">
+                            <jet-nav-link href="/dashboard" :active="$page.props.currentRouteName == 'dashboard'">
                                 Dashboard
                             </jet-nav-link>
 
 
                             <jet-nav-link
                                 href="/student/myCalendar"
-                                :active="$page.currentRouteName == 'activities'">
+                                :active="$page.props.currentRouteName == 'activities'">
                                 <div class="flex items-center">
                                     <div class="flex-shrink">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -36,8 +36,8 @@
                             </jet-nav-link>
 
                             <a
-                                v-if="$page.user.group != null"
-                                :href="`/groupGradebook/gradebook/`+ $page.user.group.id +`/` + $page.user.id"
+                                v-if="$page.props.user.group != null"
+                                :href="`/groupGradebook/gradebook/`+ $page.props.user.group.id +`/` + $page.props.user.id"
                                 target="_blank"
                                 class="mt-5"
                             >
@@ -51,7 +51,7 @@
                                     </div>
 
                                     <div class="flex-1 ml-2">
-                                        Notes
+                                        Grades
                                     </div>
                                 </div>
                             </a>
@@ -66,7 +66,7 @@
                                 <jet-dropdown align="right" width="48">
                                     <template #trigger>
                                         <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition duration-150 ease-in-out">
-                                            <img class="h-8 w-8 rounded-full object-cover" :src="$page.user.profile_photo_url" :alt="$page.user.name" />
+                                            <img class="h-8 w-8 rounded-full object-cover" :src="$page.props.user.profile_photo_url" :alt="$page.props.user.name" />
                                         </button>
                                     </template>
 
@@ -80,24 +80,24 @@
                                             Profile
                                         </jet-dropdown-link>
 
-                                        <jet-dropdown-link href="/user/api-tokens" v-if="$page.jetstream.hasApiFeatures">
+                                        <jet-dropdown-link href="/user/api-tokens" v-if="$page.props.jetstream.hasApiFeatures">
                                             API Tokens
                                         </jet-dropdown-link>
 
                                         <div class="border-t border-gray-100"></div>
 
                                         <!-- Team Management -->
-                                        <template v-if="$page.jetstream.hasTeamFeatures">
+                                        <template v-if="$page.props.jetstream.hasTeamFeatures">
                                             <div class="block px-4 py-2 text-xs text-gray-400">
                                                 Manage Team
                                             </div>
 
                                             <!-- Team Settings -->
-                                            <jet-dropdown-link :href="'/teams/' + $page.user.current_team.id">
+                                            <jet-dropdown-link :href="'/teams/' + $page.props.user.current_team.id">
                                                 Team Settings
                                             </jet-dropdown-link>
 
-                                            <jet-dropdown-link href="/teams/create" v-if="$page.jetstream.canCreateTeams">
+                                            <jet-dropdown-link href="/teams/create" v-if="$page.props.jetstream.canCreateTeams">
                                                 Create New Team
                                             </jet-dropdown-link>
 
@@ -108,11 +108,11 @@
                                                 Switch Teams
                                             </div>
 
-                                            <template v-for="team in $page.user.all_teams">
+                                            <template v-for="team in $page.props.user.all_teams">
                                                 <form @submit.prevent="switchToTeam(team)">
                                                     <jet-dropdown-link as="button">
                                                         <div class="flex items-center">
-                                                            <svg v-if="team.id == $page.user.current_team_id" class="mr-2 h-5 w-5 text-green-400" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                                            <svg v-if="team.id == $page.props.user.current_team_id" class="mr-2 h-5 w-5 text-green-400" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                                             <div>{{ team.name }}</div>
                                                         </div>
                                                     </jet-dropdown-link>
@@ -150,15 +150,15 @@
             <!-- Responsive Navigation Menu -->
             <div :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown}" class="sm:hidden">
                 <div class="pt-2 pb-3 space-y-1">
-                    <jet-responsive-nav-link href="/dashboard" :active="$page.currentRouteName == 'dashboard'">
+                    <jet-responsive-nav-link href="/dashboard" :active="$page.props.currentRouteName == 'dashboard'">
                         Dashboard
                     </jet-responsive-nav-link>
 
                     <jet-responsive-nav-link
-                        href="`/groupGradebook/gradebook/`+ $page.user.group.id +`/` + $page.user.id"
-                        :active="$page.currentRouteName == 'gradebook'"
+                        href="`/groupGradebook/gradebook/`+ $page.props.user.group.id +`/` + $page.props.user.id"
+                        :active="$page.props.currentRouteName == 'gradebook'"
                     >
-                        Notas
+                        Grades
                     </jet-responsive-nav-link>
                 </div>
 
@@ -166,17 +166,17 @@
                 <div class="pt-4 pb-1 border-t border-gray-200">
                     <div class="flex items-center px-4">
                         <div class="flex-shrink-0">
-                            <img class="h-10 w-10 rounded-full" :src="$page.user.profile_photo_url" :alt="$page.user.name" />
+                            <img class="h-10 w-10 rounded-full" :src="$page.props.user.profile_photo_url" :alt="$page.props.user.name" />
                         </div>
 
                         <div class="ml-3">
-                            <div class="font-medium text-base text-gray-800">{{ $page.user.name }}</div>
-                            <div class="font-medium text-sm text-gray-500">{{ $page.user.email }}</div>
+                            <div class="font-medium text-base text-gray-800">{{ $page.props.user.name }}</div>
+                            <div class="font-medium text-sm text-gray-500">{{ $page.props.user.email }}</div>
                         </div>
                     </div>
 
                     <div class="mt-3 space-y-1">
-                        <jet-responsive-nav-link href="/user/profile" :active="$page.currentRouteName == 'profile.show'">
+                        <jet-responsive-nav-link href="/user/profile" :active="$page.props.currentRouteName == 'profile.show'">
                             Profile
                         </jet-responsive-nav-link>
 
@@ -188,7 +188,7 @@
                         </form>
 
                         <!-- Team Management -->
-                        <template v-if="$page.jetstream.hasTeamFeatures">
+                        <template v-if="$page.props.jetstream.hasTeamFeatures">
                             <div class="border-t border-gray-200"></div>
 
                             <div class="block px-4 py-2 text-xs text-gray-400">
@@ -196,11 +196,11 @@
                             </div>
 
                             <!-- Team Settings -->
-                            <jet-responsive-nav-link :href="'/teams/' + $page.user.current_team.id" :active="$page.currentRouteName == 'teams.show'">
+                            <jet-responsive-nav-link :href="'/teams/' + $page.props.user.current_team.id" :active="$page.props.currentRouteName == 'teams.show'">
                                 Team Settings
                             </jet-responsive-nav-link>
 
-                            <jet-responsive-nav-link href="/teams/create" :active="$page.currentRouteName == 'teams.create'">
+                            <jet-responsive-nav-link href="/teams/create" :active="$page.props.currentRouteName == 'teams.create'">
                                 Create New Team
                             </jet-responsive-nav-link>
 
@@ -211,11 +211,11 @@
                                 Switch Teams
                             </div>
 
-                            <template v-for="team in $page.user.all_teams">
+                            <template v-for="team in $page.props.user.all_teams">
                                 <form @submit.prevent="switchToTeam(team)">
                                     <jet-responsive-nav-link as="button">
                                         <div class="flex items-center">
-                                            <svg v-if="team.id == $page.user.current_team_id" class="mr-2 h-5 w-5 text-green-400" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                            <svg v-if="team.id == $page.props.user.current_team_id" class="mr-2 h-5 w-5 text-green-400" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                             <div>{{ team.name }}</div>
                                         </div>
                                     </jet-responsive-nav-link>
@@ -227,7 +227,7 @@
             </div>
         </nav>
 
-        <notifications position="bottom right"/>
+        <!--<notifications position="bottom right"/>-->
 
         <!-- Page Heading -->
         <header class="bg-white shadow">
@@ -242,8 +242,7 @@
         </main>
 
         <!-- Modal Portal -->
-        <portal-target name="modal" multiple>
-        </portal-target>
+        <!--<portal-target name="modal" multiple></portal-target>-->
     </div>
 </template>
 
@@ -277,7 +276,7 @@
         mounted() {
             this.getLogo()
 
-            Echo.private('App.Models.User.' + this.$page.user.id)
+            Echo.private('App.Models.User.' + this.$page.props.user.id)
                 .notification((notification) => {
                     console.log(notification)
                     this.$notify({

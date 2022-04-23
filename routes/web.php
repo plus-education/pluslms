@@ -30,7 +30,11 @@ Route::get('/studentIsNotSolvent', function() {
     return view('student_is_not_solvent');
 })->name('studentIsNotSolvent');
 
-Route::middleware(['auth:sanctum', 'verified'])->group(function() {
+Route::middleware([
+    'auth:sanctum', 
+    config('jetstream.auth_session'), 
+    'verified'
+])->group(function() {
     Route::get('/dashboard', Dashboard::class)
         ->name('dashboard');
 
@@ -81,11 +85,11 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
         return response()->json(['hasScore' => false]);
     });
     // System Comments
-    Route::get('/commnets/activity/{id}/{type}', [\App\Http\Controllers\CommentController::class, 'list']);
-    Route::get('/commnets/answers/{id}', [\App\Http\Controllers\CommentController::class, 'answers']);
+    Route::get('/comments/activity/{id}/{type}', [\App\Http\Controllers\CommentController::class, 'list']);
+    Route::get('/comments/answers/{id}', [\App\Http\Controllers\CommentController::class, 'answers']);
 
-    Route::post('/commnets/activity/{type}', [\App\Http\Controllers\CommentController::class, 'store']);
-    Route::post('/commnets/storeAnswer/{type}', [\App\Http\Controllers\CommentController::class, 'storeAnswer']);
+    Route::post('/comments/activity/{type}', [\App\Http\Controllers\CommentController::class, 'store']);
+    Route::post('/comments/storeAnswer/{type}', [\App\Http\Controllers\CommentController::class, 'storeAnswer']);
 
     Route::post('/comments/delete', [\App\Http\Controllers\CommentController::class, 'delete']);
 

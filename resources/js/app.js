@@ -1,26 +1,29 @@
 require('./bootstrap');
 
-import Vue from 'vue';
+import { createApp, h } from 'vue';
+import { createInertiaApp } from '@inertiajs/inertia-vue3';
+import { InertiaProgress } from '@inertiajs/progress';
+import { ZiggyVue } from 'ziggy';
+import { Ziggy } from './ziggy';
 
-import { InertiaApp } from '@inertiajs/inertia-vue';
-import { InertiaForm } from 'laravel-jetstream';
-import PortalVue from 'portal-vue';
-import Notifications from 'vue-notification'
+//import PortalVue from 'portal-vue';
+//import Notifications from 'vue-notification'
 
-Vue.use(require('vue-moment'));
-Vue.use(Notifications)
-Vue.use(InertiaApp);
-Vue.use(InertiaForm);
-Vue.use(PortalVue);
+//Vue.use(require('vue-moment'));
+//Vue.use(Notifications)
+//Vue.use(InertiaApp);
+//Vue.use(PortalVue);
 
 const app = document.getElementById('app');
 
-new Vue({
-    render: (h) =>
-        h(InertiaApp, {
-            props: {
-                initialPage: JSON.parse(app.dataset.page),
-                resolveComponent: (name) => require(`./Pages/${name}`).default,
-            },
-        }),
-}).$mount(app);
+createInertiaApp({
+    resolve: name => require(`./Pages/${name}`),
+    setup({ el, app, props, plugin }) {
+        createApp({ render: () => h(app, props) })
+            .use(plugin)
+            .use(ZiggyVue, Ziggy)
+            .mount(el)
+    },
+});
+
+InertiaProgress.init({ color: '#4B5563' });

@@ -8,7 +8,7 @@
             @endif
 
             <div class="truncate">
-                {{ $team->name }}
+                {{ $team.name }}
             </div>
         </div>
     </jet-dropdown-link>

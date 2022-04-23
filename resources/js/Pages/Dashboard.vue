@@ -13,17 +13,17 @@
                        <div class="w-24 m-auto">
                            <img
                                class="w-24 h-24 rounded-full mb-6"
-                               :src="$page.user.profile_photo_url"
+                               :src="$page.props.user.profile_photo_url"
                                alt=""
                            >
                        </div>
                     </div>
                     <div>
                         <h3 class="text-center font-bold text-lg text-gray-700">
-                            {{ $page.user.name}}
+                            {{ $page.props.user.name}}
                         </h3>
                         <div class="text-center  text-gray-500">
-                            <strong>Code: </strong> {{ $page.user.code}}
+                            <strong>Code: </strong> {{ $page.props.user.code}}
                         </div>
                     </div>
                 </div>
@@ -63,7 +63,10 @@
 
         props: {
             courses: Array,
-            group: Object,
+            group: {
+                type: Object,
+                default: {}
+            },
         },
     }
 </script>
