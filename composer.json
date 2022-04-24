@@ -13,7 +13,7 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^8.1.2",
+        "php": "^8.0",
         "addgod/nova-nested-breadcrumbs": "^1.0",
         "advoor/nova-editor-js": "^2.0.3",
         "barryvdh/laravel-dompdf": "^0.8.7",
@@ -74,9 +74,7 @@
         "vyuldashev/nova-permission": "^2.9",
         "whchi/nova-tags-input": "^0.0.5",
         "whitecube/nova-flexible-content": "^0.2.5",
-        "yassi/nova-nested-form": "^3.0",
-        "test/test-tool": "*",
-        "test/test-resource-tool": "*"
+        "yassi/nova-nested-form": "^3.0"
     },
     "repositories": [
         {
