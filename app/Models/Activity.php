@@ -126,4 +126,42 @@ class Activity extends Model implements Sortable
             ->first();
     }
 
+    public function getPrevNextIdsAttribute()
+    {
+        $res = (object) [];
+
+        // Get an array of activity IDs
+        $activities = $this->topic?->activities?->map(function ($item, $key) {
+                    return $item->id;
+                });
+
+        $index = $activities->search($this->id);  // Get index of current activity
+
+        $prev = $activities->get($index - 1);
+        $next = $activities->get($index + 1);
+
+        if ($prev === null) {
+            $prev_topic = $this->topic->prev_next_ids->prev;
+            $prev = Topic::find($prev_topic)?->activities?->last()?->id;
+
+            if ($prev !== null) {
+                $res->prev = (object) ['id' => $prev, 'topic_id' => $prev_topic];
+            }
+        } else {
+            $res->prev = (object) ['id' => $prev];
+        }
+
+        if ($next === null) {
+            $next_topic = $this->topic->prev_next_ids->next;
+            $next = Topic::find($next_topic)?->activities?->first()?->id;
+
+            if ($next !== null) {
+                $res->next = (object) ['id' => $next, 'topic_id' => $next_topic];
+            }
+        } else {
+            $res->next = (object) ['id' => $next];
+        }
+
+        return $res;
+    }
 }

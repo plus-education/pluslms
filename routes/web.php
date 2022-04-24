@@ -44,7 +44,7 @@ Route::middleware([
     Route::get('/courses/{id}', [CoursesController::class, 'index'])
         ->name('courses.index');
 
-    Route::get('/courses/topic/{id}', [CoursesController::class, 'topic'])
+    Route::get('/courses/topic/{id}/{activity_id?}', [CoursesController::class, 'topic'])
         ->name('courses.topic');
 
     Route::get('/courses/topic/activities/{id}', [CoursesController::class, 'topicActivities'])
@@ -85,9 +85,12 @@ Route::middleware([
 
         return response()->json(['hasScore' => false]);
     });
+    
     // System Comments
-    Route::get('/comments/activity/{id}/{type}', [\App\Http\Controllers\CommentController::class, 'list']);
-    Route::get('/comments/answers/{id}', [\App\Http\Controllers\CommentController::class, 'answers']);
+    Route::get('/comments/activity/{id}/{type}', [\App\Http\Controllers\CommentController::class, 'list'])
+        ->name('comments.activity');
+    Route::get('/comments/answers/{id}', [\App\Http\Controllers\CommentController::class, 'answers'])
+        ->name('comments.answers');
 
     Route::post('/comments/activity/{type}', [\App\Http\Controllers\CommentController::class, 'store']);
     Route::post('/comments/storeAnswer/{type}', [\App\Http\Controllers\CommentController::class, 'storeAnswer']);
@@ -97,7 +100,8 @@ Route::middleware([
     Route::get('/groupGradebook/{id}', [\App\Http\Controllers\GroupGradebookController::class, 'index']);
 
     Route::get('/groupGradebook/gradebook/{group}/{student}', [\App\Http\Controllers\GroupGradebookController::class, 'gradebook'])
-        ->middleware('studentIsSolvent');
+        ->middleware('studentIsSolvent')
+        ->name('groupGradebook.gradebook');
 
     Route::get('/student/myCalendar', function () {
         return \Inertia\Inertia::render('MyCalendar');
@@ -134,8 +138,11 @@ Route::middleware([
 
     // Editor Js
     Route::post('/editorjs/uploadFile', [App\Http\Controllers\EditorJsController::class, 'uploadFile']);
-});
 
+    Route::get('/nav/topic/activity/{id}', function ($id) {
+        return \App\Models\Activity::find($id)?->prev_next_ids;
+    })->name('nav.topic.activity');
+});
 
 Route::get('/gradebook/api', \App\Http\Controllers\GradebookController::class);
 

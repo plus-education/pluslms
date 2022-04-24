@@ -1,116 +1,20 @@
 <script setup>
-    import { Link } from "@inertiajs/inertia-vue3";
+import AppWithSidebarLayout from '@/Layouts/AppWithSidebarLayout.vue';
+import { CButton } from '@coreui/vue'
+import { Link } from '@inertiajs/inertia-vue3'
 </script>
 
 <template>
-    <div>
-        <!--Sidebar with Dimmer -->
-        <div class="fixed inset-0 flex z-40"
-            :class="[open ? 'w-full' : 'w-12']"
-        >
-            <!-- Sidebar -->
-            <div
-                class="absolute flex top-0 h-screen z-20"
-                :class="[right ? 'right-0 flex-row' : 'left-0 flex-row-reverse']"
-            >
-                <!--Drawer -->
-                <button
-                    @click.prevent="toggle()"
-                    class="pulse p-1 my-auto rounded text-white bg-green-600 text-center focus:outline-none hover:bg-gray-500 transition-color duration-300"
-                >
-                    <svg v-if="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-
-                    <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z" />
-                    </svg>
-                </button>
-
-                <!-- Sidebar Content -->
-                <div
-                    ref="content"
-                    class="transition-all duration-700 overflow-y-scroll bg-white overflow-hidden flex items-top"
-                    :class="[open ? 'block' : 'hidden']"
-                >
-
-                    <section class="">
-                        <div v-for="activity in topic.activities"
-                             :key="activity.id"
-                             v-show="activity.isShow == 1"
-                             class="flex items-center  border-b-2 border-gray-100 cursor-pointer"
-                             @click="changeActivity(activity)"
-                        >
-                            <div v-if="activity.type == 'DIVIDER'" class="flex bg-yellow-300 w-full h-full py-4 px-2">
-                                <div class="flex-shrink mr-2" v-html="icons[activity.type]"></div>
-                                <div class="flex-1 text-lg font-bold text-gray-800" >
-                                    {{ activity.name }}
-                                </div>
-                            </div>
-
-                            <div v-else class="flex w-full h-full py-4 px-2" :class="activity.activeClass">
-                                <div class="flex-shrink mr-2" v-html="icons[activity.type]">
-
-                                </div>
-                                <div class="flex-1 text-gray-800">
-                                    {{ activity.name }}
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <a class="flex w-full py-4 px-2 bg-green-500" :href="`/courseGradebook/${topic.id}`" >
-                            <div class="flex-shrink mr-2">
-                                <svg  xmlns="http://www.w3.org/2000/svg" class="h-6 w-6  text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                                    <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
-                                </svg>
-                            </div>
-                            <div class="flex-1 text-white font-extrabold">
-                                Punteo Acumulado
-                            </div>
-                        </a>
-                    </section>
-
-
-                </div>
-            </div>
-
-            <transition name="fade">
-                <!-- Dimmer -->
-                <div
-                    v-if="dimmer && open"
-                    @click="toggle()"
-                    class="flex-1 bg-gray-400 bg-opacity-75 active:outline-none z-10"
-                />
-            </transition>
-        </div>
-
-        <!-- Page Content -->
-        <div
-            class="absolute inset-1/2 rounded w-screen h-screen transform -translate-x-1/2 -translate-y-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center"
-        >
-
-            <div class="p-8 flex-1  max-h-full">
-                <nav
-                    class="block text-sm text-left text-gray-600 bg-gray-100 shadow  bg-opacity-10 h-12 flex items-center p-4 rounded-md container m-auto  mb-6 "
-                    role="alert"
-                >
-                    <ol class="list-reset flex text-grey-dark">
-                        <li>
-                            <Link href="/dashboard" class="font-bold">Home</Link>
-                        </li>
-                        <li><span class="mx-2">/</span></li>
-                        <li>
-                            <Link :href="`/courses/${topic.course.id}`" class="font-bold">{{ topic.course.name }}</Link>
-                        </li>
-                        <li><span class="mx-2">/</span></li>
-                        <li>
-                            {{ topic.name }}
-                        </li>
-                    </ol>
-                </nav>
+    <AppWithSidebarLayout 
+        :title="title" 
+        :topic="topic" 
+        :topics="topics"
+        :fullHeight="true"
+        :icons="icons"
+        @change-activity="changeActivity"
+    >
+        <div class="max-w-7xl mx-auto md:px-6 lg:px-8">
+            <div class="md:p-4 bg-white shadow-xl sm:rounded-lg">
 
                 <div v-if="!activity">
                     <h1 class="text-2xl text-gray-800">
@@ -119,7 +23,7 @@
                     <hr>
                 </div>
 
-                <div v-else class=" pb-4 mb-8 container m-auto  bg-white shadow rounded-lg overflow-scroll">
+                <div v-else class="pb-4 mb-8 container m-auto bg-white shadow rounded-lg"><!-- overflow-scroll">-->
 
                     <divider-activity v-if="activity.type == 'DIVIDER'" :activity="activity" :user="user"></divider-activity>
 
@@ -143,15 +47,26 @@
 
                 </div>
 
-            </div>
 
+                <div class="flex justify-between">
+                    <Link class="btn btn-outline-info" :href="prev_url" v-if="prev_url">Prev</Link>
+                    <div v-else></div>
+
+                    <form 
+                        class="pl-2" 
+                        @submit.prevent="finish_task(course.slug, section.id, topic.id)" 
+                        v-if="next_url"
+                    >
+                        <CButton color="info" variant="outline" type="submit">Next</CButton>
+                    </form>
+                </div>
+            </div>
         </div>
-    </div>
+    </AppWithSidebarLayout>
 </template>
 
 <script>
     import sidebarIcons from './SidebarIcons.js'
-    import AppLayout from './../../Layouts/AppLayout'
 
     import DividerActivity from "./Activities/Divider"
     import ExerciseActivity from "./Activities/Exercise"
@@ -167,7 +82,6 @@
 
     export default {
         components: {
-            AppLayout,
             FileActivity,
             H5pActivity,
             DividerActivity,
@@ -183,7 +97,9 @@
 
         props: {
             topic: Object,
-            user: Object
+            topics: Object,
+            user: Object,
+            //defaultactivity: Object,
         },
 
         data: () => {
@@ -192,17 +108,23 @@
               dimmer: true,
               right: false,
               activity: Object,
-              icons: Object
+              icons: Object,
+              prev_url: String,
+              next_url: String,
           }
         },
 
         created() {
             this.activity = this.initializeActivity()
+            if (this.activity) {
+                this.activity.activeClass = 'active-activity'
+            }
             this.setDivider()
         },
 
         mounted() {
-            this.icons = sidebarIcons
+            this.icons = sidebarIcons;
+            this.getNav();
         },
 
         methods: {
@@ -210,7 +132,21 @@
                 this.open = !this.open;
             },
 
+            getNav: function() {
+                if (!this.activity.id) return;
+                
+                axios.get(route('nav.topic.activity', this.activity.id)).then(response => {
+                    console.log(response.data);
+                    this.prev_url = route('');
+                    //this.comments = response.data
+                })
+            },
+
             initializeActivity: function() {
+                /*if (this.defaultactivity) {
+                    return this.activity = this.defaultactivity;
+                }*/
+
                 return (this.topic.activities.length > 0) ? this.activity = this.topic.activities[0] : false
             },
 
@@ -233,8 +169,8 @@
             },
 
             changeActivity: function(selectedActivity) {
-
-                this.selectNewActivity(selectedActivity)
+                this.selectNewActivity(selectedActivity);
+                this.getNav(this.activity);
                 //this.showDividerActivities(selectedActivity)
             },
 

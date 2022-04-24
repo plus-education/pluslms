@@ -20,10 +20,10 @@
                     </div>
                     <div>
                         <h3 class="text-center font-bold text-lg text-gray-700">
-                            {{ $page.props.user.name}}
+                            {{ $page.props.user.name }}
                         </h3>
-                        <div class="text-center  text-gray-500">
-                            <strong>Code: </strong> {{ $page.props.user.code}}
+                        <div class="text-center text-gray-500" v-if="$page.props.user.code">
+                            <strong>Code: </strong> {{ $page.props.user.code }}
                         </div>
                     </div>
                 </div>

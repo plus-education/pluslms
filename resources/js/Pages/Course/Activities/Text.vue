@@ -9,7 +9,7 @@
       </div>
 
       <div class="mt-4">
-          <div class="px-2 lg:px-24  md:px-8" v-html="activity.activityable.html">
+          <div id="activity-content" class="px-2 lg:px-24  md:px-8" v-html="activity.activityable.html">
           </div>
       </div>
 
@@ -33,6 +33,11 @@
 </script>
 
 <style>
+    #activity-content ul,
+    #activity-content li {
+        list-style-type: circle;
+    }
+
     .editor-js{
         width:100%;
         background-color:#fff;

@@ -69,4 +69,23 @@ class Topic extends Model implements Sortable
 
         return $today->between($this->startDate, $this->endDate);
     }
+
+    public function getPrevNextIdsAttribute()
+    {
+        // Map section object to an array of just their ids
+        $topics = $this->course->topics->map(function ($item, $key) {
+            return $item->id;
+        });
+        $index = $topics->search($this->id);  // Get index of current section
+
+        $res = (object) [];
+
+        // Get previous and next, returns null if it isn't found
+        $prev = $topics->get($index - 1);
+        $next = $topics->get($index + 1);
+        $res->prev = $prev;
+        $res->next = $next;
+
+        return $res;
+    }
 }

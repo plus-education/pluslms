@@ -42,7 +42,7 @@
                         v-if="topic.isShow"
                     >
                         <div class="bg-white p-4 shadow rounded-lg mb-4">
-                                {{ topic.name}}
+                                {{ topic.name }}
                         </div>
                     </Link>
                 </template>

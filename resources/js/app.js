@@ -6,6 +6,8 @@ import { InertiaProgress } from '@inertiajs/progress';
 import { ZiggyVue } from 'ziggy';
 import { Ziggy } from './ziggy';
 
+//import '@coreui/coreui/dist/css/coreui.min.css';
+
 //import PortalVue from 'portal-vue';
 //import Notifications from 'vue-notification'
 

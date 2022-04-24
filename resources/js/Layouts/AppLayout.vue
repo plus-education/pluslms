@@ -1,81 +1,101 @@
+<script setup>
+import { ref } from 'vue';
+import { Inertia } from '@inertiajs/inertia';
+import { Head, Link } from '@inertiajs/inertia-vue3';
+//import Alerts from '@/Components/Alerts.vue';
+import ResponsiveLinks from '@/Layouts/ResponsiveLinks.vue';
+import JetApplicationMark from '@/Jetstream/ApplicationMark.vue';
+import JetBanner from '@/Jetstream/Banner.vue';
+import JetDropdown from '@/Jetstream/Dropdown.vue';
+import JetDropdownLink from '@/Jetstream/DropdownLink.vue';
+import JetNavLink from '@/Jetstream/NavLink.vue';
+import JetResponsiveNavLink from '@/Jetstream/ResponsiveNavLink.vue';
+
+defineProps({
+    title: String,
+    fullHeight: {
+        type: Boolean,
+        default: false
+    },
+    hasSidebar: {
+        type: Boolean,
+        default: false
+    },
+});
+
+const showingNavigationDropdown = ref(false);
+
+const switchToTeam = (team) => {
+    Inertia.put(route('current-team.update'), {
+        team_id: team.id,
+    }, {
+        preserveState: false,
+    });
+};
+
+const logout = () => {
+    Inertia.post(route('logout'));
+};
+</script>
+
 <template>
-    <div class="min-h-screen bg-gray-100">
-        <nav class="bg-white border-b border-gray-100">
-            <!-- Primary Navigation Menu -->
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between h-16">
-                    <div class="flex">
-                        <!-- Logo -->
-                        <div class="flex-shrink-0 flex items-center">
-                            <a href="/dashboard">
-                                <img :src="logo" alt="" class="w-36">
-                            </a>
+    <div>
+        <Head :title="title" />
+
+        <JetBanner />
+
+        <div class="min-h-screen bg-gray-100" :class="{ 'h-screen': fullHeight, 'overflow-y-hidden': fullHeight }">
+            <nav class="bg-white border-b border-gray-100">
+                <!-- Primary Navigation Menu -->
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex justify-between h-16">
+                        <div class="flex">
+                            <!-- Logo -->
+                            <div class="shrink-0 flex items-center">
+                                <Link :href="route('dashboard')">
+                                    <JetApplicationMark class="block h-9 w-auto" />
+                                </Link>
+                            </div>
+
+                            <!-- Navigation Links -->
+                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                <JetNavLink :href="route('dashboard')" :active="route().current('dashboard')">
+                                    Dashboard
+                                </JetNavLink>
+
+                                <JetNavLink
+                                v-if="$page.props.user.group != null"
+                                :href="route('groupGradebook.gradebook', [$page.props.user.group.id, $page.props.user.id])"
+                                target="_blank"
+                                >
+                                    Progress
+                                </JetNavLink>
+                            </div>
                         </div>
 
-                        <!-- Navigation Links -->
-                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                            <jet-nav-link href="/dashboard" :active="$page.props.currentRouteName == 'dashboard'">
-                                Dashboard
-                            </jet-nav-link>
-
-
-                            <!--<jet-nav-link
-                                href="/student/myCalendar"
-                                :active="$page.props.currentRouteName == 'activities'">
-                                <div class="flex items-center">
-                                    <div class="flex-shrink">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                        </svg>
-                                    </div>
-
-                                    <div class="flex-1 ml-2">
-                                        My Activities
-                                    </div>
-                                </div>
-                            </jet-nav-link>-->
-
-                            <jet-nav-link
-                                v-if="$page.props.user.group != null"
-                                :href="`/groupGradebook/gradebook/`+ $page.props.user.group.id +`/` + $page.props.user.id"
-                                target="_blank"
-                            >
-                                Progress
-                            </jet-nav-link>
-
-                            <!--<a
-                                v-if="$page.props.user.group != null"
-                                :href="`/groupGradebook/gradebook/`+ $page.props.user.group.id +`/` + $page.props.user.id"
-                                target="_blank"
-                                class="mt-5"
-                            >
-                                <div class="flex items-center">
-                                    <div class="flex-shrink">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                                            <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
-                                        </svg>
-                                    </div>
-
-                                    <div class="flex-1 ml-2">
-                                        Grades
-                                    </div>
-                                </div>
-                            </a>-->
-
-                        </div>
-                    </div>
-
-                    <div class="flex">
-                        <!-- Settings Dropdown -->
                         <div class="hidden sm:flex sm:items-center sm:ml-6">
+                            <!-- Settings Dropdown -->
                             <div class="ml-3 relative">
-                                <jet-dropdown align="right" width="48">
+                                <JetDropdown align="right" width="48">
                                     <template #trigger>
-                                        <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition duration-150 ease-in-out">
-                                            <img class="h-8 w-8 rounded-full object-cover" :src="$page.props.user.profile_photo_url" :alt="$page.props.user.name" />
+                                        <button v-if="$page.props.jetstream.managesProfilePhotos" class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
+                                            <img class="h-8 w-8 rounded-full object-cover" :src="$page.props.user.profile_photo_url" :alt="$page.props.user.name">
                                         </button>
+
+                                        <span v-else class="inline-flex rounded-md">
+                                            <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition">
+                                                {{ $page.props.user.name }}
+
+                                                <svg
+                                                    class="ml-2 -mr-0.5 h-4 w-4"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 20 20"
+                                                    fill="currentColor"
+                                                >
+                                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                                </svg>
+                                            </button>
+                                        </span>
                                     </template>
 
                                     <template #content>
@@ -84,171 +104,77 @@
                                             Manage Account
                                         </div>
 
-                                        <jet-dropdown-link href="/user/profile">
+                                        <JetDropdownLink :href="route('profile.show')">
                                             Profile
-                                        </jet-dropdown-link>
+                                        </JetDropdownLink>
 
-                                        <jet-dropdown-link href="/user/api-tokens" v-if="$page.props.jetstream.hasApiFeatures">
+                                        <JetDropdownLink v-if="$page.props.jetstream.hasApiFeatures" :href="route('api-tokens.index')">
                                             API Tokens
-                                        </jet-dropdown-link>
+                                        </JetDropdownLink>
 
-                                        <div class="border-t border-gray-100"></div>
+                                        <div class="border-t border-gray-100" />
 
                                         <!-- Authentication -->
                                         <form @submit.prevent="logout">
-                                            <jet-dropdown-link as="button">
-                                                Logout
-                                            </jet-dropdown-link>
+                                            <JetDropdownLink as="button">
+                                                Log Out
+                                            </JetDropdownLink>
                                         </form>
                                     </template>
-                                </jet-dropdown>
+                                </JetDropdown>
                             </div>
                         </div>
+
                         <!-- Hamburger -->
                         <div class="-mr-2 flex items-center sm:hidden">
-                            <button @click="showingNavigationDropdown = ! showingNavigationDropdown" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
-                                <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                                    <path :class="{'hidden': showingNavigationDropdown, 'inline-flex': ! showingNavigationDropdown }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                                    <path :class="{'hidden': ! showingNavigationDropdown, 'inline-flex': showingNavigationDropdown }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                            <button class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition" @click="showingNavigationDropdown = ! showingNavigationDropdown">
+                                <svg
+                                    class="h-6 w-6"
+                                    stroke="currentColor"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        :class="{'hidden': showingNavigationDropdown, 'inline-flex': ! showingNavigationDropdown }"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M4 6h16M4 12h16M4 18h16"
+                                    />
+                                    <path
+                                        :class="{'hidden': ! showingNavigationDropdown, 'inline-flex': showingNavigationDropdown }"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M6 18L18 6M6 6l12 12"
+                                    />
                                 </svg>
                             </button>
                         </div>
-                        <!-- Notifications -->
-                        <notifications-bell></notifications-bell>
                     </div>
                 </div>
-            </div>
 
-            <!-- Responsive Navigation Menu -->
-            <div :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown}" class="sm:hidden">
-                <div class="pt-2 pb-3 space-y-1">
-                    <jet-responsive-nav-link href="/dashboard" :active="$page.props.currentRouteName == 'dashboard'">
-                        Dashboard
-                    </jet-responsive-nav-link>
-
-                    <jet-responsive-nav-link
-                        href="`/groupGradebook/gradebook/`+ $page.props.user.group.id +`/` + $page.props.user.id"
-                        :active="$page.props.currentRouteName == 'gradebook'"
-                    >
-                        Grades
-                    </jet-responsive-nav-link>
+                <!-- Responsive Navigation Menu -->
+                <div :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown, 'h-screen': hasSidebar}" class="sm:hidden">
+                    <ResponsiveLinks @logout="logout" />
+                    <template v-if="hasSidebar">
+                        <slot name="sidebar" />
+                    </template>
                 </div>
+            </nav>
 
-                <!-- Responsive Settings Options -->
-                <div class="pt-4 pb-1 border-t border-gray-200">
-                    <div class="flex items-center px-4">
-                        <div class="flex-shrink-0">
-                            <img class="h-10 w-10 rounded-full" :src="$page.props.user.profile_photo_url" :alt="$page.props.user.name" />
-                        </div>
-
-                        <div class="ml-3">
-                            <div class="font-medium text-base text-gray-800">{{ $page.props.user.name }}</div>
-                            <div class="font-medium text-sm text-gray-500">{{ $page.props.user.email }}</div>
-                        </div>
-                    </div>
-
-                    <div class="mt-3 space-y-1">
-                        <jet-responsive-nav-link href="/user/profile" :active="$page.props.currentRouteName == 'profile.show'">
-                            Profile
-                        </jet-responsive-nav-link>
-
-                        <!-- Authentication -->
-                        <form method="POST" @submit.prevent="logout">
-                            <jet-responsive-nav-link as="button">
-                                Logout
-                            </jet-responsive-nav-link>
-                        </form>
-                    </div>
+            <!-- Page Heading -->
+            <header v-if="$slots.header" class="bg-white shadow">
+                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                    <slot name="header" />
                 </div>
-            </div>
-        </nav>
+            </header>
 
-        <!--<notifications position="bottom right"/>-->
-
-        <!-- Page Heading -->
-        <header class="bg-white shadow">
-            <div class="max-w-7xl mx-auto py-2 px-4 sm:px-6 lg:px-8">
-                <slot name="header"></slot>
-            </div>
-        </header>
-
-        <!-- Page Content -->
-        <main>
-            <slot></slot>
-        </main>
-
-        <!-- Modal Portal -->
-        <!--<portal-target name="modal" multiple></portal-target>-->
+            <!-- Page Content -->
+            <main>
+                <!--<Alerts />-->
+                <slot />
+            </main>
+        </div>
     </div>
 </template>
-
-<script>
-    import JetApplicationLogo from './../Jetstream/ApplicationLogo'
-    import JetApplicationMark from './../Jetstream/ApplicationMark'
-    import JetDropdown from './../Jetstream/Dropdown'
-    import JetDropdownLink from './../Jetstream/DropdownLink'
-    import JetNavLink from './../Jetstream/NavLink'
-    import JetResponsiveNavLink from './../Jetstream/ResponsiveNavLink'
-    import NotificationsBell from "./Notifications";
-
-    export default {
-        components: {
-            JetApplicationLogo,
-            JetApplicationMark,
-            JetDropdown,
-            JetDropdownLink,
-            JetNavLink,
-            JetResponsiveNavLink,
-            NotificationsBell
-        },
-
-        data() {
-            return {
-                logo: null,
-                showingNavigationDropdown: false
-            }
-        },
-
-        mounted() {
-            this.getLogo()
-
-            Echo.private('App.Models.User.' + this.$page.props.user.id)
-                .notification((notification) => {
-                    console.log(notification)
-                    this.$notify({
-                        title: notification.title,
-                        text: 'You have been logged in!',
-                        duration: 6000
-                    })
-                });
-        },
-
-        methods: {
-            getLogo() {
-                axios.get('/logo').then(response => {
-                    this.logo = response.data.url
-                })
-            },
-
-            switchToTeam(team) {
-                this.$inertia.put('/current-team', {
-                    'team_id': team.id
-                }, {
-                    preserveState: false
-                })
-            },
-
-            logout() {
-                axios.post('/logout').then(response => {
-                    window.location = '/';
-                })
-            },
-        },
-
-        computed: {
-            path() {
-                return window.location.pathname
-            }
-        }
-    }
-</script>

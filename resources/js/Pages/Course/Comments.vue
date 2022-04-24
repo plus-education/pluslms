@@ -174,6 +174,7 @@
 </template>
 
 <script>
+    import { Inertia } from '@inertiajs/inertia';
     import { VueEditor } from "vue3-editor";
 
     export default {
@@ -210,9 +211,8 @@
 
         methods: {
             getComment: function () {
-                axios.get(`/commnets/activity/${this.activity.id}/activity`).then(response => {
+                axios.get(route('comments.activity', [this.activity.id, 'activity'])).then(response => {
                     this.comments = response.data
-                    console.log('zxd')
                 })
             },
 
@@ -224,7 +224,7 @@
                     'resourceName': 'activities',
                 }
 
-                axios.post(`/commnets/activity/activity`, data).then(response => {
+                axios.post(`/comments/activity/activity`, data).then(response => {
                     this.comments.unshift(response.data)
                 })
 
@@ -250,7 +250,7 @@
             },
 
             getAnswers: function () {
-                axios.get(`/commnets/answers/${this.comment.id}/`).then(response => {
+                axios.get(`/comments/answers/${this.comment.id}/`).then(response => {
                     this.answers = response.data
                 })
             },
@@ -262,7 +262,7 @@
                     'parent_id': this.comment.id
                 }
 
-                axios.post(`/commnets/storeAnswer/activity`, data).then(response => {
+                axios.post(`/comments/storeAnswer/activity`, data).then(response => {
                     this.answers.push(response.data)
                 })
 
