@@ -13,7 +13,7 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^7.4|^8.0",
+        "php": "^8.0",
         "addgod/nova-nested-breadcrumbs": "^1.0",
         "advoor/nova-editor-js": "^2.0.3",
         "barryvdh/laravel-dompdf": "^0.8.7",
