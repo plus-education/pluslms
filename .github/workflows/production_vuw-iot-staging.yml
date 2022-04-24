@@ -6,7 +6,7 @@ name: Build and deploy PHP app to Azure Web App - vuw-iot-staging
 on:
   push:
     branches:
-      - production
+      - master
   workflow_dispatch:
 
 jobs:
