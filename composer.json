@@ -75,8 +75,8 @@
         "whchi/nova-tags-input": "^0.0.5",
         "whitecube/nova-flexible-content": "^0.2.5",
         "yassi/nova-nested-form": "^3.0",
-        "Test/TestTool": "*",
-        "Test/TestResourceTool": "*"
+        "test/test-tool": "*",
+        "test/test-resource-tool": "*"
     },
     "repositories": [
         {
