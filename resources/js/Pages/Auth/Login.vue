@@ -85,5 +85,17 @@ const submit = () => {
                 </JetButton>
             </div>
         </form>
+
+        <hr />
+
+        <div>
+            <a :href="route('google.login')" style="margin-top: 0px !important;background: green;color: #ffffff;padding: 5px;border-radius:7px;" class="ml-2">
+                <strong>Google Login</strong>
+            </a> 
+
+            <a :href="route('microsoft.login')" style="margin-top: 0px !important;background: green;color: #ffffff;padding: 5px;border-radius:7px;" class="ml-2">
+                <strong>Microsoft Login</strong>
+            </a> 
+        </div>
     </JetAuthenticationCard>
 </template>
