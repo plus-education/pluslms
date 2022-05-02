@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Make log dir
+sudo mkdir /var/www/log
+sudo chown -R www-data:www-data /var/www/log
+sudo chmod 600 /var/www/log
+
 sudo rm /etc/nginx/sites-enabled/default
 
 echo "Replacing nginx configuration for serving PHP 8.1-based applications"

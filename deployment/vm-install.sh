@@ -10,7 +10,7 @@ sudo apt install -y software-properties-common && sudo add-apt-repository ppa:op
 sudo apt update && sudo apt upgrade -y
 
 # Install PHP 8.1
-sudo apt install nginx php8.1 -y
+sudo apt install nginx nginx-extras php8.1 -y
 
 # Disable apache2, enable nginx
 sudo systemctl stop apache2 && sudo systemctl disable apache2

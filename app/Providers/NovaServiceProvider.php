@@ -5,7 +5,6 @@ namespace App\Providers;
 use Advoor\NovaEditorJs\NovaEditorJs;
 use App\Models\Roles;
 use Illuminate\Support\Facades\Gate;
-use Joedixon\NovaTranslation\NovaTranslation;
 use Laravel\Nova\Cards\Help;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
