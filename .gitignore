@@ -15,4 +15,5 @@ yarn-error.log
 .idea
 composer.lock
 auth.json
-.gittoken
+.gittokenrr
+.rr.yaml
