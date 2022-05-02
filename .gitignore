@@ -14,6 +14,7 @@ yarn-error.log
 .serverless
 .idea
 composer.lock
+composer.lock.old
 auth.json
 .gittokenrr
 .rr.yaml

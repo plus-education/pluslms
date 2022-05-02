@@ -17,4 +17,4 @@ Tested on Ubuntu 20.04 LTS.
 9. Migrate Laravel (--seed optional): `php artisan migrate:fresh --seed`
 10. Run the script to setup nginx: `sudo ./deployment/nginx-install.sh`
 11. Install the Supervisor: `sudo ./deployment/supervisor-install.sh`
-
+12. Install Certbot: `sudo ./deployment/certbot-install.sh`
