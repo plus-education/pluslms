@@ -35,7 +35,6 @@
         "infinety-es/nova-filemanager": "^2.8",
         "izi-dev/nova-key-value-suggestion-field": "^1.0",
         "joedixon/nova-translation": "^1.0",
-        "jrodas4044/grid-multiselect-belogs-to-many": "*",
         "kabbouchi/nova-impersonate": "^1.5",
         "khalin/nova-link-field": "^1.2",
         "kpolicar/nova-date-range": "9999999-dev",
@@ -105,10 +104,6 @@
         {
             "type": "path",
             "url": "./nova-components/UsersTypes"
-        },
-        {
-            "type": "path",
-            "url": "./nova-components/GridMultiselectBelogsToMany"
         },
         {
             "type": "path",

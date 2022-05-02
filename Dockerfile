@@ -2,6 +2,9 @@
 ARG PHP_VERSION=8.1
 
 ARG COMPOSER_VERSION=latest
+ARG NOVA_HOST=http-basic.nova.laravel.com
+ARG NOVA_USERNAME
+ARG NOVA_PASSWORD
 
 ###########################################
 # PHP dependencies
@@ -10,7 +13,10 @@ ARG COMPOSER_VERSION=latest
 FROM composer:${COMPOSER_VERSION} AS vendor
 WORKDIR /var/www/html
 COPY composer* ./
-RUN composer install \
+RUN  composer config \
+  ${NOVA_HOST} \
+  ${NOVA_USERNAME} ${NOVA_PASSWORD} && \
+  composer install \
   --no-dev \
   --no-interaction \
   --prefer-dist \
