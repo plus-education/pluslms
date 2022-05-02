@@ -22,5 +22,8 @@ Tested on Ubuntu 20.04 LTS.
 13: Configure Certbot:
     - `sudo certbot --nginx -d ${DOMAIN} -d www.${DOMAIN}`
 14. (Optional) Install Node if the routes change: 
-    - As superuser: `sudo apt install nodejs npm -y`
+    - As superuser:
+        - `sudo apt install nodejs npm -y`
+        - `npm cache clean -f && sudo npm install -g n`
+        - `sudo n stable && sudo reboot`
     - As 'octane': `npm i && npm run prod`
