@@ -11,6 +11,7 @@ Tested on Ubuntu 20.04 LTS.
 5. Copy .ENV file and populate it: `cp .env.example .env && sudo nano .env`
 6. Install PHP dependencies with Composer: `sudo chown $USER:$USER . -R && composer install --no-dev --no-interaction --prefer-dist --ignore-platform-reqs --optimize-autoloader --apcu-autoloader --ansi --no-scripts`
 7. Generate an app key: `php artisan key:generate`
+    - Generate routes: `php artisan ziggy:generate`
 8. Install Octane and RoadRunner: `php artisan octane:install`
     - Select [0]. RoadRunner, and yes to get the binary.
 9. Migrate Laravel (--seed optional): `php artisan migrate:fresh --seed`

@@ -34,7 +34,6 @@
         "inertiajs/inertia-laravel": "0.5.4",
         "infinety-es/nova-filemanager": "^2.8",
         "izi-dev/nova-key-value-suggestion-field": "^1.0",
-        "joedixon/nova-translation": "^1.0",
         "kabbouchi/nova-impersonate": "^1.5",
         "khalin/nova-link-field": "^1.2",
         "kpolicar/nova-date-range": "9999999-dev",
