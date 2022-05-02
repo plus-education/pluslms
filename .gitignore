@@ -17,3 +17,5 @@ composer.lock
 auth.json
 .gittokenrr
 .rr.yaml
+rr.exe
+rr
