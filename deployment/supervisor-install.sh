@@ -14,7 +14,7 @@ sudo cp ./deployment/octane/opcache.ini /usr/local/etc/php/conf.d/opcache.ini
 # Add cron job for scheduled tasks
 (sudo crontab -l ; echo "*/1 * * * * su octane -c \"php /var/www/html/artisan schedule:run --verbose --no-interaction\"")| sudo crontab -
 
-sudo chown -R www-data:www-data .
+sudo chown -R octane:octane .
 
 # Restart Supervisor
-sudo supervisorctl reread && sudo supervisorctl restart
+sudo supervisorctl reread && sudo supervisorctl reload
