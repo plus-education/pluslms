@@ -16,5 +16,8 @@ Tested on Ubuntu 20.04 LTS.
     - Select [0]. RoadRunner, and yes to get the binary.
 9. Migrate Laravel (--seed optional): `php artisan migrate:fresh --seed`
 10. Run the script to setup nginx: `sudo ./deployment/nginx-install.sh`
+    - Edit the server block, adding the required domains: `sudo nano /etc/nginx/sites-enabled/default`
 11. Install the Supervisor: `sudo ./deployment/supervisor-install.sh`
 12. Install Certbot: `sudo ./deployment/certbot-install.sh`
+13: Configure Certbot:
+    - `sudo certbot --nginx -d ${DOMAIN} -d www.${DOMAIN}`
