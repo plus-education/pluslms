@@ -30,4 +30,16 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'google' => [
+        'client_id' => env('OAUTH_GOOGLE_CLIENT'),
+        'client_secret' => env('OAUTH_GOOGLE_SECRET'),
+        'redirect' => env('APP_URL') . '/callback/google',
+    ],
+
+    'microsoft' => [    
+        'client_id' => env('OAUTH_MICROSOFT_CLIENT'),  
+        'client_secret' => env('OAUTH_MICROSOFT_SECRET'),  
+        'redirect' => env('APP_URL') . '/callback/microsoft', 
+    ],
+
 ];

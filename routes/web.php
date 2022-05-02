@@ -16,6 +16,13 @@ use \App\Http\Controllers\Dashboard,
     \App\Http\Controllers\CoursesController,
     \App\Http\Controllers\Student\ExerciseController;
 
+use App\Http\Controllers\Auth\SocialiteController;
+
+Route::get('/auth/google', [SocialiteController::class, 'redirectToGoogle'])->name('google.login');
+Route::get('/callback/google', [SocialiteController::class, 'handleGoogleCallback'])->name('google.callback');
+Route::get('/auth/microsoft', [SocialiteController::class, 'redirectToMicrosoft'])->name('microsoft.login');
+Route::get('/callback/microsoft', [SocialiteController::class, 'handleMicrosoftCallback'])->name('microsoft.callback');
+
 Route::get('/', function () {
     return redirect()->route('dashboard');
     //return view('welcome');

@@ -55,6 +55,7 @@
         "@tailwindcss/typography": "^0.5.2",
         "@vue/compiler-sfc": "^3.2.33",
         "axios": "^0.19",
+        "chokidar": "^3.5.3",
         "cross-env": "^7.0",
         "laravel-echo": "^1.10.0",
         "laravel-mix": "^6.0.43",
