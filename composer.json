@@ -177,12 +177,6 @@
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
         ],
-        "pre-install-cmd": [
-            "@composer config http-basic.nova.laravel.com $NOVA_USERNAME $NOVA_PASSWORD"
-        ],
-        "pre-update-cmd": [
-            "@composer run-script pre-install-cmd"
-        ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
