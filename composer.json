@@ -86,10 +86,6 @@
         },
         {
             "type": "path",
-            "url": "./h5p"
-        },
-        {
-            "type": "path",
             "url": "./nova-components/ActivityScores"
         },
         {
