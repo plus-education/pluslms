@@ -18,3 +18,4 @@ auth.json
 .rr.yaml
 rr.exe
 rr
+/nova-components/*-OLD/

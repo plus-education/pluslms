@@ -2,7 +2,6 @@
 
 namespace App\Models\TypesActivities;
 
-use Advoor\NovaEditorJs\NovaEditorJs;
 use App\Models\TypesActivities\Questions\SelectMultiple;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -11,12 +10,7 @@ class Question extends Model
 {
     use HasFactory;
 
-    protected $appends = ['html', 'options'];
-
-    public function getHtmlAttribute()
-    {
-        return NovaEditorJs::generateHtmlOutput($this->description);
-    }
+    protected $appends = ['options'];
 
     public function exercise()
     {

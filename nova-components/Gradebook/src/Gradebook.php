@@ -2,6 +2,8 @@
 
 namespace Lms\Gradebook;
 
+use Illuminate\Http\Request;
+use Laravel\Nova\Menu\MenuSection;
 use Laravel\Nova\Nova;
 use Laravel\Nova\Tool;
 
@@ -19,12 +21,15 @@ class Gradebook extends Tool
     }
 
     /**
-     * Build the view that renders the navigation links for the tool.
+     * Build the menu that renders the navigation links for the tool.
      *
-     * @return \Illuminate\View\View
+     * @param  \Illuminate\Http\Request $request
+     * @return mixed
      */
-    public function renderNavigation()
+    public function menu(Request $request)
     {
-        return view('gradebook::navigation');
+        return MenuSection::make('Gradebook')
+            ->path('/gradebook')
+            ->icon('server');
     }
 }

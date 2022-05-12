@@ -2,13 +2,10 @@
 
 namespace App\Nova;
 
-use Advoor\NovaEditorJs\NovaEditorJs;
 use App\Models\Roles;
-use DigitalCreative\Filepond\Filepond;
+use Eminiarts\Tabs\Traits\HasTabs;
 use Eminiarts\Tabs\Tabs;
-use Eminiarts\Tabs\Tab;
-use Eminiarts\Tabs\TabsOnEdit;
-use Yassi\NestedForm\NestedForm;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Gate;
@@ -21,13 +18,13 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Monaye\SimpleLinkButton\SimpleLinkButton;
-use NovaAttachMany\AttachMany;
+//use Monaye\SimpleLinkButton\SimpleLinkButton;
+//use NovaAttachMany\AttachMany;
 use Spatie\Tags\Tag;
 
 class Course extends Resource
 {
-    use TabsOnEdit;
+    use HasTabs;
 
     /**
      * The model the resource corresponds to.
@@ -96,7 +93,7 @@ class Course extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function fields(Request $request)
+    public function fields(NovaRequest $request)
     {
         return [
             Text::make(__('Name'), 'name')
@@ -108,17 +105,19 @@ class Course extends Resource
 
             Text::make(__('Code'), 'code')->sortable(),
 
-            Filepond::make(__('Cover'), 'cover')
-            ->mimesTypes('image/jpeg,image/png'),
+            Image::make(__('Cover'), 'cover'),
 
-            //NestedForm::make(__('Topics'), 'topics'),
-            HasMany::make(__('Topics'), 'topics', Topic::class),
+            new Tabs('Relations', [
+                HasMany::make(__('Topics'), 'topics', Topic::class),
 
-            Tabs::make(__('People'), [
-                AttachMany::make(__('Users'), 'users', User::class),
-                //AttachMany::make(__('Students'), 'students', Student::class),
-                //AttachMany::make(__('Teachers'), 'teachers', Teacher::class),
-                //AttachMany::make(__('Supervisors'), 'supervisors', Supervisor::class),
+                BelongsToMany::make(__('Students'), 'students', Student::class)
+                    ->searchable(),
+
+                BelongsToMany::make(__('Teachers'), 'teachers', Teacher::class)->searchable(),
+
+                BelongsToMany::make(__('Supervisors'), 'supervisors', Supervisor::class)->searchable(),
+
+                BelongsToMany::make(__('Admins'), 'admins', Admin::class)->searchable(),
             ]),
 
             //BelongsToMany::make(__('Students'), 'students', Student::class)->searchable(),
@@ -130,13 +129,13 @@ class Course extends Resource
 
             Text::make(__('Class Zoom Link'), 'classLink'),
 
-            SimpleLinkButton::make('Grades', function () {
+            /*SimpleLinkButton::make('Grades', function () {
                 return "/gradebook/courseByAllActivities/{$this->id}" ;
             })
                 ->hideWhenUpdating()
                 ->hideWhenCreating()
                 ->type('link')
-                ->style('grey')
+                ->style('grey')*/
         ];
     }
 
@@ -146,7 +145,7 @@ class Course extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function cards(Request $request)
+    public function cards(NovaRequest $request)
     {
         return [];
     }
@@ -157,7 +156,7 @@ class Course extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function filters(Request $request)
+    public function filters(NovaRequest $request)
     {
         return [];
     }
@@ -168,7 +167,7 @@ class Course extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function lenses(Request $request)
+    public function lenses(NovaRequest $request)
     {
         return [];
     }
@@ -179,7 +178,7 @@ class Course extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function actions(Request $request)
+    public function actions(NovaRequest $request)
     {
         return [];
     }

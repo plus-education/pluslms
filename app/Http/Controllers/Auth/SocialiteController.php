@@ -35,7 +35,7 @@ class SocialiteController extends Controller
     {
         try {
      
-            $user = Socialite::driver($driver)->user();
+            $user = Socialite::driver($driver)->stateless()->user();
       
             $finduser = User::where('social_id', $user->id)->first();
 

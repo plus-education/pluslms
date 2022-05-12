@@ -6,8 +6,6 @@ namespace App\Models;
 
 trait HasUsers
 {
-
-
     public function students()
     {
         return $this->users()->role(Roles::STUDENT);
@@ -21,5 +19,12 @@ trait HasUsers
     public function supervisors()
     {
         return $this->users()->role(Roles::SUPERVISOR);
+    }
+
+    public function admins()
+    {
+        return $this->users()->whereHas("roles", function ($q) {
+            $q->whereIn("name", [Roles::ADMIN, Roles::SUPER_ADMIN]);
+        });
     }
 }

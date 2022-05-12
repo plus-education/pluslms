@@ -2,9 +2,11 @@
 
 namespace App\Nova;
 
-use DigitalCreative\InlineMorphTo\InlineMorphTo;
+use Laravel\Nova\Http\Requests\NovaRequest;
+
+use Eminiarts\Tabs\Traits\HasTabs;
 use Eminiarts\Tabs\Tabs;
-use Illuminate\Http\Request;
+
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Date;
@@ -13,18 +15,19 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\MorphMany;
 use Laravel\Nova\Fields\MorphTo;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Http\Requests\NovaRequest;
-use Lms\ActivityComments\ActivityComments;
-use Lms\ActivityScores\ActivityScores;
-use MichielKempen\NovaOrderField\Orderable;
-use MichielKempen\NovaOrderField\OrderField;
-use Phalcon\Helper\Number;
+use Laravel\Nova\Fields\Number;
+
+//use Lms\ActivityComments\ActivityComments;
+//use Lms\ActivityScores\ActivityScores;
+
+use PixelCreation\NovaFieldSortable\Concerns\SortsIndexEntries;
+use PixelCreation\NovaFieldSortable\Sortable;
 
 class Activity extends Resource
 {
-    use Orderable;
+    use HasTabs, SortsIndexEntries;
 
-    public static $defaultOrderField = 'order';
+    public static $defaultSortField = 'order';
 
     /**
      * The pagination per-page options configured for this resource.
@@ -96,7 +99,7 @@ class Activity extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function fields(Request $request)
+    public function fields(NovaRequest $request)
     {
         return [
             BelongsTo::make('Topic'),
@@ -110,6 +113,10 @@ class Activity extends Resource
 
             Date::make(__('End Date'), 'end'),
 
+            Boolean::make(__('Required'), 'required')
+                ->required()
+                ->default(true),
+
             Boolean::make(__('Show'), 'isShow')
                 ->required(),
 
@@ -118,44 +125,35 @@ class Activity extends Resource
                 ->max(100)
                 ->default(0),
  
-             ActivityScores::make()
+            /*ActivityScores::make()
                  ->withMeta(['model' => $this->model()])
                  ->canSee(function() {
                      return ($this->score > 0) ? true : false;
-                 }),
+                 }),*/
  
-             OrderField::make(__("Order"), 'order'),
+            Sortable::make(__("Order"), 'order')
+                ->onlyOnIndex(),
  
-             \Laravel\Nova\Fields\Number::make(__("Order"), 'order')
+            Number::make(__("Order"), 'order')
                  ->hideWhenCreating(),
 
             Heading::make('Content'),
 
-            InlineMorphTo::make(__("Activity Type"), 'Activityable')->types([
-                Divider::class,
+            MorphTo::make(__("Activity Type"), 'Activityable')->types([
                 \App\Nova\Text::class,
                 H5P::class,
-                File::class,
-                Link::class,
-                Homework::class,
-                PDF::class,
-                Youtube::class,
-                Video::class,
                 Exercise::class,
+                PDF::class,
             ])
                 ->required()
-                ->rules('required')
-            ,
-
-            \Laravel\Nova\Fields\File::make('Original File', 'original_file'),
-                //->required(),
+                ->rules('required'),
 
             Heading::make('Meta'),
 
-            new Tabs(__('Tools'), [
-                ActivityComments::make()
-                    ->typeOfComment('activity'),
-            ]),
+            /*new Tabs(__('Tools'), [
+                ActivityComments::make(),
+                    //->typeOfComment('activity'),
+            ]),*/
         ];
     }
 
@@ -165,7 +163,7 @@ class Activity extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function cards(Request $request)
+    public function cards(NovaRequest $request)
     {
         return [];
     }
@@ -176,7 +174,7 @@ class Activity extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function filters(Request $request)
+    public function filters(NovaRequest $request)
     {
         return [];
     }
@@ -187,7 +185,7 @@ class Activity extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function lenses(Request $request)
+    public function lenses(NovaRequest $request)
     {
         return [];
     }
@@ -198,7 +196,7 @@ class Activity extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function actions(Request $request)
+    public function actions(NovaRequest $request)
     {
         return [];
     }
