@@ -95,7 +95,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     return auth()->user()->can('manage backup');
                 }),
 
-            Novaspatiepermissions::make(),
+            //Novaspatiepermissions::make(),
                 /*->canSee(function (){
                     return auth()->user()->can('manage roles');
                 }),*/
@@ -116,6 +116,10 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     public function register()
     {
-        //
+        Nova::report(function ($exception) {
+            if (app()->bound('sentry')) {
+                app('sentry')->captureException($exception);
+           }
+       });
     }
 }

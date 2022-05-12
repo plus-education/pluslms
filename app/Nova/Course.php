@@ -116,13 +116,8 @@ class Course extends Resource
                 BelongsToMany::make(__('Teachers'), 'teachers', Teacher::class)->searchable(),
 
                 BelongsToMany::make(__('Supervisors'), 'supervisors', Supervisor::class)->searchable(),
-            ]),
 
-            Tabs::make(__('People'), [
-                //AttachMany::make(__('Users'), 'users', User::class),
-                //AttachMany::make(__('Students'), 'students', Student::class),
-                //AttachMany::make(__('Teachers'), 'teachers', Teacher::class),
-                //AttachMany::make(__('Supervisors'), 'supervisors', Supervisor::class),
+                BelongsToMany::make(__('Admins'), 'admins', Admin::class)->searchable(),
             ]),
 
             //BelongsToMany::make(__('Students'), 'students', Student::class)->searchable(),

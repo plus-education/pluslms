@@ -2,8 +2,9 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Http\Requests\NovaRequest;
+
 use Laravel\Nova\Fields\Boolean;
-use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Password;
@@ -15,8 +16,6 @@ class UserFields
     public static function fields()
     {
         return [
-            Gravatar::make()->maxWidth(50),
-
             Text::make(__('Name'), 'name' )
                 ->sortable()
                 ->rules('required', 'max:255'),
@@ -36,11 +35,10 @@ class UserFields
                 ->sortable()
                 ->rules('max:255'),
 
+            //MorphToMany::make('Roles', 'roles', \Itsmejoshua\Novaspatiepermissions\Role::class),
+            //MorphToMany::make('Permissions', 'permissions', \Itsmejoshua\Novaspatiepermissions\Permission::class),
 
-            MorphToMany::make('Roles', 'roles', \Itsmejoshua\Novaspatiepermissions\Role::class),
-            MorphToMany::make('Permissions', 'permissions', \Itsmejoshua\Novaspatiepermissions\Permission::class),
-
-            Boolean::make('Es solvente', 'is_solvent'),
+            Boolean::make('Is Solvent', 'is_solvent'),
         ];
     }
 }
