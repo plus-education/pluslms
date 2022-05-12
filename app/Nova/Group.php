@@ -2,21 +2,24 @@
 
 namespace App\Nova;
 
-use Advoor\NovaEditorJs\NovaEditorJs;
-use App\Nova\Actions\GradebookGroup;
+use Laravel\Nova\Http\Requests\NovaRequest;
+
+use Eminiarts\Tabs\Traits\HasTabs;
 use Eminiarts\Tabs\Tabs;
-use Illuminate\Http\Request;
+
+use App\Nova\Actions\GradebookGroup;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
-use Laravel\Nova\Http\Requests\NovaRequest;
-use Monaye\SimpleLinkButton\SimpleLinkButton;
-use NovaAttachMany\AttachMany;
+use Laravel\Nova\Fields\Trix;
 
 class Group extends Resource
 {
+    use HasTabs;
+
     /**
      * The model the resource corresponds to.
      *
@@ -88,12 +91,12 @@ class Group extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function fields(Request $request)
+    public function fields(NovaRequest $request)
     {
         return [
-            \Laravel\Nova\Fields\Text::make(__('Name'), 'name')->sortable()->required(),
+            Text::make(__('Name'), 'name')->sortable()->required(),
 
-            NovaEditorJs::make(__('Description'), 'Description'),
+            Trix::make(__('Description'), 'Description'),
 
             DateTime::make(__('Start Date'), 'start')
                 ->sortable()
@@ -103,7 +106,7 @@ class Group extends Resource
                 ->sortable()
                 ->required(),
 
-            \Laravel\Nova\Fields\Text::make('Zoom Link', 'zoom')
+            Text::make('Zoom Link', 'zoom')
                 ->hideFromIndex(),
 
             new Tabs('Relations', [
@@ -117,13 +120,13 @@ class Group extends Resource
                 BelongsToMany::make(__('Supervisors'), 'supervisors', Supervisor::class)->searchable(),
             ]),
 
-            AttachMany::make(__('Students'), 'students', Student::class),
+            /*AttachMany::make(__('Students'), 'students', Student::class),
 
             SimpleLinkButton::make('Notas', function () {
                 return "/groupGradebook/{$this->id}" ;
             })
                 ->type('link')  // fill, outline, link
-                ->attributes(['target' => '_blank']),
+                ->attributes(['target' => '_blank']),*/
         ];
     }
 
@@ -133,7 +136,7 @@ class Group extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function cards(Request $request)
+    public function cards(NovaRequest $request)
     {
         return [];
     }
@@ -144,7 +147,7 @@ class Group extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function filters(Request $request)
+    public function filters(NovaRequest $request)
     {
         return [];
     }
@@ -155,7 +158,7 @@ class Group extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function lenses(Request $request)
+    public function lenses(NovaRequest $request)
     {
         return [];
     }
@@ -166,7 +169,7 @@ class Group extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function actions(Request $request)
+    public function actions(NovaRequest $request)
     {
         return [
         ];

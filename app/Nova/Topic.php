@@ -2,11 +2,11 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Http\Requests\NovaRequest;
+
 use App\Nova\Actions\TopicGradebook;
 use Eminiarts\Tabs\Tabs;
 use Eminiarts\Tabs\Tab;
-use Yassi\NestedForm\NestedForm;
-use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\DateTime;
@@ -14,11 +14,10 @@ use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\Heading;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Http\Requests\NovaRequest;
 use Lms\TeacherTopicComment\TeacherTopicComment;
+
 use PixelCreation\NovaFieldSortable\Concerns\SortsIndexEntries;
 use PixelCreation\NovaFieldSortable\Sortable;
-//use Monaye\SimpleLinkButton\SimpleLinkButton;
 
 class Topic extends Resource
 {
@@ -82,7 +81,7 @@ class Topic extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function fields(Request $request)
+    public function fields(NovaRequest $request)
     {
         return [
             Text::make(__('Name'), 'name')
@@ -101,10 +100,10 @@ class Topic extends Resource
                 ->onlyOnIndex(),
 
             DateTime::make(__('Start Date'), 'startDate')
-                ->pickerDisplayFormat('d-m-Y H:i'),
+                ->withDateFormat('d-M-Y, H:i'),
 
             DateTime::make(__('End Date'), 'endDate')
-                ->pickerDisplayFormat('d-m-Y H:i'),
+                ->withDateFormat('d-M-Y, H:i'),
 
             Boolean::make(__('Visible'), 'isShow')
                 ->hideWhenCreating()
@@ -114,7 +113,7 @@ class Topic extends Resource
                 ->hideWhenCreating()
                 ->hideWhenUpdating(),
 
-             SimpleLinkButton::make('Grades', function () {
+             /*SimpleLinkButton::make('Grades', function () {
                  return "/topicGradebook/{$this->id}" ;
              })
                  ->hideWhenUpdating()
@@ -130,7 +129,7 @@ class Topic extends Resource
                 ->hideFromDetail()
                 ->type('link')  // fill, outline, link
                 ->style('grey')
-                ->attributes(['target' => '_blank']),
+                ->attributes(['target' => '_blank']),*/
         ];
     }
 
@@ -140,7 +139,7 @@ class Topic extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function cards(Request $request)
+    public function cards(NovaRequest $request)
     {
         return [];
     }
@@ -151,7 +150,7 @@ class Topic extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function filters(Request $request)
+    public function filters(NovaRequest $request)
     {
         return [
         ];
@@ -163,7 +162,7 @@ class Topic extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function lenses(Request $request)
+    public function lenses(NovaRequest $request)
     {
         return [];
     }
@@ -174,7 +173,7 @@ class Topic extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function actions(Request $request)
+    public function actions(NovaRequest $request)
     {
         return [
             new TopicGradebook

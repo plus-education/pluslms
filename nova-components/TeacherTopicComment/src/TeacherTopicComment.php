@@ -2,7 +2,6 @@
 
 namespace Lms\TeacherTopicComment;
 
-use App\Nova\User;
 use Laravel\Nova\ResourceTool;
 
 class TeacherTopicComment extends ResourceTool
@@ -14,7 +13,7 @@ class TeacherTopicComment extends ResourceTool
      */
     public function name()
     {
-        return 'Comments';
+        return 'Teacher Topic Comment';
     }
 
     /**

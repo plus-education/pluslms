@@ -20,6 +20,7 @@
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "inertiajs/inertia-laravel": "0.5.4",
+        "itsmejoshua/novaspatiepermissions": "^1.0",
         "laravel/framework": "^8.16.1",
         "laravel/jetstream": "^2.7",
         "laravel/nova": "^4.0",
@@ -27,15 +28,10 @@
         "laravel/sanctum": "^2.6",
         "laravel/socialite": "^5.5",
         "laravel/tinker": "^2.0",
-        "lms/activity-comments": "*",
         "lms/activity-scores": "*",
         "lms/course-gradebook": "*",
-        "lms/files": "*",
         "lms/gradebook": "*",
-        "lms/link-file": "*",
-        "lms/notices": "*",
         "lms/teacher-topic-comment": "*",
-        "lms/users-types": "*",
         "maatwebsite/excel": "^3.1.40",
         "monaye/simple-link-button": "^1.0",
         "phoenix-lib/nova-nested-tree-attach-many": "^1.7",
@@ -45,10 +41,11 @@
         "socialiteproviders/google": "^4.1",
         "socialiteproviders/microsoft": "^4.1",
         "spatie/eloquent-sortable": "^4.0.1",
+        "spatie/laravel-permission": "^5.5",
         "spatie/nova-backup-tool": "^5.0.1",
         "spatie/nova-tags-field": "^4.0.3",
         "tightenco/ziggy": "^1.4",
-        "vyuldashev/nova-permission": "^3.0.1",
+        "wdelfuego/nova-datetime": "^1.1",
         "whitecube/nova-flexible-content": "^1.0.0"
     },
     "repositories": [
@@ -58,27 +55,15 @@
         },
         {
             "type": "path",
-            "url": "./nova-components/ActivityScores"
-        },
-        {
-            "type": "path",
             "url": "./nova-components/ActivityComments"
         },
         {
             "type": "path",
-            "url": "./nova-components/UsersTypes"
+            "url": "./nova-components/ActivityScores"
         },
         {
             "type": "path",
-            "url": "./nova-components/Files"
-        },
-        {
-            "type": "path",
-            "url": "./nova-components/LinkFile"
-        },
-        {
-            "type": "path",
-            "url": "./nova-components/TeacherTopicComment"
+            "url": "./nova-components/CourseGradebook"
         },
         {
             "type": "path",
@@ -86,11 +71,7 @@
         },
         {
             "type": "path",
-            "url": "./nova-components/Notices"
-        },
-        {
-            "type": "path",
-            "url": "./nova-components/CourseGradebook"
+            "url": "./nova-components/TeacherTopicComment"
         }
     ],
     "require-dev": {

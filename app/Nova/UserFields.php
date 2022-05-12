@@ -10,12 +10,9 @@ use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\MorphToMany;
 
-use Vyuldashev\NovaPermission\PermissionBooleanGroup;
-use Vyuldashev\NovaPermission\RoleSelect;
-
 class UserFields
 {
-    public static function fields($model = null)
+    public static function fields()
     {
         return [
             Gravatar::make()->maxWidth(50),
@@ -40,14 +37,10 @@ class UserFields
                 ->rules('max:255'),
 
 
-            RoleSelect::make('Role', 'roles'),
-            PermissionBooleanGroup::make('Permissions'),
+            MorphToMany::make('Roles', 'roles', \Itsmejoshua\Novaspatiepermissions\Role::class),
+            MorphToMany::make('Permissions', 'permissions', \Itsmejoshua\Novaspatiepermissions\Permission::class),
 
             Boolean::make('Es solvente', 'is_solvent'),
-
-            Impersonate::make($model)->withMeta([
-                'redirect_to' => '/dashboard'
-            ]),
         ];
     }
 }

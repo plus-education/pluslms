@@ -105,14 +105,21 @@ class Course extends Resource
 
             Text::make(__('Code'), 'code')->sortable(),
 
-            Filepond::make(__('Cover'), 'cover')
-            ->mimesTypes('image/jpeg,image/png'),
+            Image::make(__('Cover'), 'cover'),
 
-            //NestedForm::make(__('Topics'), 'topics'),
-            HasMany::make(__('Topics'), 'topics', Topic::class),
+            new Tabs('Relations', [
+                HasMany::make(__('Topics'), 'topics', Topic::class),
+
+                BelongsToMany::make(__('Students'), 'students', Student::class)
+                    ->searchable(),
+
+                BelongsToMany::make(__('Teachers'), 'teachers', Teacher::class)->searchable(),
+
+                BelongsToMany::make(__('Supervisors'), 'supervisors', Supervisor::class)->searchable(),
+            ]),
 
             Tabs::make(__('People'), [
-                AttachMany::make(__('Users'), 'users', User::class),
+                //AttachMany::make(__('Users'), 'users', User::class),
                 //AttachMany::make(__('Students'), 'students', Student::class),
                 //AttachMany::make(__('Teachers'), 'teachers', Teacher::class),
                 //AttachMany::make(__('Supervisors'), 'supervisors', Supervisor::class),
@@ -127,13 +134,13 @@ class Course extends Resource
 
             Text::make(__('Class Zoom Link'), 'classLink'),
 
-            SimpleLinkButton::make('Grades', function () {
+            /*SimpleLinkButton::make('Grades', function () {
                 return "/gradebook/courseByAllActivities/{$this->id}" ;
             })
                 ->hideWhenUpdating()
                 ->hideWhenCreating()
                 ->type('link')
-                ->style('grey')
+                ->style('grey')*/
         ];
     }
 

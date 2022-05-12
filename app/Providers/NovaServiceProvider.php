@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Nova\Dashboards\Main;
 
 use App\Models\Roles;
 use Illuminate\Support\Facades\Gate;
@@ -13,6 +14,8 @@ use Laravel\Nova\NovaApplicationServiceProvider;
 use Lms\CourseGradebook\CourseGradebook;
 use Lms\Gradebook\Gradebook;
 use Lms\StudentGradebook\StudentGradebook;
+
+use Itsmejoshua\Novaspatiepermissions\Novaspatiepermissions;
 use Vyuldashev\NovaPermission\PermissionPolicy;
 use Vyuldashev\NovaPermission\RolePolicy;
 
@@ -73,7 +76,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     protected function dashboards()
     {
-        return [];
+        return [
+            new Main,
+        ];
     }
 
     /**
@@ -90,12 +95,17 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     return auth()->user()->can('manage backup');
                 }),
 
+            Novaspatiepermissions::make(),
+                /*->canSee(function (){
+                    return auth()->user()->can('manage roles');
+                }),*/
+
             /*\Vyuldashev\NovaPermission\NovaPermissionTool::make()
                 ->rolePolicy(RolePolicy::class)
                 ->permissionPolicy(PermissionPolicy::class)
                 ->canSee(function (){
                     return auth()->user()->can('manage roles');
-                }),*/
+               }),*/
         ];
     }
 

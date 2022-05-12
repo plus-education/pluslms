@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d4a36d3f3eabf663917eb8dd5da617f9",
+    "content-hash": "82f0c87bd2f0d9ca2adca2a37bddeb2e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1598,61 +1598,6 @@
             "time": "2021-11-21T21:41:47+00:00"
         },
         {
-            "name": "gregoriohc/laravel-nova-theme-responsive",
-            "version": "v0.8.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/gregoriohc/laravel-nova-theme-responsive.git",
-                "reference": "a37f8162872ea7483d2dec7091d29e49376df273"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/gregoriohc/laravel-nova-theme-responsive/zipball/a37f8162872ea7483d2dec7091d29e49376df273",
-                "reference": "a37f8162872ea7483d2dec7091d29e49376df273",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Gregoriohc\\LaravelNovaThemeResponsive\\ThemeServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Gregoriohc\\LaravelNovaThemeResponsive\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Gregorio Hernández Caso",
-                    "email": "gregoriohc@gmail.com",
-                    "homepage": "https://github.com/gregoriohc",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A Laravel Nova responsive theme.",
-            "homepage": "https://github.com/gregoriohc/laravel-nova-theme-responsive",
-            "keywords": [
-                "laravel",
-                "nova"
-            ],
-            "support": {
-                "issues": "https://github.com/gregoriohc/laravel-nova-theme-responsive/issues",
-                "source": "https://github.com/gregoriohc/laravel-nova-theme-responsive/tree/master"
-            },
-            "abandoned": true,
-            "time": "2020-03-08T16:15:03+00:00"
-        },
-        {
             "name": "guzzlehttp/guzzle",
             "version": "7.4.2",
             "source": {
@@ -2101,6 +2046,54 @@
                 }
             ],
             "time": "2022-01-18T10:59:08+00:00"
+        },
+        {
+            "name": "itsmejoshua/novaspatiepermissions",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itsmejoshua/novaspatiepermissions.git",
+                "reference": "0ad813ecadf18bdce3234e8a0b2d470a76f9c987"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itsmejoshua/novaspatiepermissions/zipball/0ad813ecadf18bdce3234e8a0b2d470a76f9c987",
+                "reference": "0ad813ecadf18bdce3234e8a0b2d470a76f9c987",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0",
+                "spatie/laravel-permission": "^5.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Itsmejoshua\\Novaspatiepermissions\\ToolServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Itsmejoshua\\Novaspatiepermissions\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Laravel Nova tool for managing spaties roles/permissions in laravel's nova package.",
+            "keywords": [
+                "laravel",
+                "nova",
+                "permissions",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/itsmejoshua/novaspatiepermissions/issues",
+                "source": "https://github.com/itsmejoshua/novaspatiepermissions/tree/v1.0.3"
+            },
+            "time": "2022-04-20T10:50:50+00:00"
         },
         {
             "name": "jaybizzle/crawler-detect",
@@ -3681,52 +3674,15 @@
             "time": "2022-04-15T14:02:14+00:00"
         },
         {
-            "name": "lms/activity-comments",
-            "version": "dev-dev-nova-4",
-            "dist": {
-                "type": "path",
-                "url": "./nova-components/ActivityComments",
-                "reference": "37faa1d070eab69d4b1d547c1f90a726c4c3111e"
-            },
-            "require": {
-                "gregoriohc/laravel-nova-theme-responsive": "^0.8.1",
-                "php": ">=7.1.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Lms\\ActivityComments\\ToolServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Lms\\ActivityComments\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "A Laravel Nova resource tool.",
-            "keywords": [
-                "laravel",
-                "nova"
-            ],
-            "transport-options": {
-                "relative": true
-            }
-        },
-        {
             "name": "lms/activity-scores",
             "version": "dev-dev-nova-4",
             "dist": {
                 "type": "path",
                 "url": "./nova-components/ActivityScores",
-                "reference": "d2906bbec4fa5377f8c89b021b3e2bf67575089b"
+                "reference": "421e44f53c3617b88f993324929102a8f4f82066"
             },
             "require": {
-                "php": ">=7.1.0"
+                "php": "^7.3|^8.0"
             },
             "type": "library",
             "extra": {
@@ -3759,10 +3715,10 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/CourseGradebook",
-                "reference": "0bfc7f725b5d1fe60510b0c265e12466c71f1158"
+                "reference": "6b8f79ecb691a19dc5cc93c33c4db25d47b45ee5"
             },
             "require": {
-                "php": ">=7.1.0"
+                "php": "^7.3|^8.0"
             },
             "type": "library",
             "extra": {
@@ -3790,51 +3746,15 @@
             }
         },
         {
-            "name": "lms/files",
-            "version": "dev-dev-nova-4",
-            "dist": {
-                "type": "path",
-                "url": "./nova-components/Files",
-                "reference": "9f910da455d0238dcd9bfdcd119d2028b1c75334"
-            },
-            "require": {
-                "php": ">=7.1.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Lms\\Files\\ToolServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Lms\\Files\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "A Laravel Nova resource tool.",
-            "keywords": [
-                "laravel",
-                "nova"
-            ],
-            "transport-options": {
-                "relative": true
-            }
-        },
-        {
             "name": "lms/gradebook",
             "version": "dev-dev-nova-4",
             "dist": {
                 "type": "path",
                 "url": "./nova-components/Gradebook",
-                "reference": "4b5069eb76f536ca5d2da42ee1aa0623a6441aad"
+                "reference": "8a9f8123c20387ec890963ffe5b8392ac68ad7f4"
             },
             "require": {
-                "php": ">=7.1.0"
+                "php": "^7.3|^8.0"
             },
             "type": "library",
             "extra": {
@@ -3862,87 +3782,15 @@
             }
         },
         {
-            "name": "lms/link-file",
-            "version": "dev-dev-nova-4",
-            "dist": {
-                "type": "path",
-                "url": "./nova-components/LinkFile",
-                "reference": "fc3b331d17f0d7f3f3f3b5e47bc3c5ea58ed22a9"
-            },
-            "require": {
-                "php": ">=7.1.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Lms\\LinkFile\\FieldServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Lms\\LinkFile\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "A Laravel Nova field.",
-            "keywords": [
-                "laravel",
-                "nova"
-            ],
-            "transport-options": {
-                "relative": true
-            }
-        },
-        {
-            "name": "lms/notices",
-            "version": "dev-dev-nova-4",
-            "dist": {
-                "type": "path",
-                "url": "./nova-components/Notices",
-                "reference": "403d2556d7dbde079076696291a04fd00cbe70b4"
-            },
-            "require": {
-                "php": ">=7.1.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Lms\\Notices\\ToolServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Lms\\Notices\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "A Laravel Nova tool.",
-            "keywords": [
-                "laravel",
-                "nova"
-            ],
-            "transport-options": {
-                "relative": true
-            }
-        },
-        {
             "name": "lms/teacher-topic-comment",
             "version": "dev-dev-nova-4",
             "dist": {
                 "type": "path",
                 "url": "./nova-components/TeacherTopicComment",
-                "reference": "e652493e599baf039a7f3457650f1667c823a92e"
+                "reference": "3fe60070ac57d144b2e4e6d9ef93786521efb793"
             },
             "require": {
-                "php": ">=7.1.0"
+                "php": "^7.3|^8.0"
             },
             "type": "library",
             "extra": {
@@ -3961,42 +3809,6 @@
                 "MIT"
             ],
             "description": "A Laravel Nova resource tool.",
-            "keywords": [
-                "laravel",
-                "nova"
-            ],
-            "transport-options": {
-                "relative": true
-            }
-        },
-        {
-            "name": "lms/users-types",
-            "version": "dev-dev-nova-4",
-            "dist": {
-                "type": "path",
-                "url": "./nova-components/UsersTypes",
-                "reference": "66a2e0e92f49022675c170d0326082d1f5b4cc7e"
-            },
-            "require": {
-                "php": ">=7.1.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Lms\\UsersTypes\\FilterServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Lms\\UsersTypes\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "A Laravel Nova filter.",
             "keywords": [
                 "laravel",
                 "nova"
@@ -7550,28 +7362,28 @@
         },
         {
             "name": "spatie/laravel-permission",
-            "version": "4.4.3",
+            "version": "5.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-permission.git",
-                "reference": "779797a47689d0bc1666e26f566cca44603e56fa"
+                "reference": "4e3ad0aed6e3a8a4b5df9424aa0a721902bc7841"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/779797a47689d0bc1666e26f566cca44603e56fa",
-                "reference": "779797a47689d0bc1666e26f566cca44603e56fa",
+                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/4e3ad0aed6e3a8a4b5df9424aa0a721902bc7841",
+                "reference": "4e3ad0aed6e3a8a4b5df9424aa0a721902bc7841",
                 "shasum": ""
             },
             "require": {
-                "illuminate/auth": "^6.0|^7.0|^8.0",
-                "illuminate/container": "^6.0|^7.0|^8.0",
-                "illuminate/contracts": "^6.0|^7.0|^8.0",
-                "illuminate/database": "^6.0|^7.0|^8.0",
-                "php": "^7.2.5|^8.0"
+                "illuminate/auth": "^7.0|^8.0|^9.0",
+                "illuminate/container": "^7.0|^8.0|^9.0",
+                "illuminate/contracts": "^7.0|^8.0|^9.0",
+                "illuminate/database": "^7.0|^8.0|^9.0",
+                "php": "^7.3|^8.0|^8.1"
             },
             "require-dev": {
-                "orchestra/testbench": "^4.0|^5.0|^6.0",
-                "phpunit/phpunit": "^8.0|^9.0",
+                "orchestra/testbench": "^5.0|^6.0|^7.0",
+                "phpunit/phpunit": "^9.4",
                 "predis/predis": "^1.1"
             },
             "type": "library",
@@ -7580,6 +7392,10 @@
                     "providers": [
                         "Spatie\\Permission\\PermissionServiceProvider"
                     ]
+                },
+                "branch-alias": {
+                    "dev-main": "5.x-dev",
+                    "dev-master": "5.x-dev"
                 }
             },
             "autoload": {
@@ -7616,7 +7432,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-permission/issues",
-                "source": "https://github.com/spatie/laravel-permission/tree/4.4.3"
+                "source": "https://github.com/spatie/laravel-permission/tree/5.5.3"
             },
             "funding": [
                 {
@@ -7624,7 +7440,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-10-28T07:33:49+00:00"
+            "time": "2022-05-05T21:50:47+00:00"
         },
         {
             "name": "spatie/laravel-signal-aware-command",
@@ -11131,54 +10947,52 @@
             "time": "2022-01-24T18:55:24+00:00"
         },
         {
-            "name": "vyuldashev/nova-permission",
-            "version": "v3.0.1",
+            "name": "wdelfuego/nova-datetime",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/vyuldashev/nova-permission.git",
-                "reference": "6dfbc44b88206ff4362e1084177e1698d46b5aaf"
+                "url": "https://github.com/wdelfuego/nova-datetime.git",
+                "reference": "2e514c4a2e78da8430fc81def7c5561323e3c8b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vyuldashev/nova-permission/zipball/6dfbc44b88206ff4362e1084177e1698d46b5aaf",
-                "reference": "6dfbc44b88206ff4362e1084177e1698d46b5aaf",
+                "url": "https://api.github.com/repos/wdelfuego/nova-datetime/zipball/2e514c4a2e78da8430fc81def7c5561323e3c8b1",
+                "reference": "2e514c4a2e78da8430fc81def7c5561323e3c8b1",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.4|^8.0",
-                "spatie/laravel-permission": "^3.0|^4.0"
+                "laravel/nova": "^4.2.4"
             },
             "type": "library",
             "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0-dev"
-                },
                 "laravel": {
                     "providers": [
-                        "Vyuldashev\\NovaPermission\\ToolServiceProvider"
-                    ]
+                        "Wdelfuego\\Nova\\DateTime\\ServiceProvider"
+                    ],
+                    "aliases": []
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Vyuldashev\\NovaPermission\\": "src/"
+                    "Wdelfuego\\Nova\\DateTime\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
-            "description": "A Laravel Nova tool for Spatie's Permission library.",
-            "keywords": [
-                "laravel",
-                "nova",
-                "spatie-permission"
+            "authors": [
+                {
+                    "name": "Willem Vervuurt",
+                    "email": "willem@studiodelfuego.com"
+                }
             ],
+            "description": "Makes working with DateTime fields in Laravel's Nova 4 easier",
             "support": {
-                "issues": "https://github.com/vyuldashev/nova-permission/issues",
-                "source": "https://github.com/vyuldashev/nova-permission/tree/v3.0.1"
+                "issues": "https://github.com/wdelfuego/nova-datetime/issues",
+                "source": "https://github.com/wdelfuego/nova-datetime/tree/v1.1.0"
             },
-            "time": "2021-06-21T00:52:48+00:00"
+            "time": "2022-04-26T01:24:32+00:00"
         },
         {
             "name": "webmozart/assert",

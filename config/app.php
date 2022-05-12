@@ -166,6 +166,7 @@ return [
          * Package Service Providers...
          */
         Spatie\Permission\PermissionServiceProvider::class,
+        Itsmejoshua\Novaspatiepermissions\NovaSpatiePermissionsServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         //Laravel\Socialite\SocialiteServiceProvider::class,
         \SocialiteProviders\Manager\ServiceProvider::class,

@@ -2,8 +2,11 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Http\Requests\NovaRequest;
+
+use Eminiarts\Tabs\Traits\HasTabs;
 use Eminiarts\Tabs\Tabs;
-use Illuminate\Http\Request;
+
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Date;
@@ -13,15 +16,16 @@ use Laravel\Nova\Fields\MorphMany;
 use Laravel\Nova\Fields\MorphTo;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Number;
-use Laravel\Nova\Http\Requests\NovaRequest;
-use Lms\ActivityComments\ActivityComments;
-use Lms\ActivityScores\ActivityScores;
+
+//use Lms\ActivityComments\ActivityComments;
+//use Lms\ActivityScores\ActivityScores;
+
 use PixelCreation\NovaFieldSortable\Concerns\SortsIndexEntries;
 use PixelCreation\NovaFieldSortable\Sortable;
 
 class Activity extends Resource
 {
-    use SortsIndexEntries;
+    use HasTabs, SortsIndexEntries;
 
     public static $defaultSortField = 'order';
 
@@ -109,6 +113,10 @@ class Activity extends Resource
 
             Date::make(__('End Date'), 'end'),
 
+            Boolean::make(__('Required'), 'required')
+                ->required()
+                ->default(true),
+
             Boolean::make(__('Show'), 'isShow')
                 ->required(),
 
@@ -117,11 +125,11 @@ class Activity extends Resource
                 ->max(100)
                 ->default(0),
  
-             ActivityScores::make()
+            /*ActivityScores::make()
                  ->withMeta(['model' => $this->model()])
                  ->canSee(function() {
                      return ($this->score > 0) ? true : false;
-                 }),
+                 }),*/
  
             Sortable::make(__("Order"), 'order')
                 ->onlyOnIndex(),
@@ -131,31 +139,21 @@ class Activity extends Resource
 
             Heading::make('Content'),
 
-            InlineMorphTo::make(__("Activity Type"), 'Activityable')->types([
-                Divider::class,
+            MorphTo::make(__("Activity Type"), 'Activityable')->types([
                 \App\Nova\Text::class,
                 H5P::class,
-                File::class,
-                Link::class,
-                Homework::class,
-                PDF::class,
-                Youtube::class,
-                Video::class,
                 Exercise::class,
+                PDF::class,
             ])
                 ->required()
-                ->rules('required')
-            ,
-
-            \Laravel\Nova\Fields\File::make('Original File', 'original_file'),
-                //->required(),
+                ->rules('required'),
 
             Heading::make('Meta'),
 
-            new Tabs(__('Tools'), [
-                ActivityComments::make()
-                    ->typeOfComment('activity'),
-            ]),
+            /*new Tabs(__('Tools'), [
+                ActivityComments::make(),
+                    //->typeOfComment('activity'),
+            ]),*/
         ];
     }
 

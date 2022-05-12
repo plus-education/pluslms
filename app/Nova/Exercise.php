@@ -2,13 +2,14 @@
 
 namespace App\Nova;
 
-use Advoor\NovaEditorJs\NovaEditorJs;
 use DigitalCreative\InlineMorphTo\InlineMorphTo;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\MorphOne;
+use Laravel\Nova\Fields\MorphTo;
 use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Exercise extends Resource
@@ -74,7 +75,7 @@ class Exercise extends Resource
         return [
             MorphOne::make('Activity'),
 
-            NovaEditorJs::make(__('Description'), 'description')
+            Trix::make(__('Description'), 'description')
                 ->rules(['required']),
 
             Number::make(__('Number Of Attemps'), 'numberOfAttemps')->default(1),

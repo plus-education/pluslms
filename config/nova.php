@@ -1,5 +1,6 @@
 <?php
 
+use Laravel\Nova\Actions\ActionResource;
 use Laravel\Nova\Http\Middleware\Authenticate;
 use Laravel\Nova\Http\Middleware\Authorize;
 use Laravel\Nova\Http\Middleware\BootTools;
@@ -102,7 +103,7 @@ return [
         HandleInertiaRequests::class,
         DispatchServingNovaEvent::class,
         BootTools::class,
-        \Vyuldashev\NovaPermission\ForgetCachedPermissions::class,
+        \Itsmejoshua\Novaspatiepermissions\ForgetCachedPermissions::class,
     ],
 
     'api_middleware' => [
