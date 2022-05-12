@@ -25,6 +25,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if (env('APP_ENV') === 'production') {
+            \Illuminate\Support\Facades\URL::forceScheme('https');
+        }
+        
         GroupUser::observe(GroupUserObserver::class);
         // Make sure the directory for compiled views exist
         if (! is_dir(config('view.compiled'))) {

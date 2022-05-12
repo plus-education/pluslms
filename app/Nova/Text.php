@@ -2,7 +2,6 @@
 
 namespace App\Nova;
 
-use Advoor\NovaEditorJs\NovaEditorJs;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Textarea;

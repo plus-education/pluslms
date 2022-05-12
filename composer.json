@@ -13,72 +13,40 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^8.0",
-        "addgod/nova-nested-breadcrumbs": "^1.0",
-        "advoor/nova-editor-js": "^2.0.3",
-        "barryvdh/laravel-dompdf": "^0.8.7",
-        "benjacho/belongs-to-many-field": "^1.9",
-        "bref/bref": "^1.5.5",
-        "bref/laravel-bridge": "^1.2.0",
-        "chris-ware/nova-breadcrumbs": "^2.3",
-        "coderello/laravel-nova-lang": "^1.6",
-        "czemu/nova-calendar-tool": "^1.3",
-        "digital-creative/nova-filepond": "^0.2.13",
-        "digital-creative/nova-inline-morph-to": "^0.2.1",
-        "dillingham/nova-attach-many": "^1.3",
-        "eminiarts/nova-tabs": "^1.5.1",
+        "php": "^8.1.4",
+        "barryvdh/laravel-dompdf": "^1.0.0",
+        "eminiarts/nova-tabs": "^2.0",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
-        "genealabs/nova-file-upload-field": "^0.4.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "inertiajs/inertia-laravel": "0.5.4",
-        "infinety-es/nova-filemanager": "^2.8",
-        "izi-dev/nova-key-value-suggestion-field": "^1.0",
-        "joedixon/nova-translation": "^1.0",
-        "kabbouchi/nova-impersonate": "^1.5",
-        "khalin/nova-link-field": "^1.2",
-        "kpolicar/nova-date-range": "9999999-dev",
+        "itsmejoshua/novaspatiepermissions": "^1.0",
         "laravel/framework": "^8.16.1",
         "laravel/jetstream": "^2.7",
-        "laravel/nova": "~3.27.0",
+        "laravel/nova": "^4.0",
         "laravel/octane": "^1.2",
         "laravel/sanctum": "^2.6",
         "laravel/socialite": "^5.5",
         "laravel/tinker": "^2.0",
-        "league/flysystem-aws-s3-v3": "^1.0",
-        "lms/activity-comments": "*",
         "lms/activity-scores": "*",
         "lms/course-gradebook": "*",
-        "lms/files": "*",
         "lms/gradebook": "*",
-        "lms/link-file": "*",
-        "lms/my-courses": "*",
-        "lms/notices": "*",
         "lms/teacher-topic-comment": "*",
-        "lms/users-types": "*",
-        "maatwebsite/excel": "^3.1",
-        "media24si/nova-youtube-field": "^1.0",
-        "michielkempen/nova-order-field": "^2.0",
-        "mirovit/nova-notifications": "^1.0",
+        "maatwebsite/excel": "^3.1.40",
         "monaye/simple-link-button": "^1.0",
-        "mycmdev/nova-modules": "^1.3",
-        "naoray/nova-json": "^1.2",
-        "optimistdigital/nova-settings": "^3.1",
-        "optimistdigital/nova-tailwind": "^1.0",
         "phoenix-lib/nova-nested-tree-attach-many": "^1.7",
+        "pixelcreation/nova-field-sortable": "^3.0.0",
         "pusher/pusher-php-server": "^6.1",
+        "sentry/sentry-laravel": "^2.12",
         "socialiteproviders/google": "^4.1",
         "socialiteproviders/microsoft": "^4.1",
-        "spatie/nova-backup-tool": "^4.0",
-        "spatie/nova-tags-field": "^3.0",
-        "spiral/roadrunner": "2.8.2",
-        "superlatif/nova-tag-input": "^1.4",
-        "test/test": "*",
+        "spatie/eloquent-sortable": "^4.0.1",
+        "spatie/laravel-permission": "^5.5",
+        "spatie/nova-backup-tool": "^5.0.1",
+        "spatie/nova-tags-field": "^4.0.3",
         "tightenco/ziggy": "^1.4",
-        "vyuldashev/nova-permission": "^2.9",
-        "whchi/nova-tags-input": "^0.0.5",
-        "whitecube/nova-flexible-content": "^0.2.5",
-        "yassi/nova-nested-form": "^3.0"
+        "wdelfuego/nova-datetime": "^1.1",
+        "whitecube/nova-flexible-content": "^1.0.0"
     },
     "repositories": [
         {
@@ -87,7 +55,7 @@
         },
         {
             "type": "path",
-            "url": "./h5p"
+            "url": "./nova-components/ActivityComments"
         },
         {
             "type": "path",
@@ -95,27 +63,7 @@
         },
         {
             "type": "path",
-            "url": "./nova-components/ActivityComments"
-        },
-        {
-            "type": "path",
-            "url": "./nova-components/MyCourses"
-        },
-        {
-            "type": "path",
-            "url": "./nova-components/UsersTypes"
-        },
-        {
-            "type": "path",
-            "url": "./nova-components/Files"
-        },
-        {
-            "type": "path",
-            "url": "./nova-components/LinkFile"
-        },
-        {
-            "type": "path",
-            "url": "./nova-components/TeacherTopicComment"
+            "url": "./nova-components/CourseGradebook"
         },
         {
             "type": "path",
@@ -123,23 +71,7 @@
         },
         {
             "type": "path",
-            "url": "./nova-components/Notices"
-        },
-        {
-            "type": "path",
-            "url": "./nova-components/CourseGradebook"
-        },
-        {
-            "type": "path",
-            "url": "./nova-components/Test"
-        },
-        {
-            "type": "path",
-            "url": "./nova-components/TestTool"
-        },
-        {
-            "type": "path",
-            "url": "./nova-components/TestResourceTool"
+            "url": "./nova-components/TeacherTopicComment"
         }
     ],
     "require-dev": {
@@ -147,7 +79,7 @@
         "fzaninotto/faker": "^1.9.1",
         "mockery/mockery": "^1.3.1",
         "nunomaduro/collision": "^5.0",
-        "phpunit/phpunit": "^9.3"
+        "phpunit/phpunit": "^9.5"
     },
     "config": {
         "optimize-autoloader": true,

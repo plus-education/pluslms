@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Laravel\Nova\Auth\Impersonatable;
 use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
@@ -16,9 +17,30 @@ class User extends Authenticatable
     use HasApiTokens;
     use HasFactory;
     use HasProfilePhoto;
+    use Impersonatable;
     use Notifiable;
     use TwoFactorAuthenticatable;
     use HasRoles;
+
+    /**
+     * Determine if the user can impersonate another user.
+     *
+     * @return bool
+     */
+    public function canImpersonate()
+    {
+        return $this->hasRole(Roles::SUPER_ADMIN);
+    }
+
+    /**
+     * Determine if the user can be impersonated.
+     *
+     * @return bool
+     */
+    public function canBeImpersonated()
+    {
+        return !$this->hasRole(Roles::SUPER_ADMIN);
+    }
 
     /**
      * The attributes that are mass assignable.

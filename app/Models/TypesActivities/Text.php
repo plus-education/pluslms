@@ -2,7 +2,6 @@
 
 namespace App\Models\TypesActivities;
 
-use Advoor\NovaEditorJs\NovaEditorJs;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -13,12 +12,4 @@ class Text extends Model
     const COMPONENT = 'TEXT';
 
     protected $guarded = [];
-
-    protected $appends = ['html'];
-
-    public function getHtmlAttribute()
-    {
-        return $this->body;
-        //return NovaEditorJs::generateHtmlOutput($this->body);
-    }
 }

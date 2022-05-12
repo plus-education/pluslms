@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Roles;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,43 +17,3 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/endpoint', function (Request $request) {
 //     //
 // });
-
-Route::get('/students/{topicId}', function ($topicId) {
-   $student = \App\Models\Topic::find($topicId)->course->users
-       ->filter(function ($student){
-           if ($student->hasRole(Roles::STUDENT)) {
-               return $student;
-           }
-       })
-       ->map(function ($student) use($topicId) {
-           if (!$student->hasRole(Roles::STUDENT)) {
-               return false;
-           }
-
-           $comment = ($student->topics->where('id', $topicId)->first()) ? $student->topics->where('id', $topicId)->first()->pivot->comment : '';
-
-            return [
-                'id' => $student->id,
-                'name' => $student->name,
-                'comment' => $comment
-            ];
-   });
-
-   return $student;
-});
-
-Route::post('/saveComment/{topicId}', function (Request $request, $topicId){
-    $student = \App\Models\User::find($request->post('studentId'));
-
-    $commnet = $student->topics->where('id', $topicId)->first();
-
-    if ($commnet) {
-        return $student->topics()->updateExistingPivot($topicId, [
-            'comment' => $request->post('comment')
-        ]);
-    }
-
-    return $student->topics()->attach($topicId, [
-        'comment' => $request->post('comment')
-    ]);
-});

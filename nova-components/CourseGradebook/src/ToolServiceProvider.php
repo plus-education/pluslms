@@ -17,8 +17,6 @@ class ToolServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'course-gradebook');
-
         $this->app->booted(function () {
             $this->routes();
         });
@@ -39,9 +37,12 @@ class ToolServiceProvider extends ServiceProvider
             return;
         }
 
+        Nova::router(['nova', Authorize::class], 'course-gradebook')
+            ->group(__DIR__.'/../routes/inertia.php');
+
         Route::middleware(['nova', Authorize::class])
-                ->prefix('nova-vendor/course-gradebook')
-                ->group(__DIR__.'/../routes/api.php');
+            ->prefix('nova-vendor/course-gradebook')
+            ->group(__DIR__.'/../routes/api.php');
     }
 
     /**

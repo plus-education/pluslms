@@ -1,9 +1,5 @@
-    Nova.booting((Vue, router, store) => {
-  router.addRoutes([
-    {
-      name: 'gradebook',
-      path: '/gradebook',
-      component: require('./components/Tool'),
-    },
-  ])
+import Tool from './pages/Tool'
+
+Nova.booting((app, store) => {
+  Nova.inertia('Gradebook', Tool)
 })

@@ -13,7 +13,9 @@ yarn-error.log
 .DS_Store
 .serverless
 .idea
-composer.lock
 auth.json
 .gittokenrr
 .rr.yaml
+rr.exe
+rr
+/nova-components/*-OLD/

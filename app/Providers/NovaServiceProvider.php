@@ -2,10 +2,10 @@
 
 namespace App\Providers;
 
-use Advoor\NovaEditorJs\NovaEditorJs;
+use App\Nova\Dashboards\Main;
+
 use App\Models\Roles;
 use Illuminate\Support\Facades\Gate;
-use Joedixon\NovaTranslation\NovaTranslation;
 use Laravel\Nova\Cards\Help;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
@@ -13,8 +13,9 @@ use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
 use Lms\CourseGradebook\CourseGradebook;
 use Lms\Gradebook\Gradebook;
-use Lms\MyCourses\MyCourses;
 use Lms\StudentGradebook\StudentGradebook;
+
+use Itsmejoshua\Novaspatiepermissions\Novaspatiepermissions;
 use Vyuldashev\NovaPermission\PermissionPolicy;
 use Vyuldashev\NovaPermission\RolePolicy;
 
@@ -28,11 +29,6 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function boot()
     {
         parent::boot();
-
-        \OptimistDigital\NovaSettings\NovaSettings::addSettingsFields([
-            Image::make('Logo', 'logo'),
-            Image::make('Logo Frontend', 'logo_frontend'),
-        ]);
     }
 
     /**
@@ -80,7 +76,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     protected function dashboards()
     {
-        return [];
+        return [
+            new Main,
+        ];
     }
 
     /**
@@ -91,27 +89,23 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function tools()
     {
         return [
-            MyCourses::make(),
-
-            CourseGradebook::make(),
             
             \Spatie\BackupTool\BackupTool::make()
                 ->canSee(function (){
                     return auth()->user()->can('manage backup');
                 }),
 
-            \Vyuldashev\NovaPermission\NovaPermissionTool::make()
+            //Novaspatiepermissions::make(),
+                /*->canSee(function (){
+                    return auth()->user()->can('manage roles');
+                }),*/
+
+            /*\Vyuldashev\NovaPermission\NovaPermissionTool::make()
                 ->rolePolicy(RolePolicy::class)
                 ->permissionPolicy(PermissionPolicy::class)
                 ->canSee(function (){
                     return auth()->user()->can('manage roles');
-                }),
-
-            \Addgod\NestedBreadcrumbs\NestedBreadcrumbs::make(),
-
-            \OptimistDigital\NovaSettings\NovaSettings::make(),
-
-            \Mirovit\NovaNotifications\NovaNotifications::make(),
+               }),*/
         ];
     }
 
@@ -122,6 +116,10 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     public function register()
     {
-        //
+        Nova::report(function ($exception) {
+            if (app()->bound('sentry')) {
+                app('sentry')->captureException($exception);
+           }
+       });
     }
 }
