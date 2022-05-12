@@ -2,6 +2,7 @@
 
 namespace App\Nova\Actions;
 
+use Laravel\Nova\Http\Requests\NovaRequest;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
@@ -30,7 +31,7 @@ class GradebookGroup extends Action
      *
      * @return array
      */
-    public function fields()
+    public function fields(NovaRequest $request)
     {
         return [];
     }

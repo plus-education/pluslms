@@ -1,10 +1,10 @@
 <?php
 
-use Laravel\Nova\Actions\ActionResource;
 use Laravel\Nova\Http\Middleware\Authenticate;
 use Laravel\Nova\Http\Middleware\Authorize;
 use Laravel\Nova\Http\Middleware\BootTools;
 use Laravel\Nova\Http\Middleware\DispatchServingNovaEvent;
+use Laravel\Nova\Http\Middleware\HandleInertiaRequests;
 
 return [
 
@@ -99,11 +99,16 @@ return [
 
     'middleware' => [
         'web',
-        Authenticate::class,
+        HandleInertiaRequests::class,
         DispatchServingNovaEvent::class,
         BootTools::class,
-        Authorize::class,
         \Vyuldashev\NovaPermission\ForgetCachedPermissions::class,
+    ],
+
+    'api_middleware' => [
+        'nova',
+        Authenticate::class,
+        Authorize::class,
     ],
 
     /*
@@ -145,6 +150,8 @@ return [
     |
     */
 
-    'currency' => 'USD',
+    'currency' => 'NZD',
+
+    'storage_disk' => env('NOVA_STORAGE_DISK', 'public'),
 
 ];

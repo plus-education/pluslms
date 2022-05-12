@@ -16,15 +16,15 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Lms\TeacherTopicComment\TeacherTopicComment;
-use MichielKempen\NovaOrderField\Orderable;
-use MichielKempen\NovaOrderField\OrderField;
-use Monaye\SimpleLinkButton\SimpleLinkButton;
+use PixelCreation\NovaFieldSortable\Concerns\SortsIndexEntries;
+use PixelCreation\NovaFieldSortable\Sortable;
+//use Monaye\SimpleLinkButton\SimpleLinkButton;
 
 class Topic extends Resource
 {
-    use Orderable;
+    use SortsIndexEntries;
 
-    public static $defaultOrderField = 'order';
+    public static $defaultSortField = 'order';
 
     /**
      * Indicates if the resource should be displayed in the sidebar.
@@ -97,7 +97,8 @@ class Topic extends Resource
 
             //HasMany::make(__('Weekly Plans'), 'weeklyPlannings', WeeklyPlanning::class),
 
-            OrderField::make(__('Order'), 'order'),
+            Sortable::make(__('Order'), 'order')
+                ->onlyOnIndex(),
 
             DateTime::make(__('Start Date'), 'startDate')
                 ->pickerDisplayFormat('d-m-Y H:i'),

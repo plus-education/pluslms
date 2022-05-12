@@ -79,7 +79,7 @@ class Supervisor extends Resource
      */
     public function fields(Request $request)
     {
-        return UserFileds::fields($this);
+        return UserFields::fields($this);
     }
 
     /**

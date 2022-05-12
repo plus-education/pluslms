@@ -2,13 +2,10 @@
 
 namespace App\Nova;
 
-use Advoor\NovaEditorJs\NovaEditorJs;
 use App\Models\Roles;
-use DigitalCreative\Filepond\Filepond;
+use Eminiarts\Tabs\Traits\HasTabs;
 use Eminiarts\Tabs\Tabs;
-use Eminiarts\Tabs\Tab;
-use Eminiarts\Tabs\TabsOnEdit;
-use Yassi\NestedForm\NestedForm;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Gate;
@@ -21,13 +18,13 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Monaye\SimpleLinkButton\SimpleLinkButton;
-use NovaAttachMany\AttachMany;
+//use Monaye\SimpleLinkButton\SimpleLinkButton;
+//use NovaAttachMany\AttachMany;
 use Spatie\Tags\Tag;
 
 class Course extends Resource
 {
-    use TabsOnEdit;
+    use HasTabs;
 
     /**
      * The model the resource corresponds to.
@@ -96,7 +93,7 @@ class Course extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function fields(Request $request)
+    public function fields(NovaRequest $request)
     {
         return [
             Text::make(__('Name'), 'name')
@@ -146,7 +143,7 @@ class Course extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function cards(Request $request)
+    public function cards(NovaRequest $request)
     {
         return [];
     }
@@ -157,7 +154,7 @@ class Course extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function filters(Request $request)
+    public function filters(NovaRequest $request)
     {
         return [];
     }
@@ -168,7 +165,7 @@ class Course extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function lenses(Request $request)
+    public function lenses(NovaRequest $request)
     {
         return [];
     }
@@ -179,7 +176,7 @@ class Course extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function actions(Request $request)
+    public function actions(NovaRequest $request)
     {
         return [];
     }

@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use Advoor\NovaEditorJs\NovaEditorJs;
+
 use App\Models\Roles;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Cards\Help;
@@ -12,7 +12,6 @@ use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
 use Lms\CourseGradebook\CourseGradebook;
 use Lms\Gradebook\Gradebook;
-use Lms\MyCourses\MyCourses;
 use Lms\StudentGradebook\StudentGradebook;
 use Vyuldashev\NovaPermission\PermissionPolicy;
 use Vyuldashev\NovaPermission\RolePolicy;
@@ -27,11 +26,6 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function boot()
     {
         parent::boot();
-
-        \OptimistDigital\NovaSettings\NovaSettings::addSettingsFields([
-            Image::make('Logo', 'logo'),
-            Image::make('Logo Frontend', 'logo_frontend'),
-        ]);
     }
 
     /**
@@ -90,27 +84,18 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function tools()
     {
         return [
-            MyCourses::make(),
-
-            CourseGradebook::make(),
             
             \Spatie\BackupTool\BackupTool::make()
                 ->canSee(function (){
                     return auth()->user()->can('manage backup');
                 }),
 
-            \Vyuldashev\NovaPermission\NovaPermissionTool::make()
+            /*\Vyuldashev\NovaPermission\NovaPermissionTool::make()
                 ->rolePolicy(RolePolicy::class)
                 ->permissionPolicy(PermissionPolicy::class)
                 ->canSee(function (){
                     return auth()->user()->can('manage roles');
-                }),
-
-            \Addgod\NestedBreadcrumbs\NestedBreadcrumbs::make(),
-
-            \OptimistDigital\NovaSettings\NovaSettings::make(),
-
-            \Mirovit\NovaNotifications\NovaNotifications::make(),
+                }),*/
         ];
     }
 

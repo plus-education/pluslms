@@ -183,7 +183,6 @@ return [
         App\Providers\JetstreamServiceProvider::class,
         \App\Providers\RepositoryServiceProvider::class,
         \App\Providers\NotificationsServiceProvider::class,
-        \NovaModules\Library\Providers\LibraryServiceProvider::class,
     ],
 
     /*

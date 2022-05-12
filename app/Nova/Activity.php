@@ -2,7 +2,6 @@
 
 namespace App\Nova;
 
-use DigitalCreative\InlineMorphTo\InlineMorphTo;
 use Eminiarts\Tabs\Tabs;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
@@ -13,18 +12,18 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\MorphMany;
 use Laravel\Nova\Fields\MorphTo;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Lms\ActivityComments\ActivityComments;
 use Lms\ActivityScores\ActivityScores;
-use MichielKempen\NovaOrderField\Orderable;
-use MichielKempen\NovaOrderField\OrderField;
-use Phalcon\Helper\Number;
+use PixelCreation\NovaFieldSortable\Concerns\SortsIndexEntries;
+use PixelCreation\NovaFieldSortable\Sortable;
 
 class Activity extends Resource
 {
-    use Orderable;
+    use SortsIndexEntries;
 
-    public static $defaultOrderField = 'order';
+    public static $defaultSortField = 'order';
 
     /**
      * The pagination per-page options configured for this resource.
@@ -96,7 +95,7 @@ class Activity extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function fields(Request $request)
+    public function fields(NovaRequest $request)
     {
         return [
             BelongsTo::make('Topic'),
@@ -124,9 +123,10 @@ class Activity extends Resource
                      return ($this->score > 0) ? true : false;
                  }),
  
-             OrderField::make(__("Order"), 'order'),
+            Sortable::make(__("Order"), 'order')
+                ->onlyOnIndex(),
  
-             \Laravel\Nova\Fields\Number::make(__("Order"), 'order')
+            Number::make(__("Order"), 'order')
                  ->hideWhenCreating(),
 
             Heading::make('Content'),
@@ -165,7 +165,7 @@ class Activity extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function cards(Request $request)
+    public function cards(NovaRequest $request)
     {
         return [];
     }
@@ -176,7 +176,7 @@ class Activity extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function filters(Request $request)
+    public function filters(NovaRequest $request)
     {
         return [];
     }
@@ -187,7 +187,7 @@ class Activity extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function lenses(Request $request)
+    public function lenses(NovaRequest $request)
     {
         return [];
     }
@@ -198,7 +198,7 @@ class Activity extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function actions(Request $request)
+    public function actions(NovaRequest $request)
     {
         return [];
     }
