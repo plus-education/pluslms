@@ -1289,16 +1289,16 @@
         },
         {
             "name": "eminiarts/nova-tabs",
-            "version": "2.0.3",
+            "version": "2.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/eminiarts/nova-tabs.git",
-                "reference": "1156a9591a2fdcad8a1319f77790f002549fcd6c"
+                "reference": "71dba1f18a51bcfe1953f3a1c4d63593a3535051"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/eminiarts/nova-tabs/zipball/1156a9591a2fdcad8a1319f77790f002549fcd6c",
-                "reference": "1156a9591a2fdcad8a1319f77790f002549fcd6c",
+                "url": "https://api.github.com/repos/eminiarts/nova-tabs/zipball/71dba1f18a51bcfe1953f3a1c4d63593a3535051",
+                "reference": "71dba1f18a51bcfe1953f3a1c4d63593a3535051",
                 "shasum": ""
             },
             "require": {
@@ -1343,9 +1343,9 @@
             ],
             "support": {
                 "issues": "https://github.com/eminiarts/nova-tabs/issues",
-                "source": "https://github.com/eminiarts/nova-tabs/tree/2.0.3"
+                "source": "https://github.com/eminiarts/nova-tabs/tree/2.0.6"
             },
-            "time": "2022-05-01T22:22:16+00:00"
+            "time": "2022-05-13T13:51:55+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -2049,16 +2049,16 @@
         },
         {
             "name": "itsmejoshua/novaspatiepermissions",
-            "version": "v1.0.3",
+            "version": "v1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itsmejoshua/novaspatiepermissions.git",
-                "reference": "0ad813ecadf18bdce3234e8a0b2d470a76f9c987"
+                "reference": "4830f9a33b5932a75136c2a9b91adcfb87c42f89"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itsmejoshua/novaspatiepermissions/zipball/0ad813ecadf18bdce3234e8a0b2d470a76f9c987",
-                "reference": "0ad813ecadf18bdce3234e8a0b2d470a76f9c987",
+                "url": "https://api.github.com/repos/itsmejoshua/novaspatiepermissions/zipball/4830f9a33b5932a75136c2a9b91adcfb87c42f89",
+                "reference": "4830f9a33b5932a75136c2a9b91adcfb87c42f89",
                 "shasum": ""
             },
             "require": {
@@ -2091,9 +2091,9 @@
             ],
             "support": {
                 "issues": "https://github.com/itsmejoshua/novaspatiepermissions/issues",
-                "source": "https://github.com/itsmejoshua/novaspatiepermissions/tree/v1.0.3"
+                "source": "https://github.com/itsmejoshua/novaspatiepermissions/tree/v1.0.4"
             },
-            "time": "2022-04-20T10:50:50+00:00"
+            "time": "2022-05-12T06:43:11+00:00"
         },
         {
             "name": "jaybizzle/crawler-detect",
@@ -2689,16 +2689,16 @@
         },
         {
             "name": "laravel/jetstream",
-            "version": "v2.8.0",
+            "version": "v2.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/jetstream.git",
-                "reference": "4aafe1f26dba30dff8dcb1420f0fb534ba3c7271"
+                "reference": "50ca355fa7cff5a851bbc0fa6addaa0010493c8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/jetstream/zipball/4aafe1f26dba30dff8dcb1420f0fb534ba3c7271",
-                "reference": "4aafe1f26dba30dff8dcb1420f0fb534ba3c7271",
+                "url": "https://api.github.com/repos/laravel/jetstream/zipball/50ca355fa7cff5a851bbc0fa6addaa0010493c8d",
+                "reference": "50ca355fa7cff5a851bbc0fa6addaa0010493c8d",
                 "shasum": ""
             },
             "require": {
@@ -2751,21 +2751,21 @@
                 "issues": "https://github.com/laravel/jetstream/issues",
                 "source": "https://github.com/laravel/jetstream"
             },
-            "time": "2022-05-10T14:20:57+00:00"
+            "time": "2022-05-13T14:06:46+00:00"
         },
         {
             "name": "laravel/nova",
-            "version": "4.5.2",
+            "version": "4.5.4",
             "source": {
                 "type": "git",
                 "url": "git@github.com:laravel/nova.git",
-                "reference": "5f94c78eb2aeda15ca34464cedb9d9771eab3409"
+                "reference": "23a2001aeb28cdce4dbb84f638477fd87c1067e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-5f94c78eb2aeda15ca34464cedb9d9771eab3409-zip-05f2f6.zip",
-                "reference": "5f94c78eb2aeda15ca34464cedb9d9771eab3409",
-                "shasum": "36e670077479fe7b638c7b00927c8a9acf6f4a6d"
+                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-23a2001aeb28cdce4dbb84f638477fd87c1067e4-zip-512dac.zip",
+                "reference": "23a2001aeb28cdce4dbb84f638477fd87c1067e4",
+                "shasum": "9f10a19383ab876a0b66f72923a737c356b37bb0"
             },
             "require": {
                 "brick/money": "^0.5.0",
@@ -2858,9 +2858,9 @@
                 "laravel"
             ],
             "support": {
-                "source": "https://github.com/laravel/nova/tree/v4.5.2"
+                "source": "https://github.com/laravel/nova/tree/v4.5.4"
             },
-            "time": "2022-05-11T20:32:18+00:00"
+            "time": "2022-05-12T18:43:40+00:00"
         },
         {
             "name": "laravel/octane",
@@ -3261,16 +3261,16 @@
         },
         {
             "name": "league/commonmark",
-            "version": "2.3.0",
+            "version": "2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "32a49eb2b38fe5e5c417ab748a45d0beaab97955"
+                "reference": "cb36fee279f7fca01d5d9399ddd1b37e48e2eca1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/32a49eb2b38fe5e5c417ab748a45d0beaab97955",
-                "reference": "32a49eb2b38fe5e5c417ab748a45d0beaab97955",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/cb36fee279f7fca01d5d9399ddd1b37e48e2eca1",
+                "reference": "cb36fee279f7fca01d5d9399ddd1b37e48e2eca1",
                 "shasum": ""
             },
             "require": {
@@ -3363,7 +3363,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-04-07T22:37:05+00:00"
+            "time": "2022-05-14T15:37:39+00:00"
         },
         {
             "name": "league/config",
@@ -3675,11 +3675,11 @@
         },
         {
             "name": "lms/activity-scores",
-            "version": "dev-dev-nova-4",
+            "version": "dev-dev",
             "dist": {
                 "type": "path",
                 "url": "./nova-components/ActivityScores",
-                "reference": "421e44f53c3617b88f993324929102a8f4f82066"
+                "reference": "79c421784a97bf5e44f803d98acde374fbe57c68"
             },
             "require": {
                 "php": "^7.3|^8.0"
@@ -3711,11 +3711,11 @@
         },
         {
             "name": "lms/course-gradebook",
-            "version": "dev-dev-nova-4",
+            "version": "dev-dev",
             "dist": {
                 "type": "path",
                 "url": "./nova-components/CourseGradebook",
-                "reference": "6b8f79ecb691a19dc5cc93c33c4db25d47b45ee5"
+                "reference": "17db4975b647cc9c543e50e39cc995b339ec9cec"
             },
             "require": {
                 "php": "^7.3|^8.0"
@@ -3747,11 +3747,11 @@
         },
         {
             "name": "lms/gradebook",
-            "version": "dev-dev-nova-4",
+            "version": "dev-dev",
             "dist": {
                 "type": "path",
                 "url": "./nova-components/Gradebook",
-                "reference": "8a9f8123c20387ec890963ffe5b8392ac68ad7f4"
+                "reference": "cf78695b64ced49e10c2afbfebe4833c0f25ce74"
             },
             "require": {
                 "php": "^7.3|^8.0"
@@ -3783,11 +3783,11 @@
         },
         {
             "name": "lms/teacher-topic-comment",
-            "version": "dev-dev-nova-4",
+            "version": "dev-dev",
             "dist": {
                 "type": "path",
                 "url": "./nova-components/TeacherTopicComment",
-                "reference": "3fe60070ac57d144b2e4e6d9ef93786521efb793"
+                "reference": "bdd78048522f49e15032431a9eca411a6dd02889"
             },
             "require": {
                 "php": "^7.3|^8.0"
