@@ -52,13 +52,15 @@ import { Link } from '@inertiajs/inertia-vue3'
                     <Link class="btn btn-outline-info" :href="prev_url" v-if="prev_url">Prev</Link>
                     <div v-else></div>
 
-                    <form 
+                    <!--<form 
                         class="pl-2" 
                         @submit.prevent="finish_task(course.slug, section.id, topic.id)" 
                         v-if="next_url"
                     >
                         <CButton color="info" variant="outline" type="submit">Next</CButton>
-                    </form>
+                    </form>-->
+                    <Link class="btn btn-outline-info" :href="next_url" v-if="next_url">Next</Link>
+                    <div v-else></div>
                 </div>
             </div>
         </div>
@@ -99,7 +101,7 @@ import { Link } from '@inertiajs/inertia-vue3'
             topic: Object,
             topics: Object,
             user: Object,
-            //defaultactivity: Object,
+            activityid: Number,
         },
 
         data: () => {
@@ -109,13 +111,14 @@ import { Link } from '@inertiajs/inertia-vue3'
               right: false,
               activity: Object,
               icons: Object,
-              prev_url: String,
-              next_url: String,
+              prev_url: null,
+              next_url: null,
           }
         },
 
         created() {
             this.activity = this.initializeActivity()
+
             if (this.activity) {
                 this.activity.activeClass = 'active-activity'
             }
@@ -137,17 +140,30 @@ import { Link } from '@inertiajs/inertia-vue3'
                 
                 axios.get(route('nav.topic.activity', this.activity.id)).then(response => {
                     console.log(response.data);
-                    this.prev_url = route('');
+
+                    if (response.data.prev != null) {
+                        this.prev_url = route('courses.topic', [response.data.prev?.topic_id ?? this.topic.id, response.data.prev.id]);
+                    }
+
+                    if (response.data.next != null) {
+                        this.next_url = route('courses.topic', [response.data.next?.topic_id ?? this.topic.id, response.data.next.id]);
+                    }
                     //this.comments = response.data
                 })
             },
 
             initializeActivity: function() {
-                /*if (this.defaultactivity) {
-                    return this.activity = this.defaultactivity;
-                }*/
+                let index = 0;
 
-                return (this.topic.activities.length > 0) ? this.activity = this.topic.activities[0] : false
+                if (this.activityid) {
+                    let key = window._.findKey(this.topic.activities, obj => {
+                        return obj.id == this.activityid
+                    });
+
+                    if (key) index = key;
+                }
+
+                return (this.topic.activities.length > 0) ? this.activity = this.topic.activities[index] : false
             },
 
             setDivider: function() {
@@ -171,7 +187,6 @@ import { Link } from '@inertiajs/inertia-vue3'
             changeActivity: function(selectedActivity) {
                 this.selectNewActivity(selectedActivity);
                 this.getNav(this.activity);
-                //this.showDividerActivities(selectedActivity)
             },
 
             selectNewActivity: function(selectedActivity) {
@@ -183,26 +198,6 @@ import { Link } from '@inertiajs/inertia-vue3'
 
                     return activity.activeClass = null
                 })
-            },
-
-            showDividerActivities: function(divider) {
-                return divider.show = true
-
-
-                if(divider.type != 'DIVIDER'){
-                    return false;
-                }
-
-                this.topic.activities.forEach(activity => {
-                    if(activity.divider != divider.id && activity.divider != 0){
-                        activity.show = false
-                        return
-                    }
-
-                    activity.show = true
-                    return activity
-                })
-
             },
         }
     }
