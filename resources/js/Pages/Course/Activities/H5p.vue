@@ -43,6 +43,7 @@
         methods: {
             resizeH5PContent(e = null) {
                 let iFrame = document.getElementById('h5p-content');
+                console.log(iFrame);
                 iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
 
                 //document.getElementById("h5p-content").style.height = document.getElementById("h5p-content").contentWindow.document.body.scrollHeight + "px";

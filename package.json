@@ -17,7 +17,9 @@
         "build-gradebook": "cd nova-components/Gradebook && npm run dev",
         "build-gradebook-prod": "cd nova-components/Gradebook && npm run prod",
         "build-course-gradebook": "cd nova-components/CourseGradebook && npm run dev",
-        "build-course-gradebook-prod": "cd nova-components/CourseGradebook && npm run prod"
+        "build-course-gradebook-prod": "cd nova-components/CourseGradebook && npm run prod",
+        "build-inline-morph-to": "cd nova-components/InlineMorphTo && npm run dev",
+        "build-inline-morph-to-prod": "cd nova-components/InlineMorphTo && npm run prod"
     },
     "devDependencies": {
         "@editorjs/attaches": "^1.1.0",

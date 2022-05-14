@@ -66,6 +66,44 @@ class Activity extends Model implements Sortable
         Video::class,
     ];
 
+    /**
+     * The "booted" method of the model.
+     *
+     * @return void
+     */
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($model) {
+            switch ($model->activityable_type) {
+                case 'App\Models\TypesActivities\H5P':
+                    $h5p = H5P::create([
+                        'link' => $model->link,
+                    ]);
+                    $model->activityable_type = H5P::class;
+                    $model->activityable_id = $h5p->id;
+                    unset($model->link);  # Unset the link so we don't get an error
+                    break;
+                case 'App\Models\TypesActivities\Text':
+                    $text = Text::create([
+                        'link' => $model->body,
+                    ]);
+                    $model->activityable_type = Text::class;
+                    $model->activityable_id = $text->id;
+                    unset($model->body);  # Unset the link so we don't get an error
+                    break;
+                default:
+                    unset($model->activityable_type);
+                    break;
+            }
+            
+        });
+        
+        static::updating(function ($model) {
+        });
+    }
+
     public function topic()
     {
         return $this->belongsTo(Topic::class);

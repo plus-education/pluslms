@@ -13,7 +13,8 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^8.1.4",
+        "php": "^8.1.2",
+        "alexwenzel/nova-dependency-container": "^1.0",
         "barryvdh/laravel-dompdf": "^1.0.0",
         "eminiarts/nova-tabs": "^2.0",
         "fideloper/proxy": "^4.2",

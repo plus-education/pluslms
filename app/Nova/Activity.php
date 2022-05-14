@@ -12,10 +12,15 @@ use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\Heading;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\MorphMany;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\MorphTo;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Number;
+
+use App\Nova\Text as TextActivity;
+
+use Alexwenzel\DependencyContainer\HasDependencies;
+use Alexwenzel\DependencyContainer\DependencyContainer;
 
 //use Lms\ActivityComments\ActivityComments;
 //use Lms\ActivityScores\ActivityScores;
@@ -25,7 +30,7 @@ use PixelCreation\NovaFieldSortable\Sortable;
 
 class Activity extends Resource
 {
-    use HasTabs, SortsIndexEntries;
+    use HasDependencies, HasTabs, SortsIndexEntries;
 
     public static $defaultSortField = 'order';
 
@@ -120,7 +125,7 @@ class Activity extends Resource
             Boolean::make(__('Show'), 'isShow')
                 ->required(),
 
-                \Laravel\Nova\Fields\Number::make(__('Score'), 'score')
+            \Laravel\Nova\Fields\Number::make(__('Score'), 'score')
                 ->min(0)
                 ->max(100)
                 ->default(0),
@@ -139,14 +144,35 @@ class Activity extends Resource
 
             Heading::make('Content'),
 
+            Select::make(__("Activity Type"), 'activityable_type')->options([
+                'App\Models\TypesActivities\H5P' => 'H5P Content',
+                'App\Models\TypesActivities\Text' => 'Text',
+                //Exercise::class,
+                //PDF::class,
+            ])
+                ->displayUsingLabels()
+                ->required()
+                ->rules('required')
+                ->onlyOnForms()
+                ->hideWhenUpdating(),
+
             MorphTo::make(__("Activity Type"), 'Activityable')->types([
                 \App\Nova\Text::class,
-                H5P::class,
-                Exercise::class,
-                PDF::class,
+                H5P::class
+                //Exercise::class,
+                //PDF::class,
             ])
-                ->required()
-                ->rules('required'),
+                ->exceptOnForms(),
+
+            DependencyContainer::make((new H5P(null))->fields($request))
+                ->dependsOn('activityable_type', 'App\Models\TypesActivities\H5P')
+                ->onlyOnForms()
+                ->hideWhenUpdating(),
+
+            DependencyContainer::make((new TextActivity(null))->fields($request))
+                ->dependsOn('activityable_type', 'App\Models\TypesActivities\Text')
+                ->onlyOnForms()
+                ->hideWhenUpdating(),
 
             Heading::make('Meta'),
 

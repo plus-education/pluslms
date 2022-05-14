@@ -11,5 +11,7 @@ class Text extends Model
 
     const COMPONENT = 'TEXT';
 
+    protected $fillable = ['body'];
+
     protected $guarded = [];
 }

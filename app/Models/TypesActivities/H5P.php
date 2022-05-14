@@ -11,5 +11,7 @@ class H5P extends Model
 
     protected $table = 'h5ps';
 
+    protected $fillable = ['link'];
+
     const COMPONENT = 'H5P';
 }
