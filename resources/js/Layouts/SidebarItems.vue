@@ -11,21 +11,21 @@ import { Link } from '@inertiajs/inertia-vue3'
                 </Link>
                 <ul v-if="topic.id === t.id && topic.activities">
                     <template 
-                    :key="activity.id" 
-                    v-for="activity in topic.activities"
+                    :key="act.id" 
+                    v-for="act in topic.activities"
                     >
                         <li
                             class="cursor-pointer"
-                            v-show="activity.isShow == 1"
-                            @click="$emit('changeActivity', activity)">
-                            <div 
+                            v-show="act.isShow == 1">
+                            <Link 
+                                :href="route('courses.topic', [topic.id, act.id])"
                                 class="p-2 w-full hover:bg-gray-200 inline-block"
-                                :class="activity.activeClass"
+                                :class="{ 'active-activity': act.id === activity.id }"
                             >
-                                <span class="inline-block pr-2" style="height:18px;" v-html="icons[activity.type]"></span>
+                                <span class="inline-block pr-2" style="height:18px;" v-html="icons[act.type]"></span>
                                 <!--<span v-if="t.completed">&#9745;</span>-->
-                                {{ activity.name }}
-                            </div>
+                                {{ act.name }}
+                            </Link>
                         </li>
                     </template>
                 </ul>
@@ -40,6 +40,7 @@ export default {
         topic: Object,
         topics: Object,
         icons: Object,
+        activity: Object,
     }
 }
 </script>

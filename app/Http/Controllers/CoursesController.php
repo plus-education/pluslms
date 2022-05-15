@@ -25,15 +25,29 @@ class CoursesController extends Controller
             ->with(compact('course'));
     }
 
-    public function topic($id, $activityid = null)
+    public function topic($id, $activity_id = null)
     {
         $topic = Topic::find($id);
-        $activities = $topic->activities->where('isShow', true);
+
+        if ($topic === null) abort(404);
+        
+        if ($activity_id === null) {
+            $activity = $topic->activities->where('isShow', true)->first();
+        } else {
+            $activity = $topic->activities
+                ->where('isShow', true)
+                ->where('id', $activity_id)
+                ->first();
+        }
+
+        if ($activity === null) abort(404);
+
+        //$activities = $topic->activities->where('isShow', true);
         $topic->course;
         $topics = $topic->course->topics;
 
         return Inertia::render('Course/Topic')
-            ->with(compact('topic', 'activities', 'topics', 'activityid'));
+            ->with(compact('topic', 'activity', 'topics'));
     }
 
     public function topicActivities($id)

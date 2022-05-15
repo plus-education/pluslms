@@ -16,7 +16,7 @@ import { Link } from '@inertiajs/inertia-vue3'
                 :topic="topic"
                 :topics="topics"
                 :icons="icons"
-                @change-activity="(a) => $emit('changeActivity', a)"
+                :activity="activity"
             />
         </template>
 
@@ -31,7 +31,7 @@ import { Link } from '@inertiajs/inertia-vue3'
                     :topic="topic"
                     :topics="topics"
                     :icons="icons"
-                    @change-activity="(a) => $emit('changeActivity', a)"
+                    :activity="activity"
                 />
             </div>
 
@@ -51,7 +51,7 @@ import { Link } from '@inertiajs/inertia-vue3'
         topics: Object,
         fullHeight: Boolean,
         icons: Object,
+        activity: Object,
     },
-    emits: ['changeActivity']
   }
 </script>

@@ -9,9 +9,9 @@ import { Link } from '@inertiajs/inertia-vue3'
         :title="title" 
         :topic="topic" 
         :topics="topics"
+        :activity="activity"
         :fullHeight="true"
         :icons="icons"
-        @change-activity="changeActivity"
     >
         <div class="max-w-7xl mx-auto md:px-6 lg:px-8">
             <div class="md:p-4 bg-white shadow-xl sm:rounded-lg">
@@ -37,14 +37,7 @@ import { Link } from '@inertiajs/inertia-vue3'
                 <div class="flex justify-between">
                     <Link class="btn btn-outline-info" :href="prev_url" v-if="prev_url">Prev</Link>
                     <div v-else></div>
-
-                    <!--<form 
-                        class="pl-2" 
-                        @submit.prevent="finish_task(course.slug, section.id, topic.id)" 
-                        v-if="next_url"
-                    >
-                        <CButton color="info" variant="outline" type="submit">Next</CButton>
-                    </form>-->
+                    
                     <Link class="btn btn-outline-info" :href="next_url" v-if="next_url">Next</Link>
                     <div v-else></div>
                 </div>
@@ -72,8 +65,8 @@ import { Link } from '@inertiajs/inertia-vue3'
         props: {
             topic: Object,
             topics: Object,
+            activity: Object,
             user: Object,
-            activityid: Number,
         },
 
         data: () => {
@@ -81,7 +74,6 @@ import { Link } from '@inertiajs/inertia-vue3'
               open: false,
               dimmer: true,
               right: false,
-              activity: Object,
               icons: Object,
               prev_url: null,
               next_url: null,
@@ -89,17 +81,22 @@ import { Link } from '@inertiajs/inertia-vue3'
         },
 
         created() {
-            this.activity = this.initializeActivity()
-
-            if (this.activity) {
+            /*if (this.activity) {
                 this.activity.activeClass = 'active-activity'
-            }
-            this.setDivider()
+            }*/
         },
 
         mounted() {
             this.icons = sidebarIcons;
             this.getNav();
+
+            /*window.addEventListener('message', function receiveMessage(event) {
+                if (event.data.result === undefined) {
+                    return; // Only handle messages with result
+                }
+                
+                console.log(event.data.actor.name + ' just scored ' + (event.data.result.score.scaled * 100) + ' %');
+                } , false);*/
         },
 
         methods: {
@@ -121,54 +118,6 @@ import { Link } from '@inertiajs/inertia-vue3'
                         this.next_url = route('courses.topic', [response.data.next?.topic_id ?? this.topic.id, response.data.next.id]);
                     }
                     //this.comments = response.data
-                })
-            },
-
-            initializeActivity: function() {
-                let index = 0;
-
-                if (this.activityid) {
-                    let key = window._.findKey(this.topic.activities, obj => {
-                        return obj.id == this.activityid
-                    });
-
-                    if (key) index = key;
-                }
-
-                return (this.topic.activities.length > 0) ? this.activity = this.topic.activities[index] : false
-            },
-
-            setDivider: function() {
-                let divider = 0
-
-                this.topic.activities.forEach(activity => {
-                    if(activity.type == 'DIVIDER'){
-                        divider = activity.id
-                        activity.show = true
-                        activity.activeClass = null
-                        return
-                    }
-
-                    activity.divider = divider;
-                    //activity.show = divider == 0 ? true : false;
-                    activity.show = true
-                    return activity
-                })
-            },
-
-            changeActivity: function(selectedActivity) {
-                this.selectNewActivity(selectedActivity);
-                this.getNav(this.activity);
-            },
-
-            selectNewActivity: function(selectedActivity) {
-                this.topic.activities.forEach( (activity) => {
-                    if (activity.id == selectedActivity.id) {
-                        activity.activeClass = 'active-activity'
-                        return this.activity = activity
-                    }
-
-                    return activity.activeClass = null
                 })
             },
         }
