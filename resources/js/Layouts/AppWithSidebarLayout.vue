@@ -20,7 +20,7 @@ import { Link } from '@inertiajs/inertia-vue3'
             />
         </template>
 
-        <div class="flex flex-wrap bg-gray-100 w-full">
+        <div class="flex flex-wrap bg-gray-100 w-full overflow-y-scroll">
             <div class="w-3/12 h-screen overflow-y-auto bg-white shadow-lg hidden md:block">
                 <div class="p-3 text-ellipsis">
                     <h4>Course:</h4>

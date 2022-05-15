@@ -35,8 +35,8 @@ class UserFields
                 ->sortable()
                 ->rules('max:255'),
 
-            //MorphToMany::make('Roles', 'roles', \Itsmejoshua\Novaspatiepermissions\Role::class),
-            //MorphToMany::make('Permissions', 'permissions', \Itsmejoshua\Novaspatiepermissions\Permission::class),
+            MorphToMany::make('Roles', 'roles', \Itsmejoshua\Novaspatiepermissions\Role::class),
+            MorphToMany::make('Permissions', 'permissions', \Itsmejoshua\Novaspatiepermissions\Permission::class),
 
             Boolean::make('Is Solvent', 'is_solvent'),
         ];

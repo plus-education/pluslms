@@ -6,7 +6,7 @@
     <app-layout>
         <template #header>
             <ul>
-                <li>Home</li>
+                <li><Link class="text-blue-500 underline" :href="route('dashboard')">Home</Link> / Course: {{ course.name }} / Overview</li>
             </ul>
         </template>
 
@@ -20,22 +20,25 @@
                     </h1>
                     <span class="text-sm text-white">Group: {{ course.group.name }}</span>
                 </div>
-
                 <div class="mt-4" v-if="course.classLink !== null && course.classLink !== ''">
                     <a
                         :href="course.classLink"
                         target="_blank"
                         class="bg-white py-2 px-4 rounded-lg shadow"
                     >
-                        Join Online Class
+                        Join Zoom Class
                     </a>
                 </div>
             </header>
 
-            <div class="my-4" v-html="course.html">
+            <div class="my-4" v-if="course.description" v-html="course.description">
             </div>
 
-            <div class="mt-6">
+            <hr />
+
+            <h3 class="text-lg font-bold">Overview:</h3>
+
+            <div v-if="course.topics && course.topics.length > 0" class="mt-6">
                 <template :key="topic.id" v-for="topic in course.topics">
                     <Link
                         :href="`/courses/topic/${topic.id}`"
@@ -46,6 +49,10 @@
                         </div>
                     </Link>
                 </template>
+            </div>
+
+            <div v-else class="mt-6">
+                <p class="text-md">This course doesn't have any content yet. Please check back later.</p>
             </div>
         </section>
     </app-layout>

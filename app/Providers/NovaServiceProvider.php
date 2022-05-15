@@ -95,17 +95,12 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     return auth()->user()->can('manage backup');
                 }),
 
-            //Novaspatiepermissions::make(),
-                /*->canSee(function (){
-                    return auth()->user()->can('manage roles');
-                }),*/
-
-            /*\Vyuldashev\NovaPermission\NovaPermissionTool::make()
-                ->rolePolicy(RolePolicy::class)
-                ->permissionPolicy(PermissionPolicy::class)
+            Novaspatiepermissions::make()
                 ->canSee(function (){
                     return auth()->user()->can('manage roles');
-               }),*/
+                }),
+
+            //\ChrisWare\NovaBreadcrumbs\NovaBreadcrumbs::make(),
         ];
     }
 

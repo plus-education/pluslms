@@ -25,25 +25,11 @@ import { Link } from '@inertiajs/inertia-vue3'
 
                 <div v-else class="pb-4 mb-8 container m-auto bg-white shadow rounded-lg"><!-- overflow-scroll">-->
 
-                    <divider-activity v-if="activity.type == 'DIVIDER'" :activity="activity" :user="user"></divider-activity>
-
                     <exercise-activity v-if="activity.type == 'EXERCISE'" :activity="activity" :user="user"></exercise-activity>
-
-                    <file-activity v-if="activity.type == 'FILE'" :activity="activity" :user="user"></file-activity>
 
                     <h5p-activity v-if="activity.type == 'H5P'" :activity="activity" :user="user" />
 
-                    <link-activity v-if="activity.type == 'LINK'" :activity="activity" :user="user"></link-activity>
-
                     <text-activity v-if="activity.type == 'TEXT'" :activity="activity" :user="user"></text-activity>
-
-                    <pdf-activity v-if="activity.type == 'PDF'" :activity="activity" :user="user"></pdf-activity>
-
-                    <homework-activity v-if="activity.type == 'HOMEWORK'" :activity="activity" :user="user"></homework-activity>
-
-                    <youtube-activity v-if="activity.type == 'YOUTUBE'" :activity="activity" :user="user"></youtube-activity>
-
-                    <video-activity v-if="activity.type == 'VIDEO'" :activity="activity" :user="user"></video-activity>
 
                 </div>
 
@@ -70,30 +56,16 @@ import { Link } from '@inertiajs/inertia-vue3'
 <script>
     import sidebarIcons from './SidebarIcons.js'
 
-    import DividerActivity from "./Activities/Divider"
     import ExerciseActivity from "./Activities/Exercise"
-    import FileActivity from './Activities/File'
     import H5pActivity from './Activities/H5p';
-    import LinkActivity from './Activities/Link'
     import TextActivity from './Activities/Text'
-    import PdfActivity from "./Activities/Pdf"
-    import HomeworkActivity from "./Activities/Homework";
-    import YoutubeActivity from "./Activities/Youtube";
-    import VideoActivity from "./Activities/Video";
     import Comments from "./Comments";
 
     export default {
         components: {
-            FileActivity,
             H5pActivity,
-            DividerActivity,
             ExerciseActivity,
-            HomeworkActivity,
-            LinkActivity,
             TextActivity,
-            PdfActivity,
-            YoutubeActivity,
-            VideoActivity,
             Comments,
         },
 

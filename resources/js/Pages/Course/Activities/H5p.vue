@@ -34,21 +34,6 @@
             activity: Object,
             user: Object,
         },
-
-        mounted() {
-            this.resizeH5PContent();
-            window.addEventListener("resize", this.resizeH5PContent);
-        },
-
-        methods: {
-            resizeH5PContent(e = null) {
-                let iFrame = document.getElementById('h5p-content');
-                console.log(iFrame);
-                iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
-
-                //document.getElementById("h5p-content").style.height = document.getElementById("h5p-content").contentWindow.document.body.scrollHeight + "px";
-            }
-        }
     }
 </script>
 

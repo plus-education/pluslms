@@ -1,10 +1,5 @@
 <template>
     <app-layout>
-        <template #header>
-           <ul>
-               <li>Home</li>
-           </ul>
-        </template>
 
         <section>
             <div class="container m-auto mt-6 mb-6 flex flex-col md:flex-row items-center justify-between bg-white shadow-lg">

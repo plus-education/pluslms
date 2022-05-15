@@ -23,6 +23,21 @@ class User extends Authenticatable
     use HasRoles;
 
     /**
+     * The "booted" method of the model.
+     *
+     * @return void
+     */
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::created(function ($model) {
+            // Upon creation, assign student as the default role.
+            $model->assignRole(Roles::STUDENT);
+        });
+    }
+
+    /**
      * Determine if the user can impersonate another user.
      *
      * @return bool

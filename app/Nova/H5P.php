@@ -14,7 +14,7 @@ class H5P extends Resource
      *
      * @var bool
      */
-    //public static $displayInNavigation = false;
+    public static $displayInNavigation = false;
 
     /**
      * The model the resource corresponds to.
