@@ -86,16 +86,34 @@ const submit = () => {
             </div>
         </form>
 
-        <hr />
+        <div class="py-4 m-auto">
+            <hr class="py-2" />
+            <div class="py-1">
+                <a :href="route('google.login')" type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-slate-500 hover:border-black text-sm font-medium rounded text-black focus:outline-none">
+                    <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+                        <img width="18" src="img/google-logo.png" />
+                    </span>
+                    Sign in with Google
+                </a>
+            </div>
 
-        <div>
-            <a :href="route('google.login')" style="margin-top: 0px !important;background: green;color: #ffffff;padding: 5px;border-radius:7px;" class="ml-2">
-                <strong>Google Login</strong>
-            </a> 
-
-            <a :href="route('microsoft.login')" style="margin-top: 0px !important;background: green;color: #ffffff;padding: 5px;border-radius:7px;" class="ml-2">
-                <strong>Microsoft Login</strong>
-            </a> 
+            <div class="py-1">
+                <a :href="route('microsoft.login')" type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-slate-500 hover:border-black text-sm font-medium rounded text-black focus:outline-none">
+                    <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+                        <img width="18" src="img/microsoft-logo.svg" />
+                    </span>
+                    Sign in with Microsoft
+                </a>
+            </div>
         </div>
+
+        <div class="py-4 m-auto">
+            <hr class="py-2" />
+            Need an account?
+            <Link :href="route('register')" class="underline text-sm text-gray-600 hover:text-gray-900">
+                Register here.
+            </Link>
+        </div>
+
     </JetAuthenticationCard>
 </template>

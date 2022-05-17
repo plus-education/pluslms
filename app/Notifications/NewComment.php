@@ -8,6 +8,9 @@ use Illuminate\Notifications\Messages\BroadcastMessage;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
+use Laravel\Nova\Notifications\NovaNotification;
+use Laravel\Nova\Notifications\NovaChannel;
+
 class NewComment extends Notification
 {
     use Queueable;
@@ -34,7 +37,8 @@ class NewComment extends Notification
     {
         return [
             'database',
-            'broadcast'
+            'broadcast',
+            NovaChannel::class,
         ];
     }
 
@@ -60,10 +64,24 @@ class NewComment extends Notification
      */
     public function toArray($notifiable)
     {
-        return \Mirovit\NovaNotifications\Notification::make()
-            ->info($this->details['title'])
-            ->subtitle($this->details['details'])
-            ->routeDetail($this->details['resourceName'], $this->details['resourceId'])
-            ->toArray();
+        return [
+            'info' => $this->details['title'],
+            'subtitle' => $this->details['details'],
+            'type' => 'info'
+        ];
+    }
+
+    /**
+     * Get the nova representation of the notification
+     * 
+     * @return array
+     */
+    public function toNova($notifiable)
+    {
+        return (new NovaNotification)
+            ->message($this->details['title'] . ' - ' . $this->details['details'])
+            //->action('Download', URL::remote('https://example.com/report.pdf'))
+            ->icon('download')
+            ->type('info');
     }
 }

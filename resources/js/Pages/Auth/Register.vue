@@ -104,5 +104,27 @@ const submit = () => {
                 </JetButton>
             </div>
         </form>
+
+        <hr />
+
+        <div class="py-6 m-auto">
+            <div class="py-1">
+                <a type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-slate-500 hover:border-black text-sm font-medium rounded text-black focus:outline-none">
+                    <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+                        <img width="18" src="img/google-logo.png" />
+                    </span>
+                     Sign up with Google
+                </a>
+            </div>
+
+            <div class="py-1">
+                <a  type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-slate-500 hover:border-black text-sm font-medium rounded text-black focus:outline-none">
+                    <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+                        <img width="18" src="img/microsoft-logo.svg" />
+                    </span>
+                    Sign up with Microsoft
+                </a>
+            </div>
+        </div>
     </JetAuthenticationCard>
 </template>

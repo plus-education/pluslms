@@ -1,5 +1,6 @@
 <script setup>
     import { Link } from "@inertiajs/inertia-vue3";
+    import CourseGradebook from '../Admin/CourseGradebook';
 </script>
 
 <template>
@@ -10,7 +11,7 @@
             </ul>
         </template>
 
-        <section class="container m-auto mt-6  md:px-0 sm:px-4">
+        <section class="container m-auto mt-6 px-4 pb-6 w-full lg:w-1/2">
             <header class=" shadow rounded-lg p-8 md:h-48 sm:h-32  bg-cover"
                 :style="`background-image: url('${course.coverPath}')`"
             >
@@ -34,7 +35,7 @@
             <div class="my-4" v-if="course.description" v-html="course.description">
             </div>
 
-            <hr />
+            <hr class="py-2" />
 
             <h3 class="text-lg font-bold">Overview:</h3>
 

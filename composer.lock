@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "14dea9a91cafd87812b5f0d0fb9e44e2",
+    "content-hash": "61e808aba5f844ac2acf23d33ea8d4a2",
     "packages": [
         {
             "name": "alexwenzel/nova-dependency-container",
@@ -2082,16 +2082,16 @@
         },
         {
             "name": "inertiajs/inertia-laravel",
-            "version": "v0.5.4",
+            "version": "v0.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/inertiajs/inertia-laravel.git",
-                "reference": "6a050ce04a710ac4809161558ac09fe49f13075e"
+                "reference": "ea8f8a5a377cfdc567820b6afd50767f1794c3df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/inertiajs/inertia-laravel/zipball/6a050ce04a710ac4809161558ac09fe49f13075e",
-                "reference": "6a050ce04a710ac4809161558ac09fe49f13075e",
+                "url": "https://api.github.com/repos/inertiajs/inertia-laravel/zipball/ea8f8a5a377cfdc567820b6afd50767f1794c3df",
+                "reference": "ea8f8a5a377cfdc567820b6afd50767f1794c3df",
                 "shasum": ""
             },
             "require": {
@@ -2139,7 +2139,7 @@
             ],
             "support": {
                 "issues": "https://github.com/inertiajs/inertia-laravel/issues",
-                "source": "https://github.com/inertiajs/inertia-laravel/tree/v0.5.4"
+                "source": "https://github.com/inertiajs/inertia-laravel/tree/v0.6.0"
             },
             "funding": [
                 {
@@ -2147,7 +2147,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-01-18T10:59:08+00:00"
+            "time": "2022-05-10T11:02:47+00:00"
         },
         {
             "name": "itsmejoshua/novaspatiepermissions",
