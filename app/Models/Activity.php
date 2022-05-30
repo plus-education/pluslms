@@ -7,6 +7,7 @@ use App\Models\TypesActivities\Exercise;
 use App\Models\TypesActivities\File;
 use App\Models\TypesActivities\H5P;
 use App\Models\TypesActivities\Link;
+use App\Models\TypesActivities\MakeCode;
 use App\Models\TypesActivities\PDF;
 use App\Models\TypesActivities\Text;
 use App\Models\TypesActivities\Homework;
@@ -60,6 +61,7 @@ class Activity extends Model implements Sortable
         H5P::class,
         File::class,
         Link::class,
+        MakeCode::class,
         Homework::class,
         PDF::class,
         Youtube::class,
@@ -85,6 +87,7 @@ class Activity extends Model implements Sortable
                     $model->activityable_id = $h5p->id;
                     unset($model->link);  # Unset the link so we don't get an error
                     break;
+
                 case 'App\Models\TypesActivities\Text':
                     $text = Text::create([
                         'link' => $model->body,
@@ -93,6 +96,16 @@ class Activity extends Model implements Sortable
                     $model->activityable_id = $text->id;
                     unset($model->body);  # Unset the link so we don't get an error
                     break;
+
+                case 'App\Models\TypesActivities\MakeCode':
+                    $text = MakeCode::create([
+                        'link' => $model->link,
+                    ]);
+                    $model->activityable_type = MakeCode::class;
+                    $model->activityable_id = $text->id;
+                    unset($model->link);  # Unset the link so we don't get an error
+                    break;
+
                 default:
                     unset($model->activityable_type);
                     break;

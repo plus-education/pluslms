@@ -147,6 +147,7 @@ class Activity extends Resource
             Select::make(__("Activity Type"), 'activityable_type')->options([
                 'App\Models\TypesActivities\H5P' => 'H5P Content',
                 'App\Models\TypesActivities\Text' => 'Text',
+                'App\Models\TypesActivities\MakeCode' => 'MakeCode Project',
                 //Exercise::class,
                 //PDF::class,
             ])
@@ -158,7 +159,8 @@ class Activity extends Resource
 
             MorphTo::make(__("Activity Type"), 'Activityable')->types([
                 \App\Nova\Text::class,
-                H5P::class
+                H5P::class,
+                MakeCode::class,
                 //Exercise::class,
                 //PDF::class,
             ])
@@ -171,6 +173,11 @@ class Activity extends Resource
 
             DependencyContainer::make((new TextActivity(null))->fields($request))
                 ->dependsOn('activityable_type', 'App\Models\TypesActivities\Text')
+                ->onlyOnForms()
+                ->hideWhenUpdating(),
+
+            DependencyContainer::make((new MakeCode(null))->fields($request))
+                ->dependsOn('activityable_type', 'App\Models\TypesActivities\MakeCode')
                 ->onlyOnForms()
                 ->hideWhenUpdating(),
 

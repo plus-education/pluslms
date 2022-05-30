@@ -27,6 +27,6 @@ class CreateH5PSTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('h_5_p_s');
+        Schema::dropIfExists('h5ps');
     }
 }

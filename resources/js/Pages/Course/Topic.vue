@@ -35,6 +35,8 @@ import { Link } from '@inertiajs/inertia-vue3'
 
                     <link-activity v-if="activity.type == 'LINK'" :activity="activity" :user="user"></link-activity>
 
+                    <make-code-activity v-if="activity.type == 'MAKECODE'" :activity="activity" :user="user" />
+
                     <text-activity v-if="activity.type == 'TEXT'" :activity="activity" :user="user"></text-activity>
 
                     <pdf-activity v-if="activity.type == 'PDF'" :activity="activity" :user="user"></pdf-activity>
@@ -74,7 +76,8 @@ import { Link } from '@inertiajs/inertia-vue3'
     import ExerciseActivity from "./Activities/Exercise"
     import FileActivity from './Activities/File'
     import H5pActivity from './Activities/H5p';
-    import LinkActivity from './Activities/Link'
+    import LinkActivity from './Activities/Link';
+    import MakeCodeActivity from './Activities/MakeCode';
     import TextActivity from './Activities/Text'
     import PdfActivity from "./Activities/Pdf"
     import HomeworkActivity from "./Activities/Homework";
@@ -90,6 +93,7 @@ import { Link } from '@inertiajs/inertia-vue3'
             ExerciseActivity,
             HomeworkActivity,
             LinkActivity,
+            MakeCodeActivity,
             TextActivity,
             PdfActivity,
             YoutubeActivity,
