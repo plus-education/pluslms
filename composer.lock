@@ -4,11 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-    "content-hash": "d97cdfcca9827ca75bf88c3a78bf1a48",
-=======
-    "content-hash": "61e808aba5f844ac2acf23d33ea8d4a2",
->>>>>>> 2d2a2a0cd682a2110ea02d2fa2f0891a60777c29
+    "content-hash": "1217ace7935229610b0ca8287ad62e1f",
     "packages": [
         {
             "name": "alexwenzel/nova-dependency-container",
@@ -2080,16 +2076,16 @@
         },
         {
             "name": "inertiajs/inertia-laravel",
-            "version": "v0.6.0",
+            "version": "v0.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/inertiajs/inertia-laravel.git",
-                "reference": "ea8f8a5a377cfdc567820b6afd50767f1794c3df"
+                "reference": "75859fb1586c3d37ed8705500b5f43e87eee3cb2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/inertiajs/inertia-laravel/zipball/ea8f8a5a377cfdc567820b6afd50767f1794c3df",
-                "reference": "ea8f8a5a377cfdc567820b6afd50767f1794c3df",
+                "url": "https://api.github.com/repos/inertiajs/inertia-laravel/zipball/75859fb1586c3d37ed8705500b5f43e87eee3cb2",
+                "reference": "75859fb1586c3d37ed8705500b5f43e87eee3cb2",
                 "shasum": ""
             },
             "require": {
@@ -2137,7 +2133,7 @@
             ],
             "support": {
                 "issues": "https://github.com/inertiajs/inertia-laravel/issues",
-                "source": "https://github.com/inertiajs/inertia-laravel/tree/v0.6.0"
+                "source": "https://github.com/inertiajs/inertia-laravel/tree/v0.6.2"
             },
             "funding": [
                 {
@@ -2145,7 +2141,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-05-10T11:02:47+00:00"
+            "time": "2022-05-25T02:00:06+00:00"
         },
         {
             "name": "itsmejoshua/novaspatiepermissions",

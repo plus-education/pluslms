@@ -33,4 +33,9 @@ class Course extends Model
         $random = rand(1,6);
         return is_null($this->cover) ? "/img/courses/covers/cover-{$random}.jpg" : '/storage/' . $this->cover;
     }
+
+    public function ts_channels()
+    {
+        return $this->hasMany(TSChannel::class);
+    }
 }

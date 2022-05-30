@@ -29,13 +29,8 @@ import { Link } from '@inertiajs/inertia-vue3'
 
                     <h5p-activity v-if="activity.type == 'H5P'" :activity="activity" :user="user" />
 
-<<<<<<< HEAD
-                    <link-activity v-if="activity.type == 'LINK'" :activity="activity" :user="user"></link-activity>
-
                     <make-code-activity v-if="activity.type == 'MAKECODE'" :activity="activity" :user="user" />
 
-=======
->>>>>>> 2d2a2a0cd682a2110ea02d2fa2f0891a60777c29
                     <text-activity v-if="activity.type == 'TEXT'" :activity="activity" :user="user"></text-activity>
 
                 </div>
@@ -58,11 +53,7 @@ import { Link } from '@inertiajs/inertia-vue3'
 
     import ExerciseActivity from "./Activities/Exercise"
     import H5pActivity from './Activities/H5p';
-<<<<<<< HEAD
-    import LinkActivity from './Activities/Link';
     import MakeCodeActivity from './Activities/MakeCode';
-=======
->>>>>>> 2d2a2a0cd682a2110ea02d2fa2f0891a60777c29
     import TextActivity from './Activities/Text'
     import Comments from "./Comments";
 
@@ -70,12 +61,7 @@ import { Link } from '@inertiajs/inertia-vue3'
         components: {
             H5pActivity,
             ExerciseActivity,
-<<<<<<< HEAD
-            HomeworkActivity,
-            LinkActivity,
             MakeCodeActivity,
-=======
->>>>>>> 2d2a2a0cd682a2110ea02d2fa2f0891a60777c29
             TextActivity,
             Comments,
         },

@@ -17,11 +17,18 @@ class MakeCode extends Resource
     public static $model = \App\Models\TypesActivities\MakeCode::class;
 
     /**
+     * Indicates if the resource should be displayed in the sidebar.
+     *
+     * @var bool
+     */
+    public static $displayInNavigation = false;
+
+    /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'link';
 
     /**
      * The columns that should be searched.
@@ -30,6 +37,7 @@ class MakeCode extends Resource
      */
     public static $search = [
         'id',
+        'link',
     ];
 
     /**

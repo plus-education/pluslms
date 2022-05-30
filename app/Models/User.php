@@ -176,4 +176,9 @@ class User extends Authenticatable
     public function activityResult($id)
     {
     }
+
+    public function ts_channels()
+    {
+        return $this->hasMany(TSChannel::class);
+    }
 }
