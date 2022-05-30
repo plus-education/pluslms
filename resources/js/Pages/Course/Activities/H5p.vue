@@ -23,6 +23,7 @@
 </template>
 
 <script>
+    import $ from 'jquery';
     import Comments from "../Comments";
 
     export default {
@@ -36,19 +37,22 @@
         },
 
         mounted() {
-            this.resizeH5PContent();
-            window.addEventListener("resize", this.resizeH5PContent);
+            var iframe = document.getElementById('h5p-content');
+            var iframeWin = iframe.contentWindow || iframe;
+            var iframeDoc = iframe.contentDocument || iframeWin.document;
+            window.frameDoc = iframeDoc;
+
+            /*$(iframeDoc).ready(function (event) {
+                iframeDoc.open();
+                iframeDoc.write(`\<script>
+                    console.log(this);
+                    H5P.externalDispatcher.on('xAPI', function (event) {
+                        window.parent.postMessage(event.data.statement, '*');
+                    });
+                \<\/script>`);
+                iframeDoc.close();
+            });*/
         },
-
-        methods: {
-            resizeH5PContent(e = null) {
-                let iFrame = document.getElementById('h5p-content');
-                console.log(iFrame);
-                iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
-
-                //document.getElementById("h5p-content").style.height = document.getElementById("h5p-content").contentWindow.document.body.scrollHeight + "px";
-            }
-        }
     }
 </script>
 

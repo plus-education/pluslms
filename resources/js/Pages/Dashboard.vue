@@ -1,10 +1,5 @@
 <template>
     <app-layout>
-        <template #header>
-           <ul>
-               <li>Home</li>
-           </ul>
-        </template>
 
         <section>
             <div class="container m-auto mt-6 mb-6 flex flex-col md:flex-row items-center justify-between bg-white shadow-lg">
@@ -38,14 +33,14 @@
             </div>
         </section>
 
-        <section class="container m-auto">
+        <section class="container m-auto px-4 pb-6">
            <div v-if="group != null">
                <div class="mb-4">
                    <div v-html="group.html"></div>
                </div>
            </div>
 
-            <home :courses="courses"></home>
+            <course-list :courses="courses" />
         </section>
 
     </app-layout>
@@ -53,12 +48,12 @@
 
 <script>
     import AppLayout from './../Layouts/AppLayout'
-    import Home from './home'
+    import CourseList from './CourseList'
 
     export default {
         components: {
             AppLayout,
-            Home,
+            CourseList,
         },
 
         props: {

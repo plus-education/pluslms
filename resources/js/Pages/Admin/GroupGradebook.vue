@@ -19,14 +19,16 @@
 </template>
 
 <script>
-import CourseGradebook from './CourseGradebook'
+import AppLayout from '../../Layouts/AppLayout';
+import CourseGradebook from './CourseGradebook';
 
 
 export default {
     props : ['gradebook'],
 
     components: {
-        CourseGradebook
+        AppLayout,
+        CourseGradebook,
     }
 }
 </script>

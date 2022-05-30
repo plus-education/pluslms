@@ -7,6 +7,9 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
+use Laravel\Nova\Notifications\NovaNotification;
+use Laravel\Nova\Notifications\NovaChannel;
+
 class StudentAlert extends Notification
 {
     use Queueable;
@@ -34,7 +37,7 @@ class StudentAlert extends Notification
     {
         return [
             'database',
-            'broadcast'
+            'broadcast',
         ];
     }
 
@@ -60,9 +63,10 @@ class StudentAlert extends Notification
      */
     public function toArray($notifiable)
     {
-        return \Mirovit\NovaNotifications\Notification::make()
-            ->info($this->details['title'])
-            ->subtitle($this->details['details'])
-            ->toArray();
+        return [
+            'info' => $this->details['title'],
+            'subtitle' => $this->details['details'],
+            'type' => 'info'
+        ];
     }
 }

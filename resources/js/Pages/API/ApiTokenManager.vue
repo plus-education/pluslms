@@ -203,16 +203,10 @@
                 createApiTokenForm: this.$inertia.form({
                     name: '',
                     permissions: this.defaultPermissions,
-                }, {
-                    bag: 'createApiToken',
-                    resetOnSuccess: true,
                 }),
 
                 updateApiTokenForm: this.$inertia.form({
                     permissions: []
-                }, {
-                    resetOnSuccess: false,
-                    bag: 'updateApiToken',
                 }),
 
                 deleteApiTokenForm: this.$inertia.form(),

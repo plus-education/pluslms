@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 import { Inertia } from '@inertiajs/inertia';
 import { Head, Link } from '@inertiajs/inertia-vue3';
+import Notifications from '@/Layouts/Notifications';
 //import Alerts from '@/Components/Alerts.vue';
 import ResponsiveLinks from '@/Layouts/ResponsiveLinks.vue';
 import JetApplicationMark from '@/Jetstream/ApplicationMark.vue';
@@ -24,14 +25,6 @@ defineProps({
 });
 
 const showingNavigationDropdown = ref(false);
-
-const switchToTeam = (team) => {
-    Inertia.put(route('current-team.update'), {
-        team_id: team.id,
-    }, {
-        preserveState: false,
-    });
-};
 
 const logout = () => {
     Inertia.post(route('logout'));
@@ -70,6 +63,8 @@ const logout = () => {
                                 >
                                     Progress
                                 </JetNavLink>
+
+                                <Notifications />
                             </div>
                         </div>
 

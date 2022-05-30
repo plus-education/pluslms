@@ -118,6 +118,8 @@ class Group extends Resource
                 BelongsToMany::make(__('Teachers'), 'teachers', Teacher::class)->searchable(),
 
                 BelongsToMany::make(__('Supervisors'), 'supervisors', Supervisor::class)->searchable(),
+
+                BelongsToMany::make(__('Admins'), 'admins', Admin::class),
             ]),
 
             /*AttachMany::make(__('Students'), 'students', Student::class),

@@ -35,6 +35,7 @@
         "axios": "^0.19",
         "chokidar": "^3.5.3",
         "cross-env": "^7.0",
+        "jquery": "^3.6.0",
         "laravel-echo": "^1.10.0",
         "laravel-mix": "^6.0.43",
         "lodash": "^4.17.19",

@@ -36,7 +36,8 @@ class Activity extends Model implements Sortable
         'type',
         'divider',
         'course',
-        'isActiveToDo'
+        'isActiveToDo',
+        'completed'
     ];
 
     protected $attributes = [
@@ -125,6 +126,14 @@ class Activity extends Model implements Sortable
     public function activityable()
     {
         return $this->morphTo();
+    }
+
+    /**
+     * Returns whether a user has completed this task or not.
+     */
+    public function getCompletedAttribute()
+    {
+        return $this->users->contains(auth()->user());
     }
 
     public function users()

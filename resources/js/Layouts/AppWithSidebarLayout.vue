@@ -16,11 +16,11 @@ import { Link } from '@inertiajs/inertia-vue3'
                 :topic="topic"
                 :topics="topics"
                 :icons="icons"
-                @change-activity="(a) => $emit('changeActivity', a)"
+                :activity="activity"
             />
         </template>
 
-        <div class="flex flex-wrap bg-gray-100 w-full">
+        <div class="flex flex-wrap bg-gray-100 w-full overflow-y-scroll">
             <div class="w-3/12 h-screen overflow-y-auto bg-white shadow-lg hidden md:block">
                 <div class="p-3 text-ellipsis">
                     <h4>Course:</h4>
@@ -31,7 +31,7 @@ import { Link } from '@inertiajs/inertia-vue3'
                     :topic="topic"
                     :topics="topics"
                     :icons="icons"
-                    @change-activity="(a) => $emit('changeActivity', a)"
+                    :activity="activity"
                 />
             </div>
 
@@ -51,7 +51,7 @@ import { Link } from '@inertiajs/inertia-vue3'
         topics: Object,
         fullHeight: Boolean,
         icons: Object,
+        activity: Object,
     },
-    emits: ['changeActivity']
   }
 </script>

@@ -16,6 +16,8 @@ use \App\Http\Controllers\Dashboard,
     \App\Http\Controllers\CoursesController,
     \App\Http\Controllers\Student\ExerciseController;
 
+use \App\Http\Controllers\CourseGradebookController;
+
 use App\Http\Controllers\Auth\SocialiteController;
 
 Route::get('/auth/google', [SocialiteController::class, 'redirectToGoogle'])->name('google.login');
@@ -116,8 +118,7 @@ Route::middleware([
 
     // Gradebooks report
     Route::get('/gradebook/courseByAllActivities/{course}', \App\Http\Controllers\Gradebook\CourseGradebookByAllActivitiesController::class);
-
-
+    
     Route::get('/student/myActivities', function () {
         $user = auth()->user();
         $myCourses = $user->courses->pluck('id')->toArray();
@@ -162,48 +163,7 @@ Route::get('/test', function (\App\Repositories\UserRepositoryInterface $userRep
 });
 
 
-Route::get('/courseGradebook/{id}', function ($id) {
-    $topic = \App\Models\Topic::find($id);
-    $course = $topic->course;
-
-    $gradebook = \Illuminate\Support\Facades\DB::table('activities')
-        ->select('activities.id',
-            'activities.name',
-            'activities.score',
-            'activities.end',
-        )
-        ->where('score', '>', 0)
-        ->where('activities.topic_id', $id)
-        ->get();
-
-    $user = auth()->user();
-
-    $gradebook = $gradebook->map(function ($activity) use ($user) {
-        $homework = \Illuminate\Support\Facades\DB::table('activity_user')
-            ->where('activity_id', $activity->id)
-            ->where('user_id', $user->id)
-            ->first();
-
-        if ($homework) {
-            $activity->result = $homework->score;
-            $activity->comment = $homework->comment;
-        }
-
-        return $activity;
-    });
-
-
-    $totalScore = $gradebook->sum('score');
-    $totalScore = $totalScore > 100 ? 100 :  $totalScore;
-
-    $totalResult = $gradebook->sum('result');
-    $totalResult = $totalResult > 100 ? 100 : $totalResult;
-
-
-    ##return ($gradebook);
-    return \Inertia\Inertia::render('CourseGradebook')
-        ->with(compact('course', 'topic', 'gradebook', 'totalScore', 'totalResult'));
-})->middleware('studentIsSolvent');
+Route::get('/courseGradebook/{id}', [CourseGradebookController::class, 'show'])->middleware('studentIsSolvent');
 
 Route::get('/topicGradebook/{id}', function($id) {
     $topic = App\Models\Topic::find($id);
