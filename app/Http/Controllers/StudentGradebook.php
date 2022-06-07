@@ -23,6 +23,7 @@ class StudentGradebook extends Controller
             ->leftJoin('courses', 'topics.course_id', '=', 'courses.id')
             ->where('activity_user.user_id', $user->id)
             ->where('topics.name', 'Bimestre 1')
+            ->Orwhere('topics.name', 'Bimestre 2')
             ->groupBy('courses.id')
             ->groupBy('topics.id')
             ->get();
