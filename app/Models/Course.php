@@ -6,10 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Tags\HasTags;
 
+use Chelout\RelationshipEvents\Concerns\HasBelongsToManyEvents;
+
 class Course extends Model
 {
     use HasFactory;
     use HasUsers;
+    use HasBelongsToManyEvents;
 
     protected $appends = ['coverPath'];
     

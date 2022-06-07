@@ -12,6 +12,7 @@ class TSChannel extends Model
     protected $table = 't_s_channels';
 
     protected $fillable = [
+        'channel_id',
         'api_key',
         'user_id',
         'course_id',

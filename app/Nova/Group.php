@@ -99,12 +99,10 @@ class Group extends Resource
             Trix::make(__('Description'), 'Description'),
 
             DateTime::make(__('Start Date'), 'start')
-                ->sortable()
-                ->required(),
+                ->sortable(),
 
             DateTime::make(__('End Date'), 'end')
-                ->sortable()
-                ->required(),
+                ->sortable(),
 
             Text::make('Zoom Link', 'zoom')
                 ->hideFromIndex(),

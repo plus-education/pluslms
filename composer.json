@@ -16,6 +16,7 @@
         "php": "^8.1.2",
         "alexwenzel/nova-dependency-container": "^1.0",
         "barryvdh/laravel-dompdf": "^1.0.0",
+        "chelout/laravel-relationship-events": "^1.5",
         "chris-ware/nova-breadcrumbs": "^2.3",
         "eminiarts/nova-tabs": "^2.0",
         "fideloper/proxy": "^4.2",
