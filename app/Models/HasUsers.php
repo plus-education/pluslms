@@ -16,11 +16,6 @@ trait HasUsers
         return $this->users()->role(Roles::TEACHER);
     }
 
-    public function supervisors()
-    {
-        return $this->users()->role(Roles::SUPERVISOR);
-    }
-
     public function admins()
     {
         return $this->users()->whereHas("roles", function ($q) {

@@ -114,10 +114,6 @@ class Activity extends Resource
 
             Date::make('Created At', 'created_at')->onlyOnDetail(),
 
-            Date::make(__('Start Date'), 'start'),
-
-            Date::make(__('End Date'), 'end'),
-
             Boolean::make(__('Required'), 'required')
                 ->required()
                 ->default(true),

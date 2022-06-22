@@ -10,13 +10,7 @@ class Roles
 
     const ADMIN = 'admin';
 
-    const SUPERVISOR = 'supervisor';
-
     const TEACHER = 'teacher';
 
-    const TUTOR = 'tutor';
-
     const STUDENT = 'student';
-
-    const STUDENT_MANAGER = 'student Manager';
 }

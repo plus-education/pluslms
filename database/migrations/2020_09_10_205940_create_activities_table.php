@@ -18,8 +18,6 @@ class CreateActivitiesTable extends Migration
             $table->foreignId('topic_id');
             $table->string('name');
             $table->boolean('isShow');
-            $table->date('start')->nullable();
-            $table->date('end')->nullable();
             $table->unsignedInteger('order');
             $table->unsignedDecimal('score')->default(0);
 

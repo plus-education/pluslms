@@ -116,14 +116,8 @@ class Course extends Resource
 
                 BelongsToMany::make(__('Teachers'), 'teachers', Teacher::class)->searchable(),
 
-                BelongsToMany::make(__('Supervisors'), 'supervisors', Supervisor::class)->searchable(),
-
                 BelongsToMany::make(__('Admins'), 'admins', Admin::class)->searchable(),
             ]),
-
-            //BelongsToMany::make(__('Students'), 'students', Student::class)->searchable(),
-            //BelongsToMany::make(__('Teachers'), 'teachers', Teacher::class)->searchable(),
-            //BelongsToMany::make(__('Supervisors'), 'supervisors', Supervisor::class)->searchable(),
 
             Text::make(__('Class Zoom Link'), 'classLink'),
 
