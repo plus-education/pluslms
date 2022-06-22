@@ -25,8 +25,8 @@ class AddTextFieldToActivityUserTable extends Migration
      */
     public function down()
     {
-        Schema::table('activitiy_user', function (Blueprint $table) {
-            //
+        Schema::table('activity_user', function (Blueprint $table) {
+            $table->dropColumn('text');
         });
     }
 }

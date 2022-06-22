@@ -2,17 +2,10 @@
 
 namespace App\Models;
 
-use App\Models\TypesActivities\Divider;
 use App\Models\TypesActivities\Exercise;
-use App\Models\TypesActivities\File;
 use App\Models\TypesActivities\H5P;
-use App\Models\TypesActivities\Link;
 use App\Models\TypesActivities\MakeCode;
-use App\Models\TypesActivities\PDF;
 use App\Models\TypesActivities\Text;
-use App\Models\TypesActivities\Homework;
-use App\Models\TypesActivities\Video;
-use App\Models\TypesActivities\Youtube;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -56,17 +49,10 @@ class Activity extends Model implements Sortable
     ];
 
     protected $types = [
-        Divider::class,
         Exercise::class,
         Text::class,
         H5P::class,
-        File::class,
-        Link::class,
         MakeCode::class,
-        Homework::class,
-        PDF::class,
-        Youtube::class,
-        Video::class,
     ];
 
     /**

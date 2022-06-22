@@ -56,14 +56,6 @@ const logout = () => {
                                     Dashboard
                                 </JetNavLink>
 
-                                <JetNavLink
-                                v-if="$page.props.user.group != null"
-                                :href="route('groupGradebook.gradebook', [$page.props.user.group.id, $page.props.user.id])"
-                                target="_blank"
-                                >
-                                    Progress
-                                </JetNavLink>
-
                                 <Notifications />
                             </div>
                         </div>

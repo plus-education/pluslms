@@ -7,14 +7,6 @@ import JetResponsiveNavLink from '@/Jetstream/ResponsiveNavLink.vue';
         <JetResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
             Dashboard
         </JetResponsiveNavLink>
-        <template v-if="$page.props.user.group">
-            <JetResponsiveNavLink
-            :href="route('groupGradebook.gradebook', [$page.props.user.group.id, $page.props.user.id])"
-            :active="$page.props.currentRouteName == 'gradebook'"
-            >
-                Progress
-            </JetResponsiveNavLink>
-        </template>
     </div>
 
     <!-- Responsive Settings Options -->

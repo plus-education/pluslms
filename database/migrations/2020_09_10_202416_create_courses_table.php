@@ -15,7 +15,6 @@ class CreateCoursesTable extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('group_id')->default(1);
             $table->string('name');
             $table->text('description')->nullable();
             $table->text('code')->nullable();

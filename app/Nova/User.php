@@ -87,6 +87,11 @@ class User extends Resource
      */
     public function actions(NovaRequest $request)
     {
-        return [];
+        return [
+            Actions\AddToCourse::make(),
+            Actions\RemoveFromCourse::make(),
+            Actions\AssignThingspeakChannel::make(),
+            Actions\DetachThingspeakChannel::make(),
+        ];
     }
 }

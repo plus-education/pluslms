@@ -12,8 +12,9 @@ class TSChannel extends Model
     protected $table = 't_s_channels';
 
     protected $fillable = [
-        'channel_id',
-        'api_key',
+        'channel_id',  // Thingspeak API use
+        'api_key',  // To write data
+        'manage_api_key',  // To manage channel (e.g: delete it)
         'user_id',
         'course_id',
     ];

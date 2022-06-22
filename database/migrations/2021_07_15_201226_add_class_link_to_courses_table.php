@@ -26,7 +26,7 @@ class AddClassLinkToCoursesTable extends Migration
     public function down()
     {
         Schema::table('courses', function (Blueprint $table) {
-            //
+            $table->dropColumn('classLink');
         });
     }
 }

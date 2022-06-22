@@ -18,7 +18,7 @@ class CoursesController extends Controller
     public function index($id)
     {
         $course = Course::where('id', $id)
-            ->with('group', 'topics')
+            ->with('topics')
             ->first();
 
         return Inertia::render('Course/Index')

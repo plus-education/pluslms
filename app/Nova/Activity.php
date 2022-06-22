@@ -149,7 +149,6 @@ class Activity extends Resource
                 'App\Models\TypesActivities\Text' => 'Text',
                 'App\Models\TypesActivities\MakeCode' => 'MakeCode Project',
                 //Exercise::class,
-                //PDF::class,
             ])
                 ->displayUsingLabels()
                 ->required()
@@ -162,7 +161,6 @@ class Activity extends Resource
                 H5P::class,
                 MakeCode::class,
                 //Exercise::class,
-                //PDF::class,
             ])
                 ->exceptOnForms(),
 

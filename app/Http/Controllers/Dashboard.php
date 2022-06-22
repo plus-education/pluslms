@@ -21,13 +21,10 @@ class Dashboard extends Controller
                 'name' => $course->name,
                 'code' => $course->code,
                 'description' => $course->description,
-                'group' => $course->group->name,
                 'coverPath' => $course->coverPath
             ];
         });
 
-        $group = auth()->user()->groups()->first();
-
-        return Inertia::render('Dashboard')->with(compact('courses', 'group'));
+        return Inertia::render('Dashboard')->with(compact('courses'));
     }
 }

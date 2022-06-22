@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\Course;
 use App\Models\TSChannel;
 
+use Laravel\Nova\Actions\Actionable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -23,6 +24,7 @@ use Chelout\RelationshipEvents\Concerns\HasBelongsToManyEvents;
 
 class User extends Authenticatable
 {
+    use Actionable;
     use HasApiTokens;
     use HasFactory;
     use HasProfilePhoto;
@@ -44,83 +46,6 @@ class User extends Authenticatable
         static::created(function ($model) {
             // Upon creation, assign student as the default role.
             $model->assignRole(Roles::STUDENT);
-        });
-
-        // Run some code when a model is attached to the user
-        static::belongsToManyAttached(function ($relation, $parent, $ids) {
-            // If the course has ThingSpeak channels, then add one for this user.
-            $course = null;
-
-            if ($relation === "courses") {
-                $course = Course::find($ids[0]);
-            }
-
-            if ($course !== null && $course->has_ts_channels) {
-                $channel = TSChannel::where([
-                    'user_id' => $parent->id,
-                    'course_id' => $course->id,
-                ])->first();
-
-                if ($channel === null) {
-                    $res = null;
-
-                    $client = new Client();
-                    try {
-                        $res = $client->post('https://api.thingspeak.com/channels.json', [
-                            'form_params' => [
-                                'api_key' => ENV('THINGSPEAK_API_KEY'),
-                                'name' => "Course#{$course->id}:USER#{$parent->id}",
-                                'public_flag' => true,
-                            ]
-                        ]);
-                    } catch (ClientException $e) {}
-
-                    if ($res !== null && $res->getStatusCode() === 200) {
-                        $data = json_decode($res->getBody(), true);
-
-                        $channel = TSChannel::create([
-                            'channel_id' => $data['id'],
-                            'api_key' => $data['api_keys'][0]['api_key'],
-                            'user_id' => $parent->id,
-                            'course_id' => $course->id,
-                        ]);
-                    }
-                }
-            }
-        });
-
-        // Run some code when a model is detached to the user
-        static::belongsToManyDetaching(function ($relation, $parent, $ids) {
-            // If the course has ThingSpeak channels, then add one for this user.
-            $course = null;
-
-            if ($relation === "courses") {
-                $course = Course::find($ids[0]);
-            }
-
-            if ($course !== null && $course->has_ts_channels) {
-                $channel = TSChannel::where([
-                    'user_id' => $parent->id,
-                    'course_id' => $course->id,
-                ])->first();
-
-                if ($channel !== null) {
-                    $res = null;
-
-                    $client = new Client();
-                    try {
-                        $res = $client->delete("https://api.thingspeak.com/channels/{$channel->channel_id}.json", [
-                            'form_params' => [
-                                'api_key' => ENV('THINGSPEAK_API_KEY'),
-                            ]
-                        ]);
-                    } catch (ClientException $e) {}
-
-                    if ($res !== null && $res->getStatusCode() === 200) {
-                        $channel->delete();
-                    }
-                }
-            }
         });
     }
 
@@ -186,18 +111,7 @@ class User extends Authenticatable
      */
     protected $appends = [
         'profile_photo_url',
-        'group'
     ];
-
-    public function groups()
-    {
-        return $this->belongsToMany(Group::class)->using(GroupUser::class);
-    }
-
-    public function getGroupAttribute()
-    {
-        return $this->groups->first();
-    }
 
     public function courses()
     {

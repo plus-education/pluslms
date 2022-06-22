@@ -37,8 +37,6 @@ class UserFields
 
             MorphToMany::make('Roles', 'roles', \Itsmejoshua\Novaspatiepermissions\Role::class),
             MorphToMany::make('Permissions', 'permissions', \Itsmejoshua\Novaspatiepermissions\Permission::class),
-
-            Boolean::make('Is Solvent', 'is_solvent'),
         ];
     }
 }

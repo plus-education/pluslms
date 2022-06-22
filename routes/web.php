@@ -36,10 +36,6 @@ Route::get('/logo', function () {
     ]);
 });
 
-Route::get('/studentIsNotSolvent', function() {
-    return view('student_is_not_solvent');
-})->name('studentIsNotSolvent');
-
 Route::middleware([
     'auth:sanctum', 
     config('jetstream.auth_session'), 
@@ -106,12 +102,6 @@ Route::middleware([
 
     Route::post('/comments/delete', [\App\Http\Controllers\CommentController::class, 'delete']);
 
-    Route::get('/groupGradebook/{id}', [\App\Http\Controllers\GroupGradebookController::class, 'index']);
-
-    Route::get('/groupGradebook/gradebook/{group}/{student}', [\App\Http\Controllers\GroupGradebookController::class, 'gradebook'])
-        ->middleware('studentIsSolvent')
-        ->name('groupGradebook.gradebook');
-
     Route::get('/student/myCalendar', function () {
         return \Inertia\Inertia::render('MyCalendar');
     });
@@ -168,7 +158,6 @@ Route::get('/courseGradebook/{id}', [CourseGradebookController::class, 'show'])-
 Route::get('/topicGradebook/{id}', function($id) {
     $topic = App\Models\Topic::find($id);
     return \Inertia\Inertia::render('Admin/TopicGradebook', [
-        'group' => $topic->course->group,
         'topic' => $topic,
         'students' => $topic->course->students->map(function ($student) use($topic) {
             $student->scores =  DB::table('activity_user')

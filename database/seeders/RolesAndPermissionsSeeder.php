@@ -38,13 +38,6 @@ class RolesAndPermissionsSeeder extends Seeder
         Permission::create(['name' => 'edit courses']);
         Permission::create(['name' => 'delete courses']);
 
-        Permission::create(['name' => 'list groups']);
-        Permission::create(['name' => 'list only my groups']);
-        Permission::create(['name' => 'show group']);
-        Permission::create(['name' => 'create group']);
-        Permission::create(['name' => 'edit group']);
-        Permission::create(['name' => 'delete group']);
-
         // create roles and assign created permissions
         $admin = Role::create(['name' => 'admin']);
         $admin->givePermissionTo(Permission::all());

@@ -28,14 +28,14 @@
 
 <div>
     <img src="https://i2.wp.com/www.udeoberistain.edu.gt/wp-content/uploads/2020/11/1.png" alt="">
-    <h3>{{ $course->name }} - {{ $course->group->name }}</h3>
+    <h3>{{ $course->name }}</h3>
 </div>
 
 <div>
     <table>
         <thead>
             <tr>
-                <th>Alumno</th>
+                <th>Activities</th>
                 @foreach($activities as $activity)
                     <th>
                         {{ $activity->name }}

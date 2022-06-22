@@ -23,7 +23,6 @@ class CreateActivitiesTable extends Migration
             $table->unsignedInteger('order');
             $table->unsignedDecimal('score')->default(0);
 
-
             $table->foreignId('activityable_id');
             $table->string('activityable_type');
 

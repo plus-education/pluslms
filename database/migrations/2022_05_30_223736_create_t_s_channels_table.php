@@ -18,7 +18,9 @@ class CreateTSChannelsTable extends Migration
     {
         Schema::create('t_s_channels', function (Blueprint $table) {
             $table->id();
+            $table->string('manage_api_key', 254);  // Allows us to delete later
             $table->string('api_key', 254)->unique();
+            $table->string('channel_id', 254)->unique();
             $table->foreignIdFor(User::class);
             $table->foreignIdFor(Course::class);
             $table->timestamps();

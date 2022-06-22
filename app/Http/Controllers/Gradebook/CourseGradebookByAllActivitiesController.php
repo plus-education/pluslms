@@ -33,10 +33,6 @@ class CourseGradebookByAllActivitiesController extends Controller
         })
             ->get();
 
-
-
-        //return view('gradebook.all_activities_by_course')->with(compact('course', 'activities'));
-
         $pdf = \PDF::loadView('gradebook.all_activities_by_course', compact('course', 'activities'));
         $pdf->setPaper('legal', 'landscape');
 

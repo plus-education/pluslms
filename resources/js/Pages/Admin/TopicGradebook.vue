@@ -1,9 +1,6 @@
 <template>
 <div>
     <section class="my-6 mx-4">
-        <span class="text-xs text-white bg-green-500 px-4 py-1 mx-1 my-5">
-            {{ group.name }}
-        </span>
         <h1 class="text-2xl">{{ topic.course.name }}</h1>
         <span>{{ topic.name}}</span>
     </section>
@@ -120,7 +117,7 @@
 
 <script>
     export default {
-        props: ['group', 'topic', 'students', 'activities'],
+        props: ['topic', 'students', 'activities'],
 
         mounted() {
 

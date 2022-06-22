@@ -25,12 +25,7 @@ class Course extends Model
     {
         return $this->hasMany(Topic::class);
     }
-
-    public function group()
-    {
-        return $this->belongsTo(Group::class);
-    }
-
+    
     public function getCoverPathAttribute()
     {
         $random = rand(1,6);

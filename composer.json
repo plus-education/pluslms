@@ -14,17 +14,16 @@
     "license": "MIT",
     "require": {
         "php": "^8.1.2",
-        "alexwenzel/nova-dependency-container": "^1.0",
+        "alexwenzel/nova-dependency-container": "1.2",
         "barryvdh/laravel-dompdf": "^1.0.0",
         "chelout/laravel-relationship-events": "^1.5",
         "chris-ware/nova-breadcrumbs": "^2.3",
         "eminiarts/nova-tabs": "^2.0",
-        "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "inertiajs/inertia-laravel": "^0.6.0",
         "itsmejoshua/novaspatiepermissions": "^1.0",
-        "laravel/framework": "^8.16.1",
+        "laravel/framework": "^9.0",
         "laravel/jetstream": "^2.8.1",
         "laravel/nova": "^4.0",
         "laravel/octane": "^1.2",
@@ -78,11 +77,11 @@
         }
     ],
     "require-dev": {
-        "facade/ignition": "^2.3.6",
+        "spatie/laravel-ignition": "^1.0",
         "fzaninotto/faker": "^1.9.1",
         "laravel/dusk": "^6.24",
         "mockery/mockery": "^1.3.1",
-        "nunomaduro/collision": "^5.0",
+        "nunomaduro/collision": "^6.1",
         "phpunit/phpunit": "^9.5"
     },
     "config": {

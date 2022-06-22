@@ -22,24 +22,10 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="flex-1  card  p-6   ml-4  md:border-l">
-                    <div v-if="group !== null && group.zoom !== null" class="text-center">
-                        <a :href="group.zoom" class="btn bg-green-500 p-4 text-white m-4 rounded-lg">
-                            Join Group Zoom
-                        </a>
-                    </div>
-                </div>
             </div>
         </section>
 
         <section class="container m-auto px-4 pb-6">
-           <div v-if="group != null">
-               <div class="mb-4">
-                   <div v-html="group.html"></div>
-               </div>
-           </div>
-
             <course-list :courses="courses" />
         </section>
 
@@ -58,10 +44,6 @@
 
         props: {
             courses: Array,
-            group: {
-                type: Object,
-                default: {}
-            },
         },
     }
 </script>

@@ -108,8 +108,6 @@ class Course extends Resource
 
             Image::make(__('Cover'), 'cover'),
 
-            Boolean::make(__('Has ThingSpeak Channels'), 'has_ts_channels'),
-
             new Tabs('Relations', [
                 HasMany::make(__('Topics'), 'topics', Topic::class),
 
@@ -126,8 +124,6 @@ class Course extends Resource
             //BelongsToMany::make(__('Students'), 'students', Student::class)->searchable(),
             //BelongsToMany::make(__('Teachers'), 'teachers', Teacher::class)->searchable(),
             //BelongsToMany::make(__('Supervisors'), 'supervisors', Supervisor::class)->searchable(),
-
-            BelongsTo::make(__('Group'), 'Group', Group::class)->sortable(),
 
             Text::make(__('Class Zoom Link'), 'classLink'),
 
