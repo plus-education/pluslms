@@ -18,6 +18,7 @@ use Lms\TeacherTopicComment\TeacherTopicComment;
 
 use PixelCreation\NovaFieldSortable\Concerns\SortsIndexEntries;
 use PixelCreation\NovaFieldSortable\Sortable;
+use SLASH2NL\NovaBackButton\NovaBackButton;
 
 class Topic extends Resource
 {
@@ -133,7 +134,10 @@ class Topic extends Resource
      */
     public function cards(NovaRequest $request)
     {
-        return [];
+        return [
+            (new NovaBackButton())
+            ->onlyOnDetail(),
+        ];
     }
 
     /**

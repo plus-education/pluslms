@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5047e211b0597f356e910f27cfd68b7f",
+    "content-hash": "6fa206bf760a30d32ea5ca27753ce554",
     "packages": [
         {
             "name": "alexwenzel/nova-dependency-container",
@@ -7032,6 +7032,54 @@
                 }
             ],
             "time": "2022-04-05T10:05:19+00:00"
+        },
+        {
+            "name": "slash2nl/nova-back-button",
+            "version": "v2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SLASH2NL/nova-back-button.git",
+                "reference": "79a2a2a96464f39ef4b7aedec413605c9897748e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SLASH2NL/nova-back-button/zipball/79a2a2a96464f39ef4b7aedec413605c9897748e",
+                "reference": "79a2a2a96464f39ef4b7aedec413605c9897748e",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": "^4.0",
+                "php": "^7.3|^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "SLASH2NL\\NovaBackButton\\CardServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "SLASH2NL\\NovaBackButton\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova card to display a back button.",
+            "keywords": [
+                "Back",
+                "button",
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/SLASH2NL/nova-back-button/issues",
+                "source": "https://github.com/SLASH2NL/nova-back-button/tree/v2.0.2"
+            },
+            "time": "2022-05-10T11:23:37+00:00"
         },
         {
             "name": "socialiteproviders/google",

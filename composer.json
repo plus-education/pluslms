@@ -40,6 +40,7 @@
         "pixelcreation/nova-field-sortable": "^3.0.0",
         "pusher/pusher-php-server": "^6.1",
         "sentry/sentry-laravel": "^2.12",
+        "slash2nl/nova-back-button": "^2.0",
         "socialiteproviders/google": "^4.1",
         "socialiteproviders/microsoft": "^4.1",
         "spatie/eloquent-sortable": "^4.0.1",

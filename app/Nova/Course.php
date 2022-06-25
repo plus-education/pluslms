@@ -23,6 +23,8 @@ use Laravel\Nova\Http\Requests\NovaRequest;
 //use NovaAttachMany\AttachMany;
 use Spatie\Tags\Tag;
 
+use SLASH2NL\NovaBackButton\NovaBackButton;
+
 class Course extends Resource
 {
     use HasTabs;
@@ -139,7 +141,10 @@ class Course extends Resource
      */
     public function cards(NovaRequest $request)
     {
-        return [];
+        return [
+            (new NovaBackButton())
+            ->onlyOnDetail(),
+        ];
     }
 
     /**

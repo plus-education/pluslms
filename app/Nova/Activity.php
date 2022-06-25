@@ -27,6 +27,7 @@ use Alexwenzel\DependencyContainer\DependencyContainer;
 
 use PixelCreation\NovaFieldSortable\Concerns\SortsIndexEntries;
 use PixelCreation\NovaFieldSortable\Sortable;
+use SLASH2NL\NovaBackButton\NovaBackButton;
 
 class Activity extends Resource
 {
@@ -192,7 +193,10 @@ class Activity extends Resource
      */
     public function cards(NovaRequest $request)
     {
-        return [];
+        return [
+            (new NovaBackButton())
+            ->onlyOnDetail(),
+        ];
     }
 
     /**
