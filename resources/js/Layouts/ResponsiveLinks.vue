@@ -9,6 +9,8 @@ import JetResponsiveNavLink from '@/Jetstream/ResponsiveNavLink.vue';
         </JetResponsiveNavLink>
     </div>
 
+    <slot name="sidebar"></slot>
+
     <!-- Responsive Settings Options -->
     <div class="pt-4 pb-1 border-t border-gray-200">
         <div class="flex items-center px-4">
@@ -47,6 +49,12 @@ import JetResponsiveNavLink from '@/Jetstream/ResponsiveNavLink.vue';
 
 <script>
 export default {
-    emits: ['logout']
+    emits: ['logout'],
+    props: {
+        hasSidebar: {
+            type: Boolean,
+            default: false
+        }
+    },
 }
 </script>

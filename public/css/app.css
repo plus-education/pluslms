@@ -828,32 +828,12 @@ select {
   left: 0px;
 }
 
-.top-16 {
-  top: 4rem;
-}
-
-.bottom-0 {
-  bottom: 0px;
-}
-
-.top-\[--navbar-h\] {
-  top: --navbar-h;
-}
-
-.top-\[var\(--navbar-h\)\] {
-  top: var(--navbar-h);
-}
-
 .top-\[length\:var\(--navbar-h\)\] {
   top: var(--navbar-h);
 }
 
-.left-\[length\:var\(--navbar-w\)\] {
-  left: var(--navbar-w);
-}
-
-.left-\[length\:var\(--sidebar-w\)\] {
-  left: var(--sidebar-w);
+.bottom-0 {
+  bottom: 0px;
 }
 
 .z-50 {
@@ -1220,8 +1200,8 @@ select {
   width: 1rem;
 }
 
-.w-3\/12 {
-  width: 25%;
+.w-\[length\:var\(--sidebar-w\)\] {
+  width: var(--sidebar-w);
 }
 
 .w-screen {
@@ -1250,10 +1230,6 @@ select {
 
 .w-20 {
   width: 5rem;
-}
-
-.w-\[length\:var\(--sidebar-w\)\] {
-  width: var(--sidebar-w);
 }
 
 .min-w-0 {
@@ -2443,10 +2419,6 @@ select {
 
 @media (min-width: 640px) {
 
-  .sm\:left-\[length\:var\(--sidebar-w\)\] {
-    left: var(--sidebar-w);
-  }
-
   .sm\:col-span-4 {
     grid-column: span 4 / span 4;
   }
@@ -2459,11 +2431,6 @@ select {
   .sm\:mx-auto {
     margin-left: auto;
     margin-right: auto;
-  }
-
-  .sm\:-my-px {
-    margin-top: -1px;
-    margin-bottom: -1px;
   }
 
   .sm\:mx-8 {
@@ -2485,14 +2452,6 @@ select {
 
   .sm\:ml-4 {
     margin-left: 1rem;
-  }
-
-  .sm\:ml-10 {
-    margin-left: 2.5rem;
-  }
-
-  .sm\:ml-6 {
-    margin-left: 1.5rem;
   }
 
   .sm\:block {
@@ -2662,14 +2621,14 @@ select {
     grid-column: span 1 / span 1;
   }
 
-  .md\:mx-auto {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   .md\:-my-px {
     margin-top: -1px;
     margin-bottom: -1px;
+  }
+
+  .md\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .md\:mt-0 {

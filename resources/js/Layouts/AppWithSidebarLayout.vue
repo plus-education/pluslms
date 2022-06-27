@@ -11,13 +11,16 @@ import { Link } from '@inertiajs/inertia-vue3'
             <slot name="header" />
         </template>
 
-        <template v-if="$slots.sidebar" #sidebar>
+        <!--<template #sidebar>
             <SidebarItems
                 :topic="topic"
                 :topics="topics"
                 :icons="icons"
                 :activity="activity"
             />
+        </template>-->
+        <template #sidebar>
+            <p>Testing</p>
         </template>
 
         <div class="flex flex-wrap bg-gray-100 w-full">

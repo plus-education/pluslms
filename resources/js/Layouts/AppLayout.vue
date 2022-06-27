@@ -145,10 +145,7 @@ const logout = () => {
 
                 <!-- Responsive Navigation Menu -->
                 <div :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown, 'h-screen': hasSidebar}" class="sm:hidden">
-                    <ResponsiveLinks @logout="logout" />
-                    <template v-if="hasSidebar">
-                        <slot name="sidebar" />
-                    </template>
+                    <ResponsiveLinks :hasSidebar="hasSidebar" @logout="logout" />
                 </div>
             </nav>
 
