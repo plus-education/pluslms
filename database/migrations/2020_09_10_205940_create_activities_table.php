@@ -17,7 +17,7 @@ class CreateActivitiesTable extends Migration
             $table->id();
             $table->foreignId('topic_id');
             $table->string('name');
-            $table->boolean('isShow');
+            $table->boolean('isShow')->default(true);
             $table->unsignedInteger('order');
             $table->unsignedDecimal('score')->default(0);
 

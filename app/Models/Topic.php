@@ -12,6 +12,11 @@ class Topic extends Model implements Sortable
 {
     use HasFactory, SortableTrait;
 
+    protected $fillable = [
+        'name',
+        'course_id'
+    ];
+
     public $sortable = [
         'order_column_name' => 'order',
         'sort_when_creating' => true,

@@ -14,8 +14,10 @@ class Course extends Model
     use HasUsers;
     use HasBelongsToManyEvents;
 
+    protected $fillable = ['name'];
+
     protected $appends = ['coverPath'];
-    
+
     public function users()
     {
         return $this->belongsToMany(User::class);
@@ -25,7 +27,7 @@ class Course extends Model
     {
         return $this->hasMany(Topic::class);
     }
-    
+
     public function getCoverPathAttribute()
     {
         $random = rand(1,6);
