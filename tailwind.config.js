@@ -2,8 +2,8 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
     content: [
-        './storage/framework/views/*.php', 
-        './resources/views/**/*.blade.php', 
+        './storage/framework/views/*.php',
+        './resources/views/**/*.blade.php',
         './resources/js/**/*.vue'
     ],
 
@@ -15,12 +15,8 @@ module.exports = {
         },
     },
 
-    variants: {
-        opacity: ['responsive', 'hover', 'focus', 'disabled'],
-    },
-
     plugins: [
-        require('@tailwindcss/forms'), 
+        require('@tailwindcss/forms'),
         require('@tailwindcss/typography'),
     ],
 };

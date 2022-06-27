@@ -20,8 +20,13 @@ import { Link } from '@inertiajs/inertia-vue3'
             />
         </template>
 
-        <div class="flex flex-wrap bg-gray-100 w-full overflow-y-scroll">
-            <div class="w-3/12 h-screen overflow-y-auto bg-white shadow-lg hidden md:block">
+        <div class="flex flex-wrap bg-gray-100 w-full">
+            <div class="z-50
+                w-[length:var(--sidebar-w)]
+                overflow-y-scroll fixed
+                top-[length:var(--navbar-h)]
+                bottom-0 bg-white shadow-lg hidden md:block
+            ">
                 <div class="p-3 text-ellipsis">
                     <h4>Course:</h4>
                     <h5>{{ topic.course.name }}</h5>
@@ -35,7 +40,11 @@ import { Link } from '@inertiajs/inertia-vue3'
                 />
             </div>
 
-            <div class="w-full md:w-9/12 h-screen overflow-y-scroll">
+            <div class="
+                z-0 w-full md:w-9/12 h-screen absolute
+                top-[length:var(--navbar-h)]
+                left-0
+                md:left-[length:var(--sidebar-w)]">
                 <div class="md:p-4">
                     <slot />
                 </div>

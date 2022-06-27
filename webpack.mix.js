@@ -12,6 +12,12 @@ const path = require('path');
  |
  */
 
+mix.webpackConfig({
+    stats: {
+        children: true,
+    },
+});
+
 mix.alias({
     ziggy: path.resolve('vendor/tightenco/ziggy/dist/vue'),
 });

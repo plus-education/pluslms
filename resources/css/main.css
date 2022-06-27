@@ -1,5 +1,8 @@
 @tailwind base;
-
 @tailwind components;
-
 @tailwind utilities;
+
+:root {
+    --navbar-h: 16;
+    --sidebar-w: 25%;
+  }

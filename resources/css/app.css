@@ -1,3 +1,13 @@
-@import 'tailwindcss/base';
+/*@import 'tailwindcss/base';
 @import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import 'tailwindcss/utilities';*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --navbar-h: 4rem;
+    --sidebar-w: 25%;
+  }
+
