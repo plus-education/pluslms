@@ -47,6 +47,7 @@
         "spatie/laravel-permission": "^5.5",
         "spatie/nova-backup-tool": "^5.0.1",
         "spatie/nova-tags-field": "^4.0.3",
+        "stepanenko3/nova-settings": "^1.0",
         "tightenco/ziggy": "^1.4",
         "wdelfuego/nova-datetime": "^1.1",
         "whitecube/nova-flexible-content": "^1.0.0"

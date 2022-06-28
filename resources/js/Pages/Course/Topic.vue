@@ -85,27 +85,24 @@ import { Link } from '@inertiajs/inertia-vue3'
         },
 
         created() {
-            /*if (this.activity) {
-                this.activity.activeClass = 'active-activity'
-            }*/
+            window.addEventListener('beforeunload', this.save_analytics);
         },
 
         mounted() {
             this.icons = sidebarIcons;
             this.getNav();
-
-            /*window.addEventListener('message', function receiveMessage(event) {
-                if (event.data.result === undefined) {
-                    return; // Only handle messages with result
-                }
-
-                console.log(event.data.actor.name + ' just scored ' + (event.data.result.score.scaled * 100) + ' %');
-                } , false);*/
         },
 
         methods: {
             toggle() {
                 this.open = !this.open;
+            },
+
+            save_analytics(evt) {
+                /*console.log(evt);
+                evt.returnValue = false;
+                alert('Test');
+                return false;*/
             },
 
             getNav: function() {

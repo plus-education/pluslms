@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ced255f33cd8e36daac44211080dedec",
+    "content-hash": "5f858e1537f944b0f8ce8b31754ae889",
     "packages": [
         {
             "name": "alexwenzel/nova-dependency-container",
@@ -7376,6 +7376,97 @@
             "time": "2022-01-21T08:32:41+00:00"
         },
         {
+            "name": "spatie/laravel-activitylog",
+            "version": "4.5.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-activitylog.git",
+                "reference": "feb1a37d649b03711e546807688fbea53469dfc3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-activitylog/zipball/feb1a37d649b03711e546807688fbea53469dfc3",
+                "reference": "feb1a37d649b03711e546807688fbea53469dfc3",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/config": "^8.0 || ^9.0",
+                "illuminate/database": "^8.53 || ^9.0",
+                "illuminate/support": "^8.0 || ^9.0",
+                "php": "^8.0",
+                "spatie/laravel-package-tools": "^1.6.3"
+            },
+            "require-dev": {
+                "ext-json": "*",
+                "orchestra/testbench": "^6.23 || ^7.0",
+                "pestphp/pest": "^1.20"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\Activitylog\\ActivitylogServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Spatie\\Activitylog\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Sebastian De Deyne",
+                    "email": "sebastian@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Tom Witkowski",
+                    "email": "dev.gummibeer@gmail.com",
+                    "homepage": "https://gummibeer.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A very simple activity logger to monitor the users of your website or application",
+            "homepage": "https://github.com/spatie/activitylog",
+            "keywords": [
+                "activity",
+                "laravel",
+                "log",
+                "spatie",
+                "user"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-activitylog/issues",
+                "source": "https://github.com/spatie/laravel-activitylog/tree/4.5.3"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-05-31T10:01:05+00:00"
+        },
+        {
             "name": "spatie/laravel-backup",
             "version": "8.1.2",
             "source": {
@@ -8089,6 +8180,57 @@
                 }
             ],
             "time": "2022-03-11T08:16:01+00:00"
+        },
+        {
+            "name": "stepanenko3/nova-settings",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stepanenko3/nova-settings.git",
+                "reference": "c394e0b79e6d10ddcea5e27873cc018e608e1e37"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stepanenko3/nova-settings/zipball/c394e0b79e6d10ddcea5e27873cc018e608e1e37",
+                "reference": "c394e0b79e6d10ddcea5e27873cc018e608e1e37",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": "^4.0",
+                "php": ">=8.0",
+                "spatie/laravel-activitylog": "^4.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Stepanenko3\\NovaSettings\\ToolServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Stepanenko3\\NovaSettings\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "This Laravel Nova settings tool based on env, using nativ nova fields and resources",
+            "keywords": [
+                "Settings",
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/stepanenko3/nova-settings/issues",
+                "source": "https://github.com/stepanenko3/nova-settings/tree/v1.0.2"
+            },
+            "time": "2022-05-17T06:11:19+00:00"
         },
         {
             "name": "symfony/console",

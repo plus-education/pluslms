@@ -89,7 +89,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function tools()
     {
         return [
-            
+
             \Spatie\BackupTool\BackupTool::make()
                 ->canSee(function (){
                     return auth()->user()->can('manage backup');
@@ -101,6 +101,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 }),
 
             //\ChrisWare\NovaBreadcrumbs\NovaBreadcrumbs::make(),
+            new \Stepanenko3\NovaSettings\NovaSettingsTool(),
         ];
     }
 

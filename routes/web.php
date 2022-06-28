@@ -27,7 +27,6 @@ Route::get('/callback/microsoft', [SocialiteController::class, 'handleMicrosoftC
 
 Route::get('/', function () {
     return redirect()->route('dashboard');
-    //return view('welcome');
 });
 
 Route::get('/logo', function () {
@@ -52,7 +51,7 @@ Route::middleware([
     Route::get('/courses/topic/{id}/{activity_id?}', [CoursesController::class, 'topic'])
         ->name('courses.topic');
 
-    Route::get('/courses/topic/activities/{id}', [CoursesController::class, 'topicActivities'])
+    /*Route::get('/courses/topic/activities/{id}', [CoursesController::class, 'topicActivities'])
         ->name('courses.topic.activities');
 
     Route::get('/courses/usersByActivity/{id}', [CoursesController::class, 'usersByActivity'])
@@ -60,7 +59,7 @@ Route::middleware([
 
     Route::post('/courses/saveActivity', [CoursesController::class, 'saveActivity'])
         ->name('courses.saveActivity');
-
+    */
     /*
     Route::post('/courses/saveStudentHomework/{id}', [CoursesController::class, 'saveStudentHomework']);
     Route::get('/courses/studentHomework/{id}', [CoursesController::class, 'studentHomework']);
@@ -73,7 +72,7 @@ Route::middleware([
         ->name('courses.topicGradebookExcel');
     */
 
-    Route::get('/student/exercise/questions/{id}', [ExerciseController::class, 'getQuestion']);
+    /*Route::get('/student/exercise/questions/{id}', [ExerciseController::class, 'getQuestion']);
 
     Route::post('/student/exercise', \App\Http\Controllers\GradeExerciseController::class);
     Route::get('/student/exercise/score/{activityId}', function($id){
@@ -91,6 +90,7 @@ Route::middleware([
 
         return response()->json(['hasScore' => false]);
     });
+    */
 
     // System Comments
     Route::get('/comments/activity/{id}/{type}', [\App\Http\Controllers\CommentController::class, 'list'])
@@ -103,43 +103,7 @@ Route::middleware([
 
     Route::post('/comments/delete', [\App\Http\Controllers\CommentController::class, 'delete']);
 
-    /*
-    Route::get('/student/myCalendar', function () {
-        return \Inertia\Inertia::render('MyCalendar');
-    });
-
-    // Gradebooks report
-    Route::get('/gradebook/courseByAllActivities/{course}', \App\Http\Controllers\Gradebook\CourseGradebookByAllActivitiesController::class);
-
-    Route::get('/student/myActivities', function () {
-        $user = auth()->user();
-        $myCourses = $user->courses->pluck('id')->toArray();
-
-        $activities = \Illuminate\Support\Facades\DB::table('activities')
-            ->select('activities.name', 'activities.name', 'activities.score', 'activities.start', 'activities.end', 'topics.id as topic_id', 'topics.name as topic', 'courses.id as course_id',  'courses.name as course')
-            ->leftJoin('topics', 'activities.topic_id', 'topics.id')
-            ->leftJoin('courses', 'topics.course_id', 'courses.id')
-            ->where('activities.score', '>', 0)
-            ->where('activities.start', '<>', 'null')
-            ->where('activities.end', '<>', 'null')
-            ->whereIn('courses.id', $myCourses)
-            ->get();
-
-        return $activities->map(function ($activity){
-            return [
-                'title' => "<a href='/courses/topic/{$activity->topic_id}' target='_blank'>{$activity->name} {$activity->score} pts </a>",
-                'start' => $activity->end,
-                'end' => $activity->end,
-                'content' => "<a href='/courses/topic/{$activity->topic_id}' target='_blank'>{$activity->course}</a>",
-                'class' => "event-" . rand(1,10)
-            ];
-        });
-    });
-
-    // Editor Js
-    Route::post('/editorjs/uploadFile', [App\Http\Controllers\EditorJsController::class, 'uploadFile']);
-    */
-
+    // Get previous and next navigation for the activity, if it applies
     Route::get('/nav/topic/activity/{id}', function ($id) {
         return \App\Models\Activity::find($id)?->prev_next_ids;
     })->name('nav.topic.activity');

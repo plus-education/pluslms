@@ -63,6 +63,7 @@
         "link-preview-js": "^2.1.6",
         "link-preview-node": "^1.0.4",
         "pluralize": "^8.0.0",
+        "timeme.js": "^2.1.0",
         "vue-cal": "^4.2.0",
         "vue-file-agent": "^1.7.3",
         "vue-moment": "^4.1.0",
