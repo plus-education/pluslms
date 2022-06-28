@@ -1521,6 +1521,10 @@ input:checked + .toggle-bg {
   display: grid;
 }
 
+.\!grid {
+  display: grid !important;
+}
+
 .hidden {
   display: none;
 }
@@ -3320,6 +3324,10 @@ input:checked + .toggle-bg {
 }
 
 @media (min-width: 768px) {
+
+  .md\:fixed {
+    position: fixed;
+  }
 
   .md\:left-\[length\:var\(--sidebar-w\)\] {
     left: var(--sidebar-w);

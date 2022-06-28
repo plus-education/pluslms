@@ -9,7 +9,8 @@ import JetResponsiveNavLink from '@/Jetstream/ResponsiveNavLink.vue';
         </JetResponsiveNavLink>
     </div>
 
-    <slot name="sidebar"></slot>
+    <!-- Slot for sidebar content -->
+    <slot />
 
     <!-- Responsive Settings Options -->
     <div class="pt-4 pb-1 border-t border-gray-200">

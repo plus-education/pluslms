@@ -34949,53 +34949,56 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "max-w-7xl mx-auto px-4 md:px-6 lg:px-8"
+  "class": "min-h-screen bg-gray-100"
 };
 var _hoisted_2 = {
-  "class": "flex justify-between h-16"
+  "class": "max-w-7xl mx-auto px-4 md:px-6 lg:px-8"
 };
 var _hoisted_3 = {
-  "class": "-mr-2 flex items-center md:hidden"
+  "class": "flex justify-between h-16"
 };
 var _hoisted_4 = {
+  "class": "-mr-2 flex items-center md:hidden"
+};
+var _hoisted_5 = {
   "class": "h-6 w-6",
   stroke: "currentColor",
   fill: "none",
   viewBox: "0 0 24 24"
 };
-var _hoisted_5 = {
+var _hoisted_6 = {
   "class": "flex"
 };
-var _hoisted_6 = {
+var _hoisted_7 = {
   "class": "shrink-0 flex items-center"
 };
-var _hoisted_7 = {
+var _hoisted_8 = {
   "class": "hidden space-x-8 md:-my-px md:ml-10 md:flex"
 };
 
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Dashboard ");
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Dashboard ");
 
-var _hoisted_9 = {
+var _hoisted_10 = {
   "class": "hidden md:flex md:items-center md:ml-6"
 };
-var _hoisted_10 = {
+var _hoisted_11 = {
   "class": "ml-3 relative"
 };
-var _hoisted_11 = {
+var _hoisted_12 = {
   key: 0,
   "class": "flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition"
 };
-var _hoisted_12 = ["src", "alt"];
-var _hoisted_13 = {
+var _hoisted_13 = ["src", "alt"];
+var _hoisted_14 = {
   key: 1,
   "class": "inline-flex rounded-md"
 };
-var _hoisted_14 = {
+var _hoisted_15 = {
   type: "button",
   "class": "inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition"
 };
 
-var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
   "class": "ml-2 -mr-0.5 h-4 w-4",
   xmlns: "http://www.w3.org/2000/svg",
   viewBox: "0 0 20 20",
@@ -35008,37 +35011,37 @@ var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "block px-4 py-2 text-xs text-gray-400"
 }, " Manage Account ", -1
 /* HOISTED */
 );
 
-var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Profile ");
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Profile ");
 
-var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" API Tokens ");
+var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" API Tokens ");
 
-var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "border-t border-gray-100"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_20 = ["onSubmit"];
+var _hoisted_21 = ["onSubmit"];
 
-var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Log Out ");
+var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Log Out ");
 
-var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "flex md:hidden"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_23 = {
+var _hoisted_24 = {
   key: 0,
   "class": "bg-white shadow"
 };
-var _hoisted_24 = {
+var _hoisted_25 = {
   "class": "max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -35046,21 +35049,17 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     title: $props.title
   }, null, 8
   /* PROPS */
-  , ["title"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["JetBanner"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["min-h-screen bg-gray-100", {
-      'h-screen': $props.fullHeight
+  , ["title"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["JetBanner"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("nav", {
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["z-50 bg-white border-b border-gray-100 w-full", {
+      'relative': !$props.fullHeight,
+      'absolute md:fixed': $props.fullHeight
     }])
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("nav", {
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["z-50 bg-white border-b border-gray-100", {
-      'w-full': $props.fullHeight,
-      'fixed': $props.fullHeight
-    }])
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Primary Navigation Menu "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Hamburger "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Primary Navigation Menu "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Hamburger "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     "class": "inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition",
     onClick: _cache[0] || (_cache[0] = function ($event) {
       return $setup.showingNavigationDropdown = !$setup.showingNavigationDropdown;
     })
-  }, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("svg", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("path", {
+  }, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("svg", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("path", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
       'hidden': $setup.showingNavigationDropdown,
       'inline-flex': !$setup.showingNavigationDropdown
@@ -35082,7 +35081,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     d: "M6 18L18 6M6 6l12 12"
   }, null, 2
   /* CLASS */
-  )]))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Logo "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
+  )]))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Logo "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
     href: _ctx.route('dashboard')
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -35095,41 +35094,41 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }, 8
   /* PROPS */
-  , ["href"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Navigation Links "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["JetNavLink"], {
+  , ["href"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Navigation Links "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["JetNavLink"], {
     href: _ctx.route('dashboard'),
     active: _ctx.route().current('dashboard')
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_8];
+      return [_hoisted_9];
     }),
     _: 1
     /* STABLE */
 
   }, 8
   /* PROPS */
-  , ["href", "active"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Notifications"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Settings Dropdown "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["JetDropdown"], {
+  , ["href", "active"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Notifications"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Settings Dropdown "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["JetDropdown"], {
     align: "right",
     width: "48"
   }, {
     trigger: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       var _ctx$$page$props$jets;
 
-      return [(_ctx$$page$props$jets = _ctx.$page.props.jetstream) !== null && _ctx$$page$props$jets !== void 0 && _ctx$$page$props$jets.managesProfilePhotos ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+      return [(_ctx$$page$props$jets = _ctx.$page.props.jetstream) !== null && _ctx$$page$props$jets !== void 0 && _ctx$$page$props$jets.managesProfilePhotos ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
         "class": "h-8 w-8 rounded-full object-cover",
         src: _ctx.$page.props.user.profile_photo_url,
         alt: _ctx.$page.props.user.name
       }, null, 8
       /* PROPS */
-      , _hoisted_12)])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.name) + " ", 1
+      , _hoisted_13)])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user.name) + " ", 1
       /* TEXT */
-      ), _hoisted_15])]))];
+      ), _hoisted_16])]))];
     }),
     content: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Account Management "), _hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["JetDropdownLink"], {
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Account Management "), _hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["JetDropdownLink"], {
         href: _ctx.route('profile.show')
       }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_17];
+          return [_hoisted_18];
         }),
         _: 1
         /* STABLE */
@@ -35141,49 +35140,57 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         href: _ctx.route('api-tokens.index')
       }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_18];
+          return [_hoisted_19];
         }),
         _: 1
         /* STABLE */
 
       }, 8
       /* PROPS */
-      , ["href"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Authentication "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+      , ["href"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_20, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Authentication "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
         onSubmit: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)($setup.logout, ["prevent"])
       }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["JetDropdownLink"], {
         as: "button"
       }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_21];
+          return [_hoisted_22];
         }),
         _: 1
         /* STABLE */
 
       })], 40
       /* PROPS, HYDRATE_EVENTS */
-      , _hoisted_20)];
+      , _hoisted_21)];
     }),
     _: 1
     /* STABLE */
 
-  })])]), _hoisted_22])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Responsive Navigation Menu "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  })])]), _hoisted_23])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Page Heading "), _ctx.$slots.header ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("header", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_25, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "header")])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Responsive Navigation Menu "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)([{
       'block': $setup.showingNavigationDropdown,
-      'hidden': !$setup.showingNavigationDropdown,
-      'h-screen': $props.hasSidebar
-    }, "sm:hidden"])
+      'hidden': !$setup.showingNavigationDropdown
+    }, "md:hidden"])
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ResponsiveLinks"], {
-    hasSidebar: $props.hasSidebar,
     onLogout: $setup.logout
-  }, null, 8
-  /* PROPS */
-  , ["hasSidebar"])], 2
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "sidebar")];
+    }),
+    _: 3
+    /* FORWARDED */
+
+  })], 2
   /* CLASS */
   )], 2
   /* CLASS */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Page Heading "), _ctx.$slots.header ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("header", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "header")])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Page Content "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<Alerts />"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default")])], 2
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Page Content "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", {
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
+      'hidden': $setup.showingNavigationDropdown && !_ctx.$grid.md,
+      'block': !$setup.showingNavigationDropdown || _ctx.$grid.md
+    })
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<Alerts />"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default")], 2
   /* CLASS */
-  )]);
+  )])]);
 }
 
 /***/ }),
@@ -35201,35 +35208,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Testing", -1
-/* HOISTED */
-);
-
-var _hoisted_2 = {
+var _hoisted_1 = {
   "class": "flex flex-wrap bg-gray-100 w-full"
 };
-var _hoisted_3 = {
+var _hoisted_2 = {
   "class": "z-50 w-[length:var(--sidebar-w)] overflow-y-scroll fixed top-[length:var(--navbar-h)] bottom-0 bg-white shadow-lg hidden md:block"
 };
-var _hoisted_4 = {
+var _hoisted_3 = {
   "class": "p-3 text-ellipsis"
 };
 
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", null, "Course:", -1
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", null, "Course:", -1
 /* HOISTED */
 );
 
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("hr", {
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("hr", {
   "class": "m-0"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_7 = {
+var _hoisted_6 = {
   "class": "z-0 w-full md:w-9/12 h-screen absolute top-[length:var(--navbar-h)] left-0 md:left-[length:var(--sidebar-w)]"
 };
-var _hoisted_8 = {
+var _hoisted_7 = {
   "class": "md:p-4"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -35238,27 +35240,34 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     hasSidebar: true
   }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createSlots)({
     sidebar: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_1];
-    }),
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.topic.course.name), 1
-      /* TEXT */
-      )]), _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["SidebarItems"], {
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["SidebarItems"], {
         topic: $props.topic,
         topics: $props.topics,
         icons: $props.icons,
         activity: $props.activity
       }, null, 8
       /* PROPS */
-      , ["topic", "topics", "icons", "activity"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default")])])])];
+      , ["topic", "topics", "icons", "activity"])];
+    }),
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.topic.course.name), 1
+      /* TEXT */
+      )]), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["SidebarItems"], {
+        topic: $props.topic,
+        topics: $props.topics,
+        icons: $props.icons,
+        activity: $props.activity
+      }, null, 8
+      /* PROPS */
+      , ["topic", "topics", "icons", "activity"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default")])])])];
     }),
     _: 2
     /* DYNAMIC */
 
-  }, [_ctx.$slots.header ? {
+  }, [_ctx.$slots.headerContent ? {
     name: "header",
     fn: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "header")];
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "headerContent")];
     })
   } : undefined]), 1024
   /* DYNAMIC_SLOTS */
@@ -35409,7 +35418,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }, 8
   /* PROPS */
-  , ["href", "active"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "sidebar"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Responsive Settings Options "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(_ctx$$page$props$jets = _ctx.$page.props.jetstream) !== null && _ctx$$page$props$jets !== void 0 && _ctx$$page$props$jets.managesProfilePhotos ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+  , ["href", "active"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Slot for sidebar content "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Responsive Settings Options "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(_ctx$$page$props$jets = _ctx.$page.props.jetstream) !== null && _ctx$$page$props$jets !== void 0 && _ctx$$page$props$jets.managesProfilePhotos ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
     "class": "h-10 w-10 rounded-full object-cover",
     src: _ctx.$page.props.user.profile_photo_url,
     alt: _ctx.$page.props.user.name
@@ -35481,15 +35490,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  key: 0
+  "class": "py-4 border-t border-gray-200"
 };
-var _hoisted_2 = ["innerHTML"];
+var _hoisted_2 = {
+  key: 1
+};
+var _hoisted_3 = {
+  "class": "text-md"
+};
+var _hoisted_4 = {
+  key: 2
+};
+var _hoisted_5 = ["innerHTML"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("ul", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.topics, function (t) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("ul", _hoisted_1, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.topics, function (t) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", {
       key: t.id,
-      "class": "p-2"
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
+      "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["p-2", {
+        'bg-gray-200 cursor-pointer': t.numActivities === 0
+      }])
+    }, [t.numActivities !== 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["Link"], {
+      key: 0,
       href: _ctx.route('courses.topic', t.id)
     }, {
       "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -35506,7 +35527,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
     }, 1032
     /* PROPS, DYNAMIC_SLOTS */
-    , ["href"]), $props.topic.id === t.id && $props.topic.activities ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("ul", _hoisted_1, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.topic.activities, function (act) {
+    , ["href"])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(t.name), 1
+    /* TEXT */
+    )])), $props.topic.id === t.id && $props.topic.activities ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("ul", _hoisted_4, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.topic.activities, function (act) {
       return (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)(((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", {
         key: act.id,
         "class": "cursor-pointer"
@@ -35525,7 +35548,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             innerHTML: $props.icons[act.type]
           }, null, 8
           /* PROPS */
-          , _hoisted_2), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<span v-if=\"t.completed\">&#9745;</span>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(act.name), 1
+          , _hoisted_5), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<span v-if=\"t.completed\">&#9745;</span>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(act.name), 1
           /* TEXT */
           )];
         }),
@@ -35539,7 +35562,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       )), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, act.isShow == 1]]);
     }), 128
     /* KEYED_FRAGMENT */
-    ))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
+    ))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 2
+    /* CLASS */
+    );
   }), 128
   /* KEYED_FRAGMENT */
   ))]);
@@ -39536,9 +39561,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ziggy__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ziggy */ "./vendor/tightenco/ziggy/dist/vue.js");
 /* harmony import */ var ziggy__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(ziggy__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _ziggy__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ziggy */ "./resources/js/ziggy.js");
-/* harmony import */ var flowbite__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! flowbite */ "./node_modules/flowbite/dist/flowbite.js");
-/* harmony import */ var flowbite__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(flowbite__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var vue_screen__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue-screen */ "./node_modules/vue-screen/dist/vue-screen.esm.js");
+/* harmony import */ var flowbite__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! flowbite */ "./node_modules/flowbite/dist/flowbite.js");
+/* harmony import */ var flowbite__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(flowbite__WEBPACK_IMPORTED_MODULE_6__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
 
 
 
@@ -39567,7 +39594,7 @@ var app = document.getElementById('app');
       render: function render() {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.h)(app, props);
       }
-    }).use(plugin).use(ziggy__WEBPACK_IMPORTED_MODULE_3__.ZiggyVue, _ziggy__WEBPACK_IMPORTED_MODULE_4__.Ziggy).mount(el);
+    }).use(plugin).use(ziggy__WEBPACK_IMPORTED_MODULE_3__.ZiggyVue, _ziggy__WEBPACK_IMPORTED_MODULE_4__.Ziggy).use(vue_screen__WEBPACK_IMPORTED_MODULE_5__["default"], 'tailwind').mount(el);
   }
 });
 _inertiajs_progress__WEBPACK_IMPORTED_MODULE_2__.InertiaProgress.init({
@@ -97557,6 +97584,307 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Topic_vue_vue_type_style_index_0_id_457b92c4_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader/dist/cjs.js!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Topic.vue?vue&type=style&index=0&id=457b92c4&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Course/Topic.vue?vue&type=style&index=0&id=457b92c4&lang=css");
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-screen/dist/vue-screen.esm.js":
+/*!********************************************************!*\
+  !*** ./node_modules/vue-screen/dist/vue-screen.esm.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   "extendGrid": () => (/* binding */ extendGrid),
+/* harmony export */   "grids": () => (/* binding */ grids),
+/* harmony export */   "useGrid": () => (/* binding */ useGrid),
+/* harmony export */   "useScreen": () => (/* binding */ useScreen)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+
+var inBrowser = typeof window !== 'undefined';
+var debounce = function (callback, wait) {
+    var timeout;
+    // eslint-disable-next-line func-names
+    return function () {
+        // eslint-disable-next-line @typescript-eslint/no-this-alias
+        var context = this;
+        // eslint-disable-next-line prefer-rest-params
+        var args = arguments;
+        // eslint-disable-next-line func-names
+        var later = function () {
+            timeout = null;
+            callback.apply(context, args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+};
+
+// GoogleBot default screen properties
+var DEFAULT_WIDTH = 410;
+var DEFAULT_HEIGHT = 730;
+var DEFAULT_ORIENTATION = 'portrait';
+var DEFAULT_TOUCH_SUPPORT = true;
+var DEFAULT_DEBOUNCE_DELAY = 100;
+var useScreen = function (config, debounceDelay) {
+    if (config === void 0) { config = {}; }
+    if (debounceDelay === void 0) { debounceDelay = DEFAULT_DEBOUNCE_DELAY; }
+    var width = config.width || DEFAULT_WIDTH;
+    var height = config.height || DEFAULT_HEIGHT;
+    var orientation = config.orientation || DEFAULT_ORIENTATION;
+    var touch = config.touch === undefined ? DEFAULT_TOUCH_SUPPORT : config.touch;
+    var screen = (0,vue__WEBPACK_IMPORTED_MODULE_0__.reactive)({
+        resolution: width + "x" + height,
+        width: width,
+        height: height,
+        orientation: orientation,
+        portrait: orientation === 'portrait',
+        landscape: orientation !== 'portrait',
+        touch: touch,
+    });
+    /* istanbul ignore next */
+    var updateWindowProperties = function () {
+        screen.width = window.innerWidth;
+        screen.height = window.innerHeight;
+        screen.resolution = screen.width + "x" + screen.height;
+    };
+    /* istanbul ignore next */
+    var updateOrientationPropperties = function (e) {
+        screen.portrait = e.matches;
+        screen.landscape = !e.matches;
+        screen.orientation = e.matches ? 'portrait' : 'landscape';
+    };
+    /* istanbul ignore if */
+    if (inBrowser) {
+        var resizeListener_1 = debounce(updateWindowProperties, debounceDelay);
+        window.addEventListener('resize', resizeListener_1);
+        updateWindowProperties();
+        var query_1 = window.matchMedia('(orientation: portrait)');
+        if ('addEventListener' in query_1) {
+            query_1.addEventListener('change', updateOrientationPropperties);
+        }
+        else {
+            // https://github.com/reegodev/vue-screen/issues/30
+            // query.addListener is not deprecated for iOS 12
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            query_1.addListener(updateOrientationPropperties);
+        }
+        updateOrientationPropperties(query_1);
+        // This does not react to resize events.
+        // You always need to reload the browser to add/remove touch support,
+        // even when using DevTools device simulation
+        screen.touch = 'ontouchstart' in window;
+        // Do not leak memory by keeping event listeners active.
+        // This appears to work as expected, using useScreen() inside components
+        // triggers this hook when they are destroyed.
+        if ((0,vue__WEBPACK_IMPORTED_MODULE_0__.getCurrentInstance)()) {
+            (0,vue__WEBPACK_IMPORTED_MODULE_0__.onUnmounted)(function () {
+                window.removeEventListener('resize', resizeListener_1);
+                if ('removeEventListener' in query_1) {
+                    query_1.removeEventListener('change', updateOrientationPropperties);
+                }
+                else {
+                    // https://github.com/reegodev/vue-screen/issues/30
+                    // query.removeListener is not deprecated for iOS 12
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    query_1.removeListener(updateOrientationPropperties);
+                }
+            });
+        }
+    }
+    return screen;
+};
+
+var tailwind = {
+    sm: '640px',
+    md: '768px',
+    lg: '1024px',
+    xl: '1280px',
+    '2xl': 1536,
+};
+
+var bootstrap = {
+    xs: '0px',
+    sm: '480px',
+    md: '768px',
+    lg: '992px',
+    xl: '1200px',
+    xxl: '1400px',
+};
+
+var bulma = {
+    mobile: 0,
+    tablet: 769,
+    desktop: 1024,
+    widescreen: 1216,
+    fullhd: 1408,
+};
+
+var materialize = {
+    s: 0,
+    m: 601,
+    l: 993,
+    xl: 1201,
+};
+
+var foundation = {
+    small: 0,
+    medium: 640,
+    large: 1024,
+};
+
+var semanticUi = {
+    mobile: 0,
+    tablet: 768,
+    computer: 992,
+    large: 1201,
+};
+
+var grids = {
+    tailwind: tailwind,
+    bootstrap: bootstrap,
+    bulma: bulma,
+    materialize: materialize,
+    foundation: foundation,
+    semanticUi: semanticUi,
+};
+
+var DEFAULT_GRID_FRAMEWORK = 'tailwind';
+var createGridObject = function (config) {
+    return Object.keys(config).reduce(function (accumulator, key) {
+        accumulator[key] = false;
+        return accumulator;
+    }, {
+        breakpoint: '',
+    });
+};
+var createConfigFromLiteral = function (literal) {
+    if (!grids[literal]) {
+        throw new Error("Invalid grid type \"" + literal + "\"");
+    }
+    return grids[literal];
+};
+var getCurrentBreakpoint = function (config, object) {
+    var current = Object.keys(object)
+        .filter(function (key) {
+        return !['breakpoint'].includes(key) && typeof config[key] !== 'function';
+    })
+        .reverse()
+        .find(function (key) { return object[key]; });
+    return current || '';
+};
+/* istanbul ignore next  */
+var updateComputedProperties = function (config, object) {
+    Object.keys(config)
+        .filter(function (breakpoint) {
+        return typeof config[breakpoint] === 'function';
+    })
+        .forEach(function (breakpoint) {
+        var fn = config[breakpoint];
+        object[breakpoint] = fn.call(null, object);
+    });
+};
+var debouncedUpdateComputedProperties = debounce(updateComputedProperties, 100);
+/* istanbul ignore next  */
+var createMediaQueries = function (config, object) {
+    Object.keys(config)
+        .filter(function (breakpoint) {
+        return typeof config[breakpoint] !== 'function';
+    })
+        .forEach(function (breakpoint) {
+        var width = config[breakpoint];
+        if (typeof width === 'number') {
+            width = width + "px";
+        }
+        else {
+            width = width.toString();
+        }
+        var onChange = function (event) {
+            object[breakpoint] = event.matches;
+            object.breakpoint = getCurrentBreakpoint(config, object);
+            debouncedUpdateComputedProperties(config, object);
+        };
+        var query = window.matchMedia("(min-width: " + width + ")");
+        if ('addEventListener' in query) {
+            query.addEventListener('change', onChange);
+        }
+        else {
+            // https://github.com/reegodev/vue-screen/issues/30
+            // query.addListener is not deprecated for iOS 12
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            query.addListener(onChange);
+        }
+        object[breakpoint] = query.matches;
+        object.breakpoint = getCurrentBreakpoint(config, object);
+        // Do not leak memory by keeping event listeners active.
+        // This appears to work as expected, using useGrid() inside components
+        // triggers this hook when they are destroyed.
+        if ((0,vue__WEBPACK_IMPORTED_MODULE_0__.getCurrentInstance)()) {
+            (0,vue__WEBPACK_IMPORTED_MODULE_0__.onUnmounted)(function () {
+                if ('removeEventListener' in query) {
+                    query.removeEventListener('change', onChange);
+                }
+                else {
+                    // https://github.com/reegodev/vue-screen/issues/30
+                    // query.removeListener is not deprecated for iOS 12
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    query.removeListener(onChange);
+                }
+            });
+        }
+    });
+    updateComputedProperties(config, object);
+};
+function useGrid(gridConfig) {
+    if (gridConfig === void 0) { gridConfig = DEFAULT_GRID_FRAMEWORK; }
+    var config;
+    if (typeof gridConfig === 'string') {
+        config = createConfigFromLiteral(gridConfig);
+    }
+    else {
+        config = Object.assign(gridConfig);
+    }
+    var gridObject = (0,vue__WEBPACK_IMPORTED_MODULE_0__.reactive)(createGridObject(config));
+    /* istanbul ignore if  */
+    if (inBrowser) {
+        createMediaQueries(config, gridObject);
+    }
+    return gridObject;
+}
+var extendGrid = function (literalConfig, extraProperties) {
+    return Object.assign({}, createConfigFromLiteral(literalConfig), extraProperties);
+};
+
+var install = function (app, options) {
+    var screen;
+    var grid;
+    if (typeof options === 'string') {
+        screen = useScreen();
+        grid = useGrid(options);
+    }
+    else {
+        options = options || { grid: undefined, ssr: undefined, debounceDelay: undefined };
+        screen = useScreen(options.ssr, options.debounceDelay);
+        // ts cant figure out the type of arguments when union types are
+        // passed to an overloaded function, so we need to use "any" or do a typeof check
+        // on the arguments, which would ship 5 lines of js instead of one.
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        grid = useGrid(options.grid);
+    }
+    app.config.globalProperties.$screen = screen;
+    app.config.globalProperties.$grid = grid;
+};
+var plugin = {
+    install: install
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (plugin);
+
 
 
 /***/ }),

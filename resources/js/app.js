@@ -5,6 +5,7 @@ import { createInertiaApp } from '@inertiajs/inertia-vue3';
 import { InertiaProgress } from '@inertiajs/progress';
 import { ZiggyVue } from 'ziggy';
 import { Ziggy } from './ziggy';
+import VueScreen from 'vue-screen';
 
 import 'flowbite';
 
@@ -26,6 +27,7 @@ createInertiaApp({
         createApp({ render: () => h(app, props) })
             .use(plugin)
             .use(ZiggyVue, Ziggy)
+            .use(VueScreen, 'tailwind')
             .mount(el)
     },
 });

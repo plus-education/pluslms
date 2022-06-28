@@ -37,8 +37,8 @@ const logout = () => {
 
         <JetBanner />
 
-        <div class="min-h-screen bg-gray-100" :class="{ 'h-screen': fullHeight }">
-            <nav class="z-50 bg-white border-b border-gray-100" :class="{ 'w-full': fullHeight, 'fixed': fullHeight }">
+        <div class="min-h-screen bg-gray-100">
+            <nav class="z-50 bg-white border-b border-gray-100 w-full" :class="{ 'relative': !fullHeight, 'absolute md:fixed': fullHeight }">
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
                     <div class="flex justify-between h-16">
@@ -143,21 +143,25 @@ const logout = () => {
                     </div>
                 </div>
 
+                <!-- Page Heading -->
+                <header v-if="$slots.header" class="bg-white shadow">
+                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                        <slot name="header" />
+                    </div>
+                </header>
+
                 <!-- Responsive Navigation Menu -->
-                <div :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown, 'h-screen': hasSidebar}" class="sm:hidden">
-                    <ResponsiveLinks :hasSidebar="hasSidebar" @logout="logout" />
+                <div :class="{ 'block': showingNavigationDropdown, 'hidden': !showingNavigationDropdown }" class="md:hidden">
+                    <ResponsiveLinks @logout="logout">
+                        <slot name="sidebar" />
+                    </ResponsiveLinks>
                 </div>
             </nav>
 
-            <!-- Page Heading -->
-            <header v-if="$slots.header" class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    <slot name="header" />
-                </div>
-            </header>
+
 
             <!-- Page Content -->
-            <main>
+            <main :class="{ 'hidden': (showingNavigationDropdown && !$grid.md), 'block': (!showingNavigationDropdown || $grid.md) }">
                 <!--<Alerts />-->
                 <slot />
             </main>

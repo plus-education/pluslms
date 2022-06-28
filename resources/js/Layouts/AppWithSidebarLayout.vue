@@ -7,20 +7,17 @@ import { Link } from '@inertiajs/inertia-vue3'
 
 <template>
     <AppLayout :fullHeight="true" :hasSidebar="true">
-        <template v-if="$slots.header" #header>
-            <slot name="header" />
+        <template v-if="$slots.headerContent" #header>
+            <slot name="headerContent"></slot>
         </template>
 
-        <!--<template #sidebar>
+        <template #sidebar>
             <SidebarItems
                 :topic="topic"
                 :topics="topics"
                 :icons="icons"
                 :activity="activity"
             />
-        </template>-->
-        <template #sidebar>
-            <p>Testing</p>
         </template>
 
         <div class="flex flex-wrap bg-gray-100 w-full">
