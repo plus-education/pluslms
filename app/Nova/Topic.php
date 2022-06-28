@@ -18,7 +18,6 @@ use Lms\TeacherTopicComment\TeacherTopicComment;
 
 use PixelCreation\NovaFieldSortable\Concerns\SortsIndexEntries;
 use PixelCreation\NovaFieldSortable\Sortable;
-use SLASH2NL\NovaBackButton\NovaBackButton;
 
 class Topic extends Resource
 {
@@ -97,7 +96,7 @@ class Topic extends Resource
 
             Sortable::make(__('Order'), 'order')
                 ->onlyOnIndex(),
-                
+
             Boolean::make(__('Visible'), 'isShow')
                 ->hideWhenCreating()
                 ->hideWhenUpdating(),
@@ -105,24 +104,6 @@ class Topic extends Resource
             Text::make('Total Points', 'totalActivities')
                 ->hideWhenCreating()
                 ->hideWhenUpdating(),
-
-             /*SimpleLinkButton::make('Grades', function () {
-                 return "/topicGradebook/{$this->id}" ;
-             })
-                 ->hideWhenUpdating()
-                 ->hideFromDetail()
-                 ->type('link')
-                 ->style('grey')
-                 ->attributes(['target' => '_blank']),
-
-            SimpleLinkButton::make('Preview', function () {
-                return "/courses/topic/{$this->id}" ;
-            })
-                ->hideWhenUpdating()
-                ->hideFromDetail()
-                ->type('link')  // fill, outline, link
-                ->style('grey')
-                ->attributes(['target' => '_blank']),*/
         ];
     }
 
@@ -134,10 +115,7 @@ class Topic extends Resource
      */
     public function cards(NovaRequest $request)
     {
-        return [
-            (new NovaBackButton())
-            ->onlyOnDetail(),
-        ];
+        return [];
     }
 
     /**

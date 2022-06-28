@@ -5,6 +5,8 @@ namespace App\Nova;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Resource as NovaResource;
 
+use Formfeed\Breadcrumbs\Breadcrumbs;
+
 abstract class Resource extends NovaResource
 {
 
@@ -56,5 +58,12 @@ abstract class Resource extends NovaResource
     public static function relatableQuery(NovaRequest $request, $query)
     {
         return parent::relatableQuery($request, $query);
+    }
+
+    public function resolveCards(NovaRequest $request)
+    {
+        $cards = $this->cards($request);
+        array_unshift($cards, Breadcrumbs::make($request, $this));
+        return collect(array_values($this->filter($cards)));
     }
 }

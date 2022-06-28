@@ -27,7 +27,6 @@ use Alexwenzel\DependencyContainer\DependencyContainer;
 
 use PixelCreation\NovaFieldSortable\Concerns\SortsIndexEntries;
 use PixelCreation\NovaFieldSortable\Sortable;
-use SLASH2NL\NovaBackButton\NovaBackButton;
 
 class Activity extends Resource
 {
@@ -126,16 +125,10 @@ class Activity extends Resource
                 ->min(0)
                 ->max(100)
                 ->default(0),
- 
-            /*ActivityScores::make()
-                 ->withMeta(['model' => $this->model()])
-                 ->canSee(function() {
-                     return ($this->score > 0) ? true : false;
-                 }),*/
- 
+
             Sortable::make(__("Order"), 'order')
                 ->onlyOnIndex(),
- 
+
             Number::make(__("Order"), 'order')
                  ->hideWhenCreating(),
 
@@ -177,11 +170,6 @@ class Activity extends Resource
                 ->hideWhenUpdating(),
 
             Heading::make('Meta'),
-
-            /*new Tabs(__('Tools'), [
-                ActivityComments::make(),
-                    //->typeOfComment('activity'),
-            ]),*/
         ];
     }
 
@@ -193,10 +181,7 @@ class Activity extends Resource
      */
     public function cards(NovaRequest $request)
     {
-        return [
-            (new NovaBackButton())
-            ->onlyOnDetail(),
-        ];
+        return [];
     }
 
     /**

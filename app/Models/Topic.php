@@ -37,6 +37,11 @@ class Topic extends Model implements Sortable
         return $this->belongsTo(Course::class);
     }
 
+    public function parent()
+    {
+        return $this->course();
+    }
+
     public function activities()
     {
         return $this->hasMany(Activity::class)

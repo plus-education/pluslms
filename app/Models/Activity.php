@@ -97,9 +97,9 @@ class Activity extends Model implements Sortable
                     unset($model->activityable_type);
                     break;
             }
-            
+
         });
-        
+
         static::updating(function ($model) {
         });
     }
@@ -107,6 +107,11 @@ class Activity extends Model implements Sortable
     public function topic()
     {
         return $this->belongsTo(Topic::class);
+    }
+
+    public function parent()
+    {
+        return $this->topic();
     }
 
     public function activityable()

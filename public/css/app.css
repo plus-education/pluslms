@@ -1521,10 +1521,6 @@ input:checked + .toggle-bg {
   display: grid;
 }
 
-.\!grid {
-  display: grid !important;
-}
-
 .hidden {
   display: none;
 }
@@ -1561,12 +1557,12 @@ input:checked + .toggle-bg {
   height: 1rem;
 }
 
-.h-screen {
-  height: 100vh;
-}
-
 .h-9 {
   height: 2.25rem;
+}
+
+.h-screen {
+  height: 100vh;
 }
 
 .h-10 {
@@ -3176,10 +3172,6 @@ input:checked + .toggle-bg {
 
   .sm\:flex {
     display: flex;
-  }
-
-  .sm\:hidden {
-    display: none;
   }
 
   .sm\:h-64 {

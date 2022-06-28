@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5f858e1537f944b0f8ce8b31754ae889",
+    "content-hash": "b2854ae3b7de5d25ca25a75b1e351593",
     "packages": [
         {
             "name": "alexwenzel/nova-dependency-container",
@@ -1558,6 +1558,105 @@
                 "source": "https://github.com/ezyang/htmlpurifier/tree/v4.14.0"
             },
             "time": "2021-12-25T01:21:49+00:00"
+        },
+        {
+            "name": "formfeed-uk/nova-breadcrumbs",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Formfeed-UK/nova-breadcrumbs.git",
+                "reference": "5eb101cb94c88e1259af091c4b1e2be1fc036518"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Formfeed-UK/nova-breadcrumbs/zipball/5eb101cb94c88e1259af091c4b1e2be1fc036518",
+                "reference": "5eb101cb94c88e1259af091c4b1e2be1fc036518",
+                "shasum": ""
+            },
+            "require": {
+                "formfeed-uk/nova-resource-cards": "^1.0.1",
+                "laravel/nova": "^4.0",
+                "php": "^7.4|^8"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Formfeed\\Breadcrumbs\\CardServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Formfeed\\Breadcrumbs\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova package to show breadcrumbs on Nova Resources",
+            "homepage": "https://github.com/formfeed-uk/nova-breadcrumbs",
+            "keywords": [
+                "breadcrumbs",
+                "cards",
+                "laravel",
+                "nova",
+                "resource-cards"
+            ],
+            "support": {
+                "issues": "https://github.com/Formfeed-UK/nova-breadcrumbs/issues",
+                "source": "https://github.com/Formfeed-UK/nova-breadcrumbs/tree/1.0.2"
+            },
+            "time": "2022-06-10T23:07:22+00:00"
+        },
+        {
+            "name": "formfeed-uk/nova-resource-cards",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Formfeed-UK/nova-resource-cards.git",
+                "reference": "5f3b65e32c1c128cb31454c8583d96849925bda1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Formfeed-UK/nova-resource-cards/zipball/5f3b65e32c1c128cb31454c8583d96849925bda1",
+                "reference": "5f3b65e32c1c128cb31454c8583d96849925bda1",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": "^4.0",
+                "php": "^7.4|^8"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Formfeed\\ResourceCards\\AssetServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Formfeed\\ResourceCards\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova package to show cards on all CRUD pages.",
+            "homepage": "https://github.com/formfeed-uk/nova-resource-cards",
+            "keywords": [
+                "cards",
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/Formfeed-UK/nova-resource-cards/issues",
+                "source": "https://github.com/Formfeed-UK/nova-resource-cards/tree/1.0.1"
+            },
+            "time": "2022-06-08T20:53:20+00:00"
         },
         {
             "name": "fruitcake/laravel-cors",
@@ -4897,6 +4996,117 @@
             "time": "2022-06-22T07:13:36+00:00"
         },
         {
+            "name": "outl1ne/nova-settings",
+            "version": "5.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/outl1ne/nova-settings.git",
+                "reference": "3bc1dd6f714bfe31d0ff3baac6805d9387a343b6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/outl1ne/nova-settings/zipball/3bc1dd6f714bfe31d0ff3baac6805d9387a343b6",
+                "reference": "3bc1dd6f714bfe31d0ff3baac6805d9387a343b6",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": "^4.0",
+                "outl1ne/nova-translations-loader": "^5.0",
+                "php": ">=8.0"
+            },
+            "require-dev": {
+                "laravel/nova-dusk-suite": "^9.3-dev",
+                "orchestra/testbench": "^7.0",
+                "orchestra/testbench-dusk": "^7.0",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Outl1ne\\NovaSettings\\NovaSettingsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "./src/helpers.php"
+                ],
+                "psr-4": {
+                    "Outl1ne\\NovaSettings\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova tool for editing custom settings using native Nova fields.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/outl1ne/nova-settings/issues",
+                "source": "https://github.com/outl1ne/nova-settings/tree/5.0.2"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/outl1ne",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-05-24T11:31:28+00:00"
+        },
+        {
+            "name": "outl1ne/nova-translations-loader",
+            "version": "5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/outl1ne/nova-translations-loader.git",
+                "reference": "a005e37d105473b0cfc4a1586d87bfc7d45ffcba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/outl1ne/nova-translations-loader/zipball/a005e37d105473b0cfc4a1586d87bfc7d45ffcba",
+                "reference": "a005e37d105473b0cfc4a1586d87bfc7d45ffcba",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^8.0|^9.0",
+                "laravel/nova": "^4.0",
+                "php": ">=8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [],
+                    "aliases": []
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Outl1ne\\NovaTranslationsLoader\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "This Laravel Nova package helps developers load translations into their packages.",
+            "keywords": [
+                "laravel",
+                "nova",
+                "optimistdigital",
+                "outl1ne",
+                "translations"
+            ],
+            "support": {
+                "issues": "https://github.com/outl1ne/nova-translations-loader/issues",
+                "source": "https://github.com/outl1ne/nova-translations-loader/tree/5.0.0"
+            },
+            "time": "2022-04-29T14:58:51+00:00"
+        },
+        {
             "name": "paragonie/constant_time_encoding",
             "version": "v2.6.3",
             "source": {
@@ -7036,54 +7246,6 @@
             "time": "2022-04-05T10:05:19+00:00"
         },
         {
-            "name": "slash2nl/nova-back-button",
-            "version": "v2.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/SLASH2NL/nova-back-button.git",
-                "reference": "79a2a2a96464f39ef4b7aedec413605c9897748e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/SLASH2NL/nova-back-button/zipball/79a2a2a96464f39ef4b7aedec413605c9897748e",
-                "reference": "79a2a2a96464f39ef4b7aedec413605c9897748e",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/nova": "^4.0",
-                "php": "^7.3|^8.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "SLASH2NL\\NovaBackButton\\CardServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "SLASH2NL\\NovaBackButton\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "A Laravel Nova card to display a back button.",
-            "keywords": [
-                "Back",
-                "button",
-                "laravel",
-                "nova"
-            ],
-            "support": {
-                "issues": "https://github.com/SLASH2NL/nova-back-button/issues",
-                "source": "https://github.com/SLASH2NL/nova-back-button/tree/v2.0.2"
-            },
-            "time": "2022-05-10T11:23:37+00:00"
-        },
-        {
             "name": "socialiteproviders/google",
             "version": "4.1.0",
             "source": {
@@ -8180,57 +8342,6 @@
                 }
             ],
             "time": "2022-03-11T08:16:01+00:00"
-        },
-        {
-            "name": "stepanenko3/nova-settings",
-            "version": "v1.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/stepanenko3/nova-settings.git",
-                "reference": "c394e0b79e6d10ddcea5e27873cc018e608e1e37"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/stepanenko3/nova-settings/zipball/c394e0b79e6d10ddcea5e27873cc018e608e1e37",
-                "reference": "c394e0b79e6d10ddcea5e27873cc018e608e1e37",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/nova": "^4.0",
-                "php": ">=8.0",
-                "spatie/laravel-activitylog": "^4.4.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Stepanenko3\\NovaSettings\\ToolServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/helpers.php"
-                ],
-                "psr-4": {
-                    "Stepanenko3\\NovaSettings\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "This Laravel Nova settings tool based on env, using nativ nova fields and resources",
-            "keywords": [
-                "Settings",
-                "laravel",
-                "nova"
-            ],
-            "support": {
-                "issues": "https://github.com/stepanenko3/nova-settings/issues",
-                "source": "https://github.com/stepanenko3/nova-settings/tree/v1.0.2"
-            },
-            "time": "2022-05-17T06:11:19+00:00"
         },
         {
             "name": "symfony/console",

@@ -15,6 +15,8 @@ use Lms\CourseGradebook\CourseGradebook;
 use Lms\Gradebook\Gradebook;
 use Lms\StudentGradebook\StudentGradebook;
 
+use Eminiarts\Tabs\Tab;
+use Eminiarts\Tabs\Tabs;
 use Itsmejoshua\Novaspatiepermissions\Novaspatiepermissions;
 use Vyuldashev\NovaPermission\PermissionPolicy;
 use Vyuldashev\NovaPermission\RolePolicy;
@@ -29,6 +31,10 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function boot()
     {
         parent::boot();
+
+        \Outl1ne\NovaSettings\NovaSettings::addSettingsFields([
+            Image::make('Logo', 'logo_frontend'),
+        ]);
     }
 
     /**
@@ -101,7 +107,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 }),
 
             //\ChrisWare\NovaBreadcrumbs\NovaBreadcrumbs::make(),
-            new \Stepanenko3\NovaSettings\NovaSettingsTool(),
+            new \Outl1ne\NovaSettings\NovaSettings,
         ];
     }
 

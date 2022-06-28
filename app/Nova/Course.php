@@ -19,11 +19,8 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
-//use Monaye\SimpleLinkButton\SimpleLinkButton;
-//use NovaAttachMany\AttachMany;
-use Spatie\Tags\Tag;
 
-use SLASH2NL\NovaBackButton\NovaBackButton;
+use Spatie\Tags\Tag;
 
 class Course extends Resource
 {
@@ -122,14 +119,6 @@ class Course extends Resource
             ]),
 
             Text::make(__('Class Zoom Link'), 'classLink'),
-
-            /*SimpleLinkButton::make('Grades', function () {
-                return "/gradebook/courseByAllActivities/{$this->id}" ;
-            })
-                ->hideWhenUpdating()
-                ->hideWhenCreating()
-                ->type('link')
-                ->style('grey')*/
         ];
     }
 
@@ -141,10 +130,7 @@ class Course extends Resource
      */
     public function cards(NovaRequest $request)
     {
-        return [
-            (new NovaBackButton())
-            ->onlyOnDetail(),
-        ];
+        return [];
     }
 
     /**
