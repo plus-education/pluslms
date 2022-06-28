@@ -41,11 +41,15 @@
             <div v-if="course.topics && course.topics.length > 0" class="mt-6">
                 <template :key="topic.id" v-for="topic in course.topics">
                     <Link
-                        :href="`/courses/topic/${topic.id}`"
+                        :href="( topic.numActivities === 0 ) ? '' : `/courses/topic/${topic.id}`"
                         v-if="topic.isShow"
                     >
-                        <div class="bg-white p-4 shadow rounded-lg mb-4">
-                                {{ topic.name }}
+                        <div
+                            class="bg-white p-4 shadow rounded-lg mb-4"
+                            :class="{ 'bg-gray-200': topic.numActivities === 0 }"
+                        >
+                            <span class="block">{{ topic.name }}</span>
+                            <span class="text-sm">{{ topic.numActivities }} {{ pluralize('activity', topic.numActivities) }}</span>
                         </div>
                     </Link>
                 </template>
@@ -59,6 +63,7 @@
 </template>
 
 <script>
+    import pluralize from 'pluralize';
     import AppLayout from './../../Layouts/AppLayout'
 
     export default {

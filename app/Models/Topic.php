@@ -27,7 +27,10 @@ class Topic extends Model implements Sortable
         'endDate' => 'datetime:d-m-Y',
     ];
 
-    protected $appends = ['isShow'];
+    protected $appends = [
+        'isShow',
+        'numActivities',
+    ];
 
     public function course()
     {
@@ -44,16 +47,6 @@ class Topic extends Model implements Sortable
     {
         return $this->belongsToMany(User::class)
             ->withPivot('comment');
-    }
-
-    public function  weeklyPlannings()
-    {
-        return $this->hasMany(WeeklyPlanning::class);
-    }
-
-    public function getTotalActivitiesAttribute()
-    {
-        return $this->activities()->sum('score');
     }
 
     public function getIsShowAttribute()
@@ -73,6 +66,13 @@ class Topic extends Model implements Sortable
         }
 
         return $today->between($this->startDate, $this->endDate);
+    }
+
+    // Returns the number of activities associated with this topic
+    public function getNumActivitiesAttribute()
+    {
+        // Getting the relationship will cause a loop, so just count all in DB
+        return Activity::where('topic_id', $this->id)->count();
     }
 
     public function getPrevNextIdsAttribute()

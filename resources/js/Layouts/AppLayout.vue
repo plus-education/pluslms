@@ -139,7 +139,7 @@ const logout = () => {
                             </div>
                         </div>
 
-                        <div class="flex sm:hidden"></div>
+                        <div class="flex md:hidden"></div>
                     </div>
                 </div>
 
