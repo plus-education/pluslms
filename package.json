@@ -68,6 +68,7 @@
         "vue-file-agent": "^1.7.3",
         "vue-moment": "^4.1.0",
         "vue-screen": "^2.1.0-beta.1",
+        "vue3-carousel": "^0.1.40",
         "vue3-editor": "^0.1.1"
     }
 }

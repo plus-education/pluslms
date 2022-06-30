@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,14 +27,14 @@ Route::get('/auth/microsoft', [SocialiteController::class, 'redirectToMicrosoft'
 Route::get('/callback/microsoft', [SocialiteController::class, 'handleMicrosoftCallback'])->name('microsoft.callback');
 
 Route::get('/', function () {
-    return redirect()->route('dashboard');
-});
+    return Inertia::render('Index');
+})->name('index');
 
 Route::get('/logo', function () {
     return response([
         'url' => \Illuminate\Support\Facades\URL::asset( 'storage/'. nova_get_setting('logo_frontend'))
     ]);
-});
+})->name('logo');
 
 Route::middleware([
     'auth:sanctum',
