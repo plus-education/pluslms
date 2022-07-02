@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\AccessCode;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Tags\HasTags;
@@ -21,6 +23,10 @@ class Course extends Model
     public function users()
     {
         return $this->belongsToMany(User::class);
+    }
+
+    public function access_codes() {
+        return $this->hasMany(AccessCode::class);
     }
 
     public function topics()

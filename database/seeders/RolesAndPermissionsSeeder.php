@@ -17,15 +17,23 @@ class RolesAndPermissionsSeeder extends Seeder
     {
         app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
 
-        /*
-         * create permissions
-         */
-        Permission::create(['name' => 'manage settings']);
+        // Create student permissions
+        Permission::create(['name' => 'list only my courses']);
+        Permission::create(['name' => 'show only my course']);
+        Permission::create(['name' => 'show only my user']);
+        Permission::create(['name' => 'update only my user']);
 
-        Permission::create(['name' => 'manage roles']);
-        Permission::create(['name' => 'manage translations']);
-        Permission::create(['name' => 'manage backup']);
+        $student = Role::create(['name' => 'student']);
+        $student->givePermissionTo(Permission::all());
 
+        // Create teacher permissions
+        Permission::create(['name' => 'update only my course']);
+        Permission::create(['name' => 'list only my users']);
+
+        $teacher = Role::create(['name' => 'teacher']);
+        $teacher->givePermissionTo(Permission::all());
+
+        // Create admin permissions
         Permission::create(['name' => 'list users']);
         Permission::create(['name' => 'show user']);
         Permission::create(['name' => 'create user']);
@@ -33,17 +41,23 @@ class RolesAndPermissionsSeeder extends Seeder
         Permission::create(['name' => 'delete user']);
 
         Permission::create(['name' => 'list courses']);
-        Permission::create(['name' => 'list only my courses']);
-        Permission::create(['name' => 'create courses']);
-        Permission::create(['name' => 'edit courses']);
-        Permission::create(['name' => 'delete courses']);
+        Permission::create(['name' => 'show course']);
+        Permission::create(['name' => 'create course']);
+        Permission::create(['name' => 'edit course']);
+        Permission::create(['name' => 'delete course']);
 
-        // create roles and assign created permissions
+        Permission::create(['name' => 'list access codes']);
+        Permission::create(['name' => 'show access code']);
+        Permission::create(['name' => 'create access code']);
+        Permission::create(['name' => 'edit access code']);
+        Permission::create(['name' => 'delete access code']);
+
+        Permission::create(['name' => 'manage settings']);
+        Permission::create(['name' => 'manage roles']);
+        Permission::create(['name' => 'manage translations']);
+        Permission::create(['name' => 'manage backup']);
+
         $admin = Role::create(['name' => 'admin']);
         $admin->givePermissionTo(Permission::all());
-
-        Role::create(['name' => 'teacher']);
-        Role::create(['name' => 'student']);
-        Role::create(['name' => 'student Manager']);
     }
 }

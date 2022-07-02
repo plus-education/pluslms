@@ -49,10 +49,26 @@
                     <p v-if="search !== ''">No results for '{{ search }}'.</p>
                 </template>
             </template>
+
+            <div class="mt-4 pb-4 border-t-2 border-gray-300" />
+
+            <form @submit.prevent="submit_code" class="pb-6">
+                <label for="code">Access Code:</label>
+                <div class="grid grid-cols-1 sm:grid-cols-2">
+                    <div>
+                        <input name="code" v-model="form.code" type="text" class="w-full focus:no-underline py-2 px-4 shadow rounded-lg" />
+                    </div>
+                    <div class="content-center">
+                        <button type="submit" class="btn-outline-primary">Submit</button>
+                    </div>
+                </div>
+            </form>
        </div>
 </template>
 
 <script>
+    import { useForm } from '@inertiajs/inertia-vue3';
+
     export default {
         components: {
         },
@@ -63,7 +79,10 @@
 
         data: () => {
             return {
-                search: ''
+                search: '',
+                form: useForm({
+                    code: null,
+                }),
             }
         },
 
@@ -72,6 +91,23 @@
                 return this.courses.filter( course => {
                     return course.name.includes(this.search)
                 })
+            }
+        },
+
+        methods: {
+            submit_code () {
+                let res = axios.post(route('access-code'), this.form)
+                    .then(function (response) {
+                        console.log(response)
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                        if (error.response?.data?.msg !== null) {
+                            alert(error.response.data.msg);
+                        } else {
+                            alert('Something went wrong.');
+                        }
+                    });
             }
         }
     }

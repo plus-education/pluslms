@@ -55,8 +55,9 @@
 <style>
     @import 'vue3-carousel/dist/carousel.css';
     .carousel__prev {
-        transform: translate(20%, -50%) !important;
+        transform: translate(20%, -50%);
     }
+
     .carousel__next {
         transform: translate(-20%, -50%);
     }

@@ -18,7 +18,7 @@ class CoursePolicy
      */
     public function viewAny(User $user)
     {
-        return  true;
+        return $user->can('list courses') || $user->can('list only my courses');
     }
 
     /**
@@ -30,7 +30,7 @@ class CoursePolicy
      */
     public function view(User $user, Course $course)
     {
-       return $user->can('list courses') || $user->can('list only my courses');
+       return $user->can('show course') || $user->can('show only my course');
     }
 
     /**
@@ -41,7 +41,7 @@ class CoursePolicy
      */
     public function create(User $user)
     {
-        return $user->can('create courses');
+        return $user->can('create course');
     }
 
     /**
@@ -53,7 +53,7 @@ class CoursePolicy
      */
     public function update(User $user, Course $course)
     {
-        return $user->can('edit courses');
+        return $user->can('update course');
     }
 
     /**
@@ -65,7 +65,7 @@ class CoursePolicy
      */
     public function delete(User $user, Course $course)
     {
-        return $user->can('delete courses');
+        return $user->can('delete course');
     }
 
     /**

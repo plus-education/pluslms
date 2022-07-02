@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 
 /*
@@ -14,6 +15,7 @@ use Inertia\Inertia;
 |
 */
 use \App\Http\Controllers\Dashboard,
+    \App\Http\Controllers\AccessCodeController,
     \App\Http\Controllers\CoursesController,
     \App\Http\Controllers\Student\ExerciseController;
 
@@ -31,6 +33,10 @@ Route::get('/', function () {
 })->name('index');
 
 Route::get('/logo', function () {
+    if (file_exists(storage_path(nova_get_setting('logo_frontend')))) {
+        return null;
+    }
+
     return response([
         'url' => \Illuminate\Support\Facades\URL::asset( 'storage/'. nova_get_setting('logo_frontend'))
     ]);
@@ -52,47 +58,6 @@ Route::middleware([
     Route::get('/courses/topic/{id}/{activity_id?}', [CoursesController::class, 'topic'])
         ->name('courses.topic');
 
-    /*Route::get('/courses/topic/activities/{id}', [CoursesController::class, 'topicActivities'])
-        ->name('courses.topic.activities');
-
-    Route::get('/courses/usersByActivity/{id}', [CoursesController::class, 'usersByActivity'])
-        ->name('courses.userByActivity');
-
-    Route::post('/courses/saveActivity', [CoursesController::class, 'saveActivity'])
-        ->name('courses.saveActivity');
-    */
-    /*
-    Route::post('/courses/saveStudentHomework/{id}', [CoursesController::class, 'saveStudentHomework']);
-    Route::get('/courses/studentHomework/{id}', [CoursesController::class, 'studentHomework']);
-    Route::get('/courses/studentDeleteHomework/{id}', [CoursesController::class, 'studentDeleteHomework']);
-
-    Route::get('/course/topic/gradebookPdf/{id}', [CoursesController::class, 'topicGradebookPdf'])
-        ->name('courses.topicGradebookPdf');
-
-    Route::get('/course/topic/gradebookExcel/{id}', [CoursesController::class, 'topicGradebookExcel'])
-        ->name('courses.topicGradebookExcel');
-    */
-
-    /*Route::get('/student/exercise/questions/{id}', [ExerciseController::class, 'getQuestion']);
-
-    Route::post('/student/exercise', \App\Http\Controllers\GradeExerciseController::class);
-    Route::get('/student/exercise/score/{activityId}', function($id){
-        $activityScore = \App\Models\ActivityUser::where('activity_id', $id)
-            ->where('user_id', auth()->user()->id)
-            ->get()
-            ->first();
-
-        if ($activityScore) {
-            return response()->json([
-                'hasScore' => true,
-                'activityScore' => $activityScore
-            ]);
-        }
-
-        return response()->json(['hasScore' => false]);
-    });
-    */
-
     // System Comments
     Route::get('/comments/activity/{id}/{type}', [\App\Http\Controllers\CommentController::class, 'list'])
         ->name('comments.activity');
@@ -108,6 +73,8 @@ Route::middleware([
     Route::get('/nav/topic/activity/{id}', function ($id) {
         return \App\Models\Activity::find($id)?->prev_next_ids;
     })->name('nav.topic.activity');
+
+    Route::post('/access-code', [AccessCodeController::class, 'addToCourse'])->name('access-code');
 });
 
 Route::get('/notifications', function () {
