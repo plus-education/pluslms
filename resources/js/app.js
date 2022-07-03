@@ -1,32 +1,24 @@
-require('./bootstrap');
+import './bootstrap';
+import '../css/app.css';
 
 import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/inertia-vue3';
 import { InertiaProgress } from '@inertiajs/progress';
+import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { ZiggyVue } from 'ziggy';
 import { Ziggy } from './ziggy';
 import VueScreen from 'vue-screen';
 
 import 'flowbite';
 
-//import '@coreui/coreui/dist/css/coreui.min.css';
-
-//import PortalVue from 'portal-vue';
-//import Notifications from 'vue-notification'
-
-//Vue.use(require('vue-moment'));
-//Vue.use(Notifications)
-//Vue.use(InertiaApp);
-//Vue.use(PortalVue);
-
 const app = document.getElementById('app');
 
 createInertiaApp({
-    resolve: name => require(`./Pages/${name}`),
+    resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue')),
     setup({ el, app, props, plugin }) {
         createApp({ render: () => h(app, props) })
             .use(plugin)
-            .use(ZiggyVue, Ziggy)
+            .use(ZiggyVue)//, Ziggy)
             .use(VueScreen, 'tailwind')
             .mount(el)
     },

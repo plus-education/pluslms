@@ -1,6 +1,6 @@
 <script setup>
     import { Link } from "@inertiajs/inertia-vue3";
-    import CourseGradebook from '../Admin/CourseGradebook';
+    import CourseGradebook from '../Admin/CourseGradebook.vue';
 </script>
 
 <template>
@@ -64,7 +64,7 @@
 
 <script>
     import pluralize from 'pluralize';
-    import AppLayout from './../../Layouts/AppLayout'
+    import AppLayout from './../../Layouts/AppLayout.vue'
 
     export default {
         components: {

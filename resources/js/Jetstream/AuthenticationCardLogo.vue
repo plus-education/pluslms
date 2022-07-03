@@ -1,6 +1,6 @@
 <script setup>
 import { Link } from '@inertiajs/inertia-vue3';
-import ApplicationMark from '@/Jetstream/ApplicationMark';
+import ApplicationMark from '@/Jetstream/ApplicationMark.vue';
 </script>
 
 <template>

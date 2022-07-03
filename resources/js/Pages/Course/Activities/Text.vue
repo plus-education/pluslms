@@ -18,7 +18,7 @@
 </template>
 
 <script>
-    import Comments from "../Comments";
+    import Comments from "../Comments.vue";
 
     export default {
         components: {

@@ -17,9 +17,9 @@
 </template>
 
 <script>
-    import ApiTokenManager from './ApiTokenManager'
-    import AppLayout from './../../Layouts/AppLayout'
-    import JetSectionBorder from './../../Jetstream/SectionBorder'
+    import ApiTokenManager from './ApiTokenManager.vue'
+    import AppLayout from './../../Layouts/AppLayout.vue'
+    import JetSectionBorder from './../../Jetstream/SectionBorder.vue'
 
     export default {
         props: [

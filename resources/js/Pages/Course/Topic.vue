@@ -51,11 +51,11 @@ import { Link } from '@inertiajs/inertia-vue3'
 <script>
     import sidebarIcons from './SidebarIcons.js'
 
-    import ExerciseActivity from "./Activities/Exercise"
-    import H5pActivity from './Activities/H5p';
-    import MakeCodeActivity from './Activities/MakeCode';
-    import TextActivity from './Activities/Text'
-    import Comments from "./Comments";
+    import ExerciseActivity from "./Activities/Exercise.vue";
+    import H5pActivity from './Activities/H5p.vue';
+    import MakeCodeActivity from './Activities/MakeCode.vue';
+    import TextActivity from './Activities/Text.vue';
+    import Comments from "./Comments.vue";
 
     export default {
         components: {

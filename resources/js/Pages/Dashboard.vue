@@ -33,8 +33,8 @@
 </template>
 
 <script>
-    import AppLayout from './../Layouts/AppLayout'
-    import CourseList from './CourseList'
+    import AppLayout from './../Layouts/AppLayout.vue';
+    import CourseList from './CourseList.vue';
 
     export default {
         components: {

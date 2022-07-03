@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { Inertia } from '@inertiajs/inertia';
 import { Head, Link } from '@inertiajs/inertia-vue3';
-import Notifications from '@/Layouts/Notifications';
+import Notifications from '@/Layouts/Notifications.vue';
 //import Alerts from '@/Components/Alerts.vue';
 import ResponsiveLinks from '@/Layouts/ResponsiveLinks.vue';
 import JetApplicationMark from '@/Jetstream/ApplicationMark.vue';
