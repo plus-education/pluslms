@@ -17,3 +17,11 @@ use Illuminate\Support\Facades\Artisan;
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote');
+
+Artisan::command('deploy', function () {
+    $this->call('storage:link');
+    $this->call('cache:clear');
+    $this->call('config:cache');
+    $this->call('route:cache');
+    $this->call('view:cache');
+})->purpose('Run commands ready for deploy');
