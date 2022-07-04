@@ -5,8 +5,7 @@ import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/inertia-vue3';
 import { InertiaProgress } from '@inertiajs/progress';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
-import { ZiggyVue } from 'ziggy';
-import { Ziggy } from './ziggy';
+import { ZiggyVue } from 'ziggy/vue.es.js';
 import VueScreen from 'vue-screen';
 
 import 'flowbite';
@@ -18,9 +17,9 @@ createInertiaApp({
     setup({ el, app, props, plugin }) {
         createApp({ render: () => h(app, props) })
             .use(plugin)
-            .use(ZiggyVue)//, Ziggy)
+            .use(ZiggyVue)
             .use(VueScreen, 'tailwind')
-            .mount(el)
+            .mount(el);
     },
 });
 
