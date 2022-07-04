@@ -33,7 +33,7 @@ Route::get('/', function () {
 })->name('index');
 
 Route::get('/logo', function () {
-    if (file_exists(storage_path(nova_get_setting('logo_frontend')))) {
+    if (file_exists(storage_path('app/public/' . nova_get_setting('logo_frontend')))) {
         return null;
     }
 

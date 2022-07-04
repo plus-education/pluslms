@@ -34,8 +34,6 @@ const logout = () => {
 
 <template>
     <BaseLayout :title="title">
-        <Head :title="title" />
-
         <template #links-left>
             <JetNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                 Dashboard

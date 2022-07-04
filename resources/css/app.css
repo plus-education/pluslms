@@ -23,4 +23,17 @@
     .btn-outline-dark {
         @apply btn-outline text-gray-900 border-gray-800 hover:bg-gray-900 focus:ring-gray-300 dark:border-gray-600 dark:text-gray-400 dark:hover:bg-gray-600 dark:focus:ring-gray-800;
     }
+
+    .activity-header, .comment-title{
+        background: #193660;
+        padding: 22px;
+    }
+
+
+    .activity-header h1, .comment-title h1{
+        color: #fff;
+        font-weight: bold;
+        font-size: 2rem;
+        text-align: center;
+    }
 }

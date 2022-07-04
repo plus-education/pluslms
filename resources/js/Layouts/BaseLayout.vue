@@ -13,7 +13,10 @@ import JetNavLink from '@/Jetstream/NavLink.vue';
 import JetResponsiveNavLink from '@/Jetstream/ResponsiveNavLink.vue';
 
 defineProps({
-    title: String,
+    title: {
+        type: String,
+        default: 'App',
+    },
 });
 
 const showingNavigationDropdown = ref(false);
@@ -25,7 +28,7 @@ const logout = () => {
 
 <template>
     <div>
-        <Head :title="title" />
+        <Head :title="`${title} - ${$page.props.settings.title}`" />
 
         <JetBanner />
 

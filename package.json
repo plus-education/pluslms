@@ -60,6 +60,7 @@
         "flowbite": "^1.4.7",
         "link-preview-js": "^2.1.6",
         "link-preview-node": "^1.0.4",
+        "moment": "^2.29.3",
         "pluralize": "^8.0.0",
         "timeme.js": "^2.1.0",
         "vue-cal": "^4.2.0",

@@ -6,7 +6,7 @@ import { Link } from '@inertiajs/inertia-vue3'
 
 <template>
     <AppWithSidebarLayout
-        :title="title"
+        :title="topic.name"
         :topic="topic"
         :topics="topics"
         :activity="activity"

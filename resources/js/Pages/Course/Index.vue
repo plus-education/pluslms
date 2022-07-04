@@ -4,7 +4,7 @@
 </script>
 
 <template>
-    <app-layout>
+    <app-layout :title="`Overview - ${course.name}`">
         <template #header>
             <ul>
                 <li><Link class="text-blue-500 underline" :href="route('dashboard')">Home</Link> / Course: {{ course.name }} / Overview</li>

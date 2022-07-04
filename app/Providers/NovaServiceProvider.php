@@ -33,6 +33,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         parent::boot();
 
         \Outl1ne\NovaSettings\NovaSettings::addSettingsFields([
+            Text::make('Site Title', 'site_title'),
             Image::make('Logo', 'logo_frontend'),
         ]);
     }

@@ -1,5 +1,9 @@
+<script setup>
+    import AppLayout from './../Layouts/AppLayout.vue';
+</script>
+
 <template>
-    <app-layout>
+    <AppLayout title="Dashboard">
 
         <section>
             <div class="container m-auto mt-6 mb-6 flex flex-col md:flex-row items-center justify-between bg-white shadow-lg">
@@ -29,11 +33,10 @@
             <course-list :courses="courses" />
         </section>
 
-    </app-layout>
+    </AppLayout>
 </template>
 
 <script>
-    import AppLayout from './../Layouts/AppLayout.vue';
     import CourseList from './CourseList.vue';
 
     export default {
