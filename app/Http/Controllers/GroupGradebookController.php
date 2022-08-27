@@ -47,7 +47,7 @@ class GroupGradebookController extends Controller
     {
         $this->gradebook['courses'][$course->id]['id'] = $course->id;
         $this->gradebook['courses'][$course->id]['name'] = $course->name;
-        $this->gradebook['courses'][$course->id]['modules'] = $course->topics->take(2)
+        $this->gradebook['courses'][$course->id]['modules'] = $course->topics->take(3)
             ->map(function($topic){
             $topic->totalStudentScore =  Topic::getTotalStudent($topic, $this->student);
             return $topic;
